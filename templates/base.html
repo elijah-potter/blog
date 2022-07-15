@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <title> {% block title %}{% endblock %}</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <style>
+                        body{
+                                {% if dark %}
+                                        background-color: #262626;
+                                        color: #FFF;
+                                {% else %}
+                                        background-color: #FFF;
+                                        color: #000;
+                                {% endif%}
+                        }
+
+                        .container{
+                                display: flex;
+                                flex: 1 1 auto;
+                                flex-direction: row;
+                        }
+
+                        .content{
+                                flex: 1 1 80ch;
+                                text-align: left;
+                                font-family: charter;
+                                font-size: 1.3rem;
+                                line-height: 1.8;
+                        }
+
+                        .sidebar{
+                                flex: 1 1 auto;
+                        }
+
+                        @font-face {
+                                font-family: charter;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-stretch: normal;
+                                src: url('charter_regular.woff2') format('woff2');
+                        }
+
+                        @font-face {
+                                font-family: charter;
+                                font-style: italic;
+                                font-weight: normal;
+                                font-stretch: normal;
+                                src: url('charter_italic.woff2') format('woff2');
+                        }
+
+                        @font-face {
+                                font-family: charter;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-stretch: normal;
+                                src: url('charter_bold.woff2') format('woff2');
+                        }
+
+                        @font-face {
+                                font-family: charter;
+                                font-style: italic;
+                                font-weight: bold;
+                                font-stretch: normal;
+                                src: url('charter_bold_italic.woff2') format('woff2');
+                        }
+                </style>
+        </head>
+        <body>
+                <header>
+                        <form method="POST" action="/toggledark">
+                                <button type=submit>Theme</button>
+                        </form>
+                </header>
+                <div class="container">
+                        <div class="sidebar"></div>
+                                <div class="content">
+                                        {% block content %}{% endblock %}
+                                </div>
+                        <div class="sidebar"></div>
+                </div>
+        </body>
+</html>
