@@ -15,6 +15,23 @@
                                 {% endif%}
                         }
 
+                        button{
+                                border: none;
+                                background-color: transparent;
+                        }
+
+                        button:hover{
+                                transform: scale(1.1);
+                                transition: 250ms;
+                                transition-timing-function: ease-out;
+                        }
+
+                        button:active{
+                                transform: scale(0.8);
+                                transition: 100ms;
+                                transition-timing-function: ease-out;
+                        }
+
                         .container{
                                 display: flex;
                                 flex: 1 1 auto;
@@ -69,7 +86,13 @@
         <body>
                 <header>
                         <form method="POST" action="/toggledark">
-                                <button type=submit>Theme</button>
+                                <button type=submit>
+                                        {% if dark %}
+                                        {% include "sun.svg" %}
+                                        {% else %}
+                                        {% include "moon.svg" %}
+                                        {% endif %}
+                                </button>
                         </form>
                 </header>
                 <div class="container">
