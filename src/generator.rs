@@ -4,11 +4,13 @@ use std::{
 };
 
 use actix_web::{
-    guard::Get,
+    guard::{Get, Post},
     http::header::ContentType,
     web::{Bytes, Path},
     Handler, HttpRequest, HttpResponse, Resource,
 };
+
+use crate::templates::Post;
 use askama::Template;
 
 #[derive(Eq, PartialEq, Debug, Clone, Default, Hash)]
@@ -29,21 +31,20 @@ impl BlogGenerator {
         }
     }
 
-    pub fn update_or_add<S: ToString>(&mut self, name: S, markdown: &str) {
-        // Render markdown to html
-        let mut rendered_md = String::new();
-        let parser = pulldown_cmark::Parser::new(markdown);
-        pulldown_cmark::html::push_html(&mut rendered_md, parser);
+    pub fn update_or_add<S: ToString>(&mut self, endpoint: S, markdown: &str) {
+        let name = endpoint.to_string();
 
         let light = Post {
             dark: false,
-            content: rendered_md.as_str(),
+            title: &name,
+            content: markdown,
         }
         .render()
         .unwrap();
         let dark = Post {
             dark: true,
-            content: rendered_md.as_str(),
+            title: &name,
+            content: markdown,
         }
         .render()
         .unwrap();
@@ -124,11 +125,4 @@ impl Handler<(HttpRequest, Path<(String,)>)> for BlogHandler {
             None => future::ready(HttpResponse::NotFound().finish()),
         }
     }
-}
-
-#[derive(Template)]
-#[template(path = "post.html", escape = "none")]
-struct Post<'a> {
-    dark: bool,
-    content: &'a str,
 }

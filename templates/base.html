@@ -5,14 +5,15 @@
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <style>
-                        body{
-                                {% if dark %}
+                        {% if dark %}
+                                body{
                                         background-color: #262626;
                                         color: #FFF;
-                                {% else %}
-                                        background-color: #FFF;
-                                        color: #000;
-                                {% endif%}
+                                }
+                        {% endif%}
+
+                        header{
+                                padding: 5ch;
                         }
 
                         button{
@@ -39,11 +40,29 @@
                         }
 
                         .content{
-                                flex: 1 1 80ch;
+                                flex: 1 1 60ch;
                                 text-align: left;
                                 font-family: charter;
-                                font-size: 1.3rem;
                                 line-height: 1.8;
+                                padding: 4ch;
+                        }
+
+                        @media (max-width: 599px){
+                                .content{
+                                        font-size: 1rem;
+                                }
+                        }
+
+                        @media (min-width: 600px){
+                                .content {
+                                        font-size: 1.2rem;
+                                }
+                        }
+
+                        @media (min-width: 1200px){
+                                .content {
+                                        font-size: 1.6rem;
+                                }
                         }
 
                         .sidebar{

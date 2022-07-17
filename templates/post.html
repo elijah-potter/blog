@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %} Post {% endblock%}
+{% block title %} {{ title|titleize }} {% endblock%}
 
 {% block content %}
 
-{{ content }}
+<h1>{{ title|titleize }}</h1>
+
+{{ content|markdown }}
 
 {% endblock %}
