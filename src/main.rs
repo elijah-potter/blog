@@ -2,6 +2,8 @@ mod generator;
 mod templates;
 use std::future;
 
+use actix_web::http::header::CACHE_CONTROL;
+
 use actix_web::{
     cookie::{Cookie, SameSite},
     http::header::{HeaderValue, LOCATION, REFERER},
@@ -46,7 +48,7 @@ async fn main() {
                 cfg.route(
                     $endpoint,
                     Route::new().to(|| {
-                        future::ready(include_bytes!(concat!("../static/", $endpoint)).to_vec())
+                        future::ready(HttpResponse::Ok().insert_header((CACHE_CONTROL, "max_age=3600")).body(include_bytes!(concat!("../static/", $endpoint)).to_vec()))
                     }),
                 );
             }
@@ -58,6 +60,7 @@ async fn main() {
             .wrap(Logger::default())
             .wrap(Compress::default())
             .configure(static_file!("favicon.ico"))
+            .configure(static_file!("profile.svg"))
             .configure(static_file!("charter_regular.woff2"))
             .configure(static_file!("charter_bold.woff2"))
             .configure(static_file!("charter_italic.woff2"))
