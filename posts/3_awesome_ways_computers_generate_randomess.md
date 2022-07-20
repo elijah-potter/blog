@@ -24,8 +24,6 @@ These instructions utilize thermal noise to produce white noise, which is used t
 
 ### Do It Yourself
 
-Do it yourself
-
 If you happen to be on a Linux system, you can actually use these instructions yourself. Just run this command:
 
 `dd if=/dev/random count=4 bs=1 status=none | od -An --format=dI`

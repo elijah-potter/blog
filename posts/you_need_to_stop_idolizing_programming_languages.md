@@ -1,13 +1,8 @@
+## I’m tired of it
 
-# You need to stop idolizing programming languages.
+**EDIT:** After reading through some of the responses and discussions about this article over on [Reddit](https://www.reddit.com/r/programming/comments/u268sz/you_need_to_stop_idolizing_programming_languages/?utm_source=share&utm_medium=web2x&context=3), I just want to quickly make some things clear. This post was written in from the point of view of a single individual. It does not represent knowledge gained from any survey or other more (relatively) scientific means. It is purely in response to my personal experience learning a language that is often bashed by evangelists from various sides. While I stand behind the points I make in the article the discussions that seem to have spawned from it have been really informative to me.
 
-I’m tired of it
-
-![Photo by [Joshua Golde](https://unsplash.com/@joshgmit?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)](https://cdn-images-1.medium.com/max/11520/0*O4jD4RdCo1iPAeqp)*Photo by [Joshua Golde](https://unsplash.com/@joshgmit?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)*
-
-**EDIT: **After reading through some of the responses and discussions about this article over on [Reddit](https://www.reddit.com/r/programming/comments/u268sz/you_need_to_stop_idolizing_programming_languages/?utm_source=share&utm_medium=web2x&context=3), I just want to quickly make some things clear. This post was written in from the point of view of a single individual. It does not represent knowledge gained from any survey or other more (relatively) scientific means. It is purely in response to my personal experience learning a language that is often bashed by evangelists from various sides. While I stand behind the points I make in the article the discussions that seem to have spawned from it have been really informative to me.
-
-**EDIT 3: **I have written a follow up to this post [here.](https://itnext.io/re-you-need-to-stop-idolizing-programming-languages-b8ee55dbe852)
+**EDIT 3:** I have written a follow up to this post [here.](https://itnext.io/re-you-need-to-stop-idolizing-programming-languages-b8ee55dbe852)
 
 **Onto the actual post.**
 
@@ -41,4 +36,4 @@ Those languages are still used because **they work. **They get the job done. At 
 
 OK, rant over. Go on with your day.
 
-**EDIT 2: **I am realizing now that a lot of the points I made here had a lot of hand waving logic. Be on the lookout for a more detailed followup where I will be explaining these ideas in greater depth.
+**EDIT 2:** I am realizing now that a lot of the points I made here had a lot of hand waving logic. Be on the lookout for a more detailed followup where I will be explaining these ideas in greater depth.

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Posts {% endblock%}
+
+{% block content %}
+
+<div class="list">
+
+<h1>Posts</h1>
+
+<ul>
+
+{% for post in posts %}
+
+<li>
+        <a href="/blog/{{ post.endpoint }}">{{ post.endpoint|titleize }}</a>
+        <p>Wordcount: {{ post.content|wordcount }}</p>
+        <hr/>
+</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+{% endblock %}

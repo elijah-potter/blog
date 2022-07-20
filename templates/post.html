@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %} {{ title|titleize }} {% endblock%}
+{% block title %} {{ endpoint|titleize }} {% endblock%}
 
 {% block content %}
 
-<h1>{{ title|titleize }}</h1>
+<h1>{{ endpoint|titleize }}</h1>
 
 {{ content|markdown }}
 
