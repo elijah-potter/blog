@@ -13,6 +13,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Elijah Potter</title>
       </Head>
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "3a3453ec9a054b6d9e4dd5a64d79c371"}'
+      ></script>
       <div className="h-container">
         <Spacer />
         <div className="stage">
