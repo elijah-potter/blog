@@ -1,22 +1,31 @@
+:root{
+        --bg: #fff;
+        --fg: #000;
+}
+
 * {
         text-rendering: optimizeLegibility;        
         font-family: charter;
+        background-color: var(--bg);
+        color: var(--fg);
 }
 
 .h-container {
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
 }
 
 .v-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
 }
 
 .h-container, .v-container > * {
         flex: 1 1 auto;
-        align-items: center;
-        gap: 20px;
 }
 
 .stage {
@@ -27,8 +36,25 @@
         text-align: center;
 }
 
-.huge-text{
+.impact-text{
         font-size: 5rem;
+}
+
+.subtitle-text{
+        font-size: 2rem;
+}
+
+.shakehover:hover{
+        animation-name: shake;
+        animation-duration: 400ms;
+        animation-timing-function: ease-out;
+}
+
+@keyframes shake{
+        25% {transform: rotate(10deg);}
+        50% {transform: rotate(-10deg);}
+        75% {transform: rotate(10deg);}
+        100% {transform: rotate(0deg);}
 }
 
 @font-face {
