@@ -40,12 +40,38 @@ a {
         text-align: center;
 }
 
-.impact-text{
-        font-size: 5rem;
+.padded{
+        padding: 4ch;
 }
 
-.subtitle-text{
-        font-size: 2rem;
+@media (max-width: 599px){
+        .impact-text{
+                font-size: 3rem;
+        }
+
+        .subtitle-text{
+                font-size: 1.5rem;
+        }
+}
+
+@media (min-width: 600px){
+        .impact-text{
+                font-size: 5rem;
+        }
+        
+        .subtitle-text{
+                font-size: 2rem;
+        }
+}
+
+@media (min-width: 1200px){
+        .impact-text{
+                font-size: 5rem;
+        }
+
+        .subtitle-text{
+                font-size: 2rem;
+        }
 }
 
 .shakehover:hover{

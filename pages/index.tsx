@@ -12,9 +12,9 @@ export default function index() {
         </div>
       </div>
       <div style={{ paddingTop: "100px" }} />
-      <div className="h-container">
+      <div className="h-container" style={{ flexWrap: "wrap" }}>
         <Link href="https://github.com/chilipepperhott/">
-          <a>
+          <a className="padded">
             <Image
               width="100"
               height="100"
@@ -24,7 +24,7 @@ export default function index() {
           </a>
         </Link>
         <Link href="https://www.linkedin.com/in/elijahpotter">
-          <a>
+          <a className="padded">
             <Image
               width="100"
               height="100"
@@ -34,7 +34,7 @@ export default function index() {
           </a>
         </Link>
         <Link href="https://www.instagram.com/elijah_sirius/">
-          <a>
+          <a className="padded">
             <Image
               width="100"
               height="100"
