@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Spacer from "../components/Spacer";
 
 export default function index() {
   return (
@@ -20,7 +19,7 @@ export default function index() {
               width="100"
               height="100"
               src="/github.svg"
-              className="shakehover"
+              className="shakehover depressclick"
             />
           </a>
         </Link>
@@ -30,7 +29,17 @@ export default function index() {
               width="100"
               height="100"
               src="/linkedin.svg"
-              className="shakehover"
+              className="shakehover depressclick"
+            />
+          </a>
+        </Link>
+        <Link href="https://www.instagram.com/elijah_sirius/">
+          <a>
+            <Image
+              width="100"
+              height="100"
+              src="/polaroid.svg"
+              className="shakehover depressclick"
             />
           </a>
         </Link>

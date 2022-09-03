@@ -10,6 +10,10 @@
         color: var(--fg);
 }
 
+a {
+        text-decoration: none;
+}
+
 .h-container {
         display: flex;
         flex-direction: row;
@@ -48,6 +52,14 @@
         animation-name: shake;
         animation-duration: 400ms;
         animation-timing-function: ease-out;
+}
+
+.depressclick{
+        transition-duration: 300ms;
+}
+
+.depressclick:active{
+        transform: scale(0.8);
 }
 
 @keyframes shake{
