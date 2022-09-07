@@ -44,6 +44,10 @@ a {
         padding: 4ch;
 }
 
+.unstyled-list{
+	list-style: none;
+}
+
 @media (max-width: 599px){
         .impact-text{
                 font-size: 3rem;
@@ -64,24 +68,18 @@ a {
         }
 }
 
-@media (min-width: 1200px){
-        .impact-text{
-                font-size: 5rem;
-        }
-
-        .subtitle-text{
-                font-size: 2rem;
-        }
-}
-
 .shakehover:hover{
         animation-name: shake;
         animation-duration: 400ms;
         animation-timing-function: ease-out;
 }
 
-.depressclick{
-        transition-duration: 300ms;
+.transition-normal{
+        transition-duration: 400ms;
+}
+
+.sliderighthover:hover{
+        transform: translate(2ch, 0ch);
 }
 
 .depressclick:active{

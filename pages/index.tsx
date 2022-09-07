@@ -19,7 +19,7 @@ export default function index() {
               width="100"
               height="100"
               src="/github.svg"
-              className="shakehover depressclick"
+              className="shakehover depressclick transition-normal"
             />
           </a>
         </Link>
@@ -29,7 +29,7 @@ export default function index() {
               width="100"
               height="100"
               src="/linkedin.svg"
-              className="shakehover depressclick"
+              className="shakehover depressclick transition-normal"
             />
           </a>
         </Link>
@@ -39,7 +39,17 @@ export default function index() {
               width="100"
               height="100"
               src="/polaroid.svg"
-              className="shakehover depressclick"
+              className="shakehover depressclick transition-normal"
+            />
+          </a>
+        </Link>
+        <Link href="/blog">
+          <a className="padded">
+            <Image
+              width="100"
+              height="100"
+              src="/pencil.svg"
+              className="shakehover depressclick transition-normal"
             />
           </a>
         </Link>

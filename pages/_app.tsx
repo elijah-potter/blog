@@ -29,6 +29,11 @@ export default function App({ Component, pageProps }: AppProps) {
               </a>
             </Link>
             <Spacer />
+            <Link href="/blog">
+              <a>
+                <h1>Blog</h1>
+              </a>
+            </Link>
           </Navbar>
           <Component {...pageProps} />
         </div>
