@@ -8,6 +8,7 @@
         font-family: charter;
         background-color: var(--bg);
         color: var(--fg);
+        line-height: 1.3;
 }
 
 a {
