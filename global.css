@@ -152,6 +152,10 @@ a {
         src: url('/fonts/charter_bold_italic.woff2') format('woff2');
 }
 
+.headshot {
+        border-radius: 50%;
+}
+
 @font-face {
   font-family: hack;
   src: url('/fonts/hack-regular-subset.woff2?sha=3114f1256') format('woff2'), url('/fonts/hack-regular-subset.woff?sha=3114f1256') format('wo
