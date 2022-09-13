@@ -13,7 +13,7 @@ let rendered: null | Map<string, string> = null;
 
 /// Process each file in `./posts` into HTML and return a map of `filename` -> `html`
 export default async function processPosts(): Promise<Map<string, string>> {
-  if (rendered === null || true) {
+  if (rendered === null) {
     rendered = new Map();
 
     try {

@@ -29,7 +29,7 @@ export default function Blog(props: { rendered: object }) {
           }
 
           return (
-            <Link href={`/blog/${name}`} key={name}>
+            <Link href={`/blog/${readableName}`} key={name}>
               <a>
                 <li>
                   <h4 className="subtitle-text sliderighthover transition-normal">
