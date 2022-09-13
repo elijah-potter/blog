@@ -1,3 +1,5 @@
+# You Need to Stop Idolizing Programming Languages
+
 ## I’m tired of it
 
 **EDIT:** After reading through some of the responses and discussions about this article over on [Reddit](https://www.reddit.com/r/programming/comments/u268sz/you_need_to_stop_idolizing_programming_languages/?utm_source=share&utm_medium=web2x&context=3), I just want to quickly make some things clear. This post was written in from the point of view of a single individual. It does not represent knowledge gained from any survey or other more (relatively) scientific means. It is purely in response to my personal experience learning a language that is often bashed by evangelists from various sides. While I stand behind the points I make in the article the discussions that seem to have spawned from it have been really informative to me.

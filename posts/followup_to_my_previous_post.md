@@ -1,3 +1,5 @@
+# Followup To My Previous Post
+
 ## Addressing History
 
 Reflecting on my last post, I identified the one key element that was missing: context. Reading through the comments on Reddit made it clear that some figured that I was an old man, reveling in nostalgia for "the simpler days". That isn't the case. I am actually relatively new to the software development industry. While I feel like I have a solid base understanding of the act of *writing* software, I have relatively little experience doing so in a professional context, especially collaboratively. When I initially sat down to write my last post, my intent was to discuss a recent experience of mine and process through it. As many of you can tell, that did not end up happening. The final product ended being, as one commenter put it:
@@ -30,3 +32,4 @@ I think a good example of this is the recent Log4Shell zero-day vulnerability th
 
 As I mentioned before, when I read through my previous article, I can identify some points that simply needed more clarification, and some things I don't understand myself. To those I offended or whose time I spent, I am sorry. I hope the act of clarification has made my thoughts clearer.
 
+$\begin{bmatrix} a & c \\ b & 2 \end{bmatrix}$

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import processPosts from "../../processPosts";
 
@@ -40,5 +41,22 @@ export default function render(props: { rendered: object }) {
     return;
   }
 
-  return <div dangerouslySetInnerHTML={{ __html: html }}></div>;
+  return (
+    <>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
+          integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/default.min.css"
+          crossOrigin="anonymous"
+        />
+      </Head>
+      <div className="post" dangerouslySetInnerHTML={{ __html: html }}></div>
+    </>
+  );
 }

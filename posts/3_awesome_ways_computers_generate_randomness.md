@@ -1,5 +1,4 @@
-
-## What Is Randomness?
+# What Is Randomness?
 
 In case you were born yesterday, let's go over it.
 
