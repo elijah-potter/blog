@@ -2,13 +2,28 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import processPosts from "../../processPosts";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const rendered = await processPosts();
 
   return {
     props: {
       rendered: Object.fromEntries(rendered),
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const rendered = await processPosts();
+
+  const paths = Array.from(rendered.keys()).map((name) => {
+    return { params: { slug: [name] } };
+  });
+
+  console.log(paths);
+
+  return {
+    paths: paths,
+    fallback: false,
   };
 }
 
@@ -26,10 +41,6 @@ export default function render(props: { rendered: object }) {
 
   if (typeof filename !== "string") {
     filename = slug[0];
-  }
-
-  if (!filename.endsWith(".md")) {
-    filename += ".md";
   }
 
   const rendermap = new Map(Object.entries(props.rendered));

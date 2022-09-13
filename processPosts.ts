@@ -33,7 +33,15 @@ export default async function processPosts(): Promise<Map<string, string>> {
 
         const vfile = await processor.process(contents);
         const html = vfile.toString();
-        rendered.set(filename, html);
+
+        let readableName;
+        if (filename.endsWith(".md")) {
+          readableName = filename.slice(0, filename.length - 3);
+        } else {
+          readableName = filename;
+        }
+
+        rendered.set(readableName, html);
       }
     } catch (error) {
       console.log(error);

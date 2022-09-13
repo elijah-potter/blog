@@ -2,7 +2,7 @@ import processPosts from "../../processPosts";
 import startCase from "lodash/startCase";
 import Link from "next/link";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const rendered = await processPosts();
 
   return {
@@ -20,20 +20,12 @@ export default function Blog(props: { rendered: object }) {
       <h1 className="subtitle-text">Blog</h1>
       <ul className="unstyled-list">
         {postNames.map((name) => {
-          let readableName;
-
-          if (name.endsWith(".md")) {
-            readableName = name.slice(0, name.length - 3);
-          } else {
-            readableName = name;
-          }
-
           return (
-            <Link href={`/blog/${readableName}`} key={name}>
+            <Link href={`/blog/${name}`} key={name}>
               <a>
                 <li>
                   <h4 className="subtitle-text sliderighthover transition-normal">
-                    {startCase(readableName)}
+                    {startCase(name)}
                   </h4>
                 </li>
               </a>
