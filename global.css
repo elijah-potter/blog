@@ -36,11 +36,6 @@ a {
         flex: 1 1 auto;
 }
 
-.stage {
-        flex: 1 1 60ch;
-        width: 60ch;
-}
-
 .post {
         font-size: 1.2rem;
 }
@@ -49,11 +44,12 @@ a {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        width: 80%;
+        height: auto;
 }
 
 .post code {
-        margin-left: auto;
-        margin-right: auto;
+        width: 80%%;
         overflow-x: scroll;
 }
 
@@ -70,6 +66,11 @@ a {
 }
 
 @media (max-width: 599px){
+        .stage {
+                flex: 1 1 100%;
+                width: 100%;
+        }
+
         .impact-text{
                 font-size: 3rem;
         }
@@ -80,6 +81,11 @@ a {
 }
 
 @media (min-width: 600px){
+        .stage {
+                flex: 1 1 60ch;
+                width: 60ch;
+        }
+
         .impact-text{
                 font-size: 5rem;
         }

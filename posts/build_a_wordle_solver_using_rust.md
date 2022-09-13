@@ -14,7 +14,7 @@ Gray — The letter does not exist in the word.
 
 As you can see, there are a maximum of six guesses. If you cannot find the mystery word within six guesses, you lose. I have been competing with my grandmother each day to find the word in as few guesses as possible.
 
-![XKCD Comic #356](https://miro.medium.com/max/700/1*BBCsgnuxk8EsQxLti8Ot1w.png)
+![XKCD Comic #356](https://imgs.xkcd.com/comics/nerd_sniping.png)
 
 This totally nerd-sniped me. I felt an overwhelming urge to build an app that could, conceivably find the mystery word in as few guesses as possible.
 
