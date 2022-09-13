@@ -7,6 +7,7 @@ import remarkMath from "remark-math";
 import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
 import rust from "highlight.js/lib/languages/rust";
+import bash from "highlight.js/lib/languages/bash";
 import "highlight.js/styles/default.css";
 
 let rendered: null | Map<string, string> = null;
@@ -23,7 +24,7 @@ export default async function processPosts(): Promise<Map<string, string>> {
         .use(remarkParse)
         .use(remarkMath)
         .use(remarkRehype)
-        .use(rehypeHighlight, { languages: { rust } })
+        .use(rehypeHighlight, { languages: { rust, bash } })
         .use(remarkKatex)
         .use(rehypeStringify);
 

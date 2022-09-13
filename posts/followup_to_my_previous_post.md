@@ -31,5 +31,3 @@ I think a good example of this is the recent Log4Shell zero-day vulnerability th
 ## Final points
 
 As I mentioned before, when I read through my previous article, I can identify some points that simply needed more clarification, and some things I don't understand myself. To those I offended or whose time I spent, I am sorry. I hope the act of clarification has made my thoughts clearer.
-
-$\begin{bmatrix} a & c \\ b & 2 \end{bmatrix}$
