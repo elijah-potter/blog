@@ -53,7 +53,7 @@ export default function index() {
             <Image
               width="100"
               height="100"
-              src="/pencil.svg"
+              src="/type.svg"
               className="shakehover depressclick transition-normal"
             />
           </a>

@@ -32,7 +32,12 @@ export default function App({ Component, pageProps }: AppProps) {
             <Spacer />
             <Link href="/blog">
               <a>
-                <h1>Blog</h1>
+                <h2>Blog</h2>
+              </a>
+            </Link>
+            <Link href="/videos">
+              <a>
+                <h2>Videos</h2>
               </a>
             </Link>
           </Navbar>
