@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Spacer />
         <div className="stage">
           <Navbar>
-            <Image src="/profile.svg" width="75" height="100" />
+            <Image src="/icons/profile.svg" width="75" height="100" />
             <Link href="/">
               <a>
                 <h1>Elijah Potter</h1>
