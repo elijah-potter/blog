@@ -1,20 +1,8 @@
-import processPosts from "../../processPosts";
 import startCase from "lodash/startCase";
 import Link from "next/link";
-
-export async function getStaticProps() {
-  const rendered = await processPosts();
-
-  return {
-    props: {
-      rendered: Object.fromEntries(rendered),
-    },
-  };
-}
+import postNames from "../../posts/posts.json";
 
 export default function Blog(props: { rendered: object }) {
-  const postNames = Object.keys(props.rendered);
-
   return (
     <>
       <h1 className="subtitle-text">Blog</h1>

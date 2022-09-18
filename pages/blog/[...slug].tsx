@@ -1,9 +1,18 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import processPosts from "../../processPosts";
+import processMarkdown from "../../processMarkdown";
+import fs from "fs/promises";
+import postNames from "../../posts/posts.json";
 
 export async function getStaticProps() {
-  const rendered = await processPosts();
+  const rendered = new Map();
+
+  for (const postName of postNames) {
+    const contents = await fs.readFile(`./posts/${postName}.md`, "utf8");
+
+    const html = await processMarkdown(contents);
+    rendered.set(postName, html);
+  }
 
   return {
     props: {
@@ -13,13 +22,9 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  const rendered = await processPosts();
-
-  const paths = Array.from(rendered.keys()).map((name) => {
+  const paths = postNames.map((name) => {
     return { params: { slug: [name] } };
   });
-
-  console.log(paths);
 
   return {
     paths: paths,
@@ -49,7 +54,9 @@ export default function render(props: { rendered: object }) {
 
   if (typeof html !== "string") {
     console.log("Not a string!");
-    return;
+    return {
+      notFound: true,
+    };
   }
 
   return (
@@ -67,7 +74,7 @@ export default function render(props: { rendered: object }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <div className="post" dangerouslySetInnerHTML={{ __html: html }}></div>
+      <div className="rmd" dangerouslySetInnerHTML={{ __html: html }}></div>
     </>
   );
 }

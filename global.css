@@ -36,11 +36,11 @@ a {
         flex: 1 1 auto;
 }
 
-.post {
+.rmd {
         font-size: 1.2rem;
 }
 
-.post img {
+.rmd img {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -48,7 +48,7 @@ a {
         height: auto;
 }
 
-.post code {
+.rmd code {
         width: 80%%;
         overflow-x: scroll;
 }
