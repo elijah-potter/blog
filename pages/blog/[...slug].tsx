@@ -2,7 +2,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import processMarkdown from "../../processMarkdown";
 import fs from "fs/promises";
-import postNames from "../../posts/posts.json";
+import posts from "../../posts/posts";
+
+const postNames = Object.keys(posts);
 
 export async function getStaticProps() {
   const rendered = new Map();
@@ -42,15 +44,15 @@ export default function render(props: { rendered: object }) {
     return;
   }
 
-  let filename = slug;
+  let name = slug;
 
-  if (typeof filename !== "string") {
-    filename = slug[0];
+  if (typeof name !== "string") {
+    name = slug[0];
   }
 
   const rendermap = new Map(Object.entries(props.rendered));
 
-  const html = rendermap.get(filename);
+  const html = rendermap.get(name);
 
   if (typeof html !== "string") {
     console.log("Not a string!");
@@ -73,6 +75,9 @@ export default function render(props: { rendered: object }) {
           href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/default.min.css"
           crossOrigin="anonymous"
         />
+        <meta name="author" content={posts[name].author} />
+        <meta name="description" content={posts[name].description} />
+        <meta name="keywords" content={posts[name].keywords.join(", ")} />
       </Head>
       <div className="rmd" dangerouslySetInnerHTML={{ __html: html }}></div>
     </>

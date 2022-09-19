@@ -1,8 +1,10 @@
 import startCase from "lodash/startCase";
 import Link from "next/link";
-import postNames from "../../posts/posts.json";
+import posts from "../../posts/posts";
 
-export default function Blog(props: { rendered: object }) {
+const postNames = Object.keys(posts);
+
+export default function Blog() {
   return (
     <>
       <h1 className="subtitle-text">Blog</h1>
