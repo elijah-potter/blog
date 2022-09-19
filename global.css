@@ -80,7 +80,7 @@ a {
         }
 
         .mobile-hide {
-                visibility: hidden;
+                display: none;
         }
 }
 
