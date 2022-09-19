@@ -78,6 +78,10 @@ a {
         .subtitle-text{
                 font-size: 1.5rem;
         }
+
+        .mobile-hide {
+                visibility: hidden;
+        }
 }
 
 @media (min-width: 600px){

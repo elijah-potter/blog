@@ -23,7 +23,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <Spacer />
         <div className="stage">
           <Navbar>
-            <Image src="/icons/profile.svg" width="75" height="100" />
+            <Image
+              src="/icons/profile.svg"
+              width="75"
+              height="100"
+              className="mobile-hide"
+            />
             <Link href="/">
               <a>
                 <h1>Elijah Potter</h1>
@@ -48,9 +53,3 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
-
-//            <Link href="/blog/">
-//              <a>
-//                <h2>Blog</h2>
-//              </a>
-//            </Link>
