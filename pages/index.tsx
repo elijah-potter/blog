@@ -1,10 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const iconLinks = [
+  ["https://github.com/chilipepperhott/", "/icons/github.svg"],
+  ["https://www.linkedin.com/in/elijahpotter", "/icons/linkedin.svg"],
+  ["https://www.instagram.com/elijah_sirius/", "/icons/polaroid.svg"],
+  ["/blog", "/icons/type.svg"],
+  ["/videos", "/icons/play.svg"],
+];
+
 export default function index() {
   return (
     <>
-      <div className="h-container">
+      <div className="wrapping h-container">
         <Image
           className="headshot"
           src="/images/headshot.jpg"
@@ -17,57 +25,19 @@ export default function index() {
         </div>
       </div>
       <div style={{ paddingTop: "100px" }} />
-      <div className="h-container" style={{ flexWrap: "wrap" }}>
-        <Link href="https://github.com/chilipepperhott/">
-          <a className="padded">
-            <Image
-              width="100"
-              height="100"
-              src="/icons/github.svg"
-              className="shakehover depressclick transition-normal"
-            />
-          </a>
-        </Link>
-        <Link href="https://www.linkedin.com/in/elijahpotter">
-          <a className="padded">
-            <Image
-              width="100"
-              height="100"
-              src="/icons/linkedin.svg"
-              className="shakehover depressclick transition-normal"
-            />
-          </a>
-        </Link>
-        <Link href="https://www.instagram.com/elijah_sirius/">
-          <a className="padded">
-            <Image
-              width="100"
-              height="100"
-              src="/icons/polaroid.svg"
-              className="shakehover depressclick transition-normal"
-            />
-          </a>
-        </Link>
-        <Link href="/blog">
-          <a className="padded">
-            <Image
-              width="100"
-              height="100"
-              src="/icons/type.svg"
-              className="shakehover depressclick transition-normal"
-            />
-          </a>
-        </Link>
-        <Link href="/videos">
-          <a className="padded">
-            <Image
-              width="100"
-              height="100"
-              src="/icons/play.svg"
-              className="shakehover depressclick transition-normal"
-            />
-          </a>
-        </Link>
+      <div className="wrapping h-container">
+        {iconLinks.map(([href, icon]) => (
+          <Link href={href}>
+            <a className="padded">
+              <Image
+                width="100"
+                height="100"
+                src={icon}
+                className="shakehover depressclick transition-normal"
+              />
+            </a>
+          </Link>
+        ))}
       </div>
     </>
   );
