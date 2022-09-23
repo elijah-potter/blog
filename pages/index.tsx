@@ -27,7 +27,7 @@ export default function index() {
       <div style={{ paddingTop: "100px" }} />
       <div className="wrapping h-container">
         {iconLinks.map(([href, icon]) => (
-          <Link href={href}>
+          <Link href={href} key={href}>
             <a className="padded">
               <Image
                 width="100"

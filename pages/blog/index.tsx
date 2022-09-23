@@ -13,10 +13,9 @@ export default function Blog() {
           return (
             <Link href={`/blog/${name}`} key={name}>
               <a>
-                <li>
-                  <h4 className="subtitle-text sliderighthover transition-normal">
-                    {startCase(name)}
-                  </h4>
+                <li className="sliderighthover transition-normal">
+                  <h4 className="subtitle-text">{startCase(name)}</h4>
+                  <p>{posts[name].description}</p>
                 </li>
               </a>
             </Link>
