@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import OrbitAnimation from "../components/OrbitAnimation";
 
 const iconLinks = [
   ["https://github.com/chilipepperhott/", "/icons/github.svg"],
@@ -13,12 +14,16 @@ export default function index() {
   return (
     <>
       <div className="wrapping h-container">
-        <Image
-          className="headshot"
-          src="/images/headshot.jpg"
-          width="300"
-          height="300"
-        />
+        <div>
+          <OrbitAnimation width="320" height="320">
+            <Image
+              className="headshot"
+              src="/images/headshot.jpg"
+              width="300"
+              height="300"
+            />
+          </OrbitAnimation>
+        </div>
         <div className="v-container">
           <h1 className="center-text impact-text">Elijah Potter</h1>
           <h2 className="center-text subtitle-text">Software Developer.</h2>
