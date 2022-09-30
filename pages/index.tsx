@@ -11,17 +11,11 @@ const iconLinks = [
 ];
 
 export default function index({ dark }: { dark: boolean }) {
-  console.log(dark);
-
   return (
     <>
       <div className="wrapping h-container">
         <div>
-          <OrbitAnimation
-            width="320"
-            height="320"
-            fill={dark ? "var(--white)" : "var(--black)"}
-          >
+          <OrbitAnimation width="320" height="320">
             <Image
               className="headshot"
               src="/images/headshot.jpg"
@@ -46,7 +40,7 @@ export default function index({ dark }: { dark: boolean }) {
                 src={icon}
                 className="shakehover depressclick transitionnormal mobilehide"
                 style={{
-                  filter: dark ? "invert()" : "none",
+                  filter: "var(--themefilter)",
                 }}
               />
             </a>

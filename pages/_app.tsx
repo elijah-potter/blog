@@ -11,8 +11,6 @@ import Script from "next/script";
 type Theme = "light" | "dark" | "default";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const root: HTMLElement | null = null;
-
   const [theme, setTheme] = useState(() => {
     if (typeof localStorage == "undefined") {
       return "default";
@@ -47,9 +45,10 @@ export default function App({ Component, pageProps }: AppProps) {
     if (root != null && root.style != null) {
       root.style.setProperty("--bg", dark ? "var(--black)" : "var(--white)");
       root.style.setProperty("--fg", dark ? "var(--white)" : "var(--black)");
+      root.style.setProperty("--themefilter", dark ? "invert()" : "none");
 
       if (theme !== "default") {
-        localStorage.setItem("dark", theme);
+        localStorage.setItem("theme", theme);
       }
     }
   }, [dark]);
@@ -97,7 +96,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 height="40"
                 src="/icons/sun.svg"
                 style={{
-                  filter: dark ? "invert()" : "none",
+                  filter: "var(--themefilter)",
                 }}
               />
             </div>

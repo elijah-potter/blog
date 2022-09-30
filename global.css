@@ -3,6 +3,7 @@
         --black: #151515;
         --bg: var(--white);
         --fg: var(--black);
+        --themeFilter: none;
         text-rendering: optimizeLegibility;        
         font-family: charter;
         background-color: var(--bg);
