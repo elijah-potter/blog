@@ -10,12 +10,18 @@ const iconLinks = [
   ["/videos", "/icons/play.svg"],
 ];
 
-export default function index() {
+export default function index({ dark }: { dark: boolean }) {
+  console.log(dark);
+
   return (
     <>
       <div className="wrapping h-container">
         <div>
-          <OrbitAnimation width="320" height="320">
+          <OrbitAnimation
+            width="320"
+            height="320"
+            fill={dark ? "var(--white)" : "var(--black)"}
+          >
             <Image
               className="headshot"
               src="/images/headshot.jpg"
@@ -38,7 +44,10 @@ export default function index() {
                 width="100"
                 height="100"
                 src={icon}
-                className="shakehover depressclick transition-normal"
+                className="shakehover depressclick transitionnormal mobilehide"
+                style={{
+                  filter: dark ? "invert()" : "none",
+                }}
               />
             </a>
           </Link>

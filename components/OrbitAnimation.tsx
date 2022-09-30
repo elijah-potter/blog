@@ -4,10 +4,12 @@ import styles from "./OrbitAnimation.module.css";
 export default function OrbitAnimation({
   width,
   height,
+  fill,
   children,
 }: {
   width: string;
   height: string;
+  fill: string;
   children: ReactNode;
 }) {
   const elements = [];
@@ -23,7 +25,7 @@ export default function OrbitAnimation({
         cx={(Math.cos(r) * 49).toFixed(6)}
         cy={(Math.sin(r) * 49).toFixed(6)}
         r="1"
-        fill="black"
+        fill={fill}
       />
     );
   }

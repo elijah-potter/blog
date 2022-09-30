@@ -1,6 +1,8 @@
 :root{
-        --bg: #fff;
-        --fg: #000;
+        --white: white;
+        --black: #151515;
+        --bg: var(--white);
+        --fg: var(--black);
         text-rendering: optimizeLegibility;        
         font-family: charter;
         background-color: var(--bg);
@@ -83,7 +85,7 @@ a {
                 font-size: 1.5rem;
         }
 
-        .mobile-hide {
+        .mobilehide {
                 display: none;
         }
 }
@@ -109,7 +111,7 @@ a {
         animation-timing-function: ease-out;
 }
 
-.transition-normal{
+.transitionnormal{
         transition-duration: 400ms;
 }
 

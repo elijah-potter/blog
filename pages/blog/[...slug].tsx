@@ -34,7 +34,13 @@ export async function getStaticPaths() {
   };
 }
 
-export default function render(props: { rendered: object }) {
+export default function render({
+  rendered,
+  dark,
+}: {
+  rendered: object;
+  dark: boolean;
+}) {
   const router = useRouter();
 
   const { slug } = router.query;
@@ -50,7 +56,7 @@ export default function render(props: { rendered: object }) {
     name = slug[0];
   }
 
-  const rendermap = new Map(Object.entries(props.rendered));
+  const rendermap = new Map(Object.entries(rendered));
 
   const html = rendermap.get(name);
 
@@ -72,7 +78,9 @@ export default function render(props: { rendered: object }) {
         />
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/default.min.css"
+          href={`https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/${
+            dark ? "agate" : "default"
+          }.min.css`}
           crossOrigin="anonymous"
         />
         <meta name="author" content={posts[name].author} />
