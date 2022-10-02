@@ -66,7 +66,8 @@ const Posts: { [name: string]: Post } = {
   },
   i_designed_my_own_pen_plotter: {
     author: "Elijah Potter",
-    description: "",
+    description:
+      "In which I go through the process of designing, building, and testing a vector graphic pen plotter.",
     keywords: [
       "pen",
       "plotter",
