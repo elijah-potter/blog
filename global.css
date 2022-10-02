@@ -107,7 +107,7 @@ a {
 }
 
 .transitionnormal{
-        transition-duration: 400ms;
+        transition-duration: 75ms;
 }
 
 .depressclick:active{
