@@ -4,16 +4,16 @@ import posts from "../../posts/posts";
 
 const postNames = Object.keys(posts);
 
-export default function Blog() {
+export default function Articles() {
   return (
     <>
-      <h1 className="subtitle-text">Blog</h1>
+      <h1 className="subtitle-text">Articles</h1>
       <ul className="unstyled-list">
         {postNames.map((name) => {
           return (
-            <Link href={`/blog/${name}`} key={name}>
+            <Link href={`/articles/${name}`} key={name}>
               <a>
-                <li className="sliderighthover transitionnormal">
+                <li>
                   <h4 className="subtitle-text">{startCase(name)}</h4>
                   <p>{posts[name].description}</p>
                 </li>

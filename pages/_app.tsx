@@ -77,9 +77,9 @@ export default function App({ Component, pageProps }: AppProps) {
             </Link>
             <Spacer />
 
-            <Link href="/blog">
+            <Link href="/articles">
               <a>
-                <h2>Blog</h2>
+                <h2>Articles</h2>
               </a>
             </Link>
             <Link href="/videos">
@@ -90,7 +90,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Spacer />
             <div className="mobilehide">
               <Image
-                className="shakehover depressclick transitionnormal"
+                className="depressclick transitionnormal"
                 onClick={() => setTheme(dark ? "light" : "dark")}
                 width="40"
                 height="40"

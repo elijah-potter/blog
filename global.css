@@ -106,18 +106,8 @@ a {
         }
 }
 
-.shakehover:hover{
-        animation-name: shake;
-        animation-duration: 400ms;
-        animation-timing-function: ease-out;
-}
-
 .transitionnormal{
         transition-duration: 400ms;
-}
-
-.sliderighthover:hover{
-        transform: translate(2ch, 0ch);
 }
 
 .depressclick:active{
