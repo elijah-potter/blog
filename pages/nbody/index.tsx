@@ -1,6 +1,6 @@
 import { cloneDeep } from "lodash";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { addV, distance, mulS, normalize, subV, Vector } from "./vector";
+import { addV, distance, mulS, normalize, subV, Vector } from "../../vector";
 
 const G = 0.01;
 
