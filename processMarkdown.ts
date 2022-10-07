@@ -7,8 +7,6 @@ import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
 import rust from "highlight.js/lib/languages/rust";
 import bash from "highlight.js/lib/languages/bash";
-// TODO:
-import "highlight.js/styles/default.css";
 
 /// Converts `markdown` to `html`
 export default async function processMarkdown(

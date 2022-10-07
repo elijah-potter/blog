@@ -11,14 +11,15 @@ import Script from "next/script";
 type Theme = "light" | "dark" | "default";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
     if (typeof localStorage == "undefined") {
       return "default";
     }
 
     const stored = localStorage.getItem("theme");
 
-    if (stored == null) {
+    // TODO: Replace with io-ts
+    if (stored == null || !(stored === "light" || stored === "dark")) {
       return "default";
     } else {
       return stored;
