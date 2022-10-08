@@ -1,64 +1,83 @@
-import { cloneDeep } from "lodash";
+import { clone, cloneDeep, rearg } from "lodash";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { addV, distance, mulS, normalize, subV, Vector } from "../../vector";
+import { MouseEvent } from "react";
 
 const G = 0.01;
+const BODY_LINE_WIDTH = 2;
+const INITIAL_VELOCITY_COEFF = 0.2;
 
-type Body = {
+type DrawableBody = {
   mass: number;
-  position: [number, number];
-  velocity: [number, number];
+  position: Vector;
+};
+
+type Body = DrawableBody & {
+  velocity: Vector;
 };
 
 function radiusFromMass(mass: number): number {
   return Math.sqrt(mass / Math.PI);
 }
 
-function renderBodies(ctx: CanvasRenderingContext2D, bodies: Body[]) {
-  ctx.fillStyle = "#262626";
-  ctx.strokeStyle = "#fff";
-  ctx.lineWidth = 2;
+function positionFromMouseEvent(e: MouseEvent<HTMLCanvasElement>): Vector {
+  const rect = e.currentTarget.getBoundingClientRect();
+  return [e.clientX - rect.left, e.clientY - rect.top];
+}
 
+function drawBody(
+  ctx: CanvasRenderingContext2D,
+  body: DrawableBody,
+  dark: boolean
+) {
+  ctx.fillStyle = dark ? "#262626" : "#fff";
+  ctx.strokeStyle = dark ? "#fff" : "#262626";
+  ctx.lineWidth = BODY_LINE_WIDTH;
+
+  ctx.beginPath();
+  ctx.arc(
+    body.position[0],
+    body.position[1],
+    radiusFromMass(body.mass),
+    0,
+    2 * Math.PI,
+    false
+  );
+  ctx.fill();
+  ctx.stroke();
+}
+
+function renderBodies(
+  ctx: CanvasRenderingContext2D,
+  bodies: DrawableBody[],
+  dark: boolean
+) {
   for (const body of bodies) {
-    ctx.beginPath();
-    ctx.arc(
-      body.position[0],
-      body.position[1],
-      radiusFromMass(body.mass),
-      0,
-      2 * Math.PI,
-      false
-    );
-    ctx.fill();
-    ctx.stroke();
+    drawBody(ctx, body, dark);
   }
 }
 
-export default function index() {
+type ActiveMode =
+  | {
+      mode: "simulate";
+    }
+  | {
+      mode: "createBody";
+      dragStart: Vector;
+      dragEnd: Vector;
+      mass: number;
+    };
+
+export default function index({ dark }: { dark: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const parent = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(100);
   const [height, setHeight] = useState(100);
 
-  const [bodies, setBodies] = useState<Body[]>(() => {
-    const bodies = new Array<Body>();
-
-    for (let i = 0; i < 20; i++) {
-      bodies.push({
-        mass: Math.random() * 50,
-        position: [Math.random() * 500, Math.random() * 500],
-        velocity: [0, 0], //[(Math.random() - 0.5) * 2, (Math.random() - 0.5) * 2],
-      });
-    }
-
-    bodies.push({
-      mass: 500,
-      position: [500, 500],
-      velocity: [0, 0],
-    });
-
-    return bodies;
+  const [activeMode, setActiveMode] = useState<ActiveMode>({
+    mode: "simulate",
   });
+
+  const [bodies, setBodies] = useState<Body[]>([]);
 
   const calculateBodies = useCallback(() => {
     const computed = [];
@@ -90,20 +109,26 @@ export default function index() {
         }
       }
 
-      let velocity = addV(body.velocity, force);
+      const velocity = addV(body.velocity, force);
 
       const radius = radiusFromMass(body.mass);
 
-      if (body.position[0] < radius || body.position[0] > width - radius) {
-        velocity = [velocity[0] * -1, velocity[1]];
+      const position = addV(body.position, velocity);
+
+      if (body.position[0] < -radius - BODY_LINE_WIDTH) {
+        position[0] = position[0] + radius + BODY_LINE_WIDTH + width;
+      } else if (body.position[0] > width + radius + BODY_LINE_WIDTH) {
+        position[0] = position[0] - radius - BODY_LINE_WIDTH - width;
       }
 
-      if (body.position[1] < radius || body.position[1] > height - radius) {
-        velocity = [velocity[0], velocity[1] * -1];
+      if (body.position[1] < -radius - BODY_LINE_WIDTH) {
+        position[1] = position[1] + radius + BODY_LINE_WIDTH + height;
+      } else if (body.position[1] > width + radius + BODY_LINE_WIDTH) {
+        position[1] = position[1] - radius - BODY_LINE_WIDTH - height;
       }
 
       computed.push({
-        position: addV(body.position, velocity),
+        position,
         mass: body.mass,
         velocity,
       });
@@ -112,13 +137,63 @@ export default function index() {
     setBodies(computed);
   }, [bodies, width, height]);
 
+  const onMouseDown = useCallback(
+    (e: MouseEvent<HTMLCanvasElement>) => {
+      const newMouse = positionFromMouseEvent(e);
+
+      if (activeMode.mode === "simulate") {
+        setActiveMode({
+          mode: "createBody",
+          dragStart: newMouse,
+          dragEnd: newMouse,
+          mass: Math.random() * 600,
+        });
+      }
+    },
+    [activeMode]
+  );
+
+  const onMouseMove = useCallback(
+    (e: MouseEvent<HTMLCanvasElement>) => {
+      const newMouse = positionFromMouseEvent(e);
+
+      if (activeMode.mode === "createBody") {
+        setActiveMode({
+          ...activeMode,
+          dragEnd: newMouse,
+        });
+      }
+    },
+    [activeMode]
+  );
+
+  const onMouseUp = useCallback(
+    (e: MouseEvent<HTMLCanvasElement>) => {
+      const newMouse = positionFromMouseEvent(e);
+      if (activeMode.mode === "createBody") {
+        const newBodies = clone(bodies);
+
+        const newBody = {
+          position: activeMode.dragEnd,
+          mass: activeMode.mass,
+          velocity: mulS(
+            subV(activeMode.dragStart, activeMode.dragEnd),
+            INITIAL_VELOCITY_COEFF
+          ),
+        };
+
+        newBodies.push(newBody);
+        setBodies(newBodies);
+        setActiveMode({ mode: "simulate" });
+      }
+    },
+    [bodies, activeMode]
+  );
+
   useEffect(() => {
     const onResize = () => {
-      const parentDiv = parent.current;
-      if (parentDiv != null) {
-        setWidth(parentDiv.offsetWidth);
-        setHeight(parentDiv.offsetHeight);
-      }
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
     };
 
     window.addEventListener("resize", onResize);
@@ -145,20 +220,43 @@ export default function index() {
 
     ctx.clearRect(0, 0, width, height);
 
-    renderBodies(ctx, bodies);
-    window.requestAnimationFrame(calculateBodies);
-  }, [canvasRef, width, height, bodies]);
+    renderBodies(ctx, bodies, dark);
+
+    if (activeMode.mode === "simulate") {
+      window.requestAnimationFrame(calculateBodies);
+    } else if (activeMode.mode === "createBody") {
+      drawBody(
+        ctx,
+        {
+          position: activeMode.dragEnd,
+          mass: activeMode.mass,
+        },
+        dark
+      );
+
+      ctx.strokeStyle = dark ? "#fff" : "#262626";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(activeMode.dragStart[0], activeMode.dragStart[1]);
+      ctx.lineTo(activeMode.dragEnd[0], activeMode.dragEnd[1]);
+      ctx.stroke();
+    }
+  }, [canvasRef, width, height, bodies, activeMode, dark]);
 
   return (
-    <div ref={parent}>
-      <canvas
-        ref={canvasRef}
-        width={width}
-        height={height}
-        style={{
-          width: "100%",
-        }}
-      />
-    </div>
+    <canvas
+      ref={canvasRef}
+      width={width}
+      height={height}
+      onPointerDown={onMouseDown}
+      onPointerMove={onMouseMove}
+      onPointerUp={onMouseUp}
+      style={{
+        position: "fixed",
+        left: "0",
+        top: "0",
+        zIndex: "-100",
+      }}
+    />
   );
 }
