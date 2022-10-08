@@ -25,13 +25,21 @@ function positionFromMouseEvent(e: MouseEvent<HTMLCanvasElement>): Vector {
   return [e.clientX - rect.left, e.clientY - rect.top];
 }
 
+function primaryColor(dark: boolean) {
+  return dark ? "#262626" : "#fff";
+}
+
+function secondaryColor(dark: boolean) {
+  return dark ? "#fff" : "#262626";
+}
+
 function drawBody(
   ctx: CanvasRenderingContext2D,
   body: DrawableBody,
   dark: boolean
 ) {
-  ctx.fillStyle = dark ? "#262626" : "#fff";
-  ctx.strokeStyle = dark ? "#fff" : "#262626";
+  ctx.fillStyle = primaryColor(dark);
+  ctx.strokeStyle = secondaryColor(dark);
   ctx.lineWidth = BODY_LINE_WIDTH;
 
   ctx.beginPath();
@@ -58,6 +66,7 @@ function renderBodies(
 }
 
 type ActiveMode =
+  | { mode: "intro" }
   | {
       mode: "simulate";
     }
@@ -74,7 +83,7 @@ export default function index({ dark }: { dark: boolean }) {
   const [height, setHeight] = useState(100);
 
   const [activeMode, setActiveMode] = useState<ActiveMode>({
-    mode: "simulate",
+    mode: "intro",
   });
 
   const [bodies, setBodies] = useState<Body[]>([]);
@@ -123,7 +132,7 @@ export default function index({ dark }: { dark: boolean }) {
 
       if (body.position[1] < -radius - BODY_LINE_WIDTH) {
         position[1] = position[1] + radius + BODY_LINE_WIDTH + height;
-      } else if (body.position[1] > width + radius + BODY_LINE_WIDTH) {
+      } else if (body.position[1] > height + radius + BODY_LINE_WIDTH) {
         position[1] = position[1] - radius - BODY_LINE_WIDTH - height;
       }
 
@@ -141,7 +150,7 @@ export default function index({ dark }: { dark: boolean }) {
     (e: MouseEvent<HTMLCanvasElement>) => {
       const newMouse = positionFromMouseEvent(e);
 
-      if (activeMode.mode === "simulate") {
+      if (activeMode.mode === "simulate" || activeMode.mode === "intro") {
         setActiveMode({
           mode: "createBody",
           dragStart: newMouse,
@@ -222,9 +231,23 @@ export default function index({ dark }: { dark: boolean }) {
 
     renderBodies(ctx, bodies, dark);
 
+    if (activeMode.mode === "intro") {
+      ctx.fillStyle = secondaryColor(dark);
+      ctx.textBaseline = "middle";
+      ctx.font = "30px charter";
+      ctx.textAlign = "center";
+      ctx.fillText("Click and Drag", width / 2, height / 2);
+    }
     if (activeMode.mode === "simulate") {
       window.requestAnimationFrame(calculateBodies);
     } else if (activeMode.mode === "createBody") {
+      ctx.strokeStyle = secondaryColor(dark);
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(activeMode.dragStart[0], activeMode.dragStart[1]);
+      ctx.lineTo(activeMode.dragEnd[0], activeMode.dragEnd[1]);
+      ctx.stroke();
+
       drawBody(
         ctx,
         {
@@ -233,13 +256,6 @@ export default function index({ dark }: { dark: boolean }) {
         },
         dark
       );
-
-      ctx.strokeStyle = dark ? "#fff" : "#262626";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(activeMode.dragStart[0], activeMode.dragStart[1]);
-      ctx.lineTo(activeMode.dragEnd[0], activeMode.dragEnd[1]);
-      ctx.stroke();
     }
   }, [canvasRef, width, height, bodies, activeMode, dark]);
 
