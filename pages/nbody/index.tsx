@@ -1,11 +1,20 @@
 import { clone, cloneDeep, rearg } from "lodash";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { addV, distance, mulS, normalize, subV, Vector } from "../../vector";
+import {
+  addV,
+  distance,
+  distanceSquared,
+  mulS,
+  mulV,
+  normalize,
+  subV,
+  Vector,
+} from "../../vector";
 import { MouseEvent } from "react";
 
 const G = 0.01;
 const BODY_LINE_WIDTH = 2;
-const INITIAL_VELOCITY_COEFF = 0.2;
+const INITIAL_VELOCITY_COEFF = 0.05;
 
 type DrawableBody = {
   mass: number;
@@ -155,7 +164,7 @@ export default function index({ dark }: { dark: boolean }) {
           mode: "createBody",
           dragStart: newMouse,
           dragEnd: newMouse,
-          mass: Math.random() * 600,
+          mass: Math.pow(1000, Math.random()),
         });
       }
     },
@@ -182,16 +191,29 @@ export default function index({ dark }: { dark: boolean }) {
       if (activeMode.mode === "createBody") {
         const newBodies = clone(bodies);
 
-        const newBody = {
-          position: activeMode.dragEnd,
-          mass: activeMode.mass,
-          velocity: mulS(
-            subV(activeMode.dragStart, activeMode.dragEnd),
-            INITIAL_VELOCITY_COEFF
-          ),
-        };
+        const targetVelocity = mulS(
+          subV(activeMode.dragStart, activeMode.dragEnd),
+          INITIAL_VELOCITY_COEFF
+        );
 
-        newBodies.push(newBody);
+        for (let i = 0; i < 10 * Math.pow(0.99, activeMode.mass); i++) {
+          const jaggedVelocity = addV(
+            targetVelocity,
+            mulS(
+              [Math.random() * 2 - 1, Math.random() * 2 - 1],
+              distance(activeMode.dragStart, activeMode.dragEnd) / 128
+            )
+          );
+
+          const newBody = {
+            position: activeMode.dragEnd,
+            mass: activeMode.mass,
+            velocity: jaggedVelocity,
+          };
+
+          newBodies.push(newBody);
+        }
+
         setBodies(newBodies);
         setActiveMode({ mode: "simulate" });
       }
@@ -241,7 +263,6 @@ export default function index({ dark }: { dark: boolean }) {
     if (activeMode.mode === "simulate") {
       window.requestAnimationFrame(calculateBodies);
     } else if (activeMode.mode === "createBody") {
-      ctx.strokeStyle = secondaryColor(dark);
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(activeMode.dragStart[0], activeMode.dragStart[1]);
