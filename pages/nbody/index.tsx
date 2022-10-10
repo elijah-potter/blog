@@ -90,12 +90,13 @@ export default function index({ dark }: { dark: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [width, setWidth] = useState(100);
   const [height, setHeight] = useState(100);
+  const [stepsPerFrame, setStepsPerFrame] = useState(1);
 
   const [activeMode, setActiveMode] = useState<ActiveMode>({
     mode: "intro",
   });
 
-  const [bodies, setBodies] = useState<Body[]>([]);
+  let [bodies, setBodies] = useState<Body[]>([]);
 
   const calculateBodies = useCallback(() => {
     const computed = [];
@@ -144,6 +145,7 @@ export default function index({ dark }: { dark: boolean }) {
       });
     }
 
+    bodies = computed;
     setBodies(computed);
   }, [bodies, width, height]);
 
@@ -213,8 +215,25 @@ export default function index({ dark }: { dark: boolean }) {
 
     onResize();
 
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.code === "Space") {
+        setStepsPerFrame(10);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    const onKeyUp = (e: KeyboardEvent) => {
+      if (e.code === "Space") {
+        setStepsPerFrame(1);
+      }
+    };
+
+    window.addEventListener("keyup", onKeyUp);
     return () => {
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("keyup", onKeyUp);
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, []);
 
@@ -243,7 +262,11 @@ export default function index({ dark }: { dark: boolean }) {
       ctx.fillText("Click and Drag", width / 2, height / 2);
     }
     if (activeMode.mode === "simulate") {
-      window.requestAnimationFrame(calculateBodies);
+      window.requestAnimationFrame(() => {
+        for (let i = 0; i < stepsPerFrame; i++) {
+          calculateBodies();
+        }
+      });
     } else if (activeMode.mode === "createBody") {
       ctx.lineWidth = 1;
       ctx.beginPath();
@@ -260,7 +283,7 @@ export default function index({ dark }: { dark: boolean }) {
         dark
       );
     }
-  }, [canvasRef, width, height, bodies, activeMode, dark]);
+  }, [canvasRef, width, height, bodies, activeMode, dark, stepsPerFrame]);
 
   return (
     <canvas
