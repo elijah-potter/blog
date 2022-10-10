@@ -12,7 +12,7 @@ import {
 } from "../../vector";
 import { MouseEvent } from "react";
 
-const G = 0.01;
+const G = 0.1;
 const BODY_LINE_WIDTH = 2;
 const INITIAL_VELOCITY_COEFF = 0.05;
 
@@ -117,17 +117,9 @@ export default function index({ dark }: { dark: boolean }) {
         const normalizedDifference = normalize(difference);
 
         force = addV(force, mulS(normalizedDifference, attraction));
-
-        if (d < radiusFromMass(body.mass) + radiusFromMass(otherBody.mass)) {
-          console.log({
-            attraction,
-            normalizedDifference,
-            position: body.position,
-          });
-        }
       }
 
-      const velocity = addV(body.velocity, force);
+      const velocity = addV(body.velocity, mulS(force, 1 / body.mass));
 
       const radius = radiusFromMass(body.mass);
 
@@ -196,23 +188,13 @@ export default function index({ dark }: { dark: boolean }) {
           INITIAL_VELOCITY_COEFF
         );
 
-        for (let i = 0; i < 10 * Math.pow(0.99, activeMode.mass); i++) {
-          const jaggedVelocity = addV(
-            targetVelocity,
-            mulS(
-              [Math.random() * 2 - 1, Math.random() * 2 - 1],
-              distance(activeMode.dragStart, activeMode.dragEnd) / 128
-            )
-          );
+        const newBody = {
+          position: activeMode.dragEnd,
+          mass: activeMode.mass,
+          velocity: targetVelocity,
+        };
 
-          const newBody = {
-            position: activeMode.dragEnd,
-            mass: activeMode.mass,
-            velocity: jaggedVelocity,
-          };
-
-          newBodies.push(newBody);
-        }
+        newBodies.push(newBody);
 
         setBodies(newBodies);
         setActiveMode({ mode: "simulate" });
