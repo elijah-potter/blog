@@ -1,8 +1,10 @@
 # What Is Randomness?
 
+![Numbers on a screen](/images/numbers_on_a_screen.jpg)
+
 In case you were born yesterday, let's go over it.
 
-Randomness is, as the basic level, something that cannot be predicted. In computer science, when we talk about randomness, we are usually talking about random numbers and the tools we use to get them, random number generators (RNGs).
+Randomness is, at the most basic level, something that cannot be predicted. In computer science, when we talk about randomness, we are usually talking about random numbers and the tools we use to get them, random number generators (RNGs).
 
 ## Psuedorandomness
 
@@ -10,11 +12,11 @@ We say an RNG is “pseudorandom” when we have to give it a fixed seed, and it
 
 I thought, for a very long time, that computers could only create pseudorandom numbers. The main reason I thought this, and why you might too, is because utilities like the Random class in .NET are pseudorandom and are seeded by some arbitrary information, like the current time.
 
-Computers aren’t useful if they aren’t deterministic. I a perfect, enclosed system, it would be impossible for a computer to generate truly random numbers.
+Computers aren’t useful if they aren’t deterministic. In a perfect, enclosed system, it would be impossible for a computer to generate truly random numbers.
 
 ## True Randomness
 
-The phrase “true randomness” is used to describe things that are impossible predict. Provably so. This is different from chaotic systems, which are predictable under short spans of time. True randomness is impossible to predict on all scales.
+The phrase “true randomness” is used to describe things that are impossible to predict. Provably so. This is different from chaotic systems, which are predictable under short spans of time. True randomness is impossible to predict on all scales.
 
 ## The Everyday Method
 
@@ -32,11 +34,15 @@ This command uses `dd` to generate 4 random bytes. Then it pipes those bytes int
 
 ## The Nuclear Method
 
+![A Nuclear Plant](/images/nuclear_plant.jpg)
+
 One of the big advancements of the 20th Century was the creation of a branch of research called quantum physics. One of the things we learned was that on the scale of individual particles, it becomes provably impossible to predict state. Every time a measurement is taken of a subatomic particle, it’s state changes randomly.
 
-One way we could sample subatomic particles is by placing a Geiger counter next to a bit of radioactive ore. Because the whether an individual atom will decay at any given moment, we can know that the time between ticks of the Geiger counter is random.
+One way we could sample subatomic particles is by placing a Geiger counter next to a bit of radioactive ore. Because whether an individual atom will decay at any given moment, we can know that the time between ticks of the Geiger counter is random.
 
 ## The Cloudflare Method
+
+![A Lava Lamp](/images/lava_lamp.jpg)
 
 Cloudflare uses some especially interesting sources of entropy to seed its random number generators. One way is via lava lamps. In their lobby, they have a large array of lava lamps. There is a camera running a live feed of the lava lamps to their servers. There are two main sources of randomness.
 
