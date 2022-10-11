@@ -1,5 +1,11 @@
 import { clone, cloneDeep, rearg } from "lodash";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  DrawableBody,
+  Body,
+  radiusFromMass,
+  calculateStep,
+} from "../../simulation";
 import {
   addV,
   distance,
@@ -12,22 +18,9 @@ import {
 } from "../../vector";
 import { MouseEvent } from "react";
 
-const G = 0.1;
-const BODY_LINE_WIDTH = 2;
-const INITIAL_VELOCITY_COEFF = 0.05;
-
-type DrawableBody = {
-  mass: number;
-  position: Vector;
-};
-
-type Body = DrawableBody & {
-  velocity: Vector;
-};
-
-function radiusFromMass(mass: number): number {
-  return Math.sqrt(mass / Math.PI);
-}
+export const BODY_LINE_WIDTH = 2;
+export const INITIAL_VELOCITY_COEFF = 0.05;
+export const UI_BAR_THICKNESS = 10;
 
 function positionFromMouseEvent(e: MouseEvent<HTMLCanvasElement>): Vector {
   const rect = e.currentTarget.getBoundingClientRect();
@@ -74,6 +67,16 @@ function renderBodies(
   }
 }
 
+function clamp(n: number, min: number, max: number): number {
+  if (n < min) {
+    return min;
+  } else if (n > max) {
+    return max;
+  } else {
+    return n;
+  }
+}
+
 type ActiveMode =
   | { mode: "intro" }
   | {
@@ -83,7 +86,6 @@ type ActiveMode =
       mode: "createBody";
       dragStart: Vector;
       dragEnd: Vector;
-      mass: number;
     };
 
 export default function index({ dark }: { dark: boolean }) {
@@ -91,63 +93,17 @@ export default function index({ dark }: { dark: boolean }) {
   const [width, setWidth] = useState(100);
   const [height, setHeight] = useState(100);
   const [stepsPerFrame, setStepsPerFrame] = useState(1);
+  const [targetMass, setTargetMass] = useState(10);
+  const [mass, setMass] = useState(10);
+  const [randomizeMass, setRandomizeMass] = useState(false);
+  const [targetG, setTargetG] = useState(0.1);
+  const [g, setG] = useState(0.1);
 
   const [activeMode, setActiveMode] = useState<ActiveMode>({
     mode: "intro",
   });
 
-  let [bodies, setBodies] = useState<Body[]>([]);
-
-  const calculateBodies = useCallback(() => {
-    const computed = [];
-
-    for (const body of bodies) {
-      let force: Vector = [0, 0];
-
-      for (const otherBody of bodies) {
-        const d = distance(body.position, otherBody.position);
-
-        if (d < radiusFromMass(body.mass) + radiusFromMass(otherBody.mass)) {
-          continue;
-        }
-
-        const attraction = ((body.mass * otherBody.mass) / (d * d)) * G;
-
-        const difference = subV(otherBody.position, body.position);
-
-        const normalizedDifference = normalize(difference);
-
-        force = addV(force, mulS(normalizedDifference, attraction));
-      }
-
-      const velocity = addV(body.velocity, mulS(force, 1 / body.mass));
-
-      const radius = radiusFromMass(body.mass);
-
-      const position = addV(body.position, velocity);
-
-      if (body.position[0] < -radius - BODY_LINE_WIDTH) {
-        position[0] = position[0] + radius + BODY_LINE_WIDTH + width;
-      } else if (body.position[0] > width + radius + BODY_LINE_WIDTH) {
-        position[0] = position[0] - radius - BODY_LINE_WIDTH - width;
-      }
-
-      if (body.position[1] < -radius - BODY_LINE_WIDTH) {
-        position[1] = position[1] + radius + BODY_LINE_WIDTH + height;
-      } else if (body.position[1] > height + radius + BODY_LINE_WIDTH) {
-        position[1] = position[1] - radius - BODY_LINE_WIDTH - height;
-      }
-
-      computed.push({
-        position,
-        mass: body.mass,
-        velocity,
-      });
-    }
-
-    bodies = computed;
-    setBodies(computed);
-  }, [bodies, width, height]);
+  const [bodies, setBodies] = useState<Body[]>([]);
 
   const onMouseDown = useCallback(
     (e: MouseEvent<HTMLCanvasElement>) => {
@@ -158,11 +114,10 @@ export default function index({ dark }: { dark: boolean }) {
           mode: "createBody",
           dragStart: newMouse,
           dragEnd: newMouse,
-          mass: Math.pow(1000, Math.random()),
         });
       }
     },
-    [activeMode]
+    [activeMode, mass]
   );
 
   const onMouseMove = useCallback(
@@ -192,7 +147,7 @@ export default function index({ dark }: { dark: boolean }) {
 
         const newBody = {
           position: activeMode.dragEnd,
-          mass: activeMode.mass,
+          mass,
           velocity: targetVelocity,
         };
 
@@ -200,9 +155,12 @@ export default function index({ dark }: { dark: boolean }) {
 
         setBodies(newBodies);
         setActiveMode({ mode: "simulate" });
+        if (randomizeMass) {
+          setTargetMass(Math.pow(1000, Math.random()));
+        }
       }
     },
-    [bodies, activeMode]
+    [bodies, activeMode, mass, randomizeMass]
   );
 
   useEffect(() => {
@@ -224,8 +182,21 @@ export default function index({ dark }: { dark: boolean }) {
     window.addEventListener("keydown", onKeyDown);
 
     const onKeyUp = (e: KeyboardEvent) => {
+      console.log(e.code);
       if (e.code === "Space") {
         setStepsPerFrame(1);
+      } else if (e.code === "ArrowDown") {
+        setTargetG(targetG - 0.1);
+      } else if (e.code === "ArrowUp") {
+        setTargetG(targetG + 0.1);
+      } else if (e.code === "BracketRight") {
+        setTargetMass(clamp(targetMass + 30, 10, 10000));
+      } else if (e.code === "BracketLeft") {
+        setTargetMass(clamp(targetMass - 30, 10, 10000));
+      } else if (e.shiftKey && e.code === "KeyR") {
+        setRandomizeMass(!randomizeMass);
+      } else if (e.code === "KeyR") {
+        setTargetMass(Math.pow(1000, Math.random()));
       }
     };
 
@@ -235,7 +206,7 @@ export default function index({ dark }: { dark: boolean }) {
       window.removeEventListener("keyup", onKeyUp);
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, []);
+  }, [targetG, targetMass, randomizeMass]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -260,12 +231,18 @@ export default function index({ dark }: { dark: boolean }) {
       ctx.font = "30px charter";
       ctx.textAlign = "center";
       ctx.fillText("Click and Drag", width / 2, height / 2);
+      ctx.fillText("Space → Super Speed", width / 2, (height / 4) * 3);
     }
     if (activeMode.mode === "simulate") {
       window.requestAnimationFrame(() => {
+        let computedBodies = bodies;
         for (let i = 0; i < stepsPerFrame; i++) {
-          calculateBodies();
+          computedBodies = calculateStep(computedBodies, g, width, height);
         }
+
+        setMass(mass + 0.25 * (targetMass - mass));
+        setG(g + 0.25 * (targetG - g));
+        setBodies(computedBodies);
       });
     } else if (activeMode.mode === "createBody") {
       ctx.lineWidth = 1;
@@ -278,27 +255,55 @@ export default function index({ dark }: { dark: boolean }) {
         ctx,
         {
           position: activeMode.dragEnd,
-          mass: activeMode.mass,
+          mass,
         },
         dark
       );
     }
-  }, [canvasRef, width, height, bodies, activeMode, dark, stepsPerFrame]);
+
+    // Draw UI Bars
+    ctx.fillStyle = secondaryColor(dark);
+    ctx.fillRect(
+      width / 2,
+      height - UI_BAR_THICKNESS,
+      g * 100,
+      UI_BAR_THICKNESS
+    );
+    ctx.fillStyle = randomizeMass ? primaryColor(dark) : secondaryColor(dark);
+    ctx.strokeStyle = randomizeMass ? secondaryColor(dark) : primaryColor(dark);
+    ctx.lineWidth = 2;
+    ctx.fillRect(0, height / 2, UI_BAR_THICKNESS, mass);
+    ctx.strokeRect(0, height / 2, UI_BAR_THICKNESS, mass);
+  }, [
+    canvasRef,
+    width,
+    height,
+    bodies,
+    activeMode,
+    dark,
+    stepsPerFrame,
+    g,
+    targetG,
+    mass,
+    randomizeMass,
+  ]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      width={width}
-      height={height}
-      onPointerDown={onMouseDown}
-      onPointerMove={onMouseMove}
-      onPointerUp={onMouseUp}
-      style={{
-        position: "fixed",
-        left: "0",
-        top: "0",
-        zIndex: "-100",
-      }}
-    />
+    <div>
+      <canvas
+        ref={canvasRef}
+        width={width}
+        height={height}
+        onPointerDown={onMouseDown}
+        onPointerMove={onMouseMove}
+        onPointerUp={onMouseUp}
+        style={{
+          position: "fixed",
+          left: "0",
+          top: "0",
+          zIndex: "-100",
+        }}
+      />
+    </div>
   );
 }
