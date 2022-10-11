@@ -21,6 +21,7 @@ import { MouseEvent } from "react";
 export const BODY_LINE_WIDTH = 2;
 export const INITIAL_VELOCITY_COEFF = 0.05;
 export const UI_BAR_THICKNESS = 10;
+export const UI_BAR_LINE_WIDTH = 2;
 
 function positionFromMouseEvent(e: MouseEvent<HTMLCanvasElement>): Vector {
   const rect = e.currentTarget.getBoundingClientRect();
@@ -95,7 +96,7 @@ export default function index({ dark }: { dark: boolean }) {
   const [stepsPerFrame, setStepsPerFrame] = useState(1);
   const [targetMass, setTargetMass] = useState(10);
   const [mass, setMass] = useState(10);
-  const [randomizeMass, setRandomizeMass] = useState(false);
+  const [randomizeMass, setRandomizeMass] = useState(true);
   const [targetG, setTargetG] = useState(0.1);
   const [g, setG] = useState(0.1);
 
@@ -231,20 +232,24 @@ export default function index({ dark }: { dark: boolean }) {
       ctx.font = "30px charter";
       ctx.textAlign = "center";
       ctx.fillText("Click and Drag", width / 2, height / 2);
-      ctx.fillText("Space → Increase Speed", width / 2, (height / 4) * 3);
-      ctx.fillText("R → Randomize Mass", width / 2, (height / 4) * 3 + 40);
-      ctx.fillText(
-        "Shift + R → Automatically Randomize Mass",
-        width / 2,
-        (height / 4) * 3 + 80
-      );
-      ctx.fillText("[ / ] → Adjust Mass", width / 2, (height / 4) * 3 + 120);
-      ctx.fillText(
-        "Up / Down → Adjust Gravity",
-        width / 2,
-        (height / 4) * 3 + 160
-      );
+
+      if (width > 600 && height > 800) {
+        ctx.fillText("Space → Increase Speed", width / 2, (height / 4) * 3);
+        ctx.fillText("R → Randomize Mass", width / 2, (height / 4) * 3 + 40);
+        ctx.fillText(
+          "Shift + R → Automatically Randomize Mass",
+          width / 2,
+          (height / 4) * 3 + 80
+        );
+        ctx.fillText("[ / ] → Adjust Mass", width / 2, (height / 4) * 3 + 120);
+        ctx.fillText(
+          "Up / Down → Adjust Gravity",
+          width / 2,
+          (height / 4) * 3 + 160
+        );
+      }
     }
+
     if (activeMode.mode === "simulate") {
       window.requestAnimationFrame(() => {
         let computedBodies = bodies;
@@ -277,15 +282,15 @@ export default function index({ dark }: { dark: boolean }) {
     ctx.fillStyle = secondaryColor(dark);
     ctx.fillRect(
       width / 2,
-      height - UI_BAR_THICKNESS,
+      height - UI_BAR_THICKNESS - UI_BAR_LINE_WIDTH,
       g * 100,
       UI_BAR_THICKNESS
     );
     ctx.fillStyle = randomizeMass ? primaryColor(dark) : secondaryColor(dark);
     ctx.strokeStyle = randomizeMass ? secondaryColor(dark) : primaryColor(dark);
     ctx.lineWidth = 2;
-    ctx.fillRect(0, height / 2, UI_BAR_THICKNESS, mass);
-    ctx.strokeRect(0, height / 2, UI_BAR_THICKNESS, mass);
+    ctx.fillRect(UI_BAR_LINE_WIDTH, height / 2, UI_BAR_THICKNESS, mass);
+    ctx.strokeRect(UI_BAR_LINE_WIDTH, height / 2, UI_BAR_THICKNESS, mass);
   }, [
     canvasRef,
     width,
