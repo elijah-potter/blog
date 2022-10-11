@@ -231,7 +231,19 @@ export default function index({ dark }: { dark: boolean }) {
       ctx.font = "30px charter";
       ctx.textAlign = "center";
       ctx.fillText("Click and Drag", width / 2, height / 2);
-      ctx.fillText("Space → Super Speed", width / 2, (height / 4) * 3);
+      ctx.fillText("Space → Increase Speed", width / 2, (height / 4) * 3);
+      ctx.fillText("R → Randomize Mass", width / 2, (height / 4) * 3 + 40);
+      ctx.fillText(
+        "Shift + R → Automatically Randomize Mass",
+        width / 2,
+        (height / 4) * 3 + 80
+      );
+      ctx.fillText("[ / ] → Adjust Mass", width / 2, (height / 4) * 3 + 120);
+      ctx.fillText(
+        "Up / Down → Adjust Gravity",
+        width / 2,
+        (height / 4) * 3 + 160
+      );
     }
     if (activeMode.mode === "simulate") {
       window.requestAnimationFrame(() => {

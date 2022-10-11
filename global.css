@@ -43,6 +43,10 @@ a {
         flex: 1 1 auto;
 }
 
+.popup {
+        position: fixed;
+}
+
 .rmd {
         font-size: 1.2rem;
 }
