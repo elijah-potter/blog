@@ -1,4 +1,4 @@
-import { BODY_LINE_WIDTH } from "./pages/nbody/index";
+import { BODY_LINE_WIDTH } from "./components/NBodySimulation";
 import { addV, distance, mulS, normalize, subV, Vector } from "./vector";
 
 export type DrawableBody = {
