@@ -25,19 +25,19 @@ const Posts: { [name: string]: Post } = {
       "blazing",
     ],
   },
-  followup_to_my_previous_post: {
-    author: "Elijah Potter",
-    description:
-      "I received a bit of a backlash from my previous post. I hope to clear up my intentions and a deeper meaning behind what I said.",
-    keywords: [
-      "apology",
-      "growth",
-      "understanding",
-      "collaboration",
-      "learning",
-      "reflection",
-    ],
-  },
+  //  followup_to_my_previous_post: {
+  //    author: "Elijah Potter",
+  //    description:
+  //      "I received a bit of a backlash from my previous post. I hope to clear up my intentions and a deeper meaning behind what I said.",
+  //    keywords: [
+  //      "apology",
+  //      "growth",
+  //      "understanding",
+  //      "collaboration",
+  //      "learning",
+  //      "reflection",
+  //    ],
+  //  },
   how_to_write_a_discord_bot_in_rust: {
     author: "Elijah Potter",
     description:
@@ -59,11 +59,11 @@ const Posts: { [name: string]: Post } = {
       "A key part of Rust is far better that what JavaScript has to offer.",
     keywords: ["cargo", "rust", "npm", "nodejs", "learning", "ease-of-use"],
   },
-  you_need_to_stop_idolizing_programming_languages: {
-    author: "Elijah Potter",
-    description: "I am tired of it.",
-    keywords: ["rust", "c++", "javascript"],
-  },
+  //  you_need_to_stop_idolizing_programming_languages: {
+  //    author: "Elijah Potter",
+  //    description: "I am tired of it.",
+  //    keywords: ["rust", "c++", "javascript"],
+  //  },
   i_designed_my_own_pen_plotter: {
     author: "Elijah Potter",
     description:
