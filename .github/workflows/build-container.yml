@@ -1,0 +1,14 @@
+name: Build Container Image
+on: [ push, pull_request ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: redhat-actions/buildah-build@v2
+      with:
+        image: my-new-image
+        tags: v1 ${{ github.sha }}
+        containerfiles: |
+          ./Containerfile
