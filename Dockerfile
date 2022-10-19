@@ -1,6 +1,5 @@
 FROM rust:latest as wasm-build
 
-# Create build directory
 RUN mkdir -p /usr/build/
 WORKDIR /usr/build/
 
