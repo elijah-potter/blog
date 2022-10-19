@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import * as markov from "markov";
 import lowerCase from "lodash/lowerCase";
+import Spacer from "../../components/Spacer";
 
 const PLACEHOLDER_TEXT =
   "I like oranges because they are oranges I also like cheese because it is orange";
@@ -78,20 +79,18 @@ export default function index() {
 
   return (
     <>
-      <div>
+      <div className="v-container full-width">
         <h2>Training</h2>
-        <div>
-          <textarea
-            className="readable-text border small-pad full-width"
-            onChange={(e) => setTrainingText(e.target.value)}
-            rows={10}
-            value={trainingText}
-          />
-        </div>
+        <textarea
+          className="readable-text border small-pad full-width"
+          onChange={(e) => setTrainingText(e.target.value)}
+          rows={10}
+          value={trainingText}
+        />
       </div>
       <div className="h-container">
-        <div style={{ width: "60%" }}>
-          <h2>Scratch</h2>
+        <div style={{ width: "60%" }} className="v-container">
+          <h2 className="full-width left-text">Scratch</h2>
           <textarea
             className="readable-text border small-pad full-width"
             onChange={(e) => setCompletingText(e.target.value)}
@@ -100,19 +99,17 @@ export default function index() {
           />
         </div>
         <div
-          className="v-container"
+          className="v-container right-text"
           style={{
-            width: "auto",
-            height: "100%",
             alignSelf: "start",
             alignItems: "end",
           }}
         >
-          <h2 className="right-text">Possible Next Words</h2>
-          <ul className="unstyled-list full-width">
+          <h2 className="full-width">Possible Next Words</h2>
+          <ul className="unstyled-list readable-text full-width">
             <li>
               <button
-                className="border small-pad full-width small-margin"
+                className="border small-pad small-margin full-width"
                 onClick={autocompleteWord}
               >
                 Choose Word
@@ -122,7 +119,7 @@ export default function index() {
               nextWords.map((word) => (
                 <li
                   key={word}
-                  className="readable-text small-pad right-text clickable"
+                  className="small-pad clickable"
                   onClick={() => setCompletingText(completingText + " " + word)}
                 >
                   {word}

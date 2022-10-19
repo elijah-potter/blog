@@ -75,6 +75,10 @@ button {
         overflow-x: scroll;
 }
 
+.left-text {
+        text-align: left;
+}
+
 .center-text {
         text-align: center;
 }
@@ -115,6 +119,7 @@ button {
 
 .clickable {
         cursor: pointer;
+        user-select: none;
 }
 
 @media (max-width: 599px){
