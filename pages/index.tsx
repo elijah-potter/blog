@@ -65,7 +65,7 @@ export default function index({ dark }: { dark: boolean }) {
       <div className="wrapping h-container">
         {iconLinks.map(([href, icon, alt]) => (
           <Link href={href} key={href}>
-            <a className="padded">
+            <a className="large-pad">
               <Image
                 width="100"
                 height="100"
