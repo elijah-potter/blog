@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import processMarkdown from "../../processMarkdown";
+import processMarkdown from "../../src/processMarkdown";
 import fs from "fs/promises";
 import posts from "../../posts/posts";
 

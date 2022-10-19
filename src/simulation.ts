@@ -1,4 +1,3 @@
-import { BODY_LINE_WIDTH } from "./components/NBodySimulation";
 import { addV, distance, mulS, normalize, subV, Vector } from "./vector";
 
 export type DrawableBody = {
@@ -47,16 +46,16 @@ export function calculateStep(
 
     const position = addV(body.position, velocity);
 
-    if (body.position[0] < -radius - BODY_LINE_WIDTH) {
-      position[0] = position[0] + radius + BODY_LINE_WIDTH + width;
-    } else if (body.position[0] > width + radius + BODY_LINE_WIDTH) {
-      position[0] = position[0] - radius - BODY_LINE_WIDTH - width;
+    if (body.position[0] < -radius) {
+      position[0] = position[0] + radius + width;
+    } else if (body.position[0] > width + radius) {
+      position[0] = position[0] - radius - width;
     }
 
-    if (body.position[1] < -radius - BODY_LINE_WIDTH) {
-      position[1] = position[1] + radius + BODY_LINE_WIDTH + height;
-    } else if (body.position[1] > height + radius + BODY_LINE_WIDTH) {
-      position[1] = position[1] - radius - BODY_LINE_WIDTH - height;
+    if (body.position[1] < -radius) {
+      position[1] = position[1] + radius + height;
+    } else if (body.position[1] > height + radius) {
+      position[1] = position[1] - radius - height;
     }
 
     computed.push({

@@ -6,8 +6,8 @@ import {
   Body,
   radiusFromMass,
   calculateStep,
-} from "../simulation";
-import { mulS, subV, Vector } from "../vector";
+} from "../src/simulation";
+import { mulS, subV, Vector } from "../src/vector";
 import { MouseEvent } from "react";
 
 export const BODY_LINE_WIDTH = 2;

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import NBodySimulation from "../../components/NBodySimulation";
-import { Vector } from "../../vector";
-import { Body } from "../../simulation";
+import { Vector } from "../../src/vector";
+import { Body } from "../../src/simulation";
 
 export default function index({ dark }: { dark: boolean }) {
   const initialBodies = useMemo(() => {
