@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import * as markov from "markov";
-import Spacer from "../../components/Spacer";
-import { lowerCase } from "lodash";
+import lowerCase from "lodash/lowerCase";
 
 const PLACEHOLDER_TEXT =
   "I like oranges because they are oranges I also like cheese because it is orange";
@@ -83,7 +82,7 @@ export default function index() {
         <h2>Training</h2>
         <div>
           <textarea
-            className="readable-text border small-pad"
+            className="readable-text border small-pad full-width"
             onChange={(e) => setTrainingText(e.target.value)}
             rows={10}
             value={trainingText}
@@ -94,7 +93,7 @@ export default function index() {
         <div style={{ width: "60%" }}>
           <h2>Scratch</h2>
           <textarea
-            className="readable-text border small-pad"
+            className="readable-text border small-pad full-width"
             onChange={(e) => setCompletingText(e.target.value)}
             rows={20}
             value={completingText}
@@ -103,19 +102,27 @@ export default function index() {
         <div
           className="v-container"
           style={{
-            width: "40%",
+            width: "auto",
             height: "100%",
             alignSelf: "start",
             alignItems: "end",
           }}
         >
           <h2 className="right-text">Possible Next Words</h2>
-          <ul className="unstyled-list">
+          <ul className="unstyled-list full-width">
+            <li>
+              <button
+                className="border small-pad full-width small-margin"
+                onClick={autocompleteWord}
+              >
+                Choose Word
+              </button>
+            </li>
             {nextWords != null ? (
               nextWords.map((word) => (
                 <li
                   key={word}
-                  className="readable-text small-pad full-width right-text clickable"
+                  className="readable-text small-pad right-text clickable"
                   onClick={() => setCompletingText(completingText + " " + word)}
                 >
                   {word}

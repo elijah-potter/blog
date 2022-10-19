@@ -29,6 +29,11 @@ const iconLinks = [
     "Play icon linking to various demonstrative videos I have made.",
   ],
   ["/nbody", "/icons/orbit.svg", "Orbit icon linking to an N-Body simulation"],
+  [
+    "/markov",
+    "/icons/matrix.svg",
+    "Matrix icon linking to a demonstration of Markov chains",
+  ],
 ];
 
 export default function index({ dark }: { dark: boolean }) {
