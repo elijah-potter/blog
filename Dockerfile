@@ -19,4 +19,4 @@ COPY --from=wasm-build /usr/build/ /usr/build/
 
 RUN ./build.sh --no-wasm --release
 
-ENTRYPOINT ["yarn start"]
+ENTRYPOINT ["yarn", "start"]
