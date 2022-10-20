@@ -201,7 +201,6 @@ export default function index({
     window.addEventListener("keydown", onKeyDown);
 
     const onKeyUp = (e: KeyboardEvent) => {
-      console.log(e.code);
       if (e.code === "Space") {
         setStepsPerFrame(1);
       } else if (e.code === "ArrowDown") {

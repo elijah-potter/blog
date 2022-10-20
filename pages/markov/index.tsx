@@ -83,7 +83,14 @@ export default function index() {
         <h2>Training</h2>
         <textarea
           className="readable-text border small-pad full-width"
-          onChange={(e) => setTrainingText(e.target.value)}
+          onChange={(e) => {
+            const nt = e.target.value;
+            if (nt.length > 10000) {
+              setTrainingText(nt.substring(0, 10000));
+            } else {
+              setTrainingText(nt);
+            }
+          }}
           rows={10}
           value={trainingText}
         />
