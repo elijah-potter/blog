@@ -41,12 +41,12 @@ button {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 100%;
   height: auto;
 }
 
 .rmd code {
-  width: 80%%;
+  width: 100%;
   overflow-x: scroll;
 }
 
@@ -246,8 +246,7 @@ td {
 @font-face {
   font-family: hack;
   src: url("/fonts/hack-regular-subset.woff2?sha=3114f1256") format("woff2"),
-    url("/fonts/hack-regular-subset.woff?sha=3114f1256") format("wo
-ff");
+    url("/fonts/hack-regular-subset.woff?sha=3114f1256") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -263,8 +262,7 @@ ff");
 @font-face {
   font-family: hack;
   src: url("/fonts/hack-italic-subset.woff2?sha=3114f1256") format("woff2"),
-    url("/fonts/hack-italic-webfont.woff?sha=3114f1256") format("wof
-f");
+    url("/fonts/hack-italic-webfont.woff?sha=3114f1256") format("woff");
   font-weight: 400;
   font-style: italic;
 }
@@ -272,7 +270,7 @@ f");
 @font-face {
   font-family: hack;
   src: url("/fonts/hack-bolditalic-subset.woff2?sha=3114f1256") format("woff2"),
-    url("/fonts/hack-bolditalic-subset.woff?sha=3114f1256") form at("woff");
+    url("/fonts/hack-bolditalic-subset.woff?sha=3114f1256") format("woff");
   font-weight: 700;
   font-style: italic;
 }

@@ -56,9 +56,7 @@ export default function index() {
           <h2 className="center-text subtitle-text">
             Software Developer
             <br />
-            <Link href="https://archytasinc.com/">
-              <a>Archytas Automation</a>
-            </Link>
+            <Link href="https://archytasinc.com/">Archytas Automation</Link>
           </h2>
         </div>
       </div>
@@ -66,16 +64,16 @@ export default function index() {
       <div className="wrapping h-container">
         {iconLinks.map(([href, icon, alt]) => (
           <Link href={href} key={href} className="large-pad">
-              <Image
-                width="100"
-                height="100"
-                src={icon}
-                className="depressclick transitionnormal mobilehide"
-                style={{
-                  filter: "var(--themefilter)",
-                }}
-                alt={alt}
-              />
+            <Image
+              width="100"
+              height="100"
+              src={icon}
+              className="depressclick transitionnormal mobilehide"
+              style={{
+                filter: "var(--themefilter)",
+              }}
+              alt={alt}
+            />
           </Link>
         ))}
       </div>

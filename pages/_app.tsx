@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Spacer from "../components/Spacer";
 import Link from "next/link";
 import { AppProps } from "next/app";
-import Image from "next/image";Image
+import Image from "next/image";
 import "../global.css";
 import Script from "next/script";
 
@@ -69,18 +69,23 @@ export default function App({ Component, pageProps }: AppProps) {
         <div className="stage">
           <Navbar>
             <div className="mobilehide">
-              <Image src="/icons/profile.svg" width="75" height="100" alt="Profile Picture" />
+              <Image
+                src="/icons/profile.svg"
+                width="75"
+                height="100"
+                alt="Profile Picture"
+              />
             </div>
             <Link href="/">
-                <h1>Elijah Potter</h1>
+              <h1>Elijah Potter</h1>
             </Link>
             <Spacer />
 
             <Link href="/articles">
-                <h2>Articles</h2>
+              <h2>Articles</h2>
             </Link>
             <Link href="/videos">
-                <h2>Videos</h2>
+              <h2>Videos</h2>
             </Link>
             <Spacer />
             <div className="mobilehide">

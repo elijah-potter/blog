@@ -12,12 +12,10 @@ export default function Articles() {
         {postNames.map((name) => {
           return (
             <Link href={`/articles/${name}`} key={name}>
-              <a>
-                <li>
-                  <h4 className="subtitle-text">{startCase(name)}</h4>
-                  <p>{posts[name].description}</p>
-                </li>
-              </a>
+              <li>
+                <h4 className="subtitle-text">{startCase(name)}</h4>
+                <p>{posts[name].description}</p>
+              </li>
             </Link>
           );
         })}
