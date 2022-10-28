@@ -1,5 +1,3 @@
-import Spacer from "../../components/Spacer";
-
 export default function index() {
   const videos = {
     "/videos/social_media.mp4":

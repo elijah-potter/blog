@@ -6,37 +6,33 @@ const iconLinks = [
   [
     "https://github.com/chilipepperhott/",
     "/icons/github.svg",
-    "GitHub icon linking to my GitHub profile and open source contributions.",
+    "GitHub profile and open source contributions.",
   ],
   [
     "https://www.linkedin.com/in/elijahpotter",
     "/icons/linkedin.svg",
-    "LinkedIn icon linking to my LinkedIn profile and employment history.",
+    "LinkedIn profile and employment history.",
   ],
   [
     "https://www.instagram.com/elijah_sirius/",
     "/icons/polaroid.svg",
-    "Poloroid icon linking to my Instagram, where I post the results of my photography hobby.",
+    "My Instagram Profile, including the results of my photography hobby.",
   ],
-  [
-    "/articles",
-    "/icons/type.svg",
-    "Typeface icon linking to my written articles.",
-  ],
+  ["/articles", "/icons/type.svg", "My written articles."],
   [
     "/videos",
     "/icons/play.svg",
-    "Play icon linking to various demonstrative videos I have made.",
+    "Miscelaneus videos I've created for various classes.",
   ],
-  ["/nbody", "/icons/orbit.svg", "Orbit icon linking to an N-Body simulation"],
+  ["/nbody", "/icons/orbit.svg", "Yet another n-body simulation"],
   [
     "/markov",
     "/icons/matrix.svg",
-    "Matrix icon linking to a demonstration of Markov chains",
+    "A demonstration of Markov chains for my Linear Algebra class.",
   ],
 ];
 
-export default function index({ dark }: { dark: boolean }) {
+export default function index() {
   return (
     <>
       <Head>

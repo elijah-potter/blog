@@ -1,6 +1,6 @@
 import startCase from "lodash/startCase";
 import Link from "next/link";
-import posts from "../../posts/posts";
+import posts from "../../posts/articles";
 
 const postNames = Object.keys(posts);
 

@@ -149,38 +149,34 @@ export default function index({
     [activeMode, interactive]
   );
 
-  const onMouseUp = useCallback(
-    (e: MouseEvent<HTMLCanvasElement>) => {
-      if (!interactive) {
-        return;
+  const onMouseUp = useCallback(() => {
+    if (!interactive) {
+      return;
+    }
+
+    if (activeMode.mode === "createBody") {
+      const newBodies = clone(bodies);
+
+      const targetVelocity = mulS(
+        subV(activeMode.dragStart, activeMode.dragEnd),
+        INITIAL_VELOCITY_COEFF
+      );
+
+      const newBody = {
+        position: activeMode.dragEnd,
+        mass,
+        velocity: targetVelocity,
+      };
+
+      newBodies.push(newBody);
+
+      setBodies(newBodies);
+      setActiveMode({ mode: "simulate" });
+      if (randomizeMass) {
+        setTargetMass(Math.pow(1000, Math.random()));
       }
-
-      const newMouse = positionFromMouseEvent(e);
-      if (activeMode.mode === "createBody") {
-        const newBodies = clone(bodies);
-
-        const targetVelocity = mulS(
-          subV(activeMode.dragStart, activeMode.dragEnd),
-          INITIAL_VELOCITY_COEFF
-        );
-
-        const newBody = {
-          position: activeMode.dragEnd,
-          mass,
-          velocity: targetVelocity,
-        };
-
-        newBodies.push(newBody);
-
-        setBodies(newBodies);
-        setActiveMode({ mode: "simulate" });
-        if (randomizeMass) {
-          setTargetMass(Math.pow(1000, Math.random()));
-        }
-      }
-    },
-    [bodies, activeMode, mass, randomizeMass, interactive]
-  );
+    }
+  }, [bodies, activeMode, mass, randomizeMass, interactive]);
 
   useEffect(() => {
     const onResize = () => {

@@ -1,9 +1,9 @@
-.bar{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        text-align: center;
-        padding: 20px;
-        gap: 20px;
+.bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 20px;
+  gap: 20px;
 }

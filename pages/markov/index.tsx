@@ -1,13 +1,33 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import * as markov from "markov";
 import lowerCase from "lodash/lowerCase";
-import Spacer from "../../components/Spacer";
+import "katex/dist/katex.css";
+import "highlight.js/styles/nord.css";
+import { processMarkdownFile } from "../../src/processMarkdown";
+import fs from "fs/promises";
 
-const PLACEHOLDER_TEXT =
-  "I like oranges because they are oranges I also like cheese because it is orange";
+export async function getStaticProps() {
+  const rendered_markdown = await processMarkdownFile("./posts/markov.md");
+  const initialTrainingText = (
+    await fs.readFile("./posts/markov.md", "utf8")
+  ).replace("#", "");
 
-export default function index() {
-  const [trainingText, setTrainingText] = useState(PLACEHOLDER_TEXT);
+  return {
+    props: {
+      rendered: rendered_markdown,
+      initialTrainingText,
+    },
+  };
+}
+
+export default function index({
+  rendered,
+  initialTrainingText,
+}: {
+  rendered: string;
+  initialTrainingText: string;
+}) {
+  const [trainingText, setTrainingText] = useState(initialTrainingText);
   const [completingText, setCompletingText] = useState("oranges");
 
   const trainedModel = useMemo(
@@ -79,8 +99,8 @@ export default function index() {
 
   return (
     <>
-      <div className="v-container full-width">
-        <h2>Training</h2>
+      <div className="v-container">
+        <h2 className="full-width left-text">Training</h2>
         <textarea
           className="readable-text border small-pad full-width"
           onChange={(e) => {
@@ -106,10 +126,9 @@ export default function index() {
           />
         </div>
         <div
-          className="v-container right-text"
+          className="right-text"
           style={{
             alignSelf: "start",
-            alignItems: "end",
           }}
         >
           <h2 className="full-width">Possible Next Words</h2>
@@ -138,6 +157,7 @@ export default function index() {
           </ul>
         </div>
       </div>
+      <div className="rmd" dangerouslySetInnerHTML={{ __html: rendered }} />
     </>
   );
 }

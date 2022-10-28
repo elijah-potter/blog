@@ -6,7 +6,7 @@ After making a few algorithms and posting them to the web, I started looking aro
 
 ![A screencap of a pen plotter from Reddit](/images/reddit_pen_plotter.png)
 
-I was amazed. A robot that could draw *vector graphics*? I had been nerd sniped.
+I was amazed. A robot that could draw _vector graphics_? I had been nerd sniped.
 
 ![XKCD Comic #356](/images/xkcd_nerd_sniping.png)
 
@@ -18,13 +18,17 @@ The mathematics involved interested my especially. How do you translate $\begin{
 
 We consider that the two motors are simply lengthening or shortening each string a specific amount. Here are the equations that dictate the length of each string, given a point $\begin{bmatrix} x & y \end{bmatrix}$, and a distance $m$ between the two motors.
 
-$\sqrt{x^2+y^2} = r_0$
+$$
+\sqrt{x^2+y^2} = r_0
+$$
 
-$\sqrt{(x-m)^2+y^2} = r_1$
+$$
+\sqrt{(x-m)^2+y^2} = r_1
+$$
 
 ## Is This Actually Going to Happen?
 
-When I sat down to do the math I was just curious, and wasn't planning on really doing or building anything. Seeing how simple the math was, I felt empowered to actually do it. So, I threw together a parts list.
+I initially sat down and did the math out of curiosity. I wasn't planning on building anything. After realizing the elegant simplicty of the math, I falt empowered to go through with it. I threw together a parts list.
 
 ![A visual of all the parts needed for the plotter](/images/pen_plotter_parts.png)
 
@@ -61,27 +65,27 @@ There are two, separate programs that, together, make the plotter work. The firs
 
 There are three main reasons there needs to be a laptop in the system:
 
-1) The Arduino doesn't have enough program memory
-1) The Arduino cannot easily accept files (like SVGs)
-1) It takes forever for an Arduino program to compile and upload, which makes iteration frustrating.
+1. The Arduino doesn't have enough program memory
+1. The Arduino cannot easily accept files (like SVGs)
+1. It takes forever for an Arduino program to compile and upload, which makes iteration frustrating.
 
 ### Arduino
 
 The Arduino is running a very simple loop:
 
-1) Receive two 32 bit signed integers over serial (one for each motor)
-1) Linear interpolate the stepper motors to positions described by received integers
+1. Receive two 32 bit signed integers over serial (one for each motor)
+1. Linear interpolate the stepper motors to positions described by received integers
 
 That's it. It's important that the time it takes for each motor to reach it's destination is the same.
 
 ### Laptop
 
-The laptop is doing all the math. 
+The laptop is doing all the math.
 
 I am used my canvas library [Denim](https://github.com/chilipepperhott/denim) to do all the virtual drawing. I just added a renderer that:
 
-1) Converts all points to a sequence of belt-lengths
-1) Converts belt-lengths to sequence of motor movements
+1. Converts all points to a sequence of belt-lengths
+1. Converts belt-lengths to sequence of motor movements
 
 And sent the resulting motor movements over serial to the Arduino.
 
@@ -105,7 +109,7 @@ This one is much better. The lines are crisp, and exactly where they are suppose
 
 ![An attempt at drawing a hilbert curve](/images/pen_plotter_drawing_hilbert.jpeg)
 
-After seeing the plotter draw a Hilbert Curve, I felt proud *and* a little disappointed. The corners aren't crisp, the lines aren't straight. Frankly, it looks like it was drawn by a two-year old.
+After seeing the plotter draw a Hilbert Curve, I felt proud _and_ a little disappointed. The corners aren't crisp, the lines aren't straight. Frankly, it looks like it was drawn by a two-year old.
 
 ### Solving the Issue
 
@@ -115,4 +119,4 @@ It worked! Now all the lines are precise, crisp, smooth. The biggest issue is th
 
 ## Conclusion
 
-This was a really cool project. I learned a lot. I am not very experienced with robotics, so this really challenged me. I intend on continuing working on it. I want to add the ability for the pen to lift off the canvas, and really solidify the marker holder. Most of all, I look forward to taking my projects into the *real* world.
+This was a really cool project. I learned a lot. I am not very experienced with robotics, so this really challenged me. I intend on continuing working on it. I want to add the ability for the pen to lift off the canvas, and really solidify the marker holder. Most of all, I look forward to taking my projects into the _real_ world.

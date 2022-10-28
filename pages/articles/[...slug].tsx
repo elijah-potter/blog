@@ -1,18 +1,19 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import processMarkdown from "../../src/processMarkdown";
-import fs from "fs/promises";
-import posts from "../../posts/posts";
+import posts from "../../posts/articles";
+import "katex/dist/katex.css";
+import "highlight.js/styles/nord.css";
 
 const postNames = Object.keys(posts);
 
 export async function getStaticProps() {
+  const processMarkdownFile = (await import("../../src/processMarkdown"))
+    .processMarkdownFile;
+
   const rendered = new Map();
 
   for (const postName of postNames) {
-    const contents = await fs.readFile(`./posts/${postName}.md`, "utf8");
-
-    const html = await processMarkdown(contents);
+    const html = await processMarkdownFile(`./posts/${postName}.md`);
     rendered.set(postName, html);
   }
 
@@ -34,13 +35,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function render({
-  rendered,
-  dark,
-}: {
-  rendered: object;
-  dark: boolean;
-}) {
+export default function render({ rendered }: { rendered: object }) {
   const router = useRouter();
 
   const { slug } = router.query;
@@ -70,19 +65,6 @@ export default function render({
   return (
     <>
       <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
-          integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href={`https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/${
-            dark ? "agate" : "default"
-          }.min.css`}
-          crossOrigin="anonymous"
-        />
         <meta name="author" content={posts[name].author} />
         <meta name="description" content={posts[name].description} />
         <meta name="keywords" content={posts[name].keywords.join(", ")} />

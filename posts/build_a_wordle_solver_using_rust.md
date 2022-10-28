@@ -37,7 +37,7 @@ The first step in the program is to load the word list and count the letters:
 let mut letter_scores = HashMap::new();
 // The final list of words. It will make like easier later in the program to store the words as Vec<char>.
 let mut word_list = Vec::new();
-let mut last_word = Vec::new(); 
+let mut last_word = Vec::new();
 let file = std::fs::read("corncob_lowercase.txt")?;
 
 // Iterate through all the bytes in the wordlist file, ignoring all `\r` instances.
@@ -110,11 +110,11 @@ fn matches_found(
 
 It accepts a few different char slices:
 
-- ***Word***: the word we want to check.
-    Found: this is a slice containing the letters we have found (the green ones), with “ “ (space) characters in the locations we don’t know the character of.
-- ***Not***: this is a slice containing the letters we know aren’t in the mystery word.
-- ***Must***: this is a slice containing the letter we know are in the mystery word, but we don’t know the position of.
-- ***Masks***: this is a series of masks. We remove every word that has letters that match any mask here. This is useful for eliminating words in the wordlist that contain punctuation and for eliminating words that contain orange letters, but in positions we know they aren’t.
+- **_Word_**: the word we want to check.
+  Found: this is a slice containing the letters we have found (the green ones), with “ “ (space) characters in the locations we don’t know the character of.
+- **_Not_**: this is a slice containing the letters we know aren’t in the mystery word.
+- **_Must_**: this is a slice containing the letter we know are in the mystery word, but we don’t know the position of.
+- **_Masks_**: this is a series of masks. We remove every word that has letters that match any mask here. This is useful for eliminating words in the wordlist that contain punctuation and for eliminating words that contain orange letters, but in positions we know they aren’t.
 
 Now all we have to do is run each word in the word list and see if it matches our already known characters, updating the contents of each slice with new information after each guess.
 

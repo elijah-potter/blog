@@ -32,6 +32,7 @@ You can do this either via cargo-edit:
 cargo add serenity
 cargo add tokio --features full
 ```
+
 or by just adding them to Cargo.toml:
 
 ```toml
@@ -110,6 +111,7 @@ Now that we have the framework set up, let's add a command.
 async fn ping(ctx: &Context, msg: &Message) -> CommandResult{
 }
 ```
+
 This command only needs the Discord client's Context, the message that contains the command, and returns a `CommandResult`.
  Do not forget to add the command to the group:
 

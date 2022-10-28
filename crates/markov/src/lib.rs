@@ -4,7 +4,7 @@ use std::collections::HashMap;
 
 use common::*;
 use nalgebra::{DMatrix, DVector};
-use rand::{rngs::SmallRng, SeedableRng, Rng};
+use rand::{rngs::SmallRng, Rng, SeedableRng};
 use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
 #[wasm_bindgen]
@@ -15,10 +15,13 @@ pub struct TrainedModel {
 }
 
 #[wasm_bindgen]
-impl TrainedModel{
-    pub fn compute_next_words(&self, current_word: String, max_results: usize) -> Option<Vec<JsValue>>{
-        if let Some(index) = self.word_to_index.get(&current_word){
-
+impl TrainedModel {
+    pub fn compute_next_words(
+        &self,
+        current_word: String,
+        max_results: usize,
+    ) -> Option<Vec<JsValue>> {
+        if let Some(index) = self.word_to_index.get(&current_word) {
             let mut state = DVector::from_element(self.words.len(), 0.0);
             *state.index_mut(*index) = 1.0;
 
@@ -26,26 +29,25 @@ impl TrainedModel{
 
             // I know that this is a naive algorithm can probably be simplified.
             let mut result = Vec::with_capacity(max_results.min(self.words.len()));
-            for _ in 0..max_results.min(self.words.len()){
+            for _ in 0..max_results.min(self.words.len()) {
                 let imax = next_state.imax();
 
-                if *next_state.index(imax) != 0.0{
+                if *next_state.index(imax) != 0.0 {
                     result.push(JsValue::from_str(&self.words[imax]));
                 }
                 *next_state.index_mut(imax) = 0.0;
             }
 
             Some(result)
-        }else{
+        } else {
             None
         }
     }
 
-    pub fn random_next_word(&self, current_word: String, seed: f64) -> Option<String>{
+    pub fn random_next_word(&self, current_word: String, seed: f64) -> Option<String> {
         let mut rng = SmallRng::seed_from_u64(seed as u64);
-    
-        if let Some(index) = self.word_to_index.get(&current_word){
 
+        if let Some(index) = self.word_to_index.get(&current_word) {
             let mut state = DVector::from_element(self.words.len(), 0.0);
             *state.index_mut(*index) = 1.0;
 
@@ -54,13 +56,12 @@ impl TrainedModel{
             let next_state = (&self.stochastic_matrix * state).component_mul(&random);
 
             Some(self.words[next_state.imax()].clone())
-        }else{
+        } else {
             None
         }
-
     }
-    
-    pub fn word_variants(&self) -> usize{
+
+    pub fn word_variants(&self) -> usize {
         self.words.len()
     }
 }
