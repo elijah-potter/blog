@@ -3,14 +3,13 @@ import * as markov from "markov";
 import lowerCase from "lodash/lowerCase";
 import "katex/dist/katex.css";
 import "highlight.js/styles/nord.css";
-import { processMarkdownFile } from "../../src/processMarkdown";
-import fs from "fs/promises";
 
 export async function getStaticProps() {
+  const { processMarkdownFile } = await import("../../src/processMarkdown");
+
   const rendered_markdown = await processMarkdownFile("./posts/markov.md");
-  const initialTrainingText = (
-    await fs.readFile("./posts/markov.md", "utf8")
-  ).replace("#", "");
+  const req = await fetch("https://www.gutenberg.org/files/11/11-0.txt");
+  const initialTrainingText = await req.text();
 
   return {
     props: {
@@ -30,29 +29,33 @@ export default function index({
   const [trainingText, setTrainingText] = useState(initialTrainingText);
   const [completingText, setCompletingText] = useState("oranges");
 
-  const trainedModel = useMemo(
-    () => markov.train(trainingText),
-    [trainingText]
+  const trainedModel = useMemo(() => {
+    let clampedText = trainingText;
+
+    if (clampedText.length > 10000) {
+      clampedText = clampedText.substring(0, 10000);
+    }
+
+    return markov.train(clampedText);
+  }, [trainingText]);
+
+  const lastWord = useMemo(
+    () => computeLastWord(completingText),
+    [completingText]
   );
 
   const nextWords = useMemo(() => {
-    if (completingText.length == 0) {
+    if (lastWord == null) {
       return null;
     }
 
-    const words = completingText.split(" ").filter((s) => s.length > 0);
-    return trainedModel.compute_next_words(
-      lowerCase(words[words.length - 1]),
-      6
-    );
-  }, [trainedModel, completingText]);
+    return trainedModel.compute_next_words(lastWord, 6);
+  }, [trainedModel, completingText, lastWord]);
 
   const autocompleteWord = useCallback(() => {
-    const words = completingText.split(" ").filter((s) => s.length > 0);
-
-    if (words != null && words.length > 0) {
+    if (lastWord != null) {
       const next = trainedModel.random_next_word(
-        lowerCase(words[words.length - 1]),
+        lastWord,
         Math.random() * 10000
       );
 
@@ -104,12 +107,7 @@ export default function index({
         <textarea
           className="readable-text border small-pad full-width"
           onChange={(e) => {
-            const nt = e.target.value;
-            if (nt.length > 10000) {
-              setTrainingText(nt.substring(0, 10000));
-            } else {
-              setTrainingText(nt);
-            }
+            setTrainingText(e.target.value);
           }}
           rows={10}
           value={trainingText}
@@ -160,4 +158,18 @@ export default function index({
       <div className="rmd" dangerouslySetInnerHTML={{ __html: rendered }} />
     </>
   );
+}
+
+function seperateWords(text: string): string[] {
+  return text.split(" ").filter((s) => s.length > 0);
+}
+
+function computeLastWord(text: string): string | null {
+  const words = seperateWords(text);
+
+  if (words.length == 0) {
+    return null;
+  }
+
+  return lowerCase(words[words.length - 1]);
 }
