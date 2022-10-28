@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Spacer from "../components/Spacer";
 import Link from "next/link";
 import { AppProps } from "next/app";
-import Image from "next/image";
+import Image from "next/image";Image
 import "../global.css";
 import Script from "next/script";
 
@@ -69,24 +69,18 @@ export default function App({ Component, pageProps }: AppProps) {
         <div className="stage">
           <Navbar>
             <div className="mobilehide">
-              <Image src="/icons/profile.svg" width="75" height="100" />
+              <Image src="/icons/profile.svg" width="75" height="100" alt="Profile Picture" />
             </div>
             <Link href="/">
-              <a>
                 <h1>Elijah Potter</h1>
-              </a>
             </Link>
             <Spacer />
 
             <Link href="/articles">
-              <a>
                 <h2>Articles</h2>
-              </a>
             </Link>
             <Link href="/videos">
-              <a>
                 <h2>Videos</h2>
-              </a>
             </Link>
             <Spacer />
             <div className="mobilehide">
@@ -95,6 +89,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 onClick={() => setTheme(dark ? "light" : "dark")}
                 width="40"
                 height="40"
+                alt="Sun Icon to Enable/Disable Dark Mode"
                 src="/icons/sun.svg"
                 style={{
                   filter: "var(--themefilter)",

@@ -65,8 +65,7 @@ export default function index() {
       <div style={{ paddingTop: "100px" }} />
       <div className="wrapping h-container">
         {iconLinks.map(([href, icon, alt]) => (
-          <Link href={href} key={href}>
-            <a className="large-pad">
+          <Link href={href} key={href} className="large-pad">
               <Image
                 width="100"
                 height="100"
@@ -77,7 +76,6 @@ export default function index() {
                 }}
                 alt={alt}
               />
-            </a>
           </Link>
         ))}
       </div>
