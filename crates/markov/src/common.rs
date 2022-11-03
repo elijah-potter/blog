@@ -1,10 +1,10 @@
 use std::collections::HashSet;
 use std::hash::Hash;
-use std::{collections::HashMap, io::Read};
+use std::collections::HashMap;
 
-use nalgebra::{DMatrix, DVector, Vector};
+use nalgebra::{DMatrix, DVector};
 
-const IGNORE_CHARS: &str = "—“”‘’,";
+const IGNORE_CHARS: &str = "—“”‘’,!;:.*_{}()";
 
 pub fn create_probability_matrix(indexes: &[usize], words: usize) -> DMatrix<f32> {
     let mut counts = HashMap::new();
@@ -60,7 +60,7 @@ pub fn text_to_indexes(
     let mut indexes = Vec::new();
 
     for c in input.into_iter() {
-        if c.is_whitespace() || c.is_ascii_punctuation() || IGNORE_CHARS.contains(c) {
+        if c.is_whitespace() || IGNORE_CHARS.contains(c) {
             if word.len() > 0 {
                 if let Some(index) = word_to_index.get(&word) {
                     indexes.push(*index)
@@ -98,7 +98,7 @@ pub fn load_wordlist_from_text(input: impl IntoIterator<Item = char>) -> Vec<Str
     let mut dictionary = HashSet::new();
 
     for c in input.into_iter() {
-        if c.is_whitespace() || c.is_ascii_punctuation() || IGNORE_CHARS.contains(c) {
+        if c.is_whitespace() || IGNORE_CHARS.contains(c) {
             if word.len() > 0 {
                 dictionary.insert(word.clone());
                 word.clear();

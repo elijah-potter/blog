@@ -6,37 +6,59 @@ import "highlight.js/styles/nord.css";
 
 export async function getStaticProps() {
   const { processMarkdownFile } = await import("../../src/processMarkdown");
+  const fs = await import("fs/promises");
 
-  const rendered_markdown = await processMarkdownFile("./posts/markov.md");
-  const req = await fetch("https://www.gutenberg.org/files/11/11-0.txt");
-  const initialTrainingText = await req.text();
+  const renderedIntroduction = await processMarkdownFile(
+    "./posts/markov_introduction.md"
+  );
+  const renderedExplanation = await processMarkdownFile(
+    "./posts/markov_explanation.md"
+  );
+  const initialTrainingText = await fs.readFile(
+    "./public/markov/alice_in_wonderland.txt",
+    "utf8"
+  );
 
   return {
     props: {
-      rendered: rendered_markdown,
+      renderedIntroduction,
+      renderedExplanation,
       initialTrainingText,
     },
   };
 }
 
 export default function index({
-  rendered,
+  renderedIntroduction,
+  renderedExplanation,
   initialTrainingText,
 }: {
-  rendered: string;
+  renderedIntroduction: string;
+  renderedExplanation: string;
   initialTrainingText: string;
 }) {
+  const [trainingTextClamp, setTrainingTextClamp] = useState(5000);
   const [trainingText, setTrainingText] = useState(initialTrainingText);
-  const [completingText, setCompletingText] = useState("oranges");
+  const [completingText, setCompletingText] = useState(
+    "This a scratch text area to test the autocomplete in"
+  );
 
   const trainedModel = useMemo(() => {
+    const start = Date.now();
+
     let clampedText = trainingText;
 
-    if (clampedText.length > 10000) {
-      clampedText = clampedText.substring(0, 10000);
+    if (clampedText.length > trainingTextClamp) {
+      clampedText = clampedText.substring(0, trainingTextClamp);
     }
+    const trainedModel = markov.train(clampedText);
 
-    return markov.train(clampedText);
+    const end = Date.now();
+    const total = end - start;
+
+    setTrainingTextClamp((trainingTextClamp * 30) / total);
+
+    return trainedModel;
   }, [trainingText]);
 
   const lastWord = useMemo(
@@ -102,6 +124,10 @@ export default function index({
 
   return (
     <>
+      <div
+        className="rmd"
+        dangerouslySetInnerHTML={{ __html: renderedIntroduction }}
+      />
       <div className="v-container">
         <h2 className="full-width left-text">Training</h2>
         <textarea
@@ -155,7 +181,10 @@ export default function index({
           </ul>
         </div>
       </div>
-      <div className="rmd" dangerouslySetInnerHTML={{ __html: rendered }} />
+      <div
+        className="rmd"
+        dangerouslySetInnerHTML={{ __html: renderedExplanation }}
+      />
     </>
   );
 }

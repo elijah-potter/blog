@@ -1,4 +1,4 @@
-# Markov Chains
+# Explanation
 
 Markov chains, named after their inventor, Andrey Markov, are often used to model sequences of probabilistic events. That is, systems that cannot be modeled deterministically.
 
