@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
     "highlight.js": "^11.6.0",
@@ -24,7 +25,6 @@
     "remark-math": "^5.1.1",
     "remark-parse": "^10.0.1",
     "remark-rehype": "^10.1.0",
-    "sharp": "^0.31.0",
     "three": "^0.147.0",
     "unified": "^10.1.2"
   },
