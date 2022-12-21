@@ -334,6 +334,7 @@ export default function index({
         onPointerMove={onMouseMove}
         onPointerUp={onMouseUp}
         style={{
+          touchAction: "none",
           position: "fixed",
           left: "0",
           top: "0",
