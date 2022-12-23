@@ -31,7 +31,7 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.2.5",
     "@types/lodash": "^4.14.184",
-    "@types/node": "^18.11.13",
+    "@types/node": "^18.11.17",
     "@types/react": "^18.0.26",
     "@types/three": "^0.146.0",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
