@@ -31,7 +31,7 @@ fi
 
 if [ $SITE -eq 1 ]
 then
-    cd $R
+    cd $R/packages/site
     yarn install
     yarn build
     yarn export
