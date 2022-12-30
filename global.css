@@ -2,6 +2,7 @@
   --white: white;
   --black: #151515;
   --grey: #262626;
+  --light-grey: #DDD;
   --bg: var(--white);
   --fg: var(--black);
   --lc: var(--grey);
@@ -65,6 +66,7 @@ td {
 
 .rmd blockquote {
   background-color: var(--lc);
+  color: var(--fg);
   padding: 4px 8px;
 }
 
@@ -72,27 +74,39 @@ td {
   flex-wrap: wrap;
 }
 
-.h-container {
+.h-container,
+.v-container{
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.h-container {
+  flex-direction: row;
 }
 
 .v-container {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
 }
 
-.h-container,
+.h-container > * {
+  flex: 1 1 auto;
+}
+
 .v-container > * {
   flex: 1 1 auto;
 }
 
 .popup {
   position: fixed;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.italic-text {
+  font-style: italic;
 }
 
 .left-text {
@@ -140,6 +154,10 @@ td {
 .clickable {
   cursor: pointer;
   user-select: none;
+}
+
+.headshot {
+  border-radius: 50%;
 }
 
 @media (max-width: 599px) {
@@ -239,9 +257,6 @@ td {
   src: url("/fonts/charter_bold_italic.woff2") format("woff2");
 }
 
-.headshot {
-  border-radius: 50%;
-}
 
 @font-face {
   font-family: hack;

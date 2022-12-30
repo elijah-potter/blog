@@ -46,6 +46,10 @@ export default function App({ Component, pageProps }: AppProps) {
     if (root != null && root.style != null) {
       root.style.setProperty("--bg", dark ? "var(--black)" : "var(--white)");
       root.style.setProperty("--fg", dark ? "var(--white)" : "var(--black)");
+      root.style.setProperty(
+        "--lc",
+        dark ? "var(--grey)" : "var(--light-grey)"
+      );
       root.style.setProperty("--themefilter", dark ? "invert()" : "none");
 
       if (theme !== "default") {

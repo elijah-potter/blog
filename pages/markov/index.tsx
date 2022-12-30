@@ -28,7 +28,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function index({
+export default function ({
   renderedIntroduction,
   renderedExplanation,
   initialTrainingText,

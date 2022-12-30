@@ -3,7 +3,7 @@ import NBodySimulation from "../../components/NBodySimulation";
 import { Vector } from "../../src/vector";
 import { Body } from "../../src/simulation";
 
-export default function index({ dark }: { dark: boolean }) {
+export default function ({ dark }: { dark: boolean }) {
   const initialBodies = useMemo(() => {
     const bodies: Body[] = [];
 

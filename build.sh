@@ -27,6 +27,9 @@ if [ $WASM -eq 1 ]
 then
     cd $R/crates/markov/
     wasm-pack build --target bundler $WP_FLAG
+
+    cd $R/crates/generative-art/
+    wasm-pack build --target bundler $WP_FLAG
 fi
 
 if [ $SITE -eq 1 ]

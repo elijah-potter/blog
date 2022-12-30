@@ -1,4 +1,4 @@
-export default function index() {
+export default function () {
   const videos = {
     "/videos/social_media.mp4":
       "A look at the psychological effects of social media, specifically for teenagers. Animated and edited in DaVinci Resolve for Psychology 101",

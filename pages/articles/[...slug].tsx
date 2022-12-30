@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function render({ rendered }: { rendered: object }) {
+export default function ({ rendered }: { rendered: object }) {
   const router = useRouter();
 
   const { slug } = router.query;

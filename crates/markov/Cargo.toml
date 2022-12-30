@@ -10,3 +10,4 @@ crate-type = ["cdylib", "rlib"]
 nalgebra = { version = "0.31.4" }
 rand = { version = "0.8.5", default-features = false, features = ["small_rng"] }
 wasm-bindgen = "0.2.83"
+

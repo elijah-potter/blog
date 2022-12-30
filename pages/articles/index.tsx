@@ -4,7 +4,7 @@ import posts from "../../posts/articles";
 
 const postNames = Object.keys(posts);
 
-export default function Articles() {
+export default function () {
   return (
     <>
       <h1 className="subtitle-text">Articles</h1>
