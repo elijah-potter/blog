@@ -30,6 +30,11 @@ const iconLinks = [
     "/icons/matrix.svg",
     "A demonstration of Markov chains for my Linear Algebra class.",
   ],
+  [
+    "/art",
+    "/icons/eye.svg",
+    "A playground to interact with several generative art algorithms.",
+  ],
 ];
 
 export default function index() {

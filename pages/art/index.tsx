@@ -10,7 +10,26 @@ import useSize from "../../src/hooks/useSize";
 import { Vector } from "../../src/vector";
 import startCase from "lodash/startCase";
 
-export default function () {
+export async function getStaticProps() {
+  const { processMarkdownFile } = await import("../../src/processMarkdown");
+  const fs = await import("fs/promises");
+
+  const renderedIntroduction = await processMarkdownFile(
+    "./posts/generative_art_introduction.md"
+  );
+
+  return {
+    props: {
+      renderedIntroduction,
+    },
+  };
+}
+
+export default function ({
+  renderedIntroduction,
+}: {
+  renderedIntroduction: string;
+}) {
   const [containerRef, containerSize] = useSize();
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -54,18 +73,29 @@ export default function () {
 
   return (
     <>
-      <select onChange={(e) => setSelected(e.target.value)} value={selected}>
-        {Object.keys(options).map((key) => (
-          <option key={key} value={key}>
-            {startCase(key)}
-          </option>
-        ))}
-      </select>
-      <input
-        type="file"
-        onChange={pickerChange}
-        accept="jpg, .jpeg, .png, .tiff, .bmp"
-      />
+      <div
+        className="rmd"
+        dangerouslySetInnerHTML={{ __html: renderedIntroduction }}
+      ></div>
+      <div className="small-margin">
+        <label className="bold-text readable-text">Load File: </label>
+        <input
+          type="file"
+          onChange={pickerChange}
+          accept="jpg, .jpeg, .png, .tiff, .bmp"
+        />
+        <br />
+        <label className="bold-text readable-text">Select Algorithm: </label>
+        <select onChange={(e) => setSelected(e.target.value)} value={selected}>
+          {Object.keys(options).map((key) => (
+            <option key={key} value={key}>
+              {startCase(key)}
+            </option>
+          ))}
+        </select>
+      </div>
+      <br />
+
       <div ref={containerRef}>
         <canvas
           ref={canvasRef}
@@ -256,7 +286,10 @@ function BetterSlider({
   step: "any" | number;
 }) {
   return (
-    <div className="h-container" style={{ justifyContent: "left" }}>
+    <div
+      className="h-container auto-flex-children"
+      style={{ justifyContent: "left" }}
+    >
       <h2
         className="bold-text left-text"
         style={{
