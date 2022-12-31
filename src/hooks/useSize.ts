@@ -3,7 +3,7 @@ import { RefCallback, useCallback, useRef, useState } from "react";
 
 export default function (): [RefCallback<HTMLElement>, Vector] {
   const elementRef = useRef<HTMLElement | null>(null);
-  const [size, setSize] = useState<Vector>([100, 100]);
+  const [size, setSize] = useState([100, 100]);
 
   if (typeof window === "undefined") {
     return [() => null, size];
@@ -11,8 +11,12 @@ export default function (): [RefCallback<HTMLElement>, Vector] {
 
   const [ro] = useState(
     new ResizeObserver((entries) => {
-      const r = entries[0].contentRect;
-      setSize([r.width, r.height]);
+      if (elementRef.current != null) {
+        setSize([
+          elementRef.current.offsetWidth,
+          elementRef.current.offsetHeight,
+        ]);
+      }
     })
   );
 
@@ -27,14 +31,7 @@ export default function (): [RefCallback<HTMLElement>, Vector] {
 
     ro.observe(element);
 
-    const computedStyle = window.getComputedStyle(element);
-
-    const computedSize: Vector = [
-      parseFloat(computedStyle.width),
-      parseFloat(computedStyle.height),
-    ];
-
-    setSize(computedSize);
+    setSize([element.offsetWidth, element.offsetHeight]);
 
     elementRef.current = element;
   }, []);
