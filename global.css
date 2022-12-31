@@ -203,10 +203,6 @@ td {
   transition-duration: 75ms;
 }
 
-.depressclick:active {
-  transform: scale(0.8);
-}
-
 @keyframes shake {
   25% {
     transform: rotate(10deg);

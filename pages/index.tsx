@@ -73,7 +73,6 @@ export default function index() {
               width="100"
               height="100"
               src={icon}
-              className="depressclick transitionnormal"
               style={{
                 filter: "var(--themefilter)",
               }}
