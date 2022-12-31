@@ -2,6 +2,7 @@ import * as generativeArt from "generative-art";
 import {
   ChangeEvent,
   MutableRefObject,
+  useCallback,
   useEffect,
   useRef,
   useState,
@@ -9,6 +10,7 @@ import {
 import useSize from "../../src/hooks/useSize";
 import { Vector } from "../../src/vector";
 import startCase from "lodash/startCase";
+import { downloadUint8Array } from "../../src/utils";
 
 export async function getStaticProps() {
   const { processMarkdownFile } = await import("../../src/processMarkdown");
@@ -219,6 +221,17 @@ function RenderDef({
   const [state, setState] = useState(createDef(definition));
   const [lastRenderId, setLastRenderId] = useState(0);
 
+  const render = useCallback(
+    (kind: number): any => {
+      const args = definition.map(([name]) => state[name]);
+      args.push(kind);
+      generativeArt.set_panic_hook();
+
+      return renderFn(...args);
+    },
+    [state]
+  );
+
   useEffect(() => {
     setState(createDef(definition));
   }, [definition]);
@@ -236,14 +249,10 @@ function RenderDef({
 
     cancelAnimationFrame(lastRenderId);
 
-    const args = definition.map(([name]) => state[name]);
-    args.push(1);
-
     setLastRenderId(
       requestAnimationFrame(() => {
         try {
-          generativeArt.set_panic_hook();
-          renderFn(...args);
+          render(1);
         } catch (_) {
           console.log("An error ocurred");
         }
@@ -267,7 +276,25 @@ function RenderDef({
     />
   ));
 
-  return <ul className="unstyled-list">{items}</ul>;
+  return (
+    <ul className="unstyled-list">
+      <div className="h-container">
+        <button
+          className="border small-pad small-margin full-width"
+          onClick={() => downloadUint8Array(render(2), "image.svg")}
+        >
+          Download SVG
+        </button>
+        <button
+          className="border small-pad small-margin full-width"
+          onClick={() => downloadUint8Array(render(3), "image.png")}
+        >
+          Download PNG
+        </button>
+      </div>
+      {items}
+    </ul>
+  );
 }
 
 function BetterSlider({

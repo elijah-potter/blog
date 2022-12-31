@@ -7,3 +7,4 @@ You can find most of the source code in [this repository.](https://github.com/ch
 Note that this is a very old project. I learned a lot from it, but be warned that it isn't very performant.
 
 To begin, select an algorithm below. You can also load your own image to toy around. Don't worry, all this runs in the browser so your data is safe.
+To download the highest quality result, use the buttons at the bottom to download either a SVG or a PNG.
