@@ -35,6 +35,16 @@ const iconLinks = [
     "/icons/eye.svg",
     "A playground to interact with several generative art algorithms.",
   ],
+  [
+    "/renderer",
+    "/icons/mesh.svg",
+    "A demo and story of how I built a software renderer using Linear Algebra and Rust.",
+  ],
+  [
+    "/fluid",
+    "/icons/air.svg",
+    "A story about Lake Gregory in Australia and Climate Models",
+  ],
 ];
 
 export default function index() {
@@ -68,7 +78,7 @@ export default function index() {
       <div style={{ paddingTop: "100px" }} />
       <div className="wrapping h-container">
         {iconLinks.map(([href, icon, alt]) => (
-          <Link href={href} key={href} className="large-pad">
+          <a href={href} key={href} className="large-pad">
             <Image
               width="100"
               height="100"
@@ -78,7 +88,7 @@ export default function index() {
               }}
               alt={alt}
             />
-          </Link>
+          </a>
         ))}
       </div>
     </>

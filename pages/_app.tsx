@@ -62,6 +62,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Elijah Potter</title>
+        <script
+          src="https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js"
+          defer
+        />
       </Head>
       <Script
         defer

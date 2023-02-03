@@ -9,6 +9,7 @@ import rehypeHighlight from "rehype-highlight";
 import rust from "highlight.js/lib/languages/rust";
 import bash from "highlight.js/lib/languages/bash";
 import fs from "fs/promises";
+import rehypeTitleFigure from "rehype-title-figure";
 
 /// Converts `markdown` to `html`
 export async function processMarkdown(markdown: string): Promise<string> {
@@ -17,6 +18,7 @@ export async function processMarkdown(markdown: string): Promise<string> {
     .use(remarkMath)
     .use(remarkGfm)
     .use(remarkRehype)
+    .use(rehypeTitleFigure)
     .use(rehypeHighlight, { languages: { rust, bash } })
     .use(remarkKatex)
     .use(rehypeStringify);

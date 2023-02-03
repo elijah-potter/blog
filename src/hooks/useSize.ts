@@ -3,7 +3,7 @@ import { RefCallback, useCallback, useRef, useState } from "react";
 
 export default function (): [RefCallback<HTMLElement>, Vector] {
   const elementRef = useRef<HTMLElement | null>(null);
-  const [size, setSize] = useState([100, 100]);
+  const [size, setSize] = useState<Vector>([100, 100]);
 
   if (typeof window === "undefined") {
     return [() => null, size];

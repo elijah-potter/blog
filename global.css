@@ -19,7 +19,7 @@ code {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--fg);
 }
 
@@ -45,6 +45,10 @@ button {
   margin-right: auto;
   width: 100%;
   height: auto;
+}
+
+.rmd figcaption {
+  text-align: center;
 }
 
 .rmd code {

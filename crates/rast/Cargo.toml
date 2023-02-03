@@ -1,0 +1,18 @@
+[package]
+name = "rast"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+itertools = "0.10.5"
+macroquad = "0.3.25"
+nalgebra = "0.32.1"
+tobj = "3.2.3"
+
+[profile.dev]
+opt-level = 2
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
