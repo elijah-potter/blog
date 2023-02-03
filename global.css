@@ -61,6 +61,10 @@ button {
   margin-right: auto;
 }
 
+.rmd a {
+  text-decoration: underline;
+}
+
 .rmd table,
 th,
 td {
