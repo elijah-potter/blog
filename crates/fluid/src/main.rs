@@ -39,7 +39,7 @@ async fn main() {
 
         world.advect(delta_time);
         world.reset_edges();
-        //world.diffuse(delta_time, 1.);
+        world.diffuse(delta_time, 1.);
         //world.clear_divergence();
 
         dbg!(world.total_mass());

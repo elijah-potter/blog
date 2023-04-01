@@ -21,7 +21,7 @@ for arg in "$@"; do
         ;;
     esac
 done
-
+#
 # Build WebAssembly
 if [ $WASM -eq 1 ]
 then

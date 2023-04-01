@@ -69,8 +69,31 @@ The West coast of Australia is significantly less affected, mostly due to the la
 | Altitude | 200 m - 656 ft | 
 | Latitude | 20° South | 
 
+## Climate Modeling + Fluid Dynamics
 
+I wanted to look into the details of exactly how fluid simulations work.
+I spent some time looking around for good resources on the topic and found [Real-Time Fluid Dynamics for Games](https://www.researchgate.net/publication/2560062_Real-Time_Fluid_Dynamics_for_Games),
+a research paper that covers, as the name suggests, how to build out a fluid simulation. 
 
-# Climate Modeling + Fluid Dynamics
+There are generally two categories of fluid simulation: particle based, or vector-field based.
 
-Model
+### Particle-Based
+
+Particle-based fluid simulations work by tracing the paths of individual particles through space.
+They can be the most accurate at small scales, since they follow the movement of individual molecules.
+Particle-based simulations don't scale as well with many processers, since bounds-checking has to be done with multiple other particles every iteration.
+
+### Vector Field-Based
+
+Vector field-based approaches work by dividing space up into distince cells.
+Each of these cells store abstract attributes of a fluid (temperature, density, velocity, etc.)
+These scale up really well, especially in situations where you have access to many processing cores.
+Real-Time Fluid Dynamics for Games used this approach.
+
+There are generally three main steps to the method described in the paper: diffusion, advection, and divergence elimination.
+
+#### Diffusion
+
+Over time, the attributes of a fluid tend to equalize over time and space.
+Temperature is a good example. 
+Any single source of heat will eventually fill a room, circulating with the cold air until the equalizes.

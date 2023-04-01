@@ -1,3 +1,9 @@
+### Controls
+
+| Function      | Key |
+| ------------- | --------------: |
+| Direct Flow of Fluid | Move Mouse |
+| Randomize Fluid Cell Velocities | Space |
 
 ## Sources 
 
