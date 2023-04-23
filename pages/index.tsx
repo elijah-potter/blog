@@ -60,7 +60,7 @@ export default function index() {
         <div>
           <Image
             className="headshot"
-            src="/images/headshot.jpg"
+            src="/images/headshot.webp"
             width="300"
             height="300"
             alt="Headshot of Elijah Potter"

@@ -328,8 +328,12 @@ export default function index({
     <div>
       <canvas
         ref={canvasRef}
-        width={width * window.devicePixelRatio}
-        height={height * window.devicePixelRatio}
+        width={
+          width * (typeof window != "undefined" ? window.devicePixelRatio : 1)
+        }
+        height={
+          height * (typeof window != "undefined" ? window.devicePixelRatio : 1)
+        }
         onPointerDown={onMouseDown}
         onPointerMove={onMouseMove}
         onPointerUp={onMouseUp}
