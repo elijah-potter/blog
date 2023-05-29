@@ -1,0 +1,74 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import LargeIcon from "../components/LargeIcon.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .headshot {
+        border-radius: 50%;
+        width: 50%;
+      }
+
+      .index-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .subtitle {
+        color: #404040;
+      }
+
+      .icon-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .icon-group > * {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="index-main">
+      <img src="/images/headshot.webp" class="headshot" />
+      <h1>Elijah Potter</h1>
+      <h3 class="subtitle">Software Developer</h3>
+      <div class="icon-group">
+        {
+          [
+            ["/articles", "/icons/type.svg"],
+            ["https://www.instagram.com/elijah_sirius/", "/icons/polaroid.svg"],
+            ["https://github.com/chilipepperhott", "/icons/github.svg"],
+            ["https://www.linkedin.com/in/elijahpotter", "/icons/linkedin.svg"],
+            ["/videos", "/icons/play.svg"],
+            ["/nbody", "/icons/orbit.svg"],
+            ["/art", "/icons/eye.svg"],
+            [
+              "/articles/building_a_software_renderer_from_scratch/",
+              "/icons/mesh.svg",
+            ],
+            [
+              "/articles/markov_chains_for_fun_and_profit/",
+              "/icons/matrix.svg",
+            ],
+          ].map(([href, src]) => (
+            <a href={href}>
+              <LargeIcon src={src} />
+            </a>
+          ))
+        }
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

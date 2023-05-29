@@ -1,0 +1,29 @@
+.section > * {
+  width: 100%;
+}
+
+.button {
+  list-style: none;
+  background: #ddd;
+  text-align: center;
+  color: black;
+  border: solid 1px black;
+  font-size: 1.2rem;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  margin: 5px;
+  padding: 20px;
+}
+
+.wordlist {
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

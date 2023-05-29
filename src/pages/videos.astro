@@ -1,0 +1,50 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+const videos = {
+  "/videos/social_media.mp4":
+    "A look at the psychological effects of social media, specifically for teenagers. Animated and edited in DaVinci Resolve for Psychology 101",
+  "/videos/space.mp4":
+    "A very short Star-Trek-esque animation created and rendered in Blender.",
+  "/videos/moon.mp4":
+    "An animated version of JFK's famous space race-era speech.",
+  "/videos/obama.mp4":
+    "An animated version of a speech Barack Obama gave during his first presidential campaign.",
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title="Videos" description={SITE_DESCRIPTION} />
+    <style>
+      .videos-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <h1>Videos</h1>
+    <main class="videos-main">
+      {
+        Object.entries(videos).map(([path, description]) => (
+          <>
+            <video controls width="100%">
+              <source src={path} />
+            </video>
+            <p>{description}</p>
+          </>
+        ))
+      }
+    </main>
+    <Footer />
+  </body>
+</html>

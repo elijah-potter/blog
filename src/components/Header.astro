@@ -1,0 +1,29 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<header>
+  <style>
+    .header-icon {
+      display: inline;
+      width: 64px;
+      flex: 0 1 64px;
+      margin: 0px;
+    }
+
+    .small-header-icon {
+      display: inline;
+      width: 32px;
+      flex: 0 1 32px;
+      margin: 0px;
+    }
+  </style>
+  <img src="/icons/profile.svg" class="header-icon" />
+  <nav>
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/articles">Articles</HeaderLink>
+    <HeaderLink href="https://github.com/chilipepperhott">
+      <img src="/icons/github.svg" class="small-header-icon" />
+    </HeaderLink>
+  </nav>
+</header>

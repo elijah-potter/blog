@@ -1,0 +1,26 @@
+---
+export interface Props {
+  wasmPath: string;
+}
+
+const { wasmPath } = Astro.props;
+
+let macroquadRuntime = await (
+  await fetch("https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js")
+).text();
+
+// Load the requested file
+macroquadRuntime += `load("${wasmPath}")`;
+---
+
+<style>
+  #glcanvas {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+</style>
+<canvas id="glcanvas"></canvas>
+
+<script define:vars={{ macroquadRuntime }}>
+  eval(macroquadRuntime);
+</script>

@@ -1,0 +1,29 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import NBodySimulation from "../components/NBodySimulation.tsx";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="N-Body Simulation"
+      description="A little N-Body simulation created to help teach the basics of chaos theory and celestial motion."
+    />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <NBodySimulation
+        client:load
+        dark={false}
+        interactive={true}
+        zIndex={-200}
+        initialBodies={[]}
+      />
+    </main>
+  </body>
+</html>

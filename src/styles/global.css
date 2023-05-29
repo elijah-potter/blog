@@ -1,0 +1,81 @@
+@import "./fonts.css";
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "Source Serif Pro";
+  text-rendering: optimizeLegibility;
+  margin: 0px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: min(768px, 90vw);
+  font-family: "Bitter";
+  font-weight: bold;
+}
+
+nav > * {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 4px;
+}
+
+main {
+  width: min(768px, 90vw);
+}
+
+img {
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  height: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-family: "Bitter";
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  font-family: "Bitter";
+}
+
+h3 {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  font-family: "Bitter";
+}
+
+h4 {
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  font-family: "Bitter";
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+time {
+  font-size: 1.4rem;
+}
+
+code {
+  font-family: "Source Code Pro";
+  font-size: 1rem;
+  line-height: 1.7rem;
+}

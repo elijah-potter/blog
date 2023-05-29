@@ -1,0 +1,29 @@
+[package]
+name = "generative-art"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+generative-art = { git = "https://github.com/chilipepperhott/generative-art", default-features = false, features = [
+    "small-rng",
+] }
+console_error_panic_hook = "0.1.6" 
+base64 = "0.13.0"
+web-sys = { version = "0.3.55", features = [
+    'CanvasRenderingContext2d',
+    'Document',
+    'Element',
+    'HtmlCanvasElement',
+    'Window',
+] }
+rand = { version = "0.8.4", default-features = false }
+js-sys = "0.3.55"
+wasm-bindgen = "0.2.83"
+
+[dependencies.image]
+version = "0.23.14"
+default-features = false
+features = ["jpeg", "png", "bmp"]

@@ -1,0 +1,38 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_DESCRIPTION } from "../consts";
+import GenerativeArt from "../components/GenerativeArt";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title="Generative Art" description={SITE_DESCRIPTION} />
+    <style></style>
+  </head>
+  <body>
+    <Header />
+    <h1>Generative Art</h1>
+    <main>
+      <p>
+        Below you'll find a small interface for some generative art algorithms
+        that I've made.
+      </p>
+      <p>You can find most of the source code in this repository.</p>
+      <p>
+        Note that this is a very old project. I learned a lot from it, but be
+        warned that it isn't very performant.
+      </p>
+      <p>
+        To begin, select an algorithm below. You can also load your own image to
+        toy around. Don't worry, all this runs in the browser so your data is
+        safe. To download the highest quality result, use the buttons at the
+        bottom to download either a SVG or a PNG.
+      </p>
+      <GenerativeArt client:only="react" />
+    </main>
+    <Footer />
+  </body>
+</html>
