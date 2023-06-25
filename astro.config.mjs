@@ -10,7 +10,7 @@ import react from "@astrojs/react";
 
 export default defineConfig({
   site: "https://elijahpotter.dev",
-  integrations: [mdx(), sitemap(), react()],
+  integrations: [react(), mdx(), sitemap()],
   vite: {
     build: {
       sourcemap: "inline",
