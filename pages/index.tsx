@@ -40,11 +40,12 @@ const iconLinks = [
     "/icons/mesh.svg",
     "A demo and story of how I built a software renderer using Linear Algebra and Rust.",
   ],
-  [
-    "/fluid",
-    "/icons/air.svg",
-    "A story about Lake Gregory in Australia and Climate Models",
-  ],
+  // This is not ready for public consumption, it may never be
+  // [
+  //   "/fluid",
+  //   "/icons/air.svg",
+  //   "A story about Lake Gregory in Australia and Climate Models",
+  // ],
 ];
 
 export default function index() {

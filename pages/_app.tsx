@@ -67,11 +67,21 @@ export default function App({ Component, pageProps }: AppProps) {
           defer
         />
       </Head>
-      <Script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "3a3453ec9a054b6d9e4dd5a64d79c371"}'
-      />
+      <script
+        async
+        id="gtag"
+        src="https://www.googletagmanager.com/gtag/js?id=G-C1XNRMTJ0S"
+      ></script>
+      <Script id="gtagstart">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        // @ts-ignore
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-C1XNRMTJ0S');
+      `}
+      </Script>
       <div className="h-container root">
         <Spacer />
         <div className="stage">
