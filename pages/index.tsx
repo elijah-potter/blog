@@ -72,7 +72,13 @@ export default function index() {
           <h2 className="center-text subtitle-text">
             Software Developer
             <br />
+            Working at{" "}
             <Link href="https://archytasinc.com/">Archytas Automation</Link>
+            <br />
+            On{" "}
+            <Link href="https://hdiharmony.web.app/book/index.html">
+              HDI Harmony
+            </Link>
           </h2>
         </div>
       </div>

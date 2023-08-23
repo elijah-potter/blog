@@ -1,45 +1,87 @@
 import { motion } from "framer-motion";
-import { useMemo, useState } from "react";
-import { Vector } from "../../src/vector";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { addV, Vector } from "../../src/vector";
 
+/** A mildly interactive graph of the highest visited values of the Collatz conjecture.
+ * Not ready for public consumption
+ */
 export default function () {
-  const width = 1000;
-  const height = 1000;
   const points = 10000;
-  const yScale = 100000;
+  const [width, setWidth] = useState(100);
+  const [height, setHeight] = useState(100);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const yScale = 10000;
+  const [delta, setDelta] = useState<Vector>([1, 1]);
 
-  const [delta, setDelta] = useState<Vector>([0, 0]);
+  const highestPoints = useMemo(
+    () =>
+      delta[0] < -1
+        ? Array.from({ length: width }, (_, index) =>
+            Math.max(Math.floor(index - delta[0]), index)
+          ).map(cMaxVisit)
+        : [],
+    [delta]
+  );
 
-  const highestPoints = Array.from(
-    { length: points },
-    (_, index) => index + 1
-  ).map(cMaxVisit);
+  console.log(delta);
 
-  const svgElements = useMemo(() => {
-    return Object.entries(highestPoints).map(([key, value]) => (
-      <rect
-        x={(parseInt(key) / points) * width}
-        y={(value / yScale) * height}
-        width="1"
-        height="1"
-        fill="white"
-      />
-    ));
-  }, [width, height, points, yScale]);
+  useEffect(() => {
+    const onResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+    window.addEventListener("resize", onResize);
+    onResize();
+
+    () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (canvasRef.current != null) {
+      render(canvasRef.current.getContext("2d")!, highestPoints, yScale, delta);
+    }
+  }, [width, height, points, yScale, canvasRef.current, delta]);
 
   return (
-    <motion.svg
-      onPan={(_e, p) => setDelta([p.offset.x, p.offset.y])}
-      version="1.1"
+    <motion.canvas
+      ref={canvasRef}
+      onPan={(e, p) => setDelta(addV([p.delta.x, p.delta.y], delta))}
       width={width}
       height={height}
-      transform={`translate(${delta[0]},${delta[1]})`}
-      xmlns="http://www.w3.org/2000/svg"
-      shapeRendering="optimizeSpeed"
-    >
-      {svgElements}
-    </motion.svg>
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        zIndex: -100,
+      }}
+    ></motion.canvas>
   );
+}
+
+function render(
+  ctx: CanvasRenderingContext2D,
+  highestPoints: number[],
+  yScale: number,
+  delta: Vector
+) {
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  ctx.fillStyle = "#FFF";
+
+  ctx.translate(...delta);
+
+  for (let i = 0; i < highestPoints.length; i++) {
+    const value = highestPoints[i];
+    ctx.fillRect(
+      (i / highestPoints.length) * ctx.canvas.width,
+      (value / yScale) * ctx.canvas.height,
+      1,
+      1
+    );
+  }
+
+  ctx.resetTransform();
 }
 
 function cIter(x: number): number {

@@ -19,9 +19,10 @@ code {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--fg);
 }
+
 
 textarea {
   background-color: var(--bg);
@@ -77,6 +78,8 @@ td {
   background-color: var(--lc);
   color: var(--fg);
   padding: 4px 8px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .wrapping {
@@ -154,6 +157,15 @@ td {
 
 .full-width {
   width: 100%;
+}
+
+.card {
+  transition-duration: 100ms;
+  cursor: pointer;
+}
+
+.card:hover {
+  translate: 10px;
 }
 
 .clickable {

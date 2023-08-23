@@ -1,7 +1,7 @@
 import { Vector } from "../vector";
 import { RefCallback, useCallback, useRef, useState } from "react";
 
-export default function (): [RefCallback<HTMLElement>, Vector] {
+export default function useSize(): [RefCallback<HTMLElement>, Vector] {
   const elementRef = useRef<HTMLElement | null>(null);
   const [size, setSize] = useState<Vector>([100, 100]);
 

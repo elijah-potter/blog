@@ -10,13 +10,15 @@ export default function () {
       <h1 className="subtitle-text">Articles</h1>
       <ul className="unstyled-list">
         {postNames.map((name) => {
+          const target = `/articles/${name}`;
+
           return (
-            <Link href={`/articles/${name}`} key={name}>
-              <li>
+            <li className="card" onClick={() => (location.href = target)}>
+              <Link href={target} key={name}>
                 <h4 className="subtitle-text">{startCase(name)}</h4>
-                <p>{posts[name].description}</p>
-              </li>
-            </Link>
+              </Link>
+              <p>{posts[name].description}</p>
+            </li>
           );
         })}
       </ul>

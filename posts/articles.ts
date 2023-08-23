@@ -5,6 +5,18 @@ type Post = {
 };
 
 const Posts: { [name: string]: Post } = {
+  on_iteration_and_lean_thinking: {
+    author: "Elijah Potter",
+    description:
+      "I talk about the importance of shockingly fast iteration cycles and lean manufacturing.",
+    keywords: [
+      "lean",
+      "lean startup",
+      "lean manufacturing",
+      "iteration",
+      "entrepreneurship",
+    ],
+  },
   "3_awesome_ways_computers_generate_randomness": {
     author: "Elijah Potter",
     description:
