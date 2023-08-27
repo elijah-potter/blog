@@ -82,6 +82,10 @@ td {
   padding: 5px;
 }
 
+.rmd .math  {
+  font-size: 1rem;
+}
+
 .wrapping {
   flex-wrap: wrap;
 }
