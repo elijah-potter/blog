@@ -98,13 +98,23 @@ export default function App({ Component, pageProps }: AppProps) {
               <h1>Elijah Potter</h1>
             </Link>
             <Spacer />
-
             <Link href="/articles">
               <h2>Articles</h2>
             </Link>
             <Link href="/videos">
               <h2>Videos</h2>
             </Link>
+            <a href="/rss.xml">
+              <Image
+                width="25"
+                height="25"
+                alt="RSS Icon"
+                src="/icons/rss.svg"
+                style={{
+                  filter: "var(--themefilter)",
+                }}
+              />
+            </a>
             <Spacer />
             <div className="mobilehide">
               <Image

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import posts from "../../posts/articles";
 import "katex/dist/katex.css";
 import "highlight.js/styles/nord.css";
+import { startCase } from "lodash";
 
 const postNames = Object.keys(posts);
 
@@ -62,12 +63,23 @@ export default function ({ rendered }: { rendered: object }) {
     };
   }
 
+  const post = posts[name];
+
   return (
     <>
       <Head>
-        <meta name="author" content={posts[name].author} />
-        <meta name="description" content={posts[name].description} />
-        <meta name="keywords" content={posts[name].keywords.join(", ")} />
+        <meta
+          property="og:url"
+          content={`https://elijahpotter.dev/articles/${name}`}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={startCase(name)} />
+        <meta property="og:description" content={post.description} />
+        {post.image && <meta property="og:image" content={post.image} />}
+        <title>{startCase(name)}</title>
+        <meta name="author" content={post.author} />
+        <meta name="description" content={post.description} />
+        <meta name="keywords" content={post.keywords.join(", ")} />
       </Head>
       <div className="rmd" dangerouslySetInnerHTML={{ __html: html }}></div>
     </>

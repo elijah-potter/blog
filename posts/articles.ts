@@ -2,6 +2,7 @@ type Post = {
   author: string;
   description: string;
   keywords: string[];
+  image?: string;
 };
 
 const Posts: { [name: string]: Post } = {
@@ -16,12 +17,14 @@ const Posts: { [name: string]: Post } = {
       "iteration",
       "entrepreneurship",
     ],
+    image: "/images/model_t.jpg",
   },
   "3_awesome_ways_computers_generate_randomness": {
     author: "Elijah Potter",
     description:
       "We look at several interesting ways computers generate random numbers. It may fascinate you to know that some methods are not *truly* random, but only an approximate.",
     keywords: ["random", "nuclear", "intel", "amd", "generation", "rng"],
+    image: "/images/numbers_on_a_screen.jpg",
   },
   build_a_wordle_solver_using_rust: {
     author: "Elijah Potter",
@@ -36,6 +39,7 @@ const Posts: { [name: string]: Post } = {
       "fast",
       "blazing",
     ],
+    image: "/images/wordle_example.png",
   },
   //  followup_to_my_previous_post: {
   //    author: "Elijah Potter",
@@ -64,6 +68,7 @@ const Posts: { [name: string]: Post } = {
       "interactive",
       "tutorial",
     ],
+    image: "/images/flat_ferris.png",
   },
   why_rust_may_be_more_attractive_than_javascript: {
     author: "Elijah Potter",
@@ -89,6 +94,7 @@ const Posts: { [name: string]: Post } = {
       "learn",
       "engineering",
     ],
+    image: "/images/pen_plotter_drawing_hilbert2.jpeg",
   },
 };
 
