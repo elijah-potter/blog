@@ -163,6 +163,19 @@ td {
   width: 100%;
 }
 
+
+.seven-eighths-width{
+  width: 87.5%;
+}
+
+.three-quarter-width {
+  width: 75%;
+}
+
+.half-width {
+  width: 50%;
+}
+
 .card {
   transition-duration: 100ms;
   cursor: pointer;

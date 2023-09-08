@@ -9,6 +9,11 @@ module.exports = {
         destination: "/articles",
         permanent: true,
       },
+      {
+        source: "/articles/on_iteration_and_lean_thinking",
+        destination: "/articles/a_case_for_procrastination",
+        permanent: true,
+      },
     ];
   },
   webpack: function (config, options) {

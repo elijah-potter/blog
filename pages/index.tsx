@@ -1,45 +1,47 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Spacer from "../components/Spacer";
+import useMobile from "../src/hooks/useMobile";
 
 const iconLinks = [
   [
-    "https://github.com/chilipepperhott/",
-    "/icons/github.svg",
-    "GitHub profile and open source contributions.",
-  ],
-  [
-    "https://www.linkedin.com/in/elijahpotter",
-    "/icons/linkedin.svg",
-    "LinkedIn profile and employment history.",
+    "/articles",
+    "/icons/type.svg",
+    "Articles on books, low-level computer science, and the concept of learning",
   ],
   [
     "https://www.instagram.com/elijah_sirius/",
     "/icons/polaroid.svg",
-    "My Instagram Profile, including the results of my photography hobby.",
+    "Instagram, where I showcase my favorite personal pastime: photography",
   ],
-  ["/articles", "/icons/type.svg", "My written articles."],
   [
     "/videos",
     "/icons/play.svg",
-    "Miscelaneus videos I've created for various classes.",
+    "Short, animated, and occasionally informative videos",
   ],
   ["/nbody", "/icons/orbit.svg", "Yet another n-body simulation"],
   [
     "/markov",
     "/icons/matrix.svg",
-    "A demonstration of Markov chains for my Linear Algebra class.",
+    "How Markov chains can be used in the real world",
   ],
   [
     "/art",
     "/icons/eye.svg",
-    "A playground to interact with several generative art algorithms.",
+    "Showcase and generate visually stunning creations, from any photo",
   ],
   [
     "/renderer",
     "/icons/mesh.svg",
-    "A demo and story of how I built a software renderer using Linear Algebra and Rust.",
+    "The story of building a software renderer from scratch",
   ],
+  [
+    "https://www.linkedin.com/in/elijahpotter",
+    "/icons/linkedin.svg",
+    "LinkedIn and Resume",
+  ],
+  ["https://github.com/chilipepperhott/", "/icons/github.svg", "GitHub"],
   // This is not ready for public consumption, it may never be
   // [
   //   "/fluid",
@@ -49,6 +51,8 @@ const iconLinks = [
 ];
 
 export default function index() {
+  const isMobile = useMobile();
+
   return (
     <>
       <Head>
@@ -83,18 +87,24 @@ export default function index() {
         </div>
       </div>
       <div style={{ paddingTop: "100px" }} />
-      <div className="wrapping h-container">
+      <div className={"v-container"}>
         {iconLinks.map(([href, icon, alt]) => (
-          <a href={href} key={href} className="large-pad">
+          <a
+            href={href}
+            key={href}
+            className="large-pad card h-container seven-eighths-width"
+          >
             <Image
-              width="100"
-              height="100"
+              width="80"
+              height="80"
               src={icon}
               style={{
                 filter: "var(--themefilter)",
               }}
               alt={alt}
             />
+            <Spacer></Spacer>
+            <h2 className="readable-text three-quarter-width">{alt}</h2>
           </a>
         ))}
       </div>

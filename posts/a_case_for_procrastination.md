@@ -1,4 +1,4 @@
-# On Iteration and Lean Thinking
+# A Case for Procastination
 
 ![A linup of Model T Fords](/images/model_t.jpg)
 
@@ -102,6 +102,8 @@ I believe this comes from the fact that as compilation time increases, the amoun
 
 ### JIT Compilation and Hot Reload
 
+This is where we get to the title of the article.
+
 The concepts of lean thinking extend into compiler technology.
 The Toyota Production System includes the concept of "Just-in-time", meaning,
 "to only produce exactly what is needed for the product, exactly when in the process it is required."
@@ -115,6 +117,15 @@ Further, technologies like React and Flutter's Hot Reload make it possible to co
 I believe this is partly why interpreted languages are so beginner-friendly (other than the high level of abstraction they typically provide).
 Newcomers to programming spend most of their time on syntactic issues and simple runtime errors.
 By making micro-iterations happen as fast as possible, you make these issues less annoying to deal with.
+
+### Procrastination
+
+If you are in university (like I currently am), or any other level of education, it can actually be at beneficial to hold off on doing your homework.
+It is not uncommon (at least in my experience) for the project or paper requirements to change at the last minute.
+Some of your peers may choose to complete the project or paper as soon as possible.
+If this is the case, you may benefit from their experience.
+If a certain chain of logic or analysis is confusing or misleading, they can warn you to avoid losing time.
+Assuming they are willing, they can also provide insightful feedback on your work mid-way through your writing or study process.
 
 ## Conclusion
 

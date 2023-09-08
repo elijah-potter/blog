@@ -5,10 +5,10 @@ type Post = {
 };
 
 const Posts: { [name: string]: Post } = {
-  on_iteration_and_lean_thinking: {
+  a_case_for_procrastination: {
     author: "Elijah Potter",
     description:
-      "I talk about the importance of shockingly fast iteration cycles and lean manufacturing.",
+      "Or: why doing things at the last minute actually saves time. I talk about the importance of shockingly fast iteration cycles and lean manufacturing.",
     keywords: [
       "lean",
       "lean startup",
