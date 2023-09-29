@@ -28,8 +28,6 @@ export default function ({
   renderedIntroduction: string;
   renderedExplanation: string;
 }) {
-  const [containerRef, containerSize] = useSize();
-
   useEffect(() => {
     // @ts-expect-error Loaded from macroquad
     load("rast.wasm");
@@ -42,19 +40,11 @@ export default function ({
         dangerouslySetInnerHTML={{ __html: renderedIntroduction }}
       />
       <br />
-      <div
-        ref={containerRef}
-        style={{
-          width: "100%",
-        }}
-      >
-        <canvas
-          id="glcanvas"
-          tabIndex={1}
-          width={containerSize[0]}
-          height={containerSize[0]}
-        ></canvas>
-      </div>
+      <canvas
+        id="glcanvas"
+        tabIndex={1}
+        className="w-full aspect-square overflow-hidden"
+      ></canvas>
       <br />
       <div
         className="rmd"

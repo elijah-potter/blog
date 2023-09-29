@@ -37,7 +37,9 @@ It’s also fast, which means it can be used for everyday things, like generatin
 
 If you happen to be on a Linux system, you can actually use these instructions yourself. Just run this command:
 
-`dd if=/dev/random count=4 bs=1 status=none | od -An --format=dI`
+```bash
+dd if=/dev/random count=4 bs=1 status=none | od -An --format=dI
+```
 
 This command uses `dd` to generate 4 random bytes.
 Then it pipes those bytes into `od` , which will format those 4 bytes into human-readable text as a signed 32-bit integer.

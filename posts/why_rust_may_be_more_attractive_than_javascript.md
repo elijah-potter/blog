@@ -32,7 +32,7 @@ If you want to use C or C++ forget it. As a beginner, you are going to be stuck 
 
 ## The Rusty Solution
 
-**Cargo** is one of the simplest, easiest to use build tools out there. It does everything you might need, and it may be why Rust may soon become a major player. 99% of the time, you can just copy and paste a given library’s string directly from `crates.io`, which is a repository owned and operated by the Rust Foundation, and you are off to the races.
+**Cargo** is one of the simplest, easiest to use build tools out there. It does everything you might need, and it may be why Rust may soon become a major player. 99% of the time, you can just copy and paste a given library’s string directly from [crates.io](https://crates.io), which is a repository owned and operated by the Rust Foundation, and you are off to the races.
 
 Testing is easy too, just run `cargo test`, and you're done. It covers both unit tests, and integration tests if you need it.
 
@@ -42,7 +42,7 @@ Testing is easy too, just run `cargo test`, and you're done. It covers both unit
 
 ## Closing
 
-At least for the moment, of all the great reasons to use Rust, `cargo` will be the most significant reason it will increase it popularity.
+At least for the moment, of all the great reasons to use Rust, `cargo` will be the most significant reason it will increase in popularity.
 
 ![Most loved programming languages, according to the 2021 StackOverflow Developer Survey](/images/most_loved_stackoverflow_2021.png)
 

@@ -61,19 +61,19 @@ export default function index() {
           content="The personal site for software developer and student Elijah Potter"
         />
       </Head>
-      <div className="wrapping h-container">
+      <div className="flex flex-wrap items-center justify-evenly">
         <div>
           <Image
-            className="headshot"
+            className="rounded-full"
             src="/images/headshot.webp"
             width="300"
             height="300"
             alt="Headshot of Elijah Potter"
           />
         </div>
-        <div className="v-container">
-          <h1 className="center-text impact-text">Elijah Potter</h1>
-          <h2 className="center-text subtitle-text">
+        <div className="flex flex-col">
+          <h1 className="text-center text-6xl font-bold p-16">Elijah Potter</h1>
+          <h2 className="text-center text-3xl font-bold">
             Software Developer
             <br />
             Working at{" "}
@@ -87,12 +87,12 @@ export default function index() {
         </div>
       </div>
       <div style={{ paddingTop: "100px" }} />
-      <div className={"v-container"}>
+      <div className={"flex flex-col items-center"}>
         {iconLinks.map(([href, icon, alt]) => (
           <a
             href={href}
             key={href}
-            className="large-pad card h-container seven-eighths-width"
+            className="py-12 flex flex-row justify-between items-center w-11/12 hover:translate-x-5 transition-all"
           >
             <Image
               width="80"
@@ -104,7 +104,7 @@ export default function index() {
               alt={alt}
             />
             <Spacer></Spacer>
-            <h2 className="readable-text three-quarter-width">{alt}</h2>
+            <h2 className="text-lg md:text-2xl w-9/12 text-right">{alt}</h2>
           </a>
         ))}
       </div>

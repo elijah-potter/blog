@@ -79,16 +79,20 @@ export default function ({
         className="rmd"
         dangerouslySetInnerHTML={{ __html: renderedIntroduction }}
       ></div>
-      <div className="small-margin">
-        <label className="bold-text readable-text">Load File: </label>
+      <div className="m-6">
+        <label className="font-bold text-xl">Load File: </label>
         <input
           type="file"
           onChange={pickerChange}
           accept="jpg, .jpeg, .png, .tiff, .bmp"
         />
         <br />
-        <label className="bold-text readable-text">Select Algorithm: </label>
-        <select onChange={(e) => setSelected(e.target.value)} value={selected}>
+        <label className="font-bold text-xl">Select Algorithm: </label>
+        <select
+          className="font-bold text-xl h-10"
+          onChange={(e) => setSelected(e.target.value)}
+          value={selected}
+        >
           {Object.keys(options).map((key) => (
             <option key={key} value={key}>
               {startCase(key)}
@@ -277,16 +281,16 @@ function RenderDef({
   ));
 
   return (
-    <ul className="unstyled-list">
-      <div className="h-container">
+    <ul>
+      <div className="flex flex-row">
         <button
-          className="border small-pad small-margin full-width"
+          className="pad-20 m-5 w-full transition-all hover:translate-x-2"
           onClick={() => downloadUint8Array(render(2), "image.svg")}
         >
           Download SVG
         </button>
         <button
-          className="border small-pad small-margin full-width"
+          className="pad-20 m-5 w-full transition-all hover:translate-x-2"
           onClick={() => downloadUint8Array(render(3), "image.png")}
         >
           Download PNG
@@ -314,11 +318,11 @@ function BetterSlider({
 }) {
   return (
     <div
-      className="h-container auto-flex-children"
+      className="flex flex-row [&>*]:flex-auto"
       style={{ justifyContent: "left" }}
     >
       <h2
-        className="bold-text left-text"
+        className="font-bold"
         style={{
           flex: "0 1 200px",
         }}

@@ -11,15 +11,18 @@ export default function () {
       <Head>
         <title>Articles</title>
       </Head>
-      <h1 className="subtitle-text">Articles</h1>
-      <ul className="unstyled-list">
+      <h1 className="text-3xl font-bold">Articles</h1>
+      <ul>
         {postNames.map((name) => {
           const target = `/articles/${name}`;
 
           return (
-            <li className="card" onClick={() => (location.href = target)}>
+            <li
+              className="py-4 w-11/12 hover:translate-x-5 transition-all"
+              onClick={() => (location.href = target)}
+            >
               <Link href={target} key={name}>
-                <h4 className="subtitle-text">{startCase(name)}</h4>
+                <h4 className="text-3xl py-4">{startCase(name)}</h4>
               </Link>
               <p>{posts[name].description}</p>
             </li>

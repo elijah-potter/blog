@@ -82,9 +82,9 @@ export default function App({ Component, pageProps }: AppProps) {
         gtag('config', 'G-C1XNRMTJ0S');
       `}
       </Script>
-      <div className="h-container root">
+      <div className="flex flex-row items-center">
         <Spacer />
-        <div className="stage">
+        <div style={{ width: "clamp(50%, 768px, 90%)" }}>
           <Navbar>
             <div className="mobilehide">
               <Image
@@ -95,15 +95,9 @@ export default function App({ Component, pageProps }: AppProps) {
               />
             </div>
             <Link href="/">
-              <h1>Elijah Potter</h1>
+              <h1 className="text-2xl">Elijah Potter</h1>
             </Link>
             <Spacer />
-            <Link href="/articles">
-              <h2>Articles</h2>
-            </Link>
-            <Link href="/videos">
-              <h2>Videos</h2>
-            </Link>
             <a href="/rss.xml">
               <Image
                 width="25"
@@ -115,10 +109,9 @@ export default function App({ Component, pageProps }: AppProps) {
                 }}
               />
             </a>
-            <Spacer />
             <div className="mobilehide">
               <Image
-                className="depressclick transitionnormal"
+                className="transition-all active:scale-75"
                 onClick={() => setTheme(dark ? "light" : "dark")}
                 width="40"
                 height="40"

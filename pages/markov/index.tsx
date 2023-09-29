@@ -128,10 +128,10 @@ export default function ({
         className="rmd"
         dangerouslySetInnerHTML={{ __html: renderedIntroduction }}
       />
-      <div className="v-container">
-        <h2 className="full-width left-text">Training</h2>
+      <div className="flex flex-col pb-10">
+        <h2 className="w-full text-3xl pb-5">Training</h2>
         <textarea
-          className="readable-text border small-pad full-width"
+          className="text-lg w-full border border-white p-3"
           onChange={(e) => {
             setTrainingText(e.target.value);
           }}
@@ -139,29 +139,26 @@ export default function ({
           value={trainingText}
         />
       </div>
-      <div className="h-container">
-        <div style={{ width: "60%" }} className="v-container">
-          <h2 className="full-width left-text">Scratch</h2>
+      <div className="flex flex-row justify-between pb-10">
+        <div style={{ width: "60%" }} className="flex flex-col">
+          <h2 className="w-full text-xl font-bold pb-2">Scratch</h2>
           <textarea
-            className="readable-text border small-pad full-width"
+            className="text-lg w-full border border-white p-3"
             onChange={(e) => setCompletingText(e.target.value)}
             rows={20}
             value={completingText}
           />
         </div>
         <div
-          className="right-text"
+          className="text-right"
           style={{
             alignSelf: "start",
           }}
         >
-          <h2 className="full-width">Possible Next Words</h2>
-          <ul className="unstyled-list readable-text full-width">
+          <h2 className="w-full text-xl font-bold pb-2">Possible Next Words</h2>
+          <ul className="w-full">
             <li>
-              <button
-                className="border small-pad small-margin full-width"
-                onClick={autocompleteWord}
-              >
+              <button className="border p-2 w-9/12" onClick={autocompleteWord}>
                 Choose Word
               </button>
             </li>
@@ -169,7 +166,7 @@ export default function ({
               nextWords.map((word) => (
                 <li
                   key={word}
-                  className="small-pad clickable"
+                  className="hover:translate-x-2 cursor-pointer transition-all"
                   onClick={() => setCompletingText(completingText + " " + word)}
                 >
                   {word}
