@@ -1,7 +1,4 @@
 module.exports = {
-  images: {
-    unoptimized: true,
-  },
   async redirects() {
     return [
       {
@@ -29,4 +26,5 @@ module.exports = {
 
     return config;
   },
+  output: "standalone",
 };

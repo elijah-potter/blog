@@ -49,8 +49,7 @@ if [ $SITE -eq 1 ]
 then
     cd $R
     yarn install
-    yarn build
     yarn ts-node generateRSS.ts
-    yarn export
+    yarn build
 fi
 
