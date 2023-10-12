@@ -25,7 +25,7 @@ fs.writeFileSync(
 <description>The writings of Elijah Potter</description>
 <link>https://elijahpotter.dev</link>
 <copyright>2023 elijahpotter.dev All rights reserved</copyright>
-<ttl>1800</ttl>
+<ttl>60</ttl>
 
 ${generateItems().reduce((a, b) => `${a}\n${b}`)}
 

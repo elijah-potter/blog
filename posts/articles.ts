@@ -6,6 +6,19 @@ type Post = {
 };
 
 const Posts: { [name: string]: Post } = {
+  the_climate_change_progress_bar: {
+    author: "Elijah Potter",
+    description: "A proposal.",
+    keywords: [
+      "climate change",
+      "indonesia",
+      "idea",
+      "pitch",
+      "startup",
+      "feedback",
+    ],
+    image: "/images/blue_marble.jpg",
+  },
   a_case_for_procrastination: {
     author: "Elijah Potter",
     description:
@@ -97,5 +110,10 @@ const Posts: { [name: string]: Post } = {
     image: "/images/pen_plotter_drawing_hilbert2.jpeg",
   },
 };
+
+// Someone told me adding this to everything enhances SEO?
+for (const value of Object.values(Posts)) {
+  value.keywords.push("reddit");
+}
 
 export default Posts;
