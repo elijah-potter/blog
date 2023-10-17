@@ -11,6 +11,11 @@ const iconLinks = [
     "Articles on books, low-level computer science, and the concept of learning",
   ],
   [
+    "https://github.com/chilipepperhott/thrax-language",
+    "/icons/thrax_logo.svg",
+    "Thrax, a toy programming language I put together in late 2022 to learn about dynamic programming languages",
+  ],
+  [
     "https://www.instagram.com/elijah_sirius/",
     "/icons/polaroid.svg",
     "Instagram, where I showcase my favorite personal pastime: photography",
