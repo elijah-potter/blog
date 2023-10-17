@@ -17,11 +17,11 @@ export async function processMarkdown(markdown: string): Promise<string> {
     .use(remarkParse)
     .use(remarkMath)
     .use(remarkGfm)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeTitleFigure)
     .use(rehypeHighlight, { languages: { rust, bash } })
     .use(remarkKatex)
-    .use(rehypeStringify);
+    .use(rehypeStringify, { allowDangerousHtml: true });
 
   const vfile = await processor.process(markdown);
   const html = vfile.toString();

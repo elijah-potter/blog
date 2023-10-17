@@ -24,7 +24,7 @@ This was great: it meant that cars would be cheaper than ever, and more people c
 Around this time, Toyota entered the automotive industry.
 However, they did not have the time, nor the money to design and build the same kind of hyper-specific manufacturing machines that Ford used.
 Instead, they chose to purchase comparatively few hyper-__generalized__ machines.
-Their stragedy was to build one car at time, and sell it as soon as possible (ideally the moment it rolled off of the factory floor).
+Their strategy was to build one car at time, and sell it as soon as possible (ideally the moment it rolled off of the factory floor).
 This way, if there is an issue with the vehicle, the design can be modified before too many faulty cars are assembled.
 
 The Toyota Production System emphasized flexibility over efficiency.
@@ -120,7 +120,7 @@ By making micro-iterations happen as fast as possible, you make these issues les
 
 ### Procrastination
 
-If you are in university (like I currently am), or any other level of education, it can actually be at beneficial to hold off on doing your homework.
+If you are in university (like I currently am), or any other level of education, it can actually be beneficial to hold off on doing your homework.
 It is not uncommon (at least in my experience) for the project or paper requirements to change at the last minute.
 Some of your peers may choose to complete the project or paper as soon as possible.
 If this is the case, you may benefit from their experience.

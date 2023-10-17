@@ -109,10 +109,12 @@ export default function App({ Component, pageProps }: AppProps) {
                 }}
               />
             </a>
-            <div className="mobilehide">
+            <button
+              onClick={() => setTheme(dark ? "light" : "dark")}
+              className="mobilehide"
+            >
               <Image
                 className="transition-all active:scale-75"
-                onClick={() => setTheme(dark ? "light" : "dark")}
                 width="40"
                 height="40"
                 alt="Sun Icon to Enable/Disable Dark Mode"
@@ -121,7 +123,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   filter: "var(--themefilter)",
                 }}
               />
-            </div>
+            </button>
           </Navbar>
           <Component {...pageProps} dark={dark} />
         </div>

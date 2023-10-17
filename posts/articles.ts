@@ -6,6 +6,22 @@ type Post = {
 };
 
 const Posts: { [name: string]: Post } = {
+  quantifying_hope_on_a_global_scale: {
+    author: "Elijah Potter",
+    description: "An experiment on how to live in a seemingly hopeless world.",
+    keywords: [
+      "hope",
+      "experiment",
+      "design",
+      "makerspace",
+      "colorado school of mines",
+      "web scraping",
+      "asp.net core",
+      "python",
+      "rust",
+    ],
+    image: "/images/hope_sketch.webp",
+  },
   the_climate_change_progress_bar: {
     author: "Elijah Potter",
     description: "A proposal.",

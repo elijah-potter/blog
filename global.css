@@ -49,6 +49,11 @@ button {
   padding-left: 20px;
 }
 
+.rmd ol {
+  list-style: numeric;
+  padding-left: 40px;
+}
+
 .rmd h1 {
   font-size: 40px;
   font-weight: bold;
@@ -83,6 +88,12 @@ button {
   margin-right: auto;
   width: 100%;
   height: auto;
+  transition-timing-function: ease-out;
+  transition-duration: 500ms;
+}
+
+.rmd img:hover {
+  transform: scale(1.02);
 }
 
 .rmd figcaption {
@@ -92,6 +103,7 @@ button {
 .rmd code {
   width: 100%;
   overflow-x: scroll;
+  font-size: 1.0rem;
 }
 
 .rmd p > code {
@@ -122,7 +134,11 @@ td {
   color: var(--fg);
   padding: 4px 8px;
   border-radius: 10px;
-  padding: 5px;
+  padding: 20px;
+}
+
+.rmd blockquote p {
+  padding: 0px;
 }
 
 .rmd .math  {
