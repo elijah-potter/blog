@@ -68,20 +68,10 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <script
+        data-goatcounter="https://potterblog.goatcounter.com/count"
         async
-        id="gtag"
-        src="https://www.googletagmanager.com/gtag/js?id=G-C1XNRMTJ0S"
+        src="//gc.zgo.at/count.js"
       ></script>
-      <Script id="gtagstart">
-        {`
-        window.dataLayer = window.dataLayer || [];
-        // @ts-ignore
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-      
-        gtag('config', 'G-C1XNRMTJ0S');
-      `}
-      </Script>
       <div className="flex flex-row items-center">
         <Spacer />
         <div style={{ width: "clamp(50%, 768px, 90%)" }}>
