@@ -10,6 +10,7 @@ function generateItems(): string[] {
   <description>${post.description}</description>
   <guid isPermaLink="false">${name}</guid>
   <link>https://elijahpotter.dev/articles/${name}</link>
+  <pubDate>${post.pubDate.toUTCString()}</pubDate>
 </item>
   `
   );

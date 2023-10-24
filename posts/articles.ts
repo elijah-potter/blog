@@ -3,6 +3,7 @@ type Post = {
   description: string;
   keywords: string[];
   image?: string;
+  pubDate: Date;
 };
 
 const Posts: { [name: string]: Post } = {
@@ -21,6 +22,7 @@ const Posts: { [name: string]: Post } = {
       "rust",
     ],
     image: "/images/hope_sketch.webp",
+    pubDate: new Date(2023, 10, 21),
   },
   the_climate_change_progress_bar: {
     author: "Elijah Potter",
@@ -34,6 +36,7 @@ const Posts: { [name: string]: Post } = {
       "feedback",
     ],
     image: "/images/blue_marble.jpg",
+    pubDate: new Date(2023, 10, 12),
   },
   a_case_for_procrastination: {
     author: "Elijah Potter",
@@ -47,6 +50,7 @@ const Posts: { [name: string]: Post } = {
       "entrepreneurship",
     ],
     image: "/images/model_t.jpg",
+    pubDate: new Date(2023, 8, 27),
   },
   "3_awesome_ways_computers_generate_randomness": {
     author: "Elijah Potter",
@@ -54,6 +58,7 @@ const Posts: { [name: string]: Post } = {
       "We look at several interesting ways computers generate random numbers. It may fascinate you to know that some methods are not *truly* random, but only an approximate.",
     keywords: ["random", "nuclear", "intel", "amd", "generation", "rng"],
     image: "/images/numbers_on_a_screen.jpg",
+    pubDate: new Date(2022, 2, 4),
   },
   build_a_wordle_solver_using_rust: {
     author: "Elijah Potter",
@@ -69,6 +74,7 @@ const Posts: { [name: string]: Post } = {
       "blazing",
     ],
     image: "/images/wordle_example.png",
+    pubDate: new Date(2022, 2, 1),
   },
   //  followup_to_my_previous_post: {
   //    author: "Elijah Potter",
@@ -98,12 +104,14 @@ const Posts: { [name: string]: Post } = {
       "tutorial",
     ],
     image: "/images/flat_ferris.png",
+    pubDate: new Date(2021, 5, 2),
   },
   why_rust_may_be_more_attractive_than_javascript: {
     author: "Elijah Potter",
     description:
       "A key part of Rust is far better that what JavaScript has to offer.",
     keywords: ["cargo", "rust", "npm", "nodejs", "learning", "ease-of-use"],
+    pubDate: new Date(2022, 1, 25),
   },
   //  you_need_to_stop_idolizing_programming_languages: {
   //    author: "Elijah Potter",
@@ -124,6 +132,7 @@ const Posts: { [name: string]: Post } = {
       "engineering",
     ],
     image: "/images/pen_plotter_drawing_hilbert2.jpeg",
+    pubDate: new Date(2022, 9, 18),
   },
 };
 
