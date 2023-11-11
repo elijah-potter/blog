@@ -7,6 +7,24 @@ type Post = {
 };
 
 const Posts: { [name: string]: Post } = {
+  do_not_type_your_notes: {
+    author: "Elijah Potter",
+    description:
+      "It didn't work for me, and if you reading this, it probably won't work for you either.",
+    keywords: [
+      "neovim",
+      "nvim",
+      "notes",
+      "notetaking",
+      "latex",
+      "markdown",
+      "handwriting",
+      "college",
+      "colorado school of mines",
+    ],
+    pubDate: new Date(2023, 9, 29),
+    image: "/images/pen_paper.webp",
+  },
   quantifying_hope_on_a_global_scale: {
     author: "Elijah Potter",
     description: "An experiment on how to live in a seemingly hopeless world.",
@@ -22,7 +40,7 @@ const Posts: { [name: string]: Post } = {
       "rust",
     ],
     image: "/images/hope_sketch.webp",
-    pubDate: new Date(2023, 10, 21),
+    pubDate: new Date(2023, 9, 20),
   },
   the_climate_change_progress_bar: {
     author: "Elijah Potter",
@@ -36,7 +54,7 @@ const Posts: { [name: string]: Post } = {
       "feedback",
     ],
     image: "/images/blue_marble.jpg",
-    pubDate: new Date(2023, 10, 12),
+    pubDate: new Date(2023, 9, 12),
   },
   a_case_for_procrastination: {
     author: "Elijah Potter",

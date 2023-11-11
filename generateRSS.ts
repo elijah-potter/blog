@@ -2,18 +2,40 @@ import { startCase } from "lodash";
 import posts from "./posts/articles";
 import fs from "fs";
 
+function getMimeType(imagePath: string): string {
+  if (imagePath.endsWith("webp")) {
+    return "image/webp";
+  }
+  if (imagePath.endsWith("png")) {
+    return "image/png";
+  } else if (imagePath.endsWith("jpg") || imagePath.endsWith("jpeg")) {
+    return "image/jpeg";
+  } else {
+    throw new Error("Unexpected file type");
+  }
+}
+
 function generateItems(): string[] {
-  return Object.entries(posts).map(
-    ([name, post]) =>
-      `<item>
+  return Object.entries(posts).map(([name, post]) => {
+    let enclosureString = "";
+
+    if (post.image != null) {
+      const image = fs.readFileSync(`./public${post.image}`);
+      enclosureString = `<enclosure url="https://elijahpotter.dev/${
+        post.image
+      }" length="${image.byteLength}" type="${getMimeType(post.image)}"/>`;
+    }
+
+    return `<item>
   <title>${startCase(name)}</title>
   <description>${post.description}</description>
   <guid isPermaLink="false">${name}</guid>
   <link>https://elijahpotter.dev/articles/${name}</link>
   <pubDate>${post.pubDate.toUTCString()}</pubDate>
+  ${enclosureString}
 </item>
-  `
-  );
+  `;
+  });
 }
 
 fs.writeFileSync(

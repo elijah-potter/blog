@@ -145,6 +145,12 @@ td {
   font-size: 1rem;
 }
 
+.rmd .katex-display {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 @media (max-width: 767px) {
   .mobilehide {
     display: none;
