@@ -12,3 +12,13 @@ export function downloadUint8Array(array: Uint8Array, filename: string) {
 
   URL.revokeObjectURL(url);
 }
+
+export function clampText(text: string, length: number): string {
+  if (text.length <= length) {
+    return text;
+  }
+
+  const clamped = text.substring(0, length - 3);
+
+  return clamped + "...";
+}

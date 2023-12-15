@@ -1,11 +1,17 @@
 import startCase from "lodash/startCase";
 import Head from "next/head";
 import Link from "next/link";
-import posts from "../../posts/articles";
+import { FullPost, generateFullPosts } from "../../posts/articles";
 
-const postNames = Object.keys(posts);
+export async function getStaticProps() {
+  return {
+    props: {
+      posts: await generateFullPosts(),
+    },
+  };
+}
 
-export default function () {
+export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
   return (
     <>
       <Head>
@@ -13,7 +19,7 @@ export default function () {
       </Head>
       <h1 className="text-3xl font-bold">Articles</h1>
       <ul>
-        {postNames.map((name) => {
+        {Object.entries(posts).map(([name, post]) => {
           const target = `/articles/${name}`;
 
           return (
@@ -24,7 +30,9 @@ export default function () {
               <Link href={target} key={name}>
                 <h4 className="text-3xl py-4">{startCase(name)}</h4>
               </Link>
-              <p>{posts[name].description}</p>
+              <div
+                dangerouslySetInnerHTML={{ __html: post.description_html }}
+              />
             </li>
           );
         })}

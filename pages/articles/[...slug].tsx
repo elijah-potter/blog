@@ -1,32 +1,24 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import posts from "../../posts/articles";
+import {
+  FullPost,
+  generatePartialPosts,
+  generateFullPosts,
+} from "../../posts/articles";
 import "katex/dist/katex.css";
 import "highlight.js/styles/nord.css";
 import { startCase } from "lodash";
 
-const postNames = Object.keys(posts);
-
 export async function getStaticProps() {
-  const processMarkdownFile = (await import("../../src/processMarkdown"))
-    .processMarkdownFile;
-
-  const rendered = new Map();
-
-  for (const postName of postNames) {
-    const html = await processMarkdownFile(`./posts/${postName}.md`);
-    rendered.set(postName, html);
-  }
-
   return {
     props: {
-      rendered: Object.fromEntries(rendered),
+      posts: await generateFullPosts(),
     },
   };
 }
 
 export async function getStaticPaths() {
-  const paths = postNames.map((name) => {
+  const paths = Object.keys(generatePartialPosts()).map((name) => {
     return { params: { slug: [name] } };
   });
 
@@ -36,7 +28,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function ({ rendered }: { rendered: object }) {
+export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
   const router = useRouter();
 
   const { slug } = router.query;
@@ -52,9 +44,8 @@ export default function ({ rendered }: { rendered: object }) {
     name = slug[0];
   }
 
-  const rendermap = new Map(Object.entries(rendered));
-
-  const html = rendermap.get(name);
+  const post = posts[name];
+  const html = post?.content_html;
 
   if (typeof html !== "string") {
     console.log("Not a string!");
@@ -62,8 +53,6 @@ export default function ({ rendered }: { rendered: object }) {
       notFound: true,
     };
   }
-
-  const post = posts[name];
 
   return (
     <>

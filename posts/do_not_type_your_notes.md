@@ -102,7 +102,7 @@ Typed notes do not easily provide this flexibility.
 
 Personally, whenever I type my notes, they become a form of graph, almost always a tree.
 
-![A subset of Chinese history expressed as knowledge graph](/images/china_history_graph.svg)
+![A subset of Chinese history expressed as knowledge graph](/images/china_history_graph.webp)
 
 The above is what I am intending to write in my mind.
 But given that I am working in unformatted text, it ends up looking like:
