@@ -10,7 +10,6 @@ import rust from "highlight.js/lib/languages/rust";
 import bash from "highlight.js/lib/languages/bash";
 import fs from "fs/promises";
 import rehypeTitleFigure from "rehype-title-figure";
-import { clampText } from "./utils";
 
 /// Converts `markdown` to `html`
 export async function processMarkdown(markdown: string): Promise<string> {
@@ -28,4 +27,9 @@ export async function processMarkdown(markdown: string): Promise<string> {
   const html = vfile.toString();
 
   return html;
+}
+
+export async function processMarkdownFile(filePath: string): Promise<string> {
+  const file = await fs.readFile(filePath, "utf8");
+  return processMarkdown(file);
 }

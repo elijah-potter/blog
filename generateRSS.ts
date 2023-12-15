@@ -1,6 +1,36 @@
 import { startCase } from "lodash";
-import posts from "./posts/articles";
-import fs from "fs";
+import { FullPost, generateFullPosts } from "./posts/articles";
+import fs from "fs/promises";
+
+async function generateItems(
+  posts: Record<string, FullPost>
+): Promise<string[]> {
+  const output = [];
+
+  for (const entry of Object.entries(posts)) {
+    const [name, post] = entry;
+    let enclosureString = "";
+
+    if (post.image != null) {
+      const image = await fs.readFile(`./public${post.image}`);
+      enclosureString = `<enclosure url="https://elijahpotter.dev/${
+        post.image
+      }" length="${image.byteLength}" type="${getMimeType(post.image)}"/>`;
+    }
+
+    output.push(`<item>
+  <title>${startCase(name)}</title>
+  <description>${post.description}</description>
+  <guid isPermaLink="false">${name}</guid>
+  <link>https://elijahpotter.dev/articles/${name}</link>
+  <pubDate>${new Date(post.pubDate).toUTCString()}</pubDate>
+  ${enclosureString}
+</item>
+  `);
+  }
+
+  return output;
+}
 
 function getMimeType(imagePath: string): string {
   if (imagePath.endsWith("webp")) {
@@ -15,32 +45,12 @@ function getMimeType(imagePath: string): string {
   }
 }
 
-function generateItems(): string[] {
-  return Object.entries(posts).map(([name, post]) => {
-    let enclosureString = "";
+async function main() {
+  const posts = await generateFullPosts();
 
-    if (post.image != null) {
-      const image = fs.readFileSync(`./public${post.image}`);
-      enclosureString = `<enclosure url="https://elijahpotter.dev/${
-        post.image
-      }" length="${image.byteLength}" type="${getMimeType(post.image)}"/>`;
-    }
-
-    return `<item>
-  <title>${startCase(name)}</title>
-  <description>${post.description}</description>
-  <guid isPermaLink="false">${name}</guid>
-  <link>https://elijahpotter.dev/articles/${name}</link>
-  <pubDate>${post.pubDate.toUTCString()}</pubDate>
-  ${enclosureString}
-</item>
-  `;
-  });
-}
-
-fs.writeFileSync(
-  "./public/rss.xml",
-  `<?xml version="1.0" encoding="UTF-8" ?>
+  await fs.writeFile(
+    "./public/rss.xml",
+    `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <atom:link href="https://elijahpotter.dev/rss.xml" rel="self" type="application/rss+xml" />
@@ -50,9 +60,12 @@ fs.writeFileSync(
 <copyright>2023 elijahpotter.dev All rights reserved</copyright>
 <ttl>60</ttl>
 
-${generateItems().reduce((a, b) => `${a}\n${b}`)}
+${(await generateItems(posts)).reduce((a, b) => `${a}\n${b}`)}
 
 </channel>
 </rss>
     `
-);
+  );
+}
+
+main();

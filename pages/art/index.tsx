@@ -14,8 +14,6 @@ import { downloadUint8Array } from "../../src/utils";
 
 export async function getStaticProps() {
   const { processMarkdownFile } = await import("../../src/processMarkdown");
-  const fs = await import("fs/promises");
-
   const renderedIntroduction = await processMarkdownFile(
     "./posts/generative_art_introduction.md"
   );

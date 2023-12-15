@@ -15,7 +15,7 @@ export type FullPost = {
   content_html: string;
 } & PartialPost;
 
-const partialPosts: { [name: string]: PartialPost } = {
+const partialPosts: Record<string, PartialPost> = {
   do_not_type_your_notes: {
     description:
       "It didn't work for me, and if you reading this, it probably won't work for you either.",
@@ -154,17 +154,15 @@ const partialPosts: { [name: string]: PartialPost } = {
   },
 };
 
-export function generatePartialPosts(): { [name: string]: PartialPost } {
+export function generatePartialPosts(): Record<string, PartialPost> {
   return clone(partialPosts);
 }
 
-export async function generateFullPosts(): Promise<{
-  [name: string]: FullPost;
-}> {
+export async function generateFullPosts(): Promise<Record<string, FullPost>> {
   const { processMarkdown } = await import("../src/processMarkdown");
   const fs = await import("fs/promises");
 
-  const fullPosts: { [name: string]: FullPost } = {};
+  const fullPosts: Record<string, FullPost> = {};
 
   for (const [key, value] of Object.entries(partialPosts)) {
     // Someone told me adding this to everything enhances SEO?
