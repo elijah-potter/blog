@@ -1,0 +1,53 @@
+# flyctl launch added from .gitignore
+**/node_modules
+**/next-env.d.ts
+**/rendered
+**/.next
+**/out
+**/.firebase
+**/public/sw.js
+**/public/sw.js.map
+**/public/workbox-*.js
+**/public/workbox-*.js.map
+
+# flyctl launch added from crates/fluid/.gitignore
+crates/fluid/target
+
+# flyctl launch added from crates/generative-art/.gitignore
+crates/generative-art/**/target
+
+# flyctl launch added from crates/generative-art/pkg/.gitignore
+crates/generative-art/pkg/**/*
+
+# flyctl launch added from crates/markov/.gitignore
+crates/markov/target
+crates/markov/**/stochastic_matrix
+crates/markov/**/wordlist
+crates/markov/**/english_source.txt
+crates/markov/**/pkg
+
+# flyctl launch added from crates/markov/pkg/.gitignore
+crates/markov/pkg/**/*
+
+# flyctl launch added from crates/rast/.gitignore
+crates/rast/**/target
+
+# flyctl launch added from node_modules/generative-art/.gitignore
+node_modules/generative-art/**/*
+
+# flyctl launch added from node_modules/markov/.gitignore
+node_modules/markov/**/*
+
+# flyctl launch added from node_modules/tailwindcss/stubs/.gitignore
+!node_modules/tailwindcss/stubs/**/*
+
+# flyctl launch added from out/.gitignore
+out/**/rast.wasm
+out/**/fluid.wasm
+out/**/rss.xml
+
+# flyctl launch added from public/.gitignore
+public/**/rast.wasm
+public/**/fluid.wasm
+public/**/rss.xml
+fly.toml
