@@ -1,5 +1,5 @@
 import { startCase } from "lodash";
-import { FullPost, generateFullPosts } from "./posts/articles";
+import { FullPost, generateFullPosts } from "../posts/articles";
 import fs from "fs/promises";
 
 async function generateItems(
@@ -45,12 +45,10 @@ function getMimeType(imagePath: string): string {
   }
 }
 
-async function main() {
+export default async function generateRSS(): Promise<string> {
   const posts = await generateFullPosts();
 
-  await fs.writeFile(
-    "./public/rss.xml",
-    `<?xml version="1.0" encoding="UTF-8" ?>
+  return `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <atom:link href="https://elijahpotter.dev/rss.xml" rel="self" type="application/rss+xml" />
@@ -64,8 +62,5 @@ ${(await generateItems(posts)).reduce((a, b) => `${a}\n${b}`)}
 
 </channel>
 </rss>
-    `
-  );
+    `;
 }
-
-main();

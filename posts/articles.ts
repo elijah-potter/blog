@@ -1,6 +1,4 @@
-import { warn } from "console";
 import { clone } from "lodash";
-import { clampText } from "../src/utils";
 
 type PartialPost = {
   keywords: string[];

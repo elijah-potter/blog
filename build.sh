@@ -50,7 +50,5 @@ then
     cd $R
     yarn install
     yarn build
-    yarn ts-node generateRSS.ts
-    yarn export
 fi
 
