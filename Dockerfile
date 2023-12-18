@@ -9,7 +9,7 @@ COPY . .
 
 RUN ./build.sh --no-site --release --clean
 
-FROM node:latest
+FROM node:slim as node-build
 
 RUN mkdir -p /usr/build/
 WORKDIR /usr/build/

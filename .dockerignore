@@ -2,7 +2,6 @@
 **/node_modules
 **/next-env.d.ts
 **/rendered
-**/.next
 **/out
 **/.firebase
 **/public/sw.js
@@ -32,15 +31,6 @@ crates/markov/pkg/**/*
 # flyctl launch added from crates/rast/.gitignore
 crates/rast/**/target
 
-# flyctl launch added from node_modules/generative-art/.gitignore
-node_modules/generative-art/**/*
-
-# flyctl launch added from node_modules/markov/.gitignore
-node_modules/markov/**/*
-
-# flyctl launch added from node_modules/tailwindcss/stubs/.gitignore
-!node_modules/tailwindcss/stubs/**/*
-
 # flyctl launch added from out/.gitignore
 out/**/rast.wasm
 out/**/fluid.wasm
@@ -51,3 +41,5 @@ public/**/rast.wasm
 public/**/fluid.wasm
 public/**/rss.xml
 fly.toml
+
+Dockerfile

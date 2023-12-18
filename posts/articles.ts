@@ -1,6 +1,6 @@
 import { clone } from "lodash";
 
-type PartialPost = {
+export type PartialPost = {
   keywords: string[];
   image?: string;
   pubDate: string;

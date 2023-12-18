@@ -1,9 +1,9 @@
 import { startCase } from "lodash";
-import { FullPost, generateFullPosts } from "../posts/articles";
+import { generatePartialPosts, PartialPost } from "../posts/articles";
 import fs from "fs/promises";
 
 async function generateItems(
-  posts: Record<string, FullPost>
+  posts: Record<string, PartialPost>
 ): Promise<string[]> {
   const output = [];
 
@@ -46,7 +46,7 @@ function getMimeType(imagePath: string): string {
 }
 
 export default async function generateRSS(): Promise<string> {
-  const posts = await generateFullPosts();
+  const posts = generatePartialPosts();
 
   return `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

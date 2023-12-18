@@ -9,10 +9,33 @@ primary_region = "den"
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
-  min_machines_running = 0
+  min_machines_running = 3
   processes = ["app"]
+
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/"
 
 [[vm]]
   cpu_kind = "shared"
   cpus = 1
   memory_mb = 256
+
+[[statics]]
+  guest_path = "/usr/build/public/images"
+  url_prefix = "/images"
+
+[[statics]]
+  guest_path = "/usr/build/public/videos"
+  url_prefix = "/videos"
+
+[[statics]]
+  guest_path = "/usr/build/public/fonts"
+  url_prefix = "/fonts"
+
+[[statics]]
+  guest_path = "/usr/build/public/icons"
+  url_prefix = "/icons"
