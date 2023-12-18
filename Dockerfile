@@ -7,7 +7,7 @@ RUN cargo install wasm-pack
 
 COPY . .
 
-RUN ./build.sh --no-site --release
+RUN ./build.sh --no-site --release --clean
 
 FROM node:latest
 
@@ -18,4 +18,4 @@ COPY --from=wasm-build /usr/build/ /usr/build/
 
 RUN ./build.sh --no-wasm --release
 
-ENTRYPOINT ["yarn", "start"]
+ENTRYPOINT ["yarn", "start", "-p", "3000", "-H", "0.0.0.0"]
