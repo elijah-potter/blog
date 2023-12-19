@@ -39,3 +39,7 @@ primary_region = "den"
 [[statics]]
   guest_path = "/usr/build/public/icons"
   url_prefix = "/icons"
+
+[[statics]]
+  guest_path = "/usr/build/.next/static"
+  url_prefix = "/_next/static"
