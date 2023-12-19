@@ -14,6 +14,12 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  the_easiest_way_to_run_llms_locally: {
+    description: "It saved me enough time, I had some to share about it.",
+    keywords: ["arch", "linux", "llama", "chatgpt", "academia"],
+    pubDate: new Date(2023, 11, 18).toUTCString(),
+    image: "/images/llama.webp",
+  },
   do_not_type_your_notes: {
     description:
       "It didn't work for me, and if you reading this, it probably won't work for you either.",
