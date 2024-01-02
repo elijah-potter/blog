@@ -1,19 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import * as markov from "markov";
 import lowerCase from "lodash/lowerCase";
-import "katex/dist/katex.css";
-import "highlight.js/styles/nord.css";
 
 export async function getStaticProps() {
-  const { processMarkdownFile } = await import("../../src/processMarkdown");
   const fs = await import("fs/promises");
 
-  const renderedIntroduction = await processMarkdownFile(
-    "./posts/markov_introduction.md"
-  );
-  const renderedExplanation = await processMarkdownFile(
-    "./posts/markov_explanation.md"
-  );
   const initialTrainingText = await fs.readFile(
     "./public/markov/alice_in_wonderland.txt",
     "utf8"
@@ -21,20 +12,14 @@ export async function getStaticProps() {
 
   return {
     props: {
-      renderedIntroduction,
-      renderedExplanation,
       initialTrainingText,
     },
   };
 }
 
-export default function ({
-  renderedIntroduction,
-  renderedExplanation,
+export default function index({
   initialTrainingText,
 }: {
-  renderedIntroduction: string;
-  renderedExplanation: string;
   initialTrainingText: string;
 }) {
   const [trainingTextClamp, setTrainingTextClamp] = useState(5000);
@@ -124,14 +109,10 @@ export default function ({
 
   return (
     <>
-      <div
-        className="rmd"
-        dangerouslySetInnerHTML={{ __html: renderedIntroduction }}
-      />
       <div className="flex flex-col pb-10">
         <h2 className="w-full text-3xl pb-5">Training</h2>
         <textarea
-          className="text-lg w-full border border-white p-3"
+          className="text-lg w-full border border-gray-500 p-3"
           onChange={(e) => {
             setTrainingText(e.target.value);
           }}
@@ -143,7 +124,7 @@ export default function ({
         <div style={{ width: "60%" }} className="flex flex-col">
           <h2 className="w-full text-xl font-bold pb-2">Scratch</h2>
           <textarea
-            className="text-lg w-full border border-white p-3"
+            className="text-lg w-full border border-gray-500 p-3"
             onChange={(e) => setCompletingText(e.target.value)}
             rows={20}
             value={completingText}
@@ -178,10 +159,6 @@ export default function ({
           </ul>
         </div>
       </div>
-      <div
-        className="rmd"
-        dangerouslySetInnerHTML={{ __html: renderedExplanation }}
-      />
     </>
   );
 }

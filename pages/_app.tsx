@@ -6,11 +6,15 @@ import Link from "next/link";
 import { AppProps } from "next/app";
 import Image from "next/image";
 import "../global.css";
-import Script from "next/script";
+import { useRouter } from "next/router";
 
 type Theme = "light" | "dark" | "default";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  const showNavbar = router.query.navbar !== "no";
+
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof localStorage == "undefined") {
       return "default";
@@ -75,46 +79,48 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className="flex flex-row items-center">
         <Spacer />
         <div style={{ width: "clamp(50%, 768px, 90%)" }}>
-          <Navbar>
-            <div className="mobilehide">
-              <Image
-                src="/icons/profile.svg"
-                width="75"
-                height="100"
-                alt="Profile Picture"
-              />
-            </div>
-            <Link href="/">
-              <h1 className="text-2xl">Elijah Potter</h1>
-            </Link>
-            <Spacer />
-            <a href="/rss.xml">
-              <Image
-                width="25"
-                height="25"
-                alt="RSS Icon"
-                src="/icons/rss.svg"
-                style={{
-                  filter: "var(--themefilter)",
-                }}
-              />
-            </a>
-            <button
-              onClick={() => setTheme(dark ? "light" : "dark")}
-              className="mobilehide"
-            >
-              <Image
-                className="transition-all active:scale-75"
-                width="40"
-                height="40"
-                alt="Sun Icon to Enable/Disable Dark Mode"
-                src="/icons/sun.svg"
-                style={{
-                  filter: "var(--themefilter)",
-                }}
-              />
-            </button>
-          </Navbar>
+          {showNavbar && (
+            <Navbar>
+              <div className="mobilehide">
+                <Image
+                  src="/icons/profile.svg"
+                  width="75"
+                  height="100"
+                  alt="Profile Picture"
+                />
+              </div>
+              <Link href="/">
+                <h1 className="text-2xl">Elijah Potter</h1>
+              </Link>
+              <Spacer />
+              <a href="/rss.xml">
+                <Image
+                  width="25"
+                  height="25"
+                  alt="RSS Icon"
+                  src="/icons/rss.svg"
+                  style={{
+                    filter: "var(--themefilter)",
+                  }}
+                />
+              </a>
+              <button
+                onClick={() => setTheme(dark ? "light" : "dark")}
+                className="mobilehide"
+              >
+                <Image
+                  className="transition-all active:scale-75"
+                  width="40"
+                  height="40"
+                  alt="Sun Icon to Enable/Disable Dark Mode"
+                  src="/icons/sun.svg"
+                  style={{
+                    filter: "var(--themefilter)",
+                  }}
+                />
+              </button>
+            </Navbar>
+          )}
           <Component {...pageProps} dark={dark} />
         </div>
         <Spacer />

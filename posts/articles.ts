@@ -14,6 +14,43 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  markov_chains_are_the_original_language_models: {
+    description: "Back in my day, we used math for autocomplete.",
+    pubDate: new Date(2024, 0, 1).toUTCString(),
+    image: "/images/andrei_markov.jpg",
+    keywords: [
+      "linear algebra",
+      "linear",
+      "algebra",
+      "rust",
+      "mathematics",
+      "college",
+      "high school",
+      "artificial intelligence",
+      "autocomplete",
+      "llm",
+      "large language models",
+      "chatgpt",
+    ],
+  },
+  building_a_software_renderer_from_scratch: {
+    description:
+      "How I built a software renderer from scratch, and you can too.",
+    pubDate: new Date(2024, 0, 1).toUTCString(),
+    image: "/images/star_fox.png",
+    keywords: [
+      "computer graphics",
+      "computer",
+      "graphics",
+      "linear algebra",
+      "linear",
+      "algebra",
+      "rust",
+      "mathematics",
+      "college",
+      "high school",
+    ],
+  },
   the_easiest_way_to_run_llms_locally: {
     description: "It saved me enough time, I had some to share about it.",
     keywords: ["arch", "linux", "llama", "chatgpt", "academia"],
