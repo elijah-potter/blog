@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
   async redirects() {
     return [
@@ -12,6 +12,16 @@ module.exports = {
       {
         source: "/articles/on_iteration_and_lean_thinking",
         destination: "/articles/a_case_for_procrastination",
+        permanent: true,
+      },
+      {
+        source: "/renderer",
+        destination: "/articles/building_a_software_renderer_from_scratch",
+        permanent: true,
+      },
+      {
+        source: "/markov",
+        destination: "/articles/markov_chains_are_the_original_language_models",
         permanent: true,
       },
     ];

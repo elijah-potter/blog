@@ -1,3 +1,15 @@
+# Markov Chains
+
+Below is a demonstration of my implementation of auto-completion using Markov Chains.
+
+Though it is written in Rust and compiled to WebAssembly, it is not particularly efficient. To find out why, continue down the page to my detailed explanation of the implementation.
+
+## Controls
+
+You may use either "Choose Word" or your right arrow key [→] to let the system choose the next word. Alternatively, you can tap any of the [Possible Next Words] to do so yourself.
+
+<iframe iframe frameBorder="0" style="width: 100%; height: 1100px;" allowfullscreen src="/standalonemarkov?navbar=no"></iframe>
+
 # Explanation
 
 Markov chains, named after their inventor, Andrey Markov, are often used to model sequences of probabilistic events. That is, systems that cannot be modeled deterministically.
