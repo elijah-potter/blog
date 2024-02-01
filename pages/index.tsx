@@ -27,19 +27,9 @@ const iconLinks = [
   ],
   ["/nbody", "/icons/orbit.svg", "Yet another n-body simulation"],
   [
-    "/markov",
-    "/icons/matrix.svg",
-    "How Markov chains can be used in the real world",
-  ],
-  [
     "/art",
     "/icons/eye.svg",
     "Showcase and generate visually stunning creations, from any photo",
-  ],
-  [
-    "/renderer",
-    "/icons/mesh.svg",
-    "The story of building a software renderer from scratch",
   ],
   [
     "https://www.linkedin.com/in/elijahpotter",

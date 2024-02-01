@@ -76,9 +76,8 @@ export default function App({ Component, pageProps }: AppProps) {
         async
         src="//gc.zgo.at/count.js"
       ></script>
-      <div className="flex flex-row items-center">
-        <Spacer />
-        <div className="md:w-[800px]">
+      <div className="flex flex-row justify-center">
+        <div className="w-[300px] sm:w-full md:w-[800px] m-5">
           {showNavbar && (
             <Navbar>
               <div className="mobilehide">
@@ -123,7 +122,6 @@ export default function App({ Component, pageProps }: AppProps) {
           )}
           <Component {...pageProps} dark={dark} />
         </div>
-        <Spacer />
       </div>
     </>
   );

@@ -79,9 +79,9 @@ In the case of orthographic projection, this is easy.
 Because we have placed the camera on the origin, facing the positive $z$ axis, we can draw the coordinates of any given point directly to the screen.
 The only consideration necessary pertains to the points _behind_ the camera, which we can skip by checking the sign of the $z$ component.
 
-### Homogenous Coordinates
+### Homogeneous Coordinates
 
-This is where _homogenous coordinates_ come in.
+This is where _homogeneous coordinates_ come in.
 When working in euclidean space, we represent a given vector or coordinate using three components:
 
 $$
@@ -289,5 +289,5 @@ In this regard, it did not live up to my expectations.
 While I was allowed to explore some concepts, like orthogonality, it was not quite satisfactory.
 
 It was not for naught, though.
-I learnt a lot about the fields of math and computers integrate together, as well as how to more effectively convert mathematical concepts into a working prototype.
+I learned a lot about the fields of math and computers integrate together, as well as how to more effectively convert mathematical concepts into a working prototype.
 I want to continue doing projects like this, and cannot wait to re-take Linear Algebra when I go to college.
