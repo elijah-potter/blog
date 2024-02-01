@@ -1,4 +1,8 @@
-# How I Built Software Renderer from Scratch
+# How I Built Software Render Engine from Scratch
+
+> __Heads Up:__ This article is a republished (with some tweaks on spelling, grammar and layout) version of 
+> an article I wrote in my senior year of high school for my Linear Algebra class.
+> As such, the publish date is not quite correct.
 
 Computers are fantastic at processing, producing, and consuming data.
 But I've often found that the most difficult part of the pipeline is representing the data to a user.
@@ -13,19 +17,22 @@ I wanted to learn more about how this worked.
 ## Inspiration
 
 For a long time, I've been told that the most prevalent application of linear algebra was computer graphics.
-Before I even began my independent study, I knew I would eventually get around to doing something like this.
+Before I even began my study on linear algebra, I knew I wanted to get into software rendering.
 
 One of the big roadblocks was the amount of technical know-how I thought it required.
 You see, most 3D programs do all the number-crunching on the specially designed __graphics processing unit__ that is readily available on most modern computers.
-From my previous attempts to use GPUs, I knew setting up the pipeline is quite involved, with much math.
+From my previous attempts to use GPUs, I knew setting up the pipeline is quite involved.
+If I went that route again, I know I would likely spend most of my time dealing with vendor-specific APIs.
 
 Since I wanted to focus on the math, I postponed the project.
 That is, until it occurred to me that I could simply _not use the GPU._
 I know it might sound obvious, but it felt so freeing at the time.
 
-### What Are Software Renderers?
+### What Is a Software Render Engine?
 
-A software renderer is, as it may sound, a renderer that does all computation in software.
+A render engine is a piece of software that takes a set of triangles in space and projects them onto a 2D grid that can be displayed on a computer screen.
+
+A software render engine is, as it may sound, a render engine that does all computation in software.
 No specialized hardware is utilized __at all.__
 
 ## Demo
@@ -58,7 +65,7 @@ I suggest you read up on [Bresenham's line algorithm](https://en.wikipedia.org/w
 
 ### Projection
 
-With a perspective camera, projection happens from the world, towards the "sensor," which is a fixed point.
+With a perspective camera, projection happens from the world, towards the "sensor," which is a defined point.
 For the sake of argument, let's say that point is at the origin and the camera is facing the positive $z$ axis.
 
 We want all other points to be projected onto a plane $d$ distance away.
@@ -276,7 +283,7 @@ In the demo, you can toggle backface culling with `B`.
 
 ## Conclusion
 
-When I initially designed this project, I hoped it would allow me to apply some of the more advanced Linear Algebra concepts that I've learnt in the second trimester.
+When I initially designed this project, I hoped it would allow me to apply some of the more advanced linear algebra concepts that I've learnt in the second trimester.
 In this regard, it did not live up to my expectations.
 
 While I was allowed to explore some concepts, like orthogonality, it was not quite satisfactory.

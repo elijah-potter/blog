@@ -78,7 +78,7 @@ export default function App({ Component, pageProps }: AppProps) {
       ></script>
       <div className="flex flex-row items-center">
         <Spacer />
-        <div style={{ width: "clamp(50%, 768px, 90%)" }}>
+        <div className="md:w-[800px]">
           {showNavbar && (
             <Navbar>
               <div className="mobilehide">

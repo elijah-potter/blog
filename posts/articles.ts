@@ -16,7 +16,7 @@ export type FullPost = {
 const partialPosts: Record<string, PartialPost> = {
   markov_chains_are_the_original_language_models: {
     description: "Back in my day, we used math for autocomplete.",
-    pubDate: new Date(2024, 0, 1).toUTCString(),
+    pubDate: new Date(2024, 0, 31).toUTCString(),
     image: "/images/andrei_markov.jpg",
     keywords: [
       "linear algebra",
@@ -33,10 +33,10 @@ const partialPosts: Record<string, PartialPost> = {
       "chatgpt",
     ],
   },
-  building_a_software_renderer_from_scratch: {
+  building_a_software_render_engine_from_scratch: {
     description:
-      "How I built a software renderer from scratch, and you can too.",
-    pubDate: new Date(2024, 0, 1).toUTCString(),
+      "How I built a software render engine from scratch, and you can too.",
+    pubDate: new Date(2024, 0, 31).toUTCString(),
     image: "/images/star_fox.png",
     keywords: [
       "computer graphics",
@@ -61,6 +61,8 @@ const partialPosts: Record<string, PartialPost> = {
     description:
       "It didn't work for me, and if you reading this, it probably won't work for you either.",
     keywords: [
+      "arch",
+      "linux",
       "neovim",
       "nvim",
       "notes",

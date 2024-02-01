@@ -28,8 +28,14 @@ export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
               onClick={() => (location.href = target)}
             >
               <Link href={target} key={name}>
-                <h4 className="text-3xl py-4">{startCase(name)}</h4>
+                <h4 className="text-3xl py-2">{startCase(name)}</h4>
               </Link>
+              <p className="font-extrabold py-2">
+                Published on{" "}
+                {new Date(post.pubDate).toLocaleString(undefined, {
+                  dateStyle: "short",
+                })}
+              </p>
               <div
                 dangerouslySetInnerHTML={{ __html: post.description_html }}
               />

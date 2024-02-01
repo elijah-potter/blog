@@ -1,4 +1,4 @@
-# A Case for Procastination
+# A Case for Procrastination
 
 ![A linup of Model T Fords](/images/model_t.jpg)
 
@@ -77,7 +77,7 @@ Planning out the entire product release months in advance is problematic when th
 Interpreted programming languages are almost laughably pervasive. 
 Of the top ten most popular programming languages on the 2023 StackOverflow Developer survey, six were interpreted.
 That count does not include TypeScript, which can be used in a semi-interpreted manner.
-Interpreted language popularity is often chalked up to their ease-of-use, abstraction, and simple, english-like syntax.
+Interpreted language popularity is often chalked up to their ease-of-use, abstraction, and simple, English-like syntax.
 However, I believe there is an additional reason: they allow one to iterate much, much faster. 
 
 ## Micro-iterations
@@ -96,8 +96,8 @@ $$
 
 > This is __not__ an exact, representative equation, merely an abstraction to illustrate my point, based on personal experience.
 
-In other words, the total debugging time increases quadratically as the time it takes to _test_ a change to the program increases.
-Notice how, as the `time to test` increases, the actual amount of time `text editing` falls to a negligable ratio of the total.
+In other words, the total debugging time increases super-linearly as the time it takes to _test_ a change to the program increases.
+Notice how, as the `time to test` increases, the actual amount of time `text editing` falls to a negligible ratio of the total.
 I believe this comes from the fact that as compilation time increases, the amount of information gleaned per micro-iteration tends to decrease.
 
 ### JIT Compilation and Hot Reload

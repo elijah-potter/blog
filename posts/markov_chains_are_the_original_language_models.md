@@ -1,4 +1,57 @@
-# Markov Chains
+# Markov Chains are the Original Language Models
+
+![An old car interior](/images/old_car.webp)
+
+> __Heads Up:__ This article is a republished (with some tweaks on spelling, grammar and layout) version of 
+> an article I wrote in my senior year of high school for my Linear Algebra class.
+> As such, the publish date is not quite correct.
+
+## The AI Buzz is Boring Now
+
+I've come to the conclusion that there are four stages to the current AI hype cycle in an individual person's brain, at least as it pertains to large language models.
+At the very least, these are the stages I went through.
+
+### Stage One: Amazement
+
+"Wow! This is so cool! I can converse with a computer just like a real person!"
+
+This is where all the science fiction fantasies come to fruition.
+The possibilities seem endless.
+We can all kick back and relax now, right?
+
+### Stage Two: Frustration
+
+"Hmm... This isn't as effective as I originally thought."
+
+It seems like the brand-new technology is really only applicable to the kinds of work no one wants to do anyway.
+What it __is__ able to do doesn't provide too much value to you.
+It gets information and logic wrong often enough that it cannot be trusted for just about anything.
+
+### Stage Three: Confusion
+
+After stage two, you start to forget about it.
+But the hype is inescapable.
+Your friends bring it up.
+Your parents ask you about it when you go home for the holidays.
+Even your dentist tries to extol its virtues.
+
+Even if you moved on it, no one else did.
+Could that mean that you were wrong?
+
+### Stage Four: Boredom
+
+At this point the rate of new language models appearing has become faster than rate of new JavaScript frameworks (and just as annoying).
+You want to go back to your roots and start from scratch.
+You want the freedom of knowing the whole stack from start to finish.
+You don't want any of the ineffective magic.
+
+This is where I am right now.
+Want to go back to my roots.
+Some people work on old cars, even though they are less efficient.
+At the same time though, they are more fun to work on than new cars.
+I've decided to look into Markov chains.
+
+## Markov Chains
 
 Below is a demonstration of my implementation of auto-completion using Markov Chains.
 
@@ -138,7 +191,7 @@ $$
 
 There are two possible situations: the user is in the process of typing, or they have finished their last word.
 The latter is the easiest to implement.
-Scan the user's text, and isolate the last word. Perform a lookup on the wordlist to identify it's index. Create a new vector containing `0`s except for that index, which should contain a `1`.
+Scan the user's text, and isolate the last word. Perform a lookup on the word list to identify it's index. Create a new vector containing `0`s except for that index, which should contain a `1`.
 For example, if the last word was 'is',
 
 $$
