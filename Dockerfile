@@ -9,6 +9,10 @@ COPY . .
 
 RUN ./build.sh --no-site --release --clean
 
+# Clean up unneeded build artifacts
+WORKDIR /usr/build/crates/
+RUN find -maxdepth 2 -name target -exec rm -r {} +
+
 FROM node:slim as node-build
 
 RUN mkdir -p /usr/build/

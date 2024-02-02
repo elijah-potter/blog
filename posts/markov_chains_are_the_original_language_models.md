@@ -223,4 +223,3 @@ Unfortunately, there is an issue. All Markov chains are guaranteed to converge o
 #### My Solution
 
 Create a square diagonal matrix $R$ with a side length equal to the length of $\vec{s}$. Fill the diagonal elements with random numbers between $0$ and $1$. Then choose the word whose index corresponds with the highest value of $R\vec{s}$
-
