@@ -77,7 +77,7 @@ export default function App({ Component, pageProps }: AppProps) {
         src="//gc.zgo.at/count.js"
       ></script>
       <div className="flex flex-row justify-center">
-        <div className="w-[300px] sm:w-full md:w-[800px] m-5">
+        <div className="w-[370px] sm:w-full md:w-[800px] m-5">
           {showNavbar && (
             <Navbar>
               <div className="mobilehide">

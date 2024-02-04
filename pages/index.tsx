@@ -46,8 +46,6 @@ const iconLinks = [
 ];
 
 export default function index() {
-  const isMobile = useMobile();
-
   return (
     <>
       <Head>

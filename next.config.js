@@ -16,7 +16,7 @@ module.exports = {
       },
       {
         source: "/renderer",
-        destination: "/articles/building_a_software_renderer_from_scratch",
+        destination: "/articles/building_a_software_render_engine_from_scratch",
         permanent: true,
       },
       {
