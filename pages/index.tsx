@@ -11,6 +11,11 @@ const iconLinks = [
     "Articles on books, low-level computer science, and the concept of learning",
   ],
   [
+    "https://github.com/chilipepperhott/harper",
+    "/icons/harper.svg",
+    "Harper, a Grammar Checker for Developers",
+  ],
+  [
     "https://github.com/chilipepperhott/thrax-language",
     "/icons/thrax_logo.svg",
     "Thrax, a toy programming language I put together in late 2022 to learn about dynamic programming languages",
@@ -82,7 +87,7 @@ export default function index() {
       <div style={{ paddingTop: "100px" }} />
       <div className={"flex flex-col items-center"}>
         {iconLinks.map(([href, icon, alt]) => (
-          <a
+          <Link
             href={href}
             key={href}
             className="py-12 flex flex-row justify-between items-center w-11/12 hover:translate-x-5 transition-all"
@@ -98,7 +103,7 @@ export default function index() {
             />
             <Spacer></Spacer>
             <h2 className="text-lg md:text-2xl w-9/12 text-right">{alt}</h2>
-          </a>
+          </Link>
         ))}
       </div>
     </>

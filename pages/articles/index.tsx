@@ -23,23 +23,23 @@ export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
           const target = `/articles/${name}`;
 
           return (
-            <li
-              className="py-4 w-11/12 hover:translate-x-5 transition-all"
-              onClick={() => (location.href = target)}
-            >
-              <Link href={target} key={name}>
+            <Link href={target} key={name}>
+              <li
+                className="py-4 w-11/12 hover:translate-x-5 transition-all"
+                onClick={() => (location.href = target)}
+              >
                 <h4 className="text-3xl py-2">{startCase(name)}</h4>
-              </Link>
-              <p className="font-extrabold py-2">
-                Published on{" "}
-                {new Date(post.pubDate).toLocaleString(undefined, {
-                  dateStyle: "short",
-                })}
-              </p>
-              <div
-                dangerouslySetInnerHTML={{ __html: post.description_html }}
-              />
-            </li>
+                <p className="font-extrabold py-2">
+                  Published on{" "}
+                  {new Date(post.pubDate).toLocaleString(undefined, {
+                    dateStyle: "short",
+                  })}
+                </p>
+                <div
+                  dangerouslySetInnerHTML={{ __html: post.description_html }}
+                />
+              </li>
+            </Link>
           );
         })}
       </ul>
