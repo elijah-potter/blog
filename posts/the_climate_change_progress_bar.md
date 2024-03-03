@@ -4,7 +4,7 @@
 
 ## The Problem
 
-Over the last two years, I've noticed a growing distinction between two groups of people.
+Over the last couple years, I've noticed a growing distinction between two groups of people.
 
 On one hand, we have those who deny climate change is a problem.
 Some believe it is a [hoax](https://en.wikipedia.org/wiki/Climate_change_conspiracy_theory), while others merely don't grasp the gravity of the situation.

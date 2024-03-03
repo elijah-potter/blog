@@ -11,12 +11,12 @@ const iconLinks = [
     "Articles on books, low-level computer science, and the concept of learning",
   ],
   [
-    "https://github.com/chilipepperhott/harper",
+    "https://github.com/elijah-potter/harper",
     "/icons/harper.svg",
     "Harper, a Grammar Checker for Developers",
   ],
   [
-    "https://github.com/chilipepperhott/thrax-language",
+    "https://github.com/elijah-potter/thrax-language",
     "/icons/thrax_logo.svg",
     "Thrax, a toy programming language I put together in late 2022 to learn about dynamic programming languages",
   ],
@@ -41,7 +41,7 @@ const iconLinks = [
     "/icons/linkedin.svg",
     "LinkedIn and Resume",
   ],
-  ["https://github.com/chilipepperhott/", "/icons/github.svg", "GitHub"],
+  ["https://github.com/elijah-potter/", "/icons/github.svg", "GitHub"],
   // This is not ready for public consumption, it may never be
   // [
   //   "/fluid",

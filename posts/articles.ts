@@ -14,6 +14,12 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  stupid_simple_spell_check: {
+    description: "It almost feels wrong. Maybe it is.",
+    pubDate: new Date(2024, 2, 3).toUTCString(),
+    keywords: [],
+    image: "/images/antiques.webp",
+  },
   markov_chains_are_the_original_language_models: {
     description: "Back in my day, we used math for autocomplete.",
     pubDate: new Date(2024, 0, 31).toUTCString(),

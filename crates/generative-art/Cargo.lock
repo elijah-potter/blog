@@ -200,7 +200,7 @@ dependencies = [
 [[package]]
 name = "generative-art"
 version = "0.2.0"
-source = "git+https://github.com/chilipepperhott/generative-art#e64cd2254cad5226c8a45877cb91860c469548d6"
+source = "git+https://github.com/elijah-potter/generative-art#e64cd2254cad5226c8a45877cb91860c469548d6"
 dependencies = [
  "anyhow",
  "barium",

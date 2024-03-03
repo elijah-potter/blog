@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "My personal homepage.",
-  "repository": "git@github.com:chilipepperhott/blog.git",
+  "repository": "git@github.com:elijah-potter/blog.git",
   "author": "Elijah Potter <elijah.sirius@protonmail.com>",
   "private": true,
   "scripts": {

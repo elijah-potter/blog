@@ -126,7 +126,7 @@ I had four reasons for this:
 
 One main drawback of ASP.NET Core is the amount of boilerplate necessary.
 As a result, I am hesitant to show any clippings from the rewrite, as it takes a lot of space without adding much value to the discussion here.
-However, all the code for this project is open source and available on [GitHub](https://github.com/chilipepperhott/hope-meter).
+However, all the code for this project is open source and available on [GitHub](https://github.com/elijah-potter/hope-meter).
 
 Here is the gist of the overall process the re-written app goes through:
 

@@ -5,7 +5,7 @@
 The most valuable, unique aspect of software development is the speed at which we can iterate.
 Software projects that don't iterate quickly and frequently usually stagnate and fail, while projects that work with user feedback on an almost real-time basis are the most successful.
 I've noticed the difference personally, with my work at [Archytas Automation](https://archytasinc.com/).
-Most recently, I've read _The Lean Startup_, _The Art of Motorcycle Maintenance_ and _The Pragmatic Programmer_.
+Most recently, I've read _The Lean Startup_, _Zen and the Art of Motorcycle Maintenance_ and _The Pragmatic Programmer_.
 While each uses their own terminology, both go into depth on the depth on the topic of fast iteration cycles.
 
 ## Lean Manufacturing and Lean Thinking

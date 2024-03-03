@@ -14,7 +14,7 @@ The bot we are going to make now will simply respond to `!ping` with "Pong!".
 
 ## Template
 
-This tutorial is going to teach you how to set up a bot from scratch, but the easiest way to get started is by using my ![cargo generator template](https://github.com/chilipepperhott/discord-bot-template)
+This tutorial is going to teach you how to set up a bot from scratch, but the easiest way to get started is by using my ![cargo generator template](https://github.com/elijah-potter/discord-bot-template)
 
 ## Setup the Project
 

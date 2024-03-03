@@ -2,7 +2,7 @@
 
 Below you'll find a small interface for some generative art algorithms that I've made.
 
-You can find most of the source code in [this repository.](https://github.com/chilipepperhott/generative-art)
+You can find most of the source code in [this repository.](https://github.com/elijah-potter/generative-art)
 
 Note that this is a very old project. I learned a lot from it, but be warned that it isn't very performant.
 

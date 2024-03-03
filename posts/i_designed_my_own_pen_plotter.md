@@ -1,6 +1,6 @@
 # How I Designed (and built) My Own Pen Plotter
 
-For the last few months, after reading Preslav Rachev's book [Generative Art in Go](https://p5v.gumroad.com/l/generative-art-in-golang), I have been playing around with writing algorithms that create interesting graphics. I eventually ended up building a [modular canvas library](https://github.com/chilipepperhott/denim) for Rust to make that easier to do, for me and other people.
+For the last few months, after reading Preslav Rachev's book [Generative Art in Go](https://p5v.gumroad.com/l/generative-art-in-golang), I have been playing around with writing algorithms that create interesting graphics. I eventually ended up building a [modular canvas library](https://github.com/elijah-potter/denim) for Rust to make that easier to do, for me and other people.
 
 After making a few algorithms and posting them to the web, I started looking around for more inspiration. I happened upon a video with this pen plotter:
 
@@ -82,7 +82,7 @@ That's it. It's important that the time it takes for each motor to reach it's de
 
 The laptop is doing all the math.
 
-I am used my canvas library [Denim](https://github.com/chilipepperhott/denim) to do all the virtual drawing. I just added a renderer that:
+I am used my canvas library [Denim](https://github.com/elijah-potter/denim) to do all the virtual drawing. I just added a renderer that:
 
 1. Converts all points to a sequence of belt-lengths
 1. Converts belt-lengths to sequence of motor movements
