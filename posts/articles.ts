@@ -16,7 +16,7 @@ export type FullPost = {
 const partialPosts: Record<string, PartialPost> = {
   stupid_simple_spell_check: {
     description: "It almost feels wrong. Maybe it is.",
-    pubDate: new Date(2024, 2, 3).toUTCString(),
+    pubDate: new Date(2024, 2, 4).toUTCString(),
     keywords: [],
     image: "/images/antiques.webp",
   },

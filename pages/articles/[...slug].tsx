@@ -6,7 +6,7 @@ import {
   generateFullPosts,
 } from "../../posts/articles";
 import "katex/dist/katex.css";
-import "highlight.js/styles/nord.css";
+import "highlight.js/styles/hybrid.css";
 import { startCase } from "lodash";
 
 export async function getStaticProps() {

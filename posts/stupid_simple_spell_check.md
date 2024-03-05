@@ -43,14 +43,14 @@ Grammarly is a great product, just not for me.
 
 ## The Algorithm
 
-Now that I've thoroughly explained my reasoning for implementing a new grammar checker (one that I'm calling [Harper](https://harper.elijahpotter.dev)), I'd like to recount 
+Now that I've thoroughly explained my reasoning for implementing a new grammar checker (one that I'm calling [Harper](https://github.com/elijah-potter/harper)), I'd like to recount 
 my first, admittedly naive, attempt a spellchecking.
 
 The first idea we need to get a grip on is _Levenshtein edit distance._
 In essence, edit distance is the least number of single-character edits (insertions, deletions or replacements) necessary to turn one word into another.
 For example, the edit distance between "cat" and "bat" is one; the only edit involves replacing the "c" with a "b".
 
-Similarly, the edit distance between "kitten" and "sitting" is one: remove the "g", replace the second "i" with an "e" and replace the "s" with a "k".
+Similarly, the edit distance between "kitten" and "sitting" is three: remove the "g", replace the second "i" with an "e" and replace the "s" with a "k".
 For this naive spellchecking, we aren't too concerned with the exact edits (atomic errors) that occur in a given misspelling, only the magnitude of the error.
 
 From a high level view here's how the algorithm is going to work:
@@ -80,27 +80,27 @@ To check if a given word is within the list, we can place the list into a hash s
 and grab it's contents.
 
 ```rust 
-    let words: Vec<String> = vec!["into", "the", "a", "cat", "tree", "jumped"]
-        .into_iter()
-        .map(|s| s.to_string())
-        .collect();
+let words: Vec<String> = vec!["into", "the", "a", "cat", "tree", "jumped"]
+    .into_iter()
+    .map(|s| s.to_string())
+    .collect();
 
-    let word_set: HashSet<String> = words.iter().cloned().collect();
+let word_set: HashSet<String> = words.iter().cloned().collect();
 
-    let word = "thw";
-    let word_chars: Vec<_> = word.chars().collect();
+let word = "thw";
+let word_chars: Vec<_> = word.chars().collect();
 
-    if word_set.contains(word) {
-        println!("It is a valid English word!");
-        return;
-    }
+if word_set.contains(word) {
+    println!("It is a valid English word!");
+    return;
+}
 
-    println!("Are you sure you meant to spell \"{}\" that way?", word);
+println!("Are you sure you meant to spell \"{}\" that way?", word);
 ```
 
 ### The Wagner-Fischer Algorithm
 
-Now the we know our word is actually misspelled, we can move on to finding the correct spelling.
+Now that we know our word is actually misspelled, we can move on to finding the correct spelling.
 We need to find the edit distance between the misspelled word and all the words in our set.
 
 To do this, we will be using the [Wagner-Fischer](https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm) algorithm.
@@ -160,7 +160,7 @@ This works pretty well.
 There are a number of optimizations we could apply to this function alone.
 I'll leave that as a problem for the reader, since they aren't particularly relevant to the meat of the larger algorithm.
 
-### Step 2.
+### Steps 2 + 3
 
 Now that we can determine the edit distance between two words, we can perform a brute-force search.
 In this short example, we're going to use `sort_by_key` to do this, since our data set is so small.
@@ -186,15 +186,15 @@ suggestions.sort_by_key(|(_, d)| *d);
 
 println!("Possible alternatives: ");
 
-suggestions.iter().for_each(|(s, _)| println!("{}", s));
+suggestions.iter().for_each(|(s, _)| println!("- {}", s));
 ```
 
 If we run the whole program again, we get an output something like:
 
-```
+```output
 Are you sure you meant to spell "thw" that way?
 Possible alternatives:
-the
+- the
 ```
 
 That looks pretty good to me!
