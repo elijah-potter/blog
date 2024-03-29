@@ -19,7 +19,7 @@ Yet, the life is used to living here.
 
 The rain comes in bursts, punctuating vast stretches of time.
 It comes as the result of cyclones, when their wight slams into West Australia.
-Makes sense. 
+Makes sense.
 It seems like only the force of God could get water there.
 
 ![A photo of Lake Gregory taken from space](/images/lake_gregory_nasa.jpg "A photo of Lake Gregory taken from space. Credit NASA")
@@ -30,14 +30,14 @@ The cycle forces the air back Northward along the surface of the Earth.
 There isn't anything wet on the way, so it stays dry.
 
 The sand is warm in the day, and downright frigid at night.
-No moisture means no clouds. 
+No moisture means no clouds.
 No clouds mean no shade in the day, and no insulating blanket at night.
 
 ![A big rock in the Australian outback](/images/australia_rock.jpg "It's just a big rock.")
 
 ## Changing Climate
 
-It is difficult to predict what the precise changes will be to the area surrounding Lake Gregory. 
+It is difficult to predict what the precise changes will be to the area surrounding Lake Gregory.
 It is possible that changes in both ocean and atmospheric temperatures will change the way air flows over Australia.
 
 In one possible scenario, the amount of moisture increases, either due to more frequent and more intense cycles, or due to a redirection of steady wind from a moist area (like the North).
@@ -50,30 +50,30 @@ With rising temperatures, the thermal differential between the East and West of 
 For Australia, this means more flooding and more extreme droughts (depending on the cycle).
 The West coast of Australia is significantly less affected, mostly due to the large swath of land sitting in the way, but it still massively impacted.
 
-## Quick-Stats! 
+## Quick-Stats!
 
 ### Average Temperatures
 
-| Time | Temperature |
-| ---- | ----: |
-| Winter | ~68° F | 
-| Spring | ~80° F | 
-| Summer | ~86° F | 
-| Fall | ~80° F | 
+| Time   | Temperature |
+| ------ | ----------: |
+| Winter |      ~68° F |
+| Spring |      ~80° F |
+| Summer |      ~86° F |
+| Fall   |      ~80° F |
 
 ### Misc. Stats
 
-| Name | Value |
-| ---- | ----: |
-| Surrounding Sand Albedo | ~40% | 
-| Altitude | 200 m - 656 ft | 
-| Latitude | 20° South | 
+| Name                    |          Value |
+| ----------------------- | -------------: |
+| Surrounding Sand Albedo |           ~40% |
+| Altitude                | 200 m - 656 ft |
+| Latitude                |      20° South |
 
 ## Climate Modeling + Fluid Dynamics
 
 I wanted to look into the details of exactly how fluid simulations work.
 I spent some time looking around for good resources on the topic and found [Real-Time Fluid Dynamics for Games](https://www.researchgate.net/publication/2560062_Real-Time_Fluid_Dynamics_for_Games),
-a research paper that covers, as the name suggests, how to build out a fluid simulation. 
+a research paper that covers, as the name suggests, how to build out a fluid simulation.
 
 There are generally two categories of fluid simulation: particle based, or vector-field based.
 
@@ -95,5 +95,5 @@ There are generally three main steps to the method described in the paper: diffu
 #### Diffusion
 
 Over time, the attributes of a fluid tend to equalize over time and space.
-Temperature is a good example. 
+Temperature is a good example.
 Any single source of heat will eventually fill a room, circulating with the cold air until the equalizes.

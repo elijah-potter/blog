@@ -11,20 +11,19 @@ A large language model (or LLM) is a statistical model capable of "predicting" a
 Essentially, it is a computer program capable of filling in the blank.
 If you let it predict the next word, then feed the result back in, you can get some pretty human-looking text.
 
-
 ## Let's Be Clear
 
 I hold a lot of skepticism on the practical applications of LLMs as a tool.
 As a blanket rule, I never use LLMs or any similar technology in my education.
 
-I know some people ask LLMs question like "explain the fundamental theorem of calculus to me like I'm five."
+I know some people ask LLMs questions like "explain the fundamental theorem of calculus to me like I'm five."
 While they may get good results for questions, I do not want to lean on them as a crutch.
 College is not only an opportunity to learn the raw material, but also an opportunity to learn how to learn.
 If we know anything about LLMs, it's that its ability to answer complex questions break down as you move to more specialized classes.
 
 Which is all to say: I did not investigate this with the intention of using it as a tool, I just wanted to play around.
 
-## My Circumstance 
+## My Circumstance
 
 I use [arch, btw.](https://archlinux.org/)
 While I enjoy the level of control it provides, I don't think it's for everybody.

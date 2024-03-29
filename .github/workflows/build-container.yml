@@ -1,13 +1,13 @@
 name: Build Container Image
-on: [ push, pull_request ]
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: redhat-actions/buildah-build@v2
-      with:
-        image: site
-        containerfiles: |
-          Dockerfile
+      - uses: actions/checkout@v2
+      - uses: redhat-actions/buildah-build@v2
+        with:
+          image: site
+          containerfiles: |
+            Dockerfile

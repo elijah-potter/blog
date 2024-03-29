@@ -17,10 +17,10 @@ export default function () {
     () =>
       delta[0] < -1
         ? Array.from({ length: width }, (_, index) =>
-            Math.max(Math.floor(index - delta[0]), index)
+            Math.max(Math.floor(index - delta[0]), index),
           ).map(cMaxVisit)
         : [],
-    [delta]
+    [delta],
   );
 
   console.log(delta);
@@ -64,7 +64,7 @@ function render(
   ctx: CanvasRenderingContext2D,
   highestPoints: number[],
   yScale: number,
-  delta: Vector
+  delta: Vector,
 ) {
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   ctx.fillStyle = "#FFF";
@@ -77,7 +77,7 @@ function render(
       (i / highestPoints.length) * ctx.canvas.width,
       (value / yScale) * ctx.canvas.height,
       1,
-      1
+      1,
     );
   }
 

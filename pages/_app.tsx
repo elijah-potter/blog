@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
       root.style.setProperty("--fg", dark ? "var(--white)" : "var(--black)");
       root.style.setProperty(
         "--lc",
-        dark ? "var(--grey)" : "var(--light-grey)"
+        dark ? "var(--grey)" : "var(--light-grey)",
       );
       root.style.setProperty("--themefilter", dark ? "invert()" : "none");
 

@@ -17,7 +17,7 @@ export function calculateStep(
   bodies: Body[],
   g: number,
   width: number,
-  height: number
+  height: number,
 ) {
   const computed = [];
 

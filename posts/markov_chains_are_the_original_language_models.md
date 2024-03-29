@@ -2,7 +2,7 @@
 
 ![An old car interior](/images/old_car.webp)
 
-> __Heads Up:__ This article is a republished (with some tweaks on spelling, grammar and layout) version of 
+> **Heads Up:** This article is a republished (with some tweaks on spelling, grammar and layout) version of
 > an article I wrote in my senior year of high school for my Linear Algebra class.
 > As such, the publish date is not quite correct.
 
@@ -24,7 +24,7 @@ We can all kick back and relax now, right?
 "Hmm... This isn't as effective as I originally thought."
 
 It seems like the brand-new technology is really only applicable to the kinds of work no one wants to do anyway.
-What it __is__ able to do doesn't provide too much value to you.
+What it **is** able to do doesn't provide too much value to you.
 It gets information and logic wrong often enough that it cannot be trusted for just about anything.
 
 ### Stage Three: Confusion
@@ -135,20 +135,20 @@ It is trivial to build a dictionary from sample text. For the purposes of the ex
 | 1     | fruit   |
 | 2     | passion |
 | 3     | cheese  |
-| 4     | not  |
-| 5     | is  |
+| 4     | not     |
+| 5     | is      |
 
 ### Building the Transition Matrix
 
 To build our transition matrix, we need to count all the transitions that occur between possible words in our dictionary.
-In the interest of performance, my implementation converts the dictionary into a `HashMap<String, usize>`. 
+In the interest of performance, my implementation converts the dictionary into a `HashMap<String, usize>`.
 Next, I go through the training text and match each word to it's index in the dictionary, effectively transforming the `String` into a `Vec<usize>`.
 For example, the phrase, "passion fruit is not orange, cheese is orange," becomes, `[ 2, 1, 5, 4, 0, 3, 5, 0 ]`.
-Next, the implementation iterates through each element in this vector, counting each transition. The counts are stored in another `HashMap` in the interest of performance, but is eventually converted into a matrix $C$. Each row is the output word's index, and the column is the input word's index. 
+Next, the implementation iterates through each element in this vector, counting each transition. The counts are stored in another `HashMap` in the interest of performance, but is eventually converted into a matrix $C$. Each row is the output word's index, and the column is the input word's index.
 For example, the transition `"fruit" (index 1) -> "is" (index 5)` occurs exactly once, so we record `1` in column 1, row 5.
 
 $$
-C = \begin{bmatrix} 
+C = \begin{bmatrix}
     0 & 0 & 0 & 0 & 1 & 1 \\
     0 & 0 & 1 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0 & 0 & 0 \\
@@ -163,7 +163,7 @@ Not a very interesting matrix, is it?
 Each element needs to be converted into a probability. Take the sum of each column:
 
 $$
-\begin{bmatrix} 
+\begin{bmatrix}
     1 & 1 & 1 & 1 & 1 & 2
 \end{bmatrix}
 $$
@@ -171,7 +171,7 @@ $$
 Create a diagonal matrix $D$ composed of $\frac{1}{\text{column sum}}$
 
 $$
-C = \begin{bmatrix} 
+C = \begin{bmatrix}
     0 & 0 & 0 & 0 & 1 & 0.5 \\
     0 & 0 & 1 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0 & 0 & 0 \\
@@ -203,7 +203,7 @@ $$
 Run it through our transition matrix:
 
 $$
-M\vec{s} = \begin{bmatrix} 
+M\vec{s} = \begin{bmatrix}
   0.5 & 0 & 0 & 0 & 0.5 & 0
 \end{bmatrix}
 $$

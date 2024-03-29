@@ -19,7 +19,7 @@ I want to look back at what worked, why, and why it doesn't work anymore.
 
 In his books, Cal Newport has recommended to students taking non-technical courses to type their notes.
 This is for a number of reasons.
-For one, typing is pretty much universally faster than handwriting, to the point that [some believe](https://radiolab.org/podcast/wubi-effect) it was a major economic advantage to cultures who spoke languages with smaller character sets. 
+For one, typing is pretty much universally faster than handwriting, to the point that [some believe](https://radiolab.org/podcast/wubi-effect) it was a major economic advantage to cultures who spoke languages with smaller character sets.
 If I can write down more information, I will have a better record of the lecture, and thus an easier time studying later.
 If I was taking history, creative writing, psychology, or business, and I intentionally paraphrase all my notes, I can paste them into my essay outline and use it as a framework.
 Further, getting good at $\LaTeX$ and edit-focused text editors like [NeoVim](https://neovim.io/), I found I could decimate my revision time.
@@ -35,8 +35,8 @@ This is true for humanities classes that are working primarily in English.
 This is _not_ true for technical classes that are working primarily in _math notation._
 
 Pretty much the only way to reliably record mathematical expressions is via $\LaTeX$.
-Sound simple? 
-__No.__
+Sound simple?
+**No.**
 
 ### An Example
 
@@ -70,7 +70,7 @@ There are two separate problems here.
 1. The $\LaTeX$ is not quite self describing.
    In order to get a good grasp of what it represents, I have to render it out to either HTML or in a `pdf`.
 1. It is extraordinarily difficult to write and revise.
-   Even with snippets and a good grasp of the keyboard, even minor edits are laborious. 
+   Even with snippets and a good grasp of the keyboard, even minor edits are laborious.
 
 The net result: lectures become manic, unsuccessful attempt at replicating the chalkboard in $\LaTeX$, not an actual learning experience.
 
@@ -108,7 +108,6 @@ The above is what I am intending to write in my mind.
 But given that I am working in unformatted text, it ends up looking like:
 
 ```markdown
-
 # Chinese History
 
 ## Warring States Period
@@ -143,12 +142,12 @@ By associating the physical location of information in my notes with the informa
 ## Final Thoughts
 
 Do I regret not switching to handwritten notes sooner?
-__No.__
+**No.**
 Will I continue typing my notes in humanities classes?
-__Yes.__
+**Yes.**
 
-I know I phrased the title is a primarily instructive way, but there is only one thing I want you to remember: taking notes is an ultimately personal process. 
-__Do what works for you.__
+I know I phrased the title is a primarily instructive way, but there is only one thing I want you to remember: taking notes is an ultimately personal process.
+**Do what works for you.**
 Similarly, I am just now entering what feels like a new world possibility.
 It may _not_ end up going as well as I theorize.
 Either way, you will hear from me again.

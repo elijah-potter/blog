@@ -1,6 +1,6 @@
 # Quantifying Hope on a Global Scale
 
-___Hope___ is a somewhat nebulous word.
+**_Hope_** is a somewhat nebulous word.
 
 For some, it is an expectation of what the future will be.
 For others, it is a goal for what the future _should_ be.
@@ -8,21 +8,21 @@ The word itself means something different to each person.
 
 Most generally, though, hope describes how one perceives the momentum of the world.
 Do things seem to be generally getting better, or do they generally seem to be getting worse?
-Personally, I think things are rapidly getting __much, much__ better.
+Personally, I think things are rapidly getting **much, much** better.
 
 ## We _Should_ Be Hopeful
 
 First, let's define our metric.
-The __world__ is better off when __people__ are better off.
+The **world** is better off when **people** are better off.
 The more people who are able to live long, meaningful lives, the better.
 
 In his posthumously published book, [_Factfulness: Ten Reasons We're Wrong About the World – and Why Things Are Better Than You Think_](https://www.amazon.com/Factfulness-Reasons-World-Things-Better/dp/1250123828/), Hans Rosling made the case that the quality and length of human life has been trending upward for more than a century.
 Life expectancy at birth has [more than doubled](https://ourworldindata.org/life-expectancy) in the last century alone.
 The portion of the global population living in poverty is lower than [any point in history](https://ourworldindata.org/poverty).
 
-> __Side note:__ a _great_ resource to learn about this is Our World In Data's [comprehensive, yet approachable report](https://ourworldindata.org/extreme-poverty-in-brief).
+> **Side note:** a _great_ resource to learn about this is Our World In Data's [comprehensive, yet approachable report](https://ourworldindata.org/extreme-poverty-in-brief).
 
-All of this progress does __not__ mean we should just stop here and say the work is "done."
+All of this progress does **not** mean we should just stop here and say the work is "done."
 However, I believe that often the best approaches to solving world-scale problems (like poverty) start by first looking at the solutions that already work.
 
 In the book, Rosling tells how he is often described as an "optimist."
@@ -34,7 +34,7 @@ While I don't even approach his qualifications, I would similarly describe my wo
 ## The Solutions That Exist
 
 I've spoken on the topic of solution-focused thinking [before](/articles/the_climate_change_progress_bar), but I think it warrants revisiting.
-I don't want this to be the focus of my writing today, but I do want to provide a brief example of the kind of solutions that exist __today__ that are having profound, real-world impacts.
+I don't want this to be the focus of my writing today, but I do want to provide a brief example of the kind of solutions that exist **today** that are having profound, real-world impacts.
 
 One of the critical environmental problems is related to recycling.
 Every year, [18 million tonnes](https://ourworldindata.org/how-much-plastic-waste-ends-up-in-the-ocean) of trash is leaked to the environment, including our oceans and rivers.
@@ -42,7 +42,7 @@ According to [AMP Robotics](https://www.amprobotics.com/) founder Matanya Horowi
 Depending on market conditions, one ton of recyclable material can be worth up to \$100.
 The issue: the cost of sorting the material into a usable form is often also around \$100, most of which is spent on human labor.
 Since the cost of processing the material to _prepare_ to sell is about the same as it's sold price, there is little economic incentive to do much recycling.
-In the case of plastics recycling, the issue is __not__ that people don't recycle enough.
+In the case of plastics recycling, the issue is **not** that people don't recycle enough.
 It is that the cost of recycling the resulting material is too high.
 
 So what does AMP Robotics do?
@@ -55,7 +55,7 @@ In reality, however, the limiting factor is not on the individual, but the waste
 
 ## Quantifying Hope
 
-I've established that the world __is__ becoming a better place to live for almost everybody, all the time.
+I've established that the world **is** becoming a better place to live for almost everybody, all the time.
 I've also made clear that this positive change is the result of solutions that get reported on (by the news) less frequently than the problems they solve.
 With that done, I think it is time to return to the topic of hope.
 
@@ -65,7 +65,7 @@ The plan: I would first quantify how hopeful a given news article was, then work
 
 ### Web Scraping
 
-The first step was to write a system that could retrieve recent, important news articles reliably. 
+The first step was to write a system that could retrieve recent, important news articles reliably.
 There is already infrastructure on most news websites that makes this pretty easy: RSS.
 By regularly iterating through a list of RSS feeds, we can get pretty good news coverage for most of the world.
 Additionally, news organizations prioritize the content of their RSS based on what _they_ think is important.
@@ -167,7 +167,7 @@ First, I threw together a quick website using [Svelte](https://svelte.dev/) and 
 ![A screenshot of my website prototype](/images/hope_screenshot.webp)
 
 I ran the website for a couple of days and had friends, family, and peers test it out to get feedback on the concept.
- 
+
 ### Feedback
 
 The people I spoke to had a lot to say on the dial itself.
@@ -187,7 +187,7 @@ I was pushed to look into what a physical hope meter would look like, so I sketc
 ### Moving To the Real World
 
 I got hooked on the physical dial.
-I wanted something tangible that I could put somewhere. 
+I wanted something tangible that I could put somewhere.
 Something whose physical weight would give an amount of substance to the thing it measured.
 
 I decided to keep riffing on the sketches I had drawn out.
@@ -195,7 +195,7 @@ I loaded the web server I used for the original site onto a Raspberry Pi 3, plan
 
 The only material I needed to buy was a [FS5103R continuous rotation servo](https://www.adafruit.com/product/154).
 I already had access to everything else.
-While I was waiting on that part to arrive, I modeled out what the physical device *could* look like.
+While I was waiting on that part to arrive, I modeled out what the physical device _could_ look like.
 Initially, I imagined something like this:
 
 ![A Blender render of the initial Hope meter 3D model](/images/hope_model.jpg)
@@ -211,11 +211,10 @@ That isn't even to mention there isn't a single hole for a power cord in this mo
 In the final model (pictured above), I included facial expressions to differentiate hope and despair on the dial.
 I also completely removed the enclosure, instead planning on directly attaching the Raspberry Pi and servo to the back of the dial.
 
-
 #### The Print
 
 With the model complete, I went to my local makerspace, and printed it out.
-How did it go? 
+How did it go?
 Not so well.
 
 ![My first (failed) 3D print](/images/failed_hope_print.webp)
@@ -256,10 +255,10 @@ To that end, I found this quite successful.
 I now have a better understanding of what kind of server and database architecture I want to use.
 I also now know what kinds of formats people are more likely to see global metrics like hope or climate progress (home screen widgets and push notifications are at the top of the list).
 
-> __Note to the Grandey Honors Program:__
+> **Note to the Grandey Honors Program:**
 > I know you want a formal self assessment.
 > This is it.
 > I believe I deserve a "T".
 > My reflection and portfolio are quite polished and convey the story of building my Hope-o-meter relatively well.
-> I demonstrably went outside my comfort zone and attempted to solve (what I perceive to be) a ___real world problem___.
+> I demonstrably went outside my comfort zone and attempted to solve (what I perceive to be) a **_real world problem_**.
 > My work should stand on its own, so I feel no further need to justify a "T".

@@ -14,10 +14,39 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  the_optimal_workspace: {
+    description: "My thoughts on how to live the most effective life possible.",
+    pubDate: new Date(2024, 2, 29).toUTCString(),
+    keywords: [
+      "Cal Newport",
+      "Deep Work",
+      "sleep",
+      "focus",
+      "self",
+      "workspaces",
+      "book",
+      "Why We Sleep",
+      "Matthew Walker",
+    ],
+    image: "/images/prod_map.png",
+  },
   stupid_simple_spell_check: {
     description: "It almost feels wrong. Maybe it is.",
     pubDate: new Date(2024, 2, 4).toUTCString(),
-    keywords: [],
+    keywords: [
+      "harper",
+      "grammarly",
+      "languagetool",
+      "grammar",
+      "neovim",
+      "rust",
+      "math",
+      "how",
+      "does",
+      "spellcheck",
+      "work",
+      "better",
+    ],
     image: "/images/antiques.webp",
   },
   markov_chains_are_the_original_language_models: {

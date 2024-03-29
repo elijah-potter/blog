@@ -1,8 +1,13 @@
-app = "potterblog"
-primary_region = "den"
+# fly.toml app configuration file generated for potterblog-preview on 2024-03-14T09:39:03-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'potterblog'
+primary_region = 'den'
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [http_service]
   internal_port = 3000
@@ -10,36 +15,34 @@ primary_region = "den"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 1
-  processes = ["app"]
+  processes = ['app']
 
 [[http_service.checks]]
-  grace_period = "10s"
-  interval = "30s"
-  method = "GET"
-  timeout = "5s"
-  path = "/"
+    interval = '30s'
+    timeout = '5s'
+    grace_period = '10s'
+    method = 'GET'
+    path = '/'
 
 [[vm]]
-  cpu_kind = "shared"
-  cpus = 1
-  memory_mb = 256
+  size = 'shared-cpu-1x'
 
 [[statics]]
-  guest_path = "/usr/build/public/images"
-  url_prefix = "/images"
+  guest_path = '/usr/build/public/images'
+  url_prefix = '/images'
 
 [[statics]]
-  guest_path = "/usr/build/public/videos"
-  url_prefix = "/videos"
+  guest_path = '/usr/build/public/videos'
+  url_prefix = '/videos'
 
 [[statics]]
-  guest_path = "/usr/build/public/fonts"
-  url_prefix = "/fonts"
+  guest_path = '/usr/build/public/fonts'
+  url_prefix = '/fonts'
 
 [[statics]]
-  guest_path = "/usr/build/public/icons"
-  url_prefix = "/icons"
+  guest_path = '/usr/build/public/icons'
+  url_prefix = '/icons'
 
 [[statics]]
-  guest_path = "/usr/build/.next/static"
-  url_prefix = "/_next/static"
+  guest_path = '/usr/build/.next/static'
+  url_prefix = '/_next/static'

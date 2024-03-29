@@ -18,13 +18,13 @@ In reality, the climate problem is _huge._
 It _will_ result in massive habitat losses for human life and wildlife.
 In all likelihood, hundreds of millions of people will lose the ability to farm their land, either from drought, floods, lost soil fertility or wildfires.
 
-> __Side Note:__ If you want to learn more about human migration in the 21st century, I highly recommend the documentary _Climate Refugees_.
+> **Side Note:** If you want to learn more about human migration in the 21st century, I highly recommend the documentary _Climate Refugees_.
 
 The point of this article is _not_ to convince you that climate change is a real problem that has real solutions.
 At this point, I don't need to tell you that the climate problem is actively being solved by some of the most courageous, influential, intelligent minds in the world.
-There _are_ solutions out there that are having a [__huge__ impact](https://www.ted.com/talks/al_gore_the_case_for_optimism_on_climate_change), but people don't have a straightforward way to discover them.
+There _are_ solutions out there that are having a [**huge** impact](https://www.ted.com/talks/al_gore_the_case_for_optimism_on_climate_change), but people don't have a straightforward way to discover them.
 
-The problem __I__ want to solve is this: there is no single metric or dashboard to see the progress of climate change and its solutions.
+The problem **I** want to solve is this: there is no single metric or dashboard to see the progress of climate change and its solutions.
 
 ## What's the Pitch?
 
@@ -55,7 +55,7 @@ The above graph shows where the planet is on several planetary boundaries.
 As you can see, we've exceeded most of them.
 
 While planetary boundaries are a great way of communicating where we are on a bunch of environmental metrics, it falls short of our goal in a few key ways.
-For one, it doesn't specialize in climate change. 
+For one, it doesn't specialize in climate change.
 While it _does_ show current carbon dioxide levels, it doesn't include any other greenhouse gases, or how deepy they are effecting global temperatures.
 Finally, it is only updated annually.
 The Climate Change Progress Bar's key trait is that it is real-time, so people can see how we stand in the climate battle _right now._
@@ -93,4 +93,4 @@ This post, as well as all other posts related to this project, exist to serve tw
 
 In other words, I want to hear from you!
 If you have any ideas to how we can make the Climate Change Progress bar better, let us know by emailing [feedback@elijahpotter.dev](mailto:feedback@elijahpotter.dev)
-If there are __better__ metrics we should be including in our index, tell us!
+If there are **better** metrics we should be including in our index, tell us!

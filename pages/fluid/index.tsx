@@ -7,10 +7,10 @@ export async function getStaticProps() {
   const { processMarkdownFile } = await import("../../src/processMarkdown");
 
   const renderedIntroduction = await processMarkdownFile(
-    "./posts/lake_gregory_introduction.md"
+    "./posts/lake_gregory_introduction.md",
   );
   const renderedExplanation = await processMarkdownFile(
-    "./posts/lake_gregory_explanation.md"
+    "./posts/lake_gregory_explanation.md",
   );
 
   return {

@@ -6,7 +6,7 @@
   --white: white;
   --black: #151515;
   --grey: #262626;
-  --light-grey: #DDD;
+  --light-grey: #ddd;
   --bg: var(--white);
   --fg: var(--black);
   --lc: var(--grey);
@@ -27,7 +27,6 @@ a {
   color: var(--fg);
 }
 
-
 textarea {
   background-color: var(--bg);
   color: var(--fg);
@@ -38,7 +37,6 @@ button {
   background-color: var(--bg);
   color: var(--fg);
 }
-
 
 .rmd {
   font-size: 1.2rem;
@@ -104,7 +102,7 @@ button {
 .rmd code {
   width: 100%;
   overflow-x: scroll;
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 
 .rmd p > code {
@@ -142,7 +140,7 @@ td {
   padding: 0px;
 }
 
-.rmd .math  {
+.rmd .math {
   font-size: 1rem;
 }
 
@@ -190,10 +188,10 @@ td {
   src: url("/fonts/charter_bold_italic.woff2") format("woff2");
 }
 
-
 @font-face {
   font-family: hack;
-  src: url("/fonts/hack-regular-subset.woff2?sha=3114f1256") format("woff2"),
+  src:
+    url("/fonts/hack-regular-subset.woff2?sha=3114f1256") format("woff2"),
     url("/fonts/hack-regular-subset.woff?sha=3114f1256") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -201,7 +199,8 @@ td {
 
 @font-face {
   font-family: hack;
-  src: url("/fonts/hack-bold-subset.woff2?sha=3114f1256") format("woff2"),
+  src:
+    url("/fonts/hack-bold-subset.woff2?sha=3114f1256") format("woff2"),
     url("/fonts/hack-bold-subset.woff?sha=3114f1256") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -209,7 +208,8 @@ td {
 
 @font-face {
   font-family: hack;
-  src: url("/fonts/hack-italic-subset.woff2?sha=3114f1256") format("woff2"),
+  src:
+    url("/fonts/hack-italic-subset.woff2?sha=3114f1256") format("woff2"),
     url("/fonts/hack-italic-webfont.woff?sha=3114f1256") format("woff");
   font-weight: 400;
   font-style: italic;
@@ -217,7 +217,8 @@ td {
 
 @font-face {
   font-family: hack;
-  src: url("/fonts/hack-bolditalic-subset.woff2?sha=3114f1256") format("woff2"),
+  src:
+    url("/fonts/hack-bolditalic-subset.woff2?sha=3114f1256") format("woff2"),
     url("/fonts/hack-bolditalic-subset.woff?sha=3114f1256") format("woff");
   font-weight: 700;
   font-style: italic;

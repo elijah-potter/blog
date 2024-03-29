@@ -15,7 +15,7 @@ import { downloadUint8Array } from "../../src/utils";
 export async function getStaticProps() {
   const { processMarkdownFile } = await import("../../src/processMarkdown");
   const renderedIntroduction = await processMarkdownFile(
-    "./posts/generative_art_introduction.md"
+    "./posts/generative_art_introduction.md",
   );
 
   return {
@@ -58,7 +58,7 @@ export default function ({
           .split(/(\\|\/)/g)
           .pop()!
           .split(".")
-          .pop()!
+          .pop()!,
       );
     });
 
@@ -132,7 +132,7 @@ function halftoneFn(
   dotDensity: number,
   dotScale: number,
   dotSides: number,
-  renderKind: number
+  renderKind: number,
 ) {
   generativeArt.halftone(dotDensity, dotScale, dotSides, "#000000", renderKind);
 }
@@ -151,7 +151,7 @@ function wavesFn(
   frequencyMultiplier: number,
   amplitudeMutliplier: number,
   brightnessThreshold: number,
-  renderKind: number
+  renderKind: number,
 ) {
   generativeArt.waves(
     "#ffffff",
@@ -165,7 +165,7 @@ function wavesFn(
     brightnessThreshold,
     0,
     true,
-    renderKind
+    renderKind,
   );
 }
 
@@ -231,7 +231,7 @@ function RenderDef({
 
       return renderFn(...args);
     },
-    [state]
+    [state],
   );
 
   useEffect(() => {
@@ -258,7 +258,7 @@ function RenderDef({
         } catch (_) {
           console.log("An error ocurred");
         }
-      })
+      }),
     );
   }, [canvasRef.current, size, state, image]);
 

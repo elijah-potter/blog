@@ -2,12 +2,12 @@
 
 ![A sign advertising for antiques, but misspelled.](/images/antiques.webp)
 
-For the last month, I've been spending a lot of time replacing one key component 
+For the last month, I've been spending a lot of time replacing one key component
 of my writing and programming environment: my grammar checker.
 
-Up until now, I've been using the eponymous [LanguageTool](https://languagetool.org/) 
+Up until now, I've been using the eponymous [LanguageTool](https://languagetool.org/)
 via [`ltex-ls`](https://github.com/valentjn/ltex-ls) and [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig).
-Don't get me wrong, these tools are _really good,_ and I would recommend them to anyone and everyone. 
+Don't get me wrong, these tools are _really good,_ and I would recommend them to anyone and everyone.
 However, they come with a few key annoyances.
 
 ## LanguageTool Grievances
@@ -15,8 +15,8 @@ However, they come with a few key annoyances.
 ### Performance
 
 LanguageTool is slow.
-I'm not exactly sure why. 
-Every time I would run LanguageTool over my Markdown or $\LaTeX$ documents (which are reasonably sized), 
+I'm not exactly sure why.
+Every time I would run LanguageTool over my Markdown or $\LaTeX$ documents (which are reasonably sized),
 I would have to wait several seconds before even the rudimentary spell-checking would show up.
 
 Additionally, I would find `ltex-ls` regularly becoming the most memory-hungry application on my laptop,
@@ -29,21 +29,21 @@ There are a couple questionable algorithmic decisions in there as well.
 ### Download Size
 
 As I said: LanguageTool is really quite good.
-However, to get everything it can offer, you need to not only install a Java Runtime 
-Environment (>150 MB on my system), the actual `.jar` file (>300 MB), but you also need to download 
+However, to get everything it can offer, you need to not only install a Java Runtime
+Environment (>150 MB on my system), the actual `.jar` file (>300 MB), but you also need to download
 a 16 GB n-gram dataset.
 
 ## Grammarly Grievances
 
 "But Elijah," I hear you say, "just use Grammarly!"
 
-__No.__ I'm not going to drop $12 a month for something even slower and worse.
+**No.** I'm not going to drop $12 a month for something even slower and worse.
 Not to mention how they are likely going to use my work to train their large language models.
 Grammarly is a great product, just not for me.
 
 ## The Algorithm
 
-Now that I've thoroughly explained my reasoning for implementing a new grammar checker (one that I'm calling [Harper](https://github.com/elijah-potter/harper)), I'd like to recount 
+Now that I've thoroughly explained my reasoning for implementing a new grammar checker (one that I'm calling [Harper](https://github.com/elijah-potter/harper)), I'd like to recount
 my first, admittedly naive, attempt a spellchecking.
 
 The first idea we need to get a grip on is _Levenshtein edit distance._
@@ -79,7 +79,7 @@ jumped
 To check if a given word is within the list, we can place the list into a hash set,
 and grab it's contents.
 
-```rust 
+```rust
 let words: Vec<String> = vec!["into", "the", "a", "cat", "tree", "jumped"]
     .into_iter()
     .map(|s| s.to_string())
@@ -115,8 +115,8 @@ fn edit_distance(source: &[char], target: &[char]) -> u8 {
     // Create an m-by-n matrix.
     let mut d = create_empty_matrix(m + 1, n + 1);
 
-    // Since we know we can transform each word into the other by replacing 
-    // successive characters (or deleting them), we can fill the first column and 
+    // Since we know we can transform each word into the other by replacing
+    // successive characters (or deleting them), we can fill the first column and
     // row with values from 0..m and 0..n, respectively.
     for i in 0..=m {
         d[i][0] = i as u8;
@@ -140,7 +140,7 @@ fn edit_distance(source: &[char], target: &[char]) -> u8 {
     }
 
     // After all possible edits have been explored and minimized
-    // the resulting minimum edit distance will be in the final item in the matrix. 
+    // the resulting minimum edit distance will be in the final item in the matrix.
     d[m][n]
 }
 
@@ -200,4 +200,3 @@ Possible alternatives:
 That looks pretty good to me!
 
 If you would like to look at the whole program, and maybe try out your own inputs, [go right on ahead](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=fb7910ad1fb3a6c944cbc2ae8659bb31).
-

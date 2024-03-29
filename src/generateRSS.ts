@@ -3,7 +3,7 @@ import { generatePartialPosts, PartialPost } from "../posts/articles";
 import fs from "fs/promises";
 
 async function generateItems(
-  posts: Record<string, PartialPost>
+  posts: Record<string, PartialPost>,
 ): Promise<string[]> {
   const output = [];
 

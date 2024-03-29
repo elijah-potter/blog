@@ -1,6 +1,6 @@
 # How I Built Software Render Engine from Scratch
 
-> __Heads Up:__ This article is a republished (with some tweaks on spelling, grammar and layout) version of 
+> **Heads Up:** This article is a republished (with some tweaks on spelling, grammar and layout) version of
 > an article I wrote in my senior year of high school for my Linear Algebra class.
 > As such, the publish date is not quite correct.
 
@@ -9,7 +9,7 @@ But I've often found that the most difficult part of the pipeline is representin
 This can often take the form of bar charts or scatter plots, but there are situations where they just don't fit the bill.
 
 3D graphics enable developers to create interactive programs that appear most similar to the natural world.
-By presenting a three-dimensional space, the barriers for entry drop. 
+By presenting a three-dimensional space, the barriers for entry drop.
 I wanted to learn more about how this worked.
 
 ![Star Fox, one of the earliest major successes of 3D graphics in the gaming industry.](/images/star_fox.png "Star Fox, one of the earliest major successes of 3D graphics in the gaming industry.")
@@ -20,7 +20,7 @@ For a long time, I've been told that the most prevalent application of linear al
 Before I even began my study on linear algebra, I knew I wanted to get into software rendering.
 
 One of the big roadblocks was the amount of technical know-how I thought it required.
-You see, most 3D programs do all the number-crunching on the specially designed __graphics processing unit__ that is readily available on most modern computers.
+You see, most 3D programs do all the number-crunching on the specially designed **graphics processing unit** that is readily available on most modern computers.
 From my previous attempts to use GPUs, I knew setting up the pipeline is quite involved.
 If I went that route again, I know I would likely spend most of my time dealing with vendor-specific APIs.
 
@@ -33,22 +33,22 @@ I know it might sound obvious, but it felt so freeing at the time.
 A render engine is a piece of software that takes a set of triangles in space and projects them onto a 2D grid that can be displayed on a computer screen.
 
 A software render engine is, as it may sound, a render engine that does all computation in software.
-No specialized hardware is utilized __at all.__
+No specialized hardware is utilized **at all.**
 
 ## Demo
 
-Before I get into __how__ it works, I want to give you the chance to try it out yourself.
-I've created a __very__ simple scene to demonstrate.
+Before I get into **how** it works, I want to give you the chance to try it out yourself.
+I've created a **very** simple scene to demonstrate.
 
-| Function      | Key |
-| ------------- | --------------: |
-| Look Around | Left Mouse Click |
-| Toggle Depth Buffer | R |
-| Toggle Face Sorting | O |
-| Toggle Backface Culling | B |
-| Increase FOV | Arrow Key Up 🔼 |
-| Decrease FOV | Arrow Key Down 🔽 |
-| Move View | W, A, S, D |
+| Function                |               Key |
+| ----------------------- | ----------------: |
+| Look Around             |  Left Mouse Click |
+| Toggle Depth Buffer     |                 R |
+| Toggle Face Sorting     |                 O |
+| Toggle Backface Culling |                 B |
+| Increase FOV            |   Arrow Key Up 🔼 |
+| Decrease FOV            | Arrow Key Down 🔽 |
+| Move View               |        W, A, S, D |
 
 <iframe iframe frameBorder="0" style="width: 100%; aspect-ratio: 16/9;" allowfullscreen src="/standalonerenderer"></iframe>
 
@@ -59,9 +59,8 @@ I've created a __very__ simple scene to demonstrate.
 In this article, I intend only to talk about the math related to the problem.
 If you are interesting in the nitty-gritty _how lines and shapes get drawn to the screen,_
 I suggest you read up on [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm),
-[Xiaolin Wu's line algorithm](https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm), and 
+[Xiaolin Wu's line algorithm](https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm), and
 [Drawing Filled Triangles](https://www.gabrielgambetta.com/computer-graphics-from-scratch/07-filled-triangles.html)
-
 
 ### Projection
 
@@ -86,8 +85,8 @@ When working in euclidean space, we represent a given vector or coordinate using
 
 $$
 \begin{bmatrix}
-  x \\ 
-  y \\ 
+  x \\
+  y \\
   z
 \end{bmatrix}
 $$
@@ -99,7 +98,7 @@ $$
   x \\
   y \\
   z \\
-  w 
+  w
 \end{bmatrix}
 $$
 
@@ -110,7 +109,7 @@ $$
 \text{euclidean coordinate} = \begin{bmatrix}
   x / w \\
   y / w \\
-  z / w 
+  z / w
 \end{bmatrix}
 $$
 
@@ -143,7 +142,7 @@ $$
   \begin{bmatrix}
     0 \\
     0 \\
-    0 
+    0
   \end{bmatrix}
   +
   \begin{bmatrix}
@@ -183,9 +182,9 @@ $$
 $$
 T \begin{bmatrix}
   0 \\
-  0 \\ 
   0 \\
-  1 
+  0 \\
+  1
 \end{bmatrix}
 
 =
@@ -196,6 +195,7 @@ T \begin{bmatrix}
   0 \\
   1
 \end{bmatrix}
+
 
 $$
 
@@ -208,21 +208,20 @@ Remember that $d$ is the surface we are projecting onto.
 This is possible with homogenous coordinates with the following matrix:
 
 $$
-\text{perspective projection matrix} = 
+\text{perspective projection matrix} =
 
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\ 
-  0 & 1 & 0 & 0 \\ 
-  0 & 0 & 1 & 0 \\ 
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
   0 & 0 & -1 / d & 1
-\end{bmatrix} 
+\end{bmatrix}
 $$
 
 Assuming you have an understanding of matrix multiplication, it should be apparent why this works.
 When the $w$ component of the matrix is being computed, the $z$ component will be divided by $d$.
 The result then becomes a divisor of $w$, which affects all components of the resulting vector due to the nature of homogenous coordinates.
 In short: $w \leftarrow w * (-z / d)$
-
 
 ### Color
 
@@ -237,13 +236,14 @@ I want an additional way to convey depth.
 Given the three points that make up a triangle $p_1$, $p_2$, and $p_3$, we can find its normal vector (the vector perpendicular to it's surface), $\vec{n}$ fairly easily.
 
 $$
-  \vec{h} = \frac{p_2 - p_1}{||p_2 - p_1||} \times \frac{p_3 - p_1}{||p_3 - p_1||} 
+  \vec{h} = \frac{p_2 - p_1}{||p_2 - p_1||} \times \frac{p_3 - p_1}{||p_3 - p_1||}
 $$
+
 $$
   \vec{n} = \frac{h}{||h||}
 $$
 
-> __Note:__ the vertical bars around a vector $||\vec{v}||$ signify getting the vector's length.
+> **Note:** the vertical bars around a vector $||\vec{v}||$ signify getting the vector's length.
 
 Now that we have the triangles normal, we can fill it in more brightly depending on how directly it is facing the camera.
 
@@ -260,7 +260,7 @@ $$
 \text{brightness} = \text{view distance} - ||\frac{p_1 + p_2 + p_3}{3}||
 $$
 
-### Sorting 
+### Sorting
 
 When the program is supplied a mesh, the faces are not in any specific order.
 If we were to just draw each face in the order it arrives, nothing would make sense.
@@ -279,7 +279,7 @@ In most situations, there is no need to see the inside of a mesh.
 This allows us to avoid a lot of work for very little effort.
 By checking the alignment of the point-to-face vector with a face's normal, we can check if a given face is facing toward us or not.
 
-In the demo, you can toggle backface culling with `B`. 
+In the demo, you can toggle backface culling with `B`.
 
 ## Conclusion
 
