@@ -15,7 +15,7 @@ export type FullPost = {
 
 const partialPosts: Record<string, PartialPost> = {
   the_optimal_workspace: {
-    description: "My thoughts on how to live the most effective life possible.",
+    description: "How I intend on living better.",
     pubDate: new Date(2024, 2, 29).toUTCString(),
     keywords: [
       "Cal Newport",

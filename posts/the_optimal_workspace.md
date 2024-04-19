@@ -138,7 +138,7 @@ It is the single most effective move one can make, since it makes all other acti
 
 However, as I previously pointed out, success in the new economy relies particularly on deep work, which requires deep focus.
 
-## Step 1: Deep Focus
+## Step 2: Deep Focus
 
 At the beginning, I mentioned there are **two** problems restricting the ability for people to live happy, effective lives.
 The first was related to sleep, the second was related to deep focus.
