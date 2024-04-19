@@ -14,6 +14,23 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  what_blasterhacks_taught_me_about_leadership: {
+    description: "It's easier than you think.",
+    pubDate: new Date(2024, 3, 19).toUTCString(),
+    keywords: [
+      "Colorado School of Mines",
+      "hackathon",
+      "blasterhacks",
+      "sveltekit",
+      "firebase",
+      "snow",
+      "leadership",
+      "leader",
+      "mental health",
+      "wellbeing",
+    ],
+    image: "/images/kanban_blasterhacks.jpg",
+  },
   the_optimal_workspace: {
     description: "How I intend on living better.",
     pubDate: new Date(2024, 2, 29).toUTCString(),
