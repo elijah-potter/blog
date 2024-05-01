@@ -64,6 +64,10 @@ export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={startCase(name)} />
         <meta property="og:description" content={post.description} />
+        <link
+          rel="canonical"
+          href={`https://elijahpotter.dev/articles/${slug}`}
+        />
         {post.image && <meta property="og:image" content={post.image} />}
         <title>{startCase(name)}</title>
         <meta name="author" content={post.author} />

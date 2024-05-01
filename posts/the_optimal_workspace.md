@@ -38,7 +38,7 @@ There are two types of sleep, and each are equally important.
 NREM sleep is critical in the integration and solidification of memory.
 This is the portion of sleep where your eyes are stationary, thus the name.
 In fact, NREM sleep seems to be the only time the brain actively works to retain memory.
-Since NREM sleep is more prevalent in the earlier hours of the night, going to bed two hours hours later than usual results in a 69% reduction in retention of factual information the next day.
+Since NREM sleep is more prevalent in the earlier hours of the night, going to bed two hours hours later than usual results in a 70% reduction in retention of factual information the next day.
 
 ### REM Sleep
 
