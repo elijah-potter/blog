@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Spacer from "../components/Spacer";
-import useMobile from "../src/hooks/useMobile";
 
 const iconLinks = [
   [
@@ -75,12 +74,7 @@ export default function index() {
             Software Developer
             <br />
             Working at{" "}
-            <Link href="https://archytasinc.com/">Archytas Automation</Link>
-            <br />
-            On{" "}
-            <Link href="https://hdiharmony.web.app/book/index.html">
-              HDI Harmony
-            </Link>
+            <Link href="https://www.tylertech.com/">Tyler Technologies</Link>
           </h2>
         </div>
       </div>
