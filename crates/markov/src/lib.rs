@@ -1,11 +1,16 @@
 mod common;
 
-use std::collections::HashMap;
+use std::{collections::HashMap, panic};
 
 use common::*;
 use nalgebra::{DMatrix, DVector};
 use rand::{rngs::SmallRng, Rng, SeedableRng};
 use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
+
+#[wasm_bindgen(start)]
+fn start() {
+    panic::set_hook(Box::new(console_error_panic_hook::hook));
+}
 
 #[wasm_bindgen]
 pub struct TrainedModel {
