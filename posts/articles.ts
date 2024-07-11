@@ -14,6 +14,22 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  the_simplest_neovim_markdown_setup: {
+    description: "How I preview my Markdown quickly and reliably.",
+    pubDate: new Date(2024, 6, 11).toUTCString(),
+    keywords: [
+      "harper-ls",
+      "harper",
+      "grammar checking",
+      "markdown",
+      "rendering",
+      "html",
+      "css",
+      "katex",
+      "neovim",
+    ],
+    image: "/images/tatum_screenshot.webp",
+  },
   what_blasterhacks_taught_me_about_leadership: {
     description: "It's easier than you think.",
     pubDate: new Date(2024, 3, 19).toUTCString(),
