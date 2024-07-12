@@ -7,7 +7,7 @@ export async function getStaticProps() {
 
   const initialTrainingText = await fs.readFile(
     "./public/markov/alice_in_wonderland.txt",
-    "utf8",
+    "utf8"
   );
 
   return {
@@ -25,7 +25,7 @@ export default function index({
   const [trainingTextClamp, setTrainingTextClamp] = useState(5000);
   const [trainingText, setTrainingText] = useState(initialTrainingText);
   const [completingText, setCompletingText] = useState(
-    "This a scratch text area to test the autocomplete in",
+    "This a scratch text area to test the autocomplete in"
   );
 
   const trainedModel = useMemo(() => {
@@ -48,7 +48,7 @@ export default function index({
 
   const lastWord = useMemo(
     () => computeLastWord(completingText),
-    [completingText],
+    [completingText]
   );
 
   const nextWords = useMemo(() => {
@@ -63,7 +63,7 @@ export default function index({
     if (lastWord != null) {
       const next = trainedModel.random_next_word(
         lastWord,
-        Math.random() * 10000,
+        Math.random() * 10000
       );
 
       if (next != null) {

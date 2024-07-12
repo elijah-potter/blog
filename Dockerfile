@@ -3,7 +3,7 @@ FROM rust:latest as wasm-build
 RUN mkdir -p /usr/build/
 WORKDIR /usr/build/
 
-RUN cargo install wasm-pack
+RUN cargo install wasm-pack --version 0.12.1
 
 COPY . .
 

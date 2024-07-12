@@ -7,9 +7,13 @@ use nalgebra::{DMatrix, DVector};
 use rand::{rngs::SmallRng, Rng, SeedableRng};
 use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
+/// Setup the WebAssembly module's logging.
+///
+/// Not strictly necessary for anything to function, but makes bug-hunting less
+/// painful.
 #[wasm_bindgen(start)]
-fn start() {
-    panic::set_hook(Box::new(console_error_panic_hook::hook));
+pub fn setup() {
+    console_error_panic_hook::set_once();
 }
 
 #[wasm_bindgen]

@@ -21,7 +21,7 @@ web-sys = { version = "0.3.55", features = [
 ] }
 rand = { version = "0.8.4", default-features = false }
 js-sys = "0.3.55"
-wasm-bindgen = "0.2.83"
+wasm-bindgen = "0.2.92"
 
 [dependencies.image]
 version = "0.23.14"
