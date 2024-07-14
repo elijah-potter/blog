@@ -16,7 +16,7 @@ export type FullPost = {
 const partialPosts: Record<string, PartialPost> = {
   the_simplest_neovim_markdown_setup: {
     description: "How I preview my Markdown quickly and reliably.",
-    pubDate: new Date(2024, 6, 11).toUTCString(),
+    pubDate: new Date(2024, 6, 13).toUTCString(),
     keywords: [
       "harper-ls",
       "harper",
@@ -48,7 +48,7 @@ const partialPosts: Record<string, PartialPost> = {
     image: "/images/kanban_blasterhacks.jpg",
   },
   the_optimal_workspace: {
-    description: "How I intend on living better.",
+    description: "How I intend to live better.",
     pubDate: new Date(2024, 2, 29).toUTCString(),
     keywords: [
       "Cal Newport",
