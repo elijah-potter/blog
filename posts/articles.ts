@@ -14,6 +14,21 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  naming_harper: {
+    description: "Where did Harper come from?",
+    pubDate: new Date(2024, 7, 6).toUTCString(),
+    keywords: [
+      "harper-ls",
+      "harper",
+      "grammar checking",
+      "markdown",
+      "html",
+      "css",
+      "neovim",
+      "nomenclature",
+      "naming",
+    ],
+  },
   the_simplest_neovim_markdown_setup: {
     description: "How I preview my Markdown quickly and reliably.",
     pubDate: new Date(2024, 6, 13).toUTCString(),
