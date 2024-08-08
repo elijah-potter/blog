@@ -26,6 +26,7 @@ primary_region = 'den'
 
 [[vm]]
   size = 'shared-cpu-1x'
+  memory = "512mb"
 
 [[statics]]
   guest_path = '/usr/build/public/images'
