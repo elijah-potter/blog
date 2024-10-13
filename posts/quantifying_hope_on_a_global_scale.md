@@ -6,7 +6,7 @@ For some, it is an expectation of what the future will be.
 For others, it is a goal for what the future _should_ be.
 The word itself means something different to each person.
 
-Most generally, though, hope describes how one perceives the momentum of the world.
+Most generally though, hope describes how one perceives the momentum of the world.
 Do things seem to be generally getting better, or do they generally seem to be getting worse?
 Personally, I think things are rapidly getting **much, much** better.
 

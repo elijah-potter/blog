@@ -99,7 +99,7 @@ button {
   text-align: center;
 }
 
-.rmd code {
+.rmd p > code {
   width: 100%;
   overflow-x: scroll;
   font-size: 1rem;

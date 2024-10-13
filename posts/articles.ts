@@ -14,6 +14,11 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  for_the_love_of_iframes: {
+    description: "Chronically underrated, chronically over-prescribed",
+    pubDate: new Date(2024, 9, 13).toUTCString(),
+    keywords: ["iframe", "harper", "blogging", "meta"],
+  },
   naming_harper: {
     description: "Where did Harper come from?",
     pubDate: new Date(2024, 7, 6).toUTCString(),
