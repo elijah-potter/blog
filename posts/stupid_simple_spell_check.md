@@ -44,7 +44,7 @@ Grammarly is a great product, just not for me.
 ## The Algorithm
 
 Now that I've thoroughly explained my reasoning for implementing a new grammar checker (one that I'm calling [Harper](https://github.com/elijah-potter/harper)), I'd like to recount
-my first, admittedly naive, attempt a spellchecking.
+my first, admittedly naive, attempt at spellchecking.
 
 The first idea we need to get a grip on is _Levenshtein edit distance._
 In essence, edit distance is the least number of single-character edits (insertions, deletions or replacements) necessary to turn one word into another.
