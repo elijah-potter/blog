@@ -55,7 +55,7 @@ export default function index() {
       <Head>
         <meta
           name="description"
-          content="The personal site for software developer and student Elijah Potter"
+          content="The personal site for software engineer Elijah Potter"
         />
       </Head>
       <div className="flex flex-wrap items-center justify-evenly">
@@ -71,10 +71,9 @@ export default function index() {
         <div className="flex flex-col">
           <h1 className="text-center text-6xl font-bold p-16">Elijah Potter</h1>
           <h2 className="text-center text-3xl font-bold">
-            Software Developer
+            Software Engineer
             <br />
-            Working at{" "}
-            <Link href="https://www.tylertech.com/">Tyler Technologies</Link>
+            Working at <Link href="https://automattic.com/">Automattic</Link>
           </h2>
         </div>
       </div>
