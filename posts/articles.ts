@@ -14,6 +14,11 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  the_best_books_i_read_this_year: {
+    description: "I might be starting to sound like a broken record.",
+    pubDate: new Date(2024, 11, 21).toUTCString(),
+    keywords: ["books", "reading"],
+  },
   for_the_love_of_iframes: {
     description: "Chronically underrated, chronically over-prescribed",
     pubDate: new Date(2024, 9, 13).toUTCString(),
