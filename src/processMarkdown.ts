@@ -10,6 +10,7 @@ import rust from "highlight.js/lib/languages/rust";
 import bash from "highlight.js/lib/languages/bash";
 import fs from "fs/promises";
 import rehypeTitleFigure from "rehype-title-figure";
+// @ts-expect-error there are no typing for this package.
 import typeset from "typeset";
 
 /// Converts `markdown` to `html`

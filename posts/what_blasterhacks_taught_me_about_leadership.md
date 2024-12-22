@@ -22,7 +22,7 @@ After collectively downing several whole pizzas and listening to the rules of th
 We brainstormed some ideas under the overcast sky:
 
 - A Bennett Foddy-inspired battle-royale game where all the controls were `vim`-keybindings.
-- A health insurance app that estimates the cost of *your* care at all local hospitals.
+- A health insurance app that estimates the cost of _your_ care at all local hospitals.
 - An app that encouraged you to stand up and move every thirty minutes.
 
 It was that last one that we all got excited about.

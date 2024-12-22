@@ -264,11 +264,10 @@ The answers are surprisingly simple.
 We need to schedule our schools and workplaces to account for the needs of sleep for our workers and students.
 Students that remember more material become more effective problem solvers later on, which makes all other problems easier to solve.
 
-The people who are attempting to solve other great issues, like unequal access to education, climate change, and pollution will be able to 
+The people who are attempting to solve other great issues, like unequal access to education, climate change, and pollution will be able to
 work more effectively given the opportunity to enter deep focus.
 
 So please, sleep well, and don't be distracted by the things that don't matter.
-
 
 ![A map of variables that impact your productivity](/images/prod_map.png)
 
@@ -277,4 +276,3 @@ So please, sleep well, and don't be distracted by the things that don't matter.
 [1] M. Walker, Why we sleep: Unlocking the Power of Sleep and Dreams. Simon and Schuster, 2017.
 
 [2] C. Newport, Deep work: Rules for Focused Success in a Distracted World. Hachette UK, 2016.
-

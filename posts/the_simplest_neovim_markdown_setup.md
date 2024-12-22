@@ -15,7 +15,7 @@ Finally, it would be rendered to my screen using [Sioyek](https://sioyek.info/).
 
 This worked fine, I guess, but it was far from perfect.
 
-1. __It was slow.__ Each edit I made in Markdown could take as many as 10 seconds to show up in Sioyek.
+1. **It was slow.** Each edit I made in Markdown could take as many as 10 seconds to show up in Sioyek.
 1. It wasn't interesting. While I made modifications to my Pandoc settings, my PDF's still looked like every other `pdflatex` document ever made.
 1. I couldn't make my documents interactive if I wanted to.
 
@@ -36,4 +36,4 @@ Once I'm done working, I just run `tatum render <file.md>` and I get a single fi
 
 Tatum isn't for you to use.
 Feel free to poke around at how it works, or even fork it and make your own modifications.
-__It fits my use case perfectly.__
+**It fits my use case perfectly.**
