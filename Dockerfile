@@ -1,17 +1,16 @@
-FROM rust:latest as wasm-build
+FROM rust:latest AS wasm-build
 
 RUN mkdir -p /usr/build/
 WORKDIR /usr/build/
 
-RUN cargo install wasm-pack --version 0.12.1
+RUN cargo install wasm-pack --version 0.13.0
 
 COPY . .
 
-RUN ./build.sh --no-site --release --clean
+RUN ./build.sh --no-site --release
 
 # Clean up unneeded build artifacts
 WORKDIR /usr/build/crates/
-RUN find -maxdepth 2 -name target -exec rm -r {} +
 
 FROM node:slim as node-build
 

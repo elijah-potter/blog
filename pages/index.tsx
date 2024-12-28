@@ -29,7 +29,6 @@ const iconLinks = [
     "/icons/play.svg",
     "Short, animated, and occasionally informative videos",
   ],
-  ["/nbody", "/icons/orbit.svg", "Yet another n-body simulation"],
   [
     "https://www.linkedin.com/in/elijahpotter",
     "/icons/linkedin.svg",

@@ -38,35 +38,18 @@ then
     cd $R/crates/rast/
     cargo build --target wasm32-unknown-unknown --release
     
-    cd $R
     cp $R/crates/rast/target/wasm32-unknown-unknown/release/rast.wasm $R/public
 
-    cd $R/crates/fluid/
     cargo build --target wasm32-unknown-unknown --release
-    
-    cd $R
-    cp $R/crates/fluid/target/wasm32-unknown-unknown/release/fluid.wasm $R/public
-
-    if [ $CLEAN -eq 1]
-    then
-      echo Cleaning...
-
-      cd $R/crates/rast/
-      cargo clean
-
-      cd $R/crates/markov/
-      cargo clean
-      
-      cd $R/crates/fluid/
-      cargo clean
-
-      cd $R/crates/generative-art/
-      cargo clean
-    fi
 fi
 
 if [ $SITE -eq 1 ]
 then
+    cd $R/crates/markov/demo
+    yarn install 
+    yarn build
+    cp $R/crates/markov/demo/dist/index.html $R/public/standalonemarkov.html
+
     cd $R
     yarn install
     yarn build

@@ -50,7 +50,7 @@ I've created a **very** simple scene to demonstrate.
 | Decrease FOV            | Arrow Key Down 🔽 |
 | Move View               |        W, A, S, D |
 
-<iframe iframe frameBorder="0" style="width: 100%; aspect-ratio: 16/9;" allowfullscreen src="/standalonerenderer"></iframe>
+<iframe iframe frameBorder="0" style="width: 100%; aspect-ratio: 16/9;" allowfullscreen src="/standalonerenderer.html"></iframe>
 
 ## Explanation
 

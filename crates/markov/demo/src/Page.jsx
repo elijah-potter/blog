@@ -1,31 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import * as markov from "markov";
 import lowerCase from "lodash/lowerCase";
+import initialTrainingText from "./alice_in_wonderland.txt?raw";
 
-export async function getStaticProps() {
-  const fs = await import("fs/promises");
-
-  const initialTrainingText = await fs.readFile(
-    "./public/markov/alice_in_wonderland.txt",
-    "utf8",
-  );
-
-  return {
-    props: {
-      initialTrainingText,
-    },
-  };
-}
-
-export default function index({
-  initialTrainingText,
-}: {
-  initialTrainingText: string;
-}) {
+export default function () {
   const [trainingTextClamp, setTrainingTextClamp] = useState(5000);
   const [trainingText, setTrainingText] = useState(initialTrainingText);
   const [completingText, setCompletingText] = useState(
-    "This a scratch text area to test the autocomplete in",
+    "This a scratch text area to test the autocomplete in"
   );
 
   const trainedModel = useMemo(() => {
@@ -48,7 +30,7 @@ export default function index({
 
   const lastWord = useMemo(
     () => computeLastWord(completingText),
-    [completingText],
+    [completingText]
   );
 
   const nextWords = useMemo(() => {
@@ -63,7 +45,7 @@ export default function index({
     if (lastWord != null) {
       const next = trainedModel.random_next_word(
         lastWord,
-        Math.random() * 10000,
+        Math.random() * 10000
       );
 
       if (next != null) {
@@ -73,7 +55,7 @@ export default function index({
   }, [completingText, trainedModel]);
 
   useEffect(() => {
-    const onKeyUp = (e: KeyboardEvent) => {
+    const onKeyUp = (e) => {
       if (e.code === "ArrowRight") {
         autocompleteWord();
       }
@@ -163,11 +145,15 @@ export default function index({
   );
 }
 
-function seperateWords(text: string): string[] {
+/** @param text { string }
+ * @returns { string[] } */
+function seperateWords(text) {
   return text.split(" ").filter((s) => s.length > 0);
 }
 
-function computeLastWord(text: string): string | null {
+/** @param text { string }
+ * @returns { string | null }*/
+function computeLastWord(text) {
   const words = seperateWords(text);
 
   if (words.length == 0) {

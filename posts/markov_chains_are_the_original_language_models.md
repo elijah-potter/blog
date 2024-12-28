@@ -61,7 +61,7 @@ Though it is written in Rust and compiled to WebAssembly, it is not particularly
 
 You may use either "Choose Word" or your right arrow key [→] to let the system choose the next word. Alternatively, you can tap any of the [Possible Next Words] to do so yourself.
 
-<iframe iframe frameBorder="0" style="width: 100%; height: 1100px;" allowfullscreen src="/standalonemarkov?navbar=no"></iframe>
+<iframe iframe frameBorder="0" style="width: 100%; height: 1100px;" allowfullscreen src="/standalonemarkov.html"></iframe>
 
 # Explanation
 
