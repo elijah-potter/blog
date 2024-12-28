@@ -31,22 +31,11 @@ const iconLinks = [
   ],
   ["/nbody", "/icons/orbit.svg", "Yet another n-body simulation"],
   [
-    "/art",
-    "/icons/eye.svg",
-    "Showcase and generate visually stunning creations, from any photo",
-  ],
-  [
     "https://www.linkedin.com/in/elijahpotter",
     "/icons/linkedin.svg",
     "LinkedIn and Resume",
   ],
   ["https://github.com/elijah-potter/", "/icons/github.svg", "GitHub"],
-  // This is not ready for public consumption, it may never be
-  // [
-  //   "/fluid",
-  //   "/icons/air.svg",
-  //   "A story about Lake Gregory in Australia and Climate Models",
-  // ],
 ];
 
 export default function index() {

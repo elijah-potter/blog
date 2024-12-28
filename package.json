@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "framer-motion": "^10.12.18",
-    "generative-art": "./crates/generative-art/pkg",
     "highlight.js": "^11.6.0",
     "lodash": "^4.17.21",
     "markov": "./crates/markov/pkg",
