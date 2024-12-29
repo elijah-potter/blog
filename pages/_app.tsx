@@ -7,6 +7,19 @@ import { AppProps } from "next/app";
 import Image from "next/image";
 import "../global.css";
 import { useRouter } from "next/router";
+import posthog from "posthog-js";
+import { PostHogProvider } from "posthog-js/react";
+
+if (typeof window !== "undefined") {
+  posthog.init("phc_ScKr9SxzZRlBn7d4FMFIZzYestHuFonat6gOStQ5t8x", {
+    api_host: "https://us.i.posthog.com",
+    persistence: "sessionStorage",
+    person_profiles: "always",
+    loaded: (posthog) => {
+      if (process.env.NODE_ENV === "development") posthog.debug();
+    },
+  });
+}
 
 type Theme = "light" | "dark" | "default";
 
@@ -52,7 +65,7 @@ export default function App({ Component, pageProps }: AppProps) {
       root.style.setProperty("--fg", dark ? "var(--white)" : "var(--black)");
       root.style.setProperty(
         "--lc",
-        dark ? "var(--grey)" : "var(--light-grey)",
+        dark ? "var(--grey)" : "var(--light-grey)"
       );
       root.style.setProperty("--themefilter", dark ? "invert()" : "none");
 
@@ -64,65 +77,58 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head>
-        <title>Elijah Potter</title>
-        <script
-          src="https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js"
-          defer
-        />
-      </Head>
-      <script
-        data-goatcounter="https://potterblog.goatcounter.com/count"
-        async
-        src="//gc.zgo.at/count.js"
-      ></script>
-      <div className="flex flex-row justify-center">
-        <div className="w-[370px] sm:w-full md:w-[800px] m-5">
-          {showNavbar && (
-            <Navbar>
-              <div className="mobilehide">
-                <Image
-                  src="/icons/profile.svg"
-                  width="75"
-                  height="100"
-                  alt="Profile Picture"
-                />
-              </div>
-              <Link href="/">
-                <h1 className="text-2xl">Elijah Potter</h1>
-              </Link>
-              <Spacer />
-              <a href="/rss.xml">
-                <Image
-                  width="25"
-                  height="25"
-                  alt="RSS Icon"
-                  src="/icons/rss.svg"
-                  style={{
-                    filter: "var(--themefilter)",
-                  }}
-                />
-              </a>
-              <button
-                onClick={() => setTheme(dark ? "light" : "dark")}
-                className="mobilehide"
-              >
-                <Image
-                  className="transition-all active:scale-75"
-                  width="40"
-                  height="40"
-                  alt="Sun Icon to Enable/Disable Dark Mode"
-                  src="/icons/sun.svg"
-                  style={{
-                    filter: "var(--themefilter)",
-                  }}
-                />
-              </button>
-            </Navbar>
-          )}
-          <Component {...pageProps} dark={dark} />
+      <PostHogProvider client={posthog}>
+        <Head>
+          <title>Elijah Potter</title>
+        </Head>
+        <div className="flex flex-row justify-center">
+          <div className="w-[370px] sm:w-full md:w-[800px] m-5">
+            {showNavbar && (
+              <Navbar>
+                <div className="mobilehide">
+                  <Image
+                    src="/icons/profile.svg"
+                    width="75"
+                    height="100"
+                    alt="Profile Picture"
+                  />
+                </div>
+                <Link href="/">
+                  <h1 className="text-2xl">Elijah Potter</h1>
+                </Link>
+                <Spacer />
+                <a href="/rss.xml">
+                  <Image
+                    width="25"
+                    height="25"
+                    alt="RSS Icon"
+                    src="/icons/rss.svg"
+                    style={{
+                      filter: "var(--themefilter)",
+                    }}
+                  />
+                </a>
+                <button
+                  onClick={() => setTheme(dark ? "light" : "dark")}
+                  className="mobilehide"
+                >
+                  <Image
+                    className="transition-all active:scale-75"
+                    width="40"
+                    height="40"
+                    alt="Sun Icon to Enable/Disable Dark Mode"
+                    src="/icons/sun.svg"
+                    style={{
+                      filter: "var(--themefilter)",
+                    }}
+                  />
+                </button>
+              </Navbar>
+            )}
+            <Component {...pageProps} dark={dark} />
+          </div>
         </div>
-      </div>
+      </PostHogProvider>
     </>
   );
 }
