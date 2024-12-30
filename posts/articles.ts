@@ -14,6 +14,11 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  why_you_need_sccache: {
+    description: "You might not actually need it.",
+    pubDate: new Date(2024, 12, 29).toUTCString(),
+    keywords: ["sccache", "rust", "development", "linux", "distributed"],
+  },
   the_best_books_i_read_this_year: {
     description: "I might be starting to sound like a broken record.",
     pubDate: new Date(2024, 11, 21).toUTCString(),
