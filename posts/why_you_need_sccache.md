@@ -3,8 +3,7 @@
 As the maintainer of a [reasonably popular open source project](https://writewithharper.com) written in Rust, I find myself cloning PRs and swapping between branches dozens of times a day.
 In doing so, I often blow away Rust's compilation cache either via `git clean -xf .` or by changing dependency versions.
 
-Having a build cache that is separate from the project is a huge win for compile times.
-Which is why I use [`sccache`](https://github.com/mozilla/sccache).
+Having a build cache that is separate from the project is a huge win for compile times, which is why I use [`sccache`](https://github.com/mozilla/sccache).
 
 For those unaware, `sccache` is a build tool for C, C++ and Rust projects that stands in front of the compiler.
 If a given file's hash is the same across calls to the compiler, `sccache` reuses the previous result.
