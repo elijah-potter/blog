@@ -43,7 +43,7 @@ export default function index() {
       <Head>
         <meta
           name="description"
-          content="The personal site for software engineer Elijah Potter"
+          content="The blog of software engineer Elijah Potter"
         />
       </Head>
       <div className="flex flex-wrap items-center justify-evenly">
@@ -62,6 +62,8 @@ export default function index() {
             Software Engineer
             <br />
             Working at <Link href="https://automattic.com/">Automattic</Link>
+            <br />
+            on <Link href="https://writewithharper.com">Harper</Link>
           </h2>
         </div>
       </div>

@@ -1,4 +1,3 @@
-import startCase from "lodash/startCase";
 import Head from "next/head";
 import Link from "next/link";
 import { FullPost, generateFullPosts } from "../../posts/articles";
@@ -28,7 +27,7 @@ export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
                 className="py-4 w-11/12 hover:translate-x-5 transition-all"
                 onClick={() => (location.href = target)}
               >
-                <h4 className="text-3xl py-2">{startCase(name)}</h4>
+                <h4 className="text-3xl py-2">{post.title}</h4>
                 <p className="font-extrabold py-2">
                   Published on{" "}
                   {new Date(post.pubDate).toLocaleString(undefined, {

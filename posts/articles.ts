@@ -1,4 +1,5 @@
-import { clone } from "lodash";
+import { clone, startCase } from "lodash";
+import { LocalLinter } from "harper.js";
 
 export type PartialPost = {
   keywords: string[];
@@ -9,6 +10,7 @@ export type PartialPost = {
 
 export type FullPost = {
   author: string;
+  title: string;
   description_html: string;
   content_html: string;
 } & PartialPost;
@@ -299,28 +301,46 @@ export function generatePartialPosts(): Record<string, PartialPost> {
   return clone(partialPosts);
 }
 
-export async function generateFullPosts(): Promise<Record<string, FullPost>> {
+const linter = new LocalLinter();
+
+async function processEntry(
+  key: string,
+  value: PartialPost
+): Promise<[string, FullPost]> {
   const { processMarkdown } = await import("../src/processMarkdown");
   const fs = await import("fs/promises");
 
-  const fullPosts: Record<string, FullPost> = {};
+  // Someone told me adding this to everything enhances SEO?
+  value.keywords.push("reddit");
 
-  for (const [key, value] of Object.entries(partialPosts)) {
-    // Someone told me adding this to everything enhances SEO?
-    value.keywords.push("reddit");
+  const fileContent = await fs.readFile(`./posts/${key}.md`, "utf8");
 
-    const fileContent = await fs.readFile(`./posts/${key}.md`, "utf8");
+  const [content_html, description_html, title] = await Promise.all([
+    processMarkdown(fileContent),
+    processMarkdown(value.description),
+    linter.toTitleCase(startCase(key)),
+  ]);
 
-    const content_html = await processMarkdown(fileContent);
-    const description_html = await processMarkdown(value.description);
-
-    fullPosts[key] = {
+  return [
+    key,
+    {
       author: "Elijah Potter",
+      title,
       content_html,
       description_html,
       ...value,
-    };
-  }
+    },
+  ];
+}
+
+export async function generateFullPosts(): Promise<Record<string, FullPost>> {
+  const fullPosts: Record<string, FullPost> = Object.fromEntries(
+    await Promise.all(
+      Object.entries(partialPosts).map(([key, value]) =>
+        processEntry(key, value)
+      )
+    )
+  );
 
   return fullPosts;
 }
