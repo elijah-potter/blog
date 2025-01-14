@@ -16,6 +16,11 @@ export type FullPost = {
 } & PartialPost;
 
 const partialPosts: Record<string, PartialPost> = {
+  the_best_25_bucks_i_ever_spent: {
+    description: "Bonus: why you need to do it too.",
+    pubDate: new Date(2025, 0, 13).toUTCString(),
+    keywords: ["flip", "phone", "quiet"],
+  },
   why_you_need_sccache: {
     description: "You might not actually need it.",
     pubDate: new Date(2024, 11, 29).toUTCString(),
@@ -305,7 +310,7 @@ const linter = new LocalLinter();
 
 async function processEntry(
   key: string,
-  value: PartialPost
+  value: PartialPost,
 ): Promise<[string, FullPost]> {
   const { processMarkdown } = await import("../src/processMarkdown");
   const fs = await import("fs/promises");
@@ -337,9 +342,9 @@ export async function generateFullPosts(): Promise<Record<string, FullPost>> {
   const fullPosts: Record<string, FullPost> = Object.fromEntries(
     await Promise.all(
       Object.entries(partialPosts).map(([key, value]) =>
-        processEntry(key, value)
-      )
-    )
+        processEntry(key, value),
+      ),
+    ),
   );
 
   return fullPosts;
