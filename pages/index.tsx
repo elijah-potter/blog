@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Spacer from "../components/Spacer";
+import { FullPost, generateFullPosts } from "../posts/articles";
 
 const iconLinks = [
   [
@@ -37,7 +38,19 @@ const iconLinks = [
   ["https://github.com/elijah-potter/", "/icons/github.svg", "GitHub"],
 ];
 
-export default function index() {
+export async function getStaticProps() {
+  return {
+    props: {
+      posts: await generateFullPosts(),
+    },
+  };
+}
+
+export default function index({
+  posts,
+}: {
+  posts: { [name: string]: FullPost };
+}) {
   return (
     <>
       <Head>
@@ -68,16 +81,16 @@ export default function index() {
         </div>
       </div>
       <div style={{ paddingTop: "100px" }} />
-      <div className={"flex flex-col items-center"}>
+      <div className="md:flex md:flex-row grid grid-cols-4 items-center justify-evenly mt-5 transition-all place-items-center">
         {iconLinks.map(([href, icon, alt]) => (
           <Link
             href={href}
             key={href}
-            className="py-12 flex flex-row justify-between items-center w-11/12 hover:translate-x-5 transition-all"
+            className="flex flex-col justify-between items-center w-11/12 hover:scale-105 transition-all"
           >
             <Image
-              width="80"
-              height="80"
+              width="60"
+              height="60"
               src={icon}
               style={{
                 filter: "var(--themefilter)",
@@ -85,10 +98,35 @@ export default function index() {
               alt={alt}
             />
             <Spacer></Spacer>
-            <h2 className="text-lg md:text-2xl w-9/12 text-right">{alt}</h2>
           </Link>
         ))}
       </div>
+      <h2 className="text-4xl pt-16 font-bold">Articles</h2>
+      <ul>
+        {Object.entries(posts).map(([name, post]) => {
+          const target = `/articles/${name}`;
+
+          return (
+            <Link href={target} key={name}>
+              <li
+                className="py-4 w-11/12 hover:translate-x-5 transition-all"
+                onClick={() => (location.href = target)}
+              >
+                <h4 className="text-3xl py-2">{post.title}</h4>
+                <p className="font-extrabold py-2">
+                  Published on{" "}
+                  {new Date(post.pubDate).toLocaleString(undefined, {
+                    dateStyle: "short",
+                  })}
+                </p>
+                <div
+                  dangerouslySetInnerHTML={{ __html: post.description_html }}
+                />
+              </li>
+            </Link>
+          );
+        })}
+      </ul>
     </>
   );
 }

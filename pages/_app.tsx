@@ -65,7 +65,7 @@ export default function App({ Component, pageProps }: AppProps) {
       root.style.setProperty("--fg", dark ? "var(--white)" : "var(--black)");
       root.style.setProperty(
         "--lc",
-        dark ? "var(--grey)" : "var(--light-grey)"
+        dark ? "var(--grey)" : "var(--light-grey)",
       );
       root.style.setProperty("--themefilter", dark ? "invert()" : "none");
 
@@ -82,7 +82,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <title>Elijah Potter</title>
         </Head>
         <div className="flex flex-row justify-center">
-          <div className="w-[370px] sm:w-full md:w-[800px] m-5">
+          <div className="w-full p-4 sm:w-full md:w-[800px] m-5">
             {showNavbar && (
               <Navbar>
                 <div className="mobilehide">

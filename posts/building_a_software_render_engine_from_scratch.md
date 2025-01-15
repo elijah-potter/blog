@@ -1,4 +1,4 @@
-# How I Built Software Render Engine from Scratch
+# How I Built a Software Render Engine from Scratch
 
 > **Heads Up:** This article is a republished (with some tweaks on spelling, grammar and layout) version of
 > an article I wrote in my senior year of high school for my Linear Algebra class.

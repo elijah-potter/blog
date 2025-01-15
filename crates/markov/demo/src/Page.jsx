@@ -7,7 +7,7 @@ export default function () {
   const [trainingTextClamp, setTrainingTextClamp] = useState(5000);
   const [trainingText, setTrainingText] = useState(initialTrainingText);
   const [completingText, setCompletingText] = useState(
-    "This a scratch text area to test the autocomplete in"
+    "This a scratch text area to test the autocomplete in",
   );
 
   const trainedModel = useMemo(() => {
@@ -30,7 +30,7 @@ export default function () {
 
   const lastWord = useMemo(
     () => computeLastWord(completingText),
-    [completingText]
+    [completingText],
   );
 
   const nextWords = useMemo(() => {
@@ -45,7 +45,7 @@ export default function () {
     if (lastWord != null) {
       const next = trainedModel.random_next_word(
         lastWord,
-        Math.random() * 10000
+        Math.random() * 10000,
       );
 
       if (next != null) {
