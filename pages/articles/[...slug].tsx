@@ -18,7 +18,7 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  const paths = Object.keys(generatePartialPosts()).map((name) => {
+  const paths = Object.keys(await generatePartialPosts()).map((name) => {
     return { params: { slug: [name] } };
   });
 
