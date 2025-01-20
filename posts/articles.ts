@@ -1,21 +1,24 @@
 import { clone, startCase } from "lodash";
 import { LocalLinter } from "harper.js";
 
-export type PartialPost = {
+export type PostDeclaration = {
   keywords: string[];
   image?: string;
   pubDate: string;
   description: string;
 };
 
-export type FullPost = {
-  author: string;
+export type PartialPost = {
   title: string;
   description_html: string;
+  author: string;
+} & PostDeclaration;
+
+export type FullPost = {
   content_html: string;
 } & PartialPost;
 
-const partialPosts: Record<string, PartialPost> = {
+const postDeclarations: Record<string, PostDeclaration> = {
   the_best_25_bucks_i_ever_spent: {
     description: "Bonus: why you need to do it too.",
     pubDate: new Date(2025, 0, 13).toUTCString(),
@@ -302,50 +305,60 @@ const partialPosts: Record<string, PartialPost> = {
   },
 };
 
-export function generatePartialPosts(): Record<string, PartialPost> {
-  return clone(partialPosts);
+export function getPostDeclarations(): Record<string, PostDeclaration> {
+  return clone(postDeclarations);
 }
 
 const linter = new LocalLinter();
 
-async function processEntry(
+async function createPartialPost(
   key: string,
-  value: PartialPost,
-): Promise<[string, FullPost]> {
+  post: PostDeclaration
+): Promise<PartialPost> {
   const { processMarkdown } = await import("../src/processMarkdown");
-  const fs = await import("fs/promises");
+  post.keywords.push("reddit");
 
-  // Someone told me adding this to everything enhances SEO?
-  value.keywords.push("reddit");
-
-  const fileContent = await fs.readFile(`./posts/${key}.md`, "utf8");
-
-  const [content_html, description_html, title] = await Promise.all([
-    processMarkdown(fileContent),
-    processMarkdown(value.description),
+  const [description_html, title] = await Promise.all([
+    processMarkdown(post.description),
     linter.toTitleCase(startCase(key)),
   ]);
 
-  return [
-    key,
-    {
-      author: "Elijah Potter",
-      title,
-      content_html,
-      description_html,
-      ...value,
-    },
-  ];
+  return { author: "Elijah Potter", title, description_html, ...post };
+}
+
+export async function generatePartialPosts(): Promise<
+  Record<string, PartialPost>
+> {
+  const partialPosts: Record<string, PartialPost> = {};
+
+  for (const [key, post] of Object.entries(getPostDeclarations())) {
+    const partialPost = await createPartialPost(key, post);
+    partialPosts[key] = partialPost;
+  }
+
+  return partialPosts;
+}
+
+async function createFullPost(
+  key: string,
+  post: PartialPost
+): Promise<FullPost> {
+  const { processMarkdown } = await import("../src/processMarkdown");
+  const fs = await import("fs/promises");
+
+  const fileContent = await fs.readFile(`./posts/${key}.md`, "utf8");
+  const content_html = await processMarkdown(fileContent);
+
+  return { content_html, ...post };
 }
 
 export async function generateFullPosts(): Promise<Record<string, FullPost>> {
-  const fullPosts: Record<string, FullPost> = Object.fromEntries(
-    await Promise.all(
-      Object.entries(partialPosts).map(([key, value]) =>
-        processEntry(key, value),
-      ),
-    ),
-  );
+  const fullPosts: Record<string, FullPost> = {};
+
+  for (const [key, post] of Object.entries(await generatePartialPosts())) {
+    const fullPost = await createFullPost(key, post);
+    fullPosts[key] = fullPost;
+  }
 
   return fullPosts;
 }

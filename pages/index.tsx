@@ -2,14 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Spacer from "../components/Spacer";
-import { FullPost, generateFullPosts } from "../posts/articles";
+import { FullPost, generatePartialPosts } from "../posts/articles";
 
 const iconLinks = [
-  [
-    "/articles",
-    "/icons/type.svg",
-    "Articles on books, low-level computer science, and the concept of learning",
-  ],
   [
     "https://github.com/elijah-potter/harper",
     "/icons/harper.svg",
@@ -41,7 +36,7 @@ const iconLinks = [
 export async function getStaticProps() {
   return {
     props: {
-      posts: await generateFullPosts(),
+      posts: await generatePartialPosts(),
     },
   };
 }
