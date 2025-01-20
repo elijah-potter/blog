@@ -323,7 +323,15 @@ async function createPartialPost(
     linter.toTitleCase(startCase(key)),
   ]);
 
-  return { author: "Elijah Potter", title, description_html, ...post };
+  const image =
+    post.image ??
+    `https://og.tailgraph.com/og?fontFamily=Raleway&title=${encodeURIComponent(
+      title,
+    )}&titleTailwind=text-gray-800%20font-bold%20text-6xl&text=${encodeURIComponent(
+      post.description,
+    )}&textTailwind=text-gray-700%20mt-4%20text-3xl&logoTailwind=h-8&bgTailwind=bg-white&footer=tailgraph.com&footerTailwind=text-teal-600&t=1737396157314&refresh=1`;
+
+  return { author: "Elijah Potter", title, description_html, ...post, image };
 }
 
 export async function generatePartialPosts(): Promise<
