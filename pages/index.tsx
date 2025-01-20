@@ -59,8 +59,8 @@ export default function index({
           <Image
             className="rounded-full"
             src="/images/headshot.webp"
-            width="300"
-            height="300"
+            width="250"
+            height="250"
             alt="Headshot of Elijah Potter"
           />
         </div>
