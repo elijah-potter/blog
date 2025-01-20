@@ -3,18 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --white: white;
-  --black: #151515;
-  --grey: #262626;
-  --light-grey: #ddd;
-  --bg: var(--white);
-  --fg: var(--black);
-  --lc: var(--grey);
-  --themeFilter: none;
   text-rendering: optimizeLegibility;
   font-family: charter;
-  background-color: var(--bg);
-  color: var(--fg);
+  background-color: white;
+  color: black;
   line-height: 1.3;
 }
 
@@ -24,18 +16,16 @@ code {
 
 a {
   text-decoration: underline;
-  color: var(--fg);
 }
 
 textarea {
-  background-color: var(--bg);
-  color: var(--fg);
+  color: black;
   line-height: 1.3;
 }
 
 button {
-  background-color: var(--bg);
-  color: var(--fg);
+  background-color: white;
+  color: black;
 }
 
 .rmd {
@@ -106,7 +96,7 @@ button {
 }
 
 .rmd p > code {
-  background-color: var(--lc);
+  background-color: #89e0a9;
   padding: 4px;
   border-radius: 5px;
 }

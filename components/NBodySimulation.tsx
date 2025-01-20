@@ -20,21 +20,17 @@ function positionFromMouseEvent(e: MouseEvent<HTMLCanvasElement>): Vector {
   return [e.clientX - rect.left, e.clientY - rect.top];
 }
 
-function primaryColor(dark: boolean) {
-  return dark ? "#151515" : "#fff";
+function primaryColor() {
+  return "#fff";
 }
 
-function secondaryColor(dark: boolean) {
-  return dark ? "#fff" : "#151515";
+function secondaryColor() {
+  return "#151515";
 }
 
-function drawBody(
-  ctx: CanvasRenderingContext2D,
-  body: DrawableBody,
-  dark: boolean,
-) {
-  ctx.fillStyle = primaryColor(dark);
-  ctx.strokeStyle = secondaryColor(dark);
+function drawBody(ctx: CanvasRenderingContext2D, body: DrawableBody) {
+  ctx.fillStyle = primaryColor();
+  ctx.strokeStyle = secondaryColor();
   ctx.lineWidth = BODY_LINE_WIDTH;
 
   ctx.beginPath();
@@ -50,13 +46,9 @@ function drawBody(
   ctx.stroke();
 }
 
-function renderBodies(
-  ctx: CanvasRenderingContext2D,
-  bodies: DrawableBody[],
-  dark: boolean,
-) {
+function renderBodies(ctx: CanvasRenderingContext2D, bodies: DrawableBody[]) {
   for (const body of bodies) {
-    drawBody(ctx, body, dark);
+    drawBody(ctx, body);
   }
 }
 
@@ -82,12 +74,10 @@ type ActiveMode =
     };
 
 export default function index({
-  dark,
   initialBodies,
   interactive,
   zIndex,
 }: {
-  dark: boolean;
   initialBodies: Body[];
   interactive: boolean;
   zIndex: number;
@@ -235,13 +225,13 @@ export default function index({
       return;
     }
 
-    ctx.fillStyle = primaryColor(dark);
+    ctx.fillStyle = primaryColor();
     ctx.fillRect(0, 0, width, height);
 
-    renderBodies(ctx, bodies, dark);
+    renderBodies(ctx, bodies);
 
     if (activeMode.mode === "intro") {
-      ctx.fillStyle = secondaryColor(dark);
+      ctx.fillStyle = secondaryColor();
       ctx.textBaseline = "middle";
       ctx.font = "30px charter";
       ctx.textAlign = "center";
@@ -282,29 +272,23 @@ export default function index({
       ctx.lineTo(activeMode.dragEnd[0], activeMode.dragEnd[1]);
       ctx.stroke();
 
-      drawBody(
-        ctx,
-        {
-          position: activeMode.dragEnd,
-          mass,
-        },
-        dark,
-      );
+      drawBody(ctx, {
+        position: activeMode.dragEnd,
+        mass,
+      });
     }
 
     // Draw UI Bars
     if (interactive) {
-      ctx.fillStyle = secondaryColor(dark);
+      ctx.fillStyle = secondaryColor();
       ctx.fillRect(
         width / 2,
         height - UI_BAR_THICKNESS - UI_BAR_LINE_WIDTH,
         g * 100,
         UI_BAR_THICKNESS,
       );
-      ctx.fillStyle = randomizeMass ? primaryColor(dark) : secondaryColor(dark);
-      ctx.strokeStyle = randomizeMass
-        ? secondaryColor(dark)
-        : primaryColor(dark);
+      ctx.fillStyle = randomizeMass ? primaryColor() : secondaryColor();
+      ctx.strokeStyle = randomizeMass ? secondaryColor() : primaryColor();
       ctx.lineWidth = 2;
       ctx.fillRect(UI_BAR_LINE_WIDTH, height / 2, UI_BAR_THICKNESS, mass);
       ctx.strokeRect(UI_BAR_LINE_WIDTH, height / 2, UI_BAR_THICKNESS, mass);
@@ -315,7 +299,6 @@ export default function index({
     height,
     bodies,
     activeMode,
-    dark,
     stepsPerFrame,
     g,
     targetG,
