@@ -313,7 +313,7 @@ const linter = new LocalLinter();
 
 async function createPartialPost(
   key: string,
-  post: PostDeclaration
+  post: PostDeclaration,
 ): Promise<PartialPost> {
   const { processMarkdown } = await import("../src/processMarkdown");
   post.keywords.push("reddit");
@@ -341,7 +341,7 @@ export async function generatePartialPosts(): Promise<
 
 async function createFullPost(
   key: string,
-  post: PartialPost
+  post: PartialPost,
 ): Promise<FullPost> {
   const { processMarkdown } = await import("../src/processMarkdown");
   const fs = await import("fs/promises");
