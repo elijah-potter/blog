@@ -6,7 +6,7 @@ import { FullPost, generatePartialPosts } from "../posts/articles";
 
 const iconLinks = [
   [
-    "https://github.com/elijah-potter/harper",
+    "https://github.com/automattic/harper",
     "/icons/harper.svg",
     "Harper, a Grammar Checker for Developers",
   ],
@@ -91,6 +91,7 @@ export default function index({
                 filter: "var(--themefilter)",
               }}
               alt={alt}
+              title={alt}
             />
             <Spacer></Spacer>
           </Link>
