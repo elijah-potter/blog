@@ -19,6 +19,11 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  the_three_steps_to_an_apology: {
+    description: "Wisdom from my grandmother.",
+    pubDate: new Date(2025, 0, 29).toUTCString(),
+    keywords: [],
+  },
   the_best_25_bucks_i_ever_spent: {
     description: "Bonus: why you need to do it too.",
     pubDate: new Date(2025, 0, 13).toUTCString(),
@@ -313,7 +318,7 @@ const linter = new LocalLinter();
 
 async function createPartialPost(
   key: string,
-  post: PostDeclaration,
+  post: PostDeclaration
 ): Promise<PartialPost> {
   const { processMarkdown } = await import("../src/processMarkdown");
   post.keywords.push("reddit");
@@ -326,9 +331,9 @@ async function createPartialPost(
   const image =
     post.image ??
     `https://og.tailgraph.com/og?fontFamily=Raleway&title=${encodeURIComponent(
-      title,
+      title
     )}&titleTailwind=text-gray-800%20font-bold%20text-6xl&text=${encodeURIComponent(
-      post.description,
+      post.description
     )}&textTailwind=text-gray-700%20mt-4%20text-3xl&logoTailwind=h-8&bgTailwind=bg-white&footer=tailgraph.com&footerTailwind=text-teal-600&t=1737396157314&refresh=1`;
 
   return { author: "Elijah Potter", title, description_html, ...post, image };
@@ -349,7 +354,7 @@ export async function generatePartialPosts(): Promise<
 
 async function createFullPost(
   key: string,
-  post: PartialPost,
+  post: PartialPost
 ): Promise<FullPost> {
   const { processMarkdown } = await import("../src/processMarkdown");
   const fs = await import("fs/promises");
