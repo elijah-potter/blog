@@ -21,7 +21,7 @@ export type FullPost = {
 const postDeclarations: Record<string, PostDeclaration> = {
   the_three_steps_to_an_apology: {
     description: "Wisdom from my grandmother.",
-    pubDate: new Date(2025, 0, 29).toUTCString(),
+    pubDate: new Date(2025, 0, 30).toUTCString(),
     keywords: [],
   },
   the_best_25_bucks_i_ever_spent: {
