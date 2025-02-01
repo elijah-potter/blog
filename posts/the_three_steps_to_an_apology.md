@@ -1,6 +1,6 @@
 # The Three Steps to an Apology
 
-My grandmother is a wonderful woman. She never leaves the house without a least a little bit of purple. Maybe a keychain or a purse. Sometimes, she would leave the house without a lot of purple, head to toe. She also never forgets a smile and a good attitude.
+My grandmother is a wonderful woman. She never leaves the house without a least a little bit of purple. Maybe a keychain or a purse. Sometimes, she wouldn't leave the house without a lot of purple, head to toe. She also never forgets a smile and a good attitude.
 
 She's a wise woman. With more than 70 years and five children under her belt, she's seen some stuff. All that experience comes with a lot of advice. The three steps to an apology are some of the best bits of advice she's ever given me.
 
