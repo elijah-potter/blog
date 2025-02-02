@@ -7,6 +7,7 @@ import remarkMath from "remark-math";
 import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
 import rust from "highlight.js/lib/languages/rust";
+import javascript from "highlight.js/lib/languages/javascript";
 import bash from "highlight.js/lib/languages/bash";
 import fs from "fs/promises";
 import rehypeTitleFigure from "rehype-title-figure";
@@ -21,7 +22,7 @@ export async function processMarkdown(markdown: string): Promise<string> {
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeTitleFigure)
-    .use(rehypeHighlight, { languages: { rust, bash } })
+    .use(rehypeHighlight, { languages: { rust, bash, javascript } })
     .use(remarkKatex)
     .use(rehypeStringify, { allowDangerousHtml: true });
 

@@ -19,6 +19,11 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  notifications: {
+    pubDate: new Date(2025, 1, 2).toUTCString(),
+    description: "The mornings are for deep work.",
+    keywords: ["deep", "work", "open-source", "github", "notifications"],
+  },
   the_three_steps_to_an_apology: {
     description: "Wisdom from my grandmother.",
     pubDate: new Date(2025, 0, 30).toUTCString(),
