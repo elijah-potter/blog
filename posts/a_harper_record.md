@@ -9,4 +9,4 @@ In just over 15 minutes, he was able to embed Harper into Raycast, a command pal
 This is fantastic news. 
 It's always great to see when you goals are having a real impact on someone's ability.
 
-I hope you take the time to look at the project on GitHub
+I hope you take the time to look at [the project on GitHub](https://github.com/lukasmwerner/harper-raycast).
