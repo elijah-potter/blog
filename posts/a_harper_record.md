@@ -10,3 +10,8 @@ This is fantastic news.
 It's always great to see when your goals are having a real impact on someone's ability.
 
 I hope you take the time to look at [the project on GitHub](https://github.com/lukasmwerner/harper-raycast).
+
+In other news, we have some other small projects using Harper:
+
+- [Lockbook](https://github.com/lockbook/lockbook)
+- [Stubby CMS](https://stubby.io/)
