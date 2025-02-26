@@ -19,9 +19,9 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
-  ["of_course_it_is_that_easy"]: {
+  ["prompting_large_language_models_in_bash_scripts"]: {
     pubDate: new Date(2025, 2, 26).toUTCString(),
-    description: "Making scripting LLMs easy.",
+    description: "Of course it's that easy.",
     keywords: ["harper", "grammar", "ollama"],
   },
   a_harper_record: {
