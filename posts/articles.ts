@@ -19,6 +19,11 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  ["of_course_it_is_that_easy"]: {
+    pubDate: new Date(2025, 2, 26).toUTCString(),
+    description: "Making scripting LLMs easy.",
+    keywords: ["harper", "grammar", "ollama"],
+  },
   a_harper_record: {
     pubDate: new Date(2025, 1, 6).toUTCString(),
     description: "🎉",
