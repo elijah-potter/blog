@@ -6,7 +6,7 @@ I might write a blog post about the technique (which I am grandiosely calling LL
 I've written a little tool called [`ofc` that lets you insert Ollama into you bash scripts](https://github.com/elijah-potter/ofc).
 I think it's pretty neat, since it (very easily) lets you do some pretty cool things.
 
-For example, you can swap out the system prompt super easily, so if you want to compare behavior across prompts, it's pretty easy:
+For example, you can swap out the system prompt super easily, so if you want to compare behavior across prompts, you can just toss it in a loop:
 
 ```bash
 #!/bin/bash
@@ -21,7 +21,7 @@ for subreddit in "${subreddits[@]}"; do
 done
 ```
 
-Or, you can use a model to prompt itself:
+Or, you can instruct a model to prompt itself:
 
 ```bash
 ofc --system-prompt "$(ofc "Write a prompt for a large language model that makes it think harder. ")" "What is a while loop?"
