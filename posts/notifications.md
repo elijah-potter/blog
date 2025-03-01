@@ -20,12 +20,17 @@ So I wrote a little ViolentMonkey script to hide the notifications icon during t
 // @description 1/29/2025, 8:16:11 AM
 // ==/UserScript==
 
-function hideEm(){
-  const matches = document.getElementsByClassName('AppHeader-button--hasIndicator');
-    for (const element of matches) {
-      element.remove();
+function hideEm() {
+  const matches = document.getElementsByClassName(
+    "AppHeader-button--hasIndicator"
+  );
+  for (const element of matches) {
+    element.remove();
   }
 }
 
-(new MutationObserver(hideEm)).observe(document, {childList: true, subtree: true});
+new MutationObserver(hideEm).observe(document, {
+  childList: true,
+  subtree: true,
+});
 ```

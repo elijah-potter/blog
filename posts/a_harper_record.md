@@ -6,7 +6,7 @@ We wanted it to take less than 24 hours for a developer to embed high-quality gr
 A friend of mine, [Lukas Werner](https://lukaswerner.com/) recently set a record for this.
 In just over 15 minutes, he was able to embed Harper into Raycast, a command palate for MacOS.
 
-This is fantastic news. 
+This is fantastic news.
 It's always great to see when your goals are having a real impact on someone's ability.
 
 I hope you take the time to look at [the project on GitHub](https://github.com/lukasmwerner/harper-raycast).

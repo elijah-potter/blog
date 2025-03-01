@@ -1,37 +1,12 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
-import {
-  FullPost,
-  generatePartialPosts,
-  generateFullPosts,
-} from "../../posts/articles";
+import { FullPost, generateFullPosts, PartialPost } from "../../posts/articles";
 import "katex/dist/katex.css";
 import "highlight.js/styles/hybrid.css";
-import { startCase } from "lodash";
+import { startCase, sampleSize } from "lodash";
+import Link from "next/link";
 
-export async function getStaticProps() {
-  return {
-    props: {
-      posts: await generateFullPosts(),
-    },
-  };
-}
-
-export async function getStaticPaths() {
-  const paths = Object.keys(await generatePartialPosts()).map((name) => {
-    return { params: { slug: [name] } };
-  });
-
-  return {
-    paths: paths,
-    fallback: false,
-  };
-}
-
-export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
-  const router = useRouter();
-
-  const { slug } = router.query;
+export async function getServerSideProps({ params }: any) {
+  const { slug } = params;
 
   if (slug === undefined) {
     console.log("No slug!");
@@ -44,7 +19,29 @@ export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
     name = slug[0];
   }
 
+  const posts = await generateFullPosts();
   const post = posts[name];
+
+  const featuredPosts = sampleSize(Object.entries(posts), 3);
+
+  return {
+    props: {
+      post,
+      featuredPosts,
+      name,
+    },
+  };
+}
+
+export default function ({
+  post,
+  name,
+  featuredPosts,
+}: {
+  name: string;
+  post: FullPost;
+  featuredPosts: [string, PartialPost][];
+}) {
   const html = post?.content_html;
 
   if (typeof html !== "string") {
@@ -66,7 +63,7 @@ export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
         <meta property="og:description" content={post.description} />
         <link
           rel="canonical"
-          href={`https://elijahpotter.dev/articles/${slug}`}
+          href={`https://elijahpotter.dev/articles/${name}`}
         />
         {post.image && <meta property="og:image" content={post.image} />}
         <title>{startCase(name)}</title>
@@ -75,6 +72,18 @@ export default function ({ posts }: { posts: { [name: string]: FullPost } }) {
         <meta name="keywords" content={post.keywords.join(", ")} />
       </Head>
       <div className="rmd" dangerouslySetInnerHTML={{ __html: html }}></div>
+
+      <div className="border-t border-black">
+        <h2 className="text-2xl font-bold my-4">Other Stuff</h2>
+        {featuredPosts.map(([key, post]) => (
+          <Link href={`/articles/${key}`}>
+            <div className="border border-gray-300 rounded py-4 px-3 mt-4 transition-all hover:translate-x-4">
+              <h3 className="font-bold text-xl">{post.title}</h3>
+              <p className="text-lg no-underline">{post.description}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </>
   );
 }

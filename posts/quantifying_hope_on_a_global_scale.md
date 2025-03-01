@@ -254,11 +254,3 @@ Part of my motivation for doing this project was to gather more information on t
 To that end, I found this quite successful.
 I now have a better understanding of what kind of server and database architecture I want to use.
 I also now know what kinds of formats people are more likely to see global metrics like hope or climate progress (home screen widgets and push notifications are at the top of the list).
-
-> **Note to the Grandey Honors Program:**
-> I know you want a formal self assessment.
-> This is it.
-> I believe I deserve a "T".
-> My reflection and portfolio are quite polished and convey the story of building my Hope-o-meter relatively well.
-> I demonstrably went outside my comfort zone and attempted to solve (what I perceive to be) a **_real world problem_**.
-> My work should stand on its own, so I feel no further need to justify a "T".

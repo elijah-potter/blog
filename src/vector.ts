@@ -2,7 +2,7 @@ export type Vector = [number, number];
 
 export function distanceSquared(
   [ax, ay]: [number, number],
-  [bx, by]: [number, number],
+  [bx, by]: [number, number]
 ): number {
   const a = ax - bx;
   const b = ay - by;

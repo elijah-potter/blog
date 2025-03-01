@@ -3,7 +3,7 @@ import { getPostDeclarations, PostDeclaration } from "../posts/articles";
 import fs from "fs/promises";
 
 async function generateItems(
-  posts: Record<string, PostDeclaration>,
+  posts: Record<string, PostDeclaration>
 ): Promise<string[]> {
   const output = [];
 

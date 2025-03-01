@@ -1,6 +1,6 @@
 # The Books I Read in January 2025
 
-I only got to read two full books this month. 
+I only got to read two full books this month.
 The first was a short novel by Matt Haig with the title [_The Midnight Library_.](https://app.thestorygraph.com/books/d9c7ed04-6148-4e01-a118-d96cba16f507)
 
 It reads like and feels like a therapy session.

@@ -40,7 +40,7 @@ function drawBody(ctx: CanvasRenderingContext2D, body: DrawableBody) {
     radiusFromMass(body.mass),
     0,
     2 * Math.PI,
-    false,
+    false
   );
   ctx.fill();
   ctx.stroke();
@@ -97,7 +97,7 @@ export default function index({
       ? {
           mode: "intro",
         }
-      : { mode: "simulate" },
+      : { mode: "simulate" }
   );
 
   const [bodies, setBodies] = useState<Body[]>(cloneDeep(initialBodies));
@@ -118,7 +118,7 @@ export default function index({
         });
       }
     },
-    [activeMode, mass, interactive],
+    [activeMode, mass, interactive]
   );
 
   const onMouseMove = useCallback(
@@ -136,7 +136,7 @@ export default function index({
         });
       }
     },
-    [activeMode, interactive],
+    [activeMode, interactive]
   );
 
   const onMouseUp = useCallback(() => {
@@ -149,7 +149,7 @@ export default function index({
 
       const targetVelocity = mulS(
         subV(activeMode.dragStart, activeMode.dragEnd),
-        INITIAL_VELOCITY_COEFF,
+        INITIAL_VELOCITY_COEFF
       );
 
       const newBody = {
@@ -243,13 +243,13 @@ export default function index({
         ctx.fillText(
           "Shift + R → Automatically Randomize Mass",
           width / 2,
-          (height / 4) * 3 + 80,
+          (height / 4) * 3 + 80
         );
         ctx.fillText("[ / ] → Adjust Mass", width / 2, (height / 4) * 3 + 120);
         ctx.fillText(
           "Up / Down → Adjust Gravity",
           width / 2,
-          (height / 4) * 3 + 160,
+          (height / 4) * 3 + 160
         );
       }
     }
@@ -285,7 +285,7 @@ export default function index({
         width / 2,
         height - UI_BAR_THICKNESS - UI_BAR_LINE_WIDTH,
         g * 100,
-        UI_BAR_THICKNESS,
+        UI_BAR_THICKNESS
       );
       ctx.fillStyle = randomizeMass ? primaryColor() : secondaryColor();
       ctx.strokeStyle = randomizeMass ? secondaryColor() : primaryColor();

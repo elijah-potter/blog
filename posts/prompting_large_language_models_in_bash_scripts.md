@@ -1,4 +1,4 @@
-# Prompting Large Language Models In Bash Scripts 
+# Prompting Large Language Models In Bash Scripts
 
 I've been experimenting with using LLMs locally for generating datasets to test [Harper](https://writewithharper.com) against.
 I might write a blog post about the technique (which I am grandiosely calling "LLM-assisted fuzzing"), but I'm going to make you wait.

@@ -17,7 +17,7 @@ export default function useSize(): [RefCallback<HTMLElement>, Vector] {
           elementRef.current.offsetHeight,
         ]);
       }
-    }),
+    })
   );
 
   const setRef = useCallback((element: HTMLElement) => {

@@ -28,4 +28,4 @@ If a draft PR has been opened, I can usually see the problem without even clonin
 ## Conclusion
 
 So please don't wait; open that PR.
-I am thrilled each time I see a name I don't recognize on GitHub notification.
+I am thrilled each time I see a name I don't recognize on a GitHub notification.
