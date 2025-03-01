@@ -19,8 +19,29 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  never_wait: {
+    pubDate: new Date(2025, 2, 1).toUTCString(),
+    description: "Your code is always welcome.",
+    keywords: [
+      "pull request",
+      "draft PR",
+      "open source",
+      "duplicate work",
+      "CI (Continuous Integration)",
+      "debugging",
+      "mentorship",
+      "community building",
+      "contribution",
+      "collaboration",
+      "GitHub",
+      "feedback loop",
+      "project efficiency",
+      "contributor support",
+      "early submission",
+    ],
+  },
   ["prompting_large_language_models_in_bash_scripts"]: {
-    pubDate: new Date(2025, 2, 26).toUTCString(),
+    pubDate: new Date(2025, 1, 26).toUTCString(),
     description: "Of course it's that easy.",
     keywords: ["harper", "grammar", "ollama"],
   },
