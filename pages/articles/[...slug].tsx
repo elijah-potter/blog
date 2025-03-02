@@ -22,7 +22,10 @@ export async function getServerSideProps({ params }: any) {
   const posts = await generateFullPosts();
   const post = posts[name];
 
-  const featuredPosts = sampleSize(Object.entries(posts), 3);
+  const featuredPosts = sampleSize(
+    Object.entries(posts).filter(([a]) => a != name),
+    3
+  );
 
   return {
     props: {
