@@ -1,5 +1,8 @@
 # Never Wait
 
+> _Preface:_ This post is specifically about Pull Requests for [Harper](https://github.com/Automattic/harper).
+> Read the contributor guidelines for a project before opening a PR.
+
 I get it.
 Opening a pull request is an intimidating proposition.
 
