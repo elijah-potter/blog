@@ -406,12 +406,16 @@ async function createFullPost(
   return { content_html, ...post };
 }
 
-export async function generateFullPosts(): Promise<Record<string, FullPost>> {
-  const fullPosts: Record<string, FullPost> = {};
+let fullPosts: Record<string, FullPost> | null = null;
 
-  for (const [key, post] of Object.entries(await generatePartialPosts())) {
-    const fullPost = await createFullPost(key, post);
-    fullPosts[key] = fullPost;
+export async function generateFullPosts(): Promise<Record<string, FullPost>> {
+  if (fullPosts == null) {
+    fullPosts = {};
+
+    for (const [key, post] of Object.entries(await generatePartialPosts())) {
+      const fullPost = await createFullPost(key, post);
+      fullPosts[key] = fullPost;
+    }
   }
 
   return fullPosts;
