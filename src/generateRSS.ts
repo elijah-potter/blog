@@ -1,38 +1,8 @@
-import { startCase } from "lodash";
-import { getPostDeclarations, PostDeclaration } from "../posts/articles";
+import { generateFullPosts } from "../posts/articles";
 import fs from "fs/promises";
+import { Feed } from "feed";
 
-async function generateItems(
-  posts: Record<string, PostDeclaration>
-): Promise<string[]> {
-  const output = [];
-
-  for (const entry of Object.entries(posts)) {
-    const [name, post] = entry;
-    let enclosureString = "";
-
-    if (post.image != null) {
-      const image = await fs.readFile(`./public${post.image}`);
-      enclosureString = `<enclosure url="https://elijahpotter.dev${
-        post.image
-      }" length="${image.byteLength}" type="${getMimeType(post.image)}"/>`;
-    }
-
-    output.push(`<item>
-  <title>${startCase(name)}</title>
-  <description>${post.description}</description>
-  <guid isPermaLink="false">${name}</guid>
-  <link>https://elijahpotter.dev/articles/${name}</link>
-  <pubDate>${new Date(post.pubDate).toUTCString()}</pubDate>
-  ${enclosureString}
-</item>
-  `);
-  }
-
-  return output;
-}
-
-function getMimeType(imagePath: string): string {
+function getMimeType(imagePath: string): string | null {
   if (imagePath.endsWith("webp")) {
     return "image/webp";
   }
@@ -40,27 +10,39 @@ function getMimeType(imagePath: string): string {
     return "image/png";
   } else if (imagePath.endsWith("jpg") || imagePath.endsWith("jpeg")) {
     return "image/jpeg";
-  } else {
-    throw new Error("Unexpected file type");
   }
+
+  return null;
 }
 
 export default async function generateRSS(): Promise<string> {
-  const posts = getPostDeclarations();
+  const feed = new Feed({
+    title: "Elijah Potter's Blog",
+    description: "The writings of Elijah Potter",
+    link: "https://elijahpotter.dev",
+    id: "https://elijahpotter.dev",
+    copyright: "All rights reserved 2025, Elijah Potter",
+    ttl: 60,
+    feedLinks: {
+      atom: "https://elijahpotter.dev/rss.xml",
+    },
+  });
 
-  return `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-<atom:link href="https://elijahpotter.dev/rss.xml" rel="self" type="application/rss+xml" />
-<title>Elijah Potter</title>
-<description>The writings of Elijah Potter</description>
-<link>https://elijahpotter.dev</link>
-<copyright>2023 elijahpotter.dev All rights reserved</copyright>
-<ttl>60</ttl>
+  const posts = await generateFullPosts();
 
-${(await generateItems(posts)).reduce((a, b) => `${a}\n${b}`)}
+  for (const [key, post] of Object.entries(posts)) {
+    const link = `https://elijahpotter.dev/articles/${key}`;
 
-</channel>
-</rss>
-    `;
+    feed.addItem({
+      title: post.title,
+      image: post.image,
+      id: link,
+      description: post.description_html,
+      content: post.content_html,
+      date: new Date(post.pubDate),
+      link: link,
+    });
+  }
+
+  return feed.rss2();
 }

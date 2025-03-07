@@ -359,7 +359,7 @@ const linter = new LocalLinter();
 
 async function createPartialPost(
   key: string,
-  post: PostDeclaration
+  post: PostDeclaration,
 ): Promise<PartialPost> {
   const { processMarkdown } = await import("../src/processMarkdown");
   post.keywords.push("reddit");
@@ -369,13 +369,11 @@ async function createPartialPost(
     linter.toTitleCase(startCase(key)),
   ]);
 
-  const image =
-    post.image ??
-    `https://og.tailgraph.com/og?fontFamily=Raleway&title=${encodeURIComponent(
-      title
-    )}&titleTailwind=text-gray-800%20font-bold%20text-6xl&text=${encodeURIComponent(
-      post.description
-    )}&textTailwind=text-gray-700%20mt-4%20text-3xl&logoTailwind=h-8&bgTailwind=bg-white&footer=tailgraph.com&footerTailwind=text-teal-600&t=1737396157314&refresh=1`;
+  let image;
+
+  if (post.image) {
+    image = `https://elijahpotter.dev${post.image}`;
+  }
 
   return { author: "Elijah Potter", title, description_html, ...post, image };
 }
@@ -395,7 +393,7 @@ export async function generatePartialPosts(): Promise<
 
 async function createFullPost(
   key: string,
-  post: PartialPost
+  post: PartialPost,
 ): Promise<FullPost> {
   const { processMarkdown } = await import("../src/processMarkdown");
   const fs = await import("fs/promises");

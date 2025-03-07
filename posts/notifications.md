@@ -22,7 +22,7 @@ So I wrote a little ViolentMonkey script to hide the notifications icon during t
 
 function hideEm() {
   const matches = document.getElementsByClassName(
-    "AppHeader-button--hasIndicator"
+    "AppHeader-button--hasIndicator",
   );
   for (const element of matches) {
     element.remove();

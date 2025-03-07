@@ -24,7 +24,7 @@ export async function getServerSideProps({ params }: any) {
 
   const featuredPosts = sampleSize(
     Object.entries(posts).filter(([a]) => a != name),
-    3
+    3,
   );
 
   return {

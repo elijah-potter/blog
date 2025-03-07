@@ -12,6 +12,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "feed": "^4.2.2",
     "framer-motion": "^10.12.18",
     "harper.js": "^0.18.1",
     "highlight.js": "^11.6.0",
