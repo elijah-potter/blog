@@ -37,7 +37,7 @@ export default async function generateRSS(): Promise<string> {
       title: post.title,
       image: post.image,
       id: link,
-      description: post.description_html,
+      description: post.content_html,
       content: post.content_html,
       date: new Date(post.pubDate),
       link: link,
