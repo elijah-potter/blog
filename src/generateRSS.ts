@@ -35,7 +35,7 @@ export default async function generateRSS(): Promise<string> {
 
     feed.addItem({
       title: post.title,
-      image: post.image,
+      image: post.image ?? undefined,
       id: link,
       description: post.content_html,
       content: post.content_html,

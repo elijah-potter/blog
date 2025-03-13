@@ -3,7 +3,7 @@ import { LocalLinter } from "harper.js";
 
 export type PostDeclaration = {
   keywords: string[];
-  image?: string;
+  image: string | null;
   pubDate: string;
   description: string;
 };
@@ -39,51 +39,62 @@ const postDeclarations: Record<string, PostDeclaration> = {
       "contributor support",
       "early submission",
     ],
+
+    image: null,
   },
   ["prompting_large_language_models_in_bash_scripts"]: {
     pubDate: new Date(2025, 1, 26).toUTCString(),
     description: "Of course it's that easy.",
     keywords: ["harper", "grammar", "ollama"],
+    image: null,
   },
   a_harper_record: {
     pubDate: new Date(2025, 1, 6).toUTCString(),
     description: "🎉",
     keywords: ["harper", "grammar", "raycast"],
+    image: null,
   },
   the_books_i_read_in_january_2025: {
     pubDate: new Date(2025, 1, 4).toUTCString(),
     description: "Spoiler: there aren't many.",
     keywords: ["async", "sync", "communication", "project", "management"],
+    image: null,
   },
   notifications: {
     pubDate: new Date(2025, 1, 2).toUTCString(),
     description: "The mornings are for deep work.",
     keywords: ["deep", "work", "open-source", "github", "notifications"],
+    image: null,
   },
   the_three_steps_to_an_apology: {
     description: "Wisdom from my grandmother.",
     pubDate: new Date(2025, 0, 30).toUTCString(),
     keywords: [],
+    image: null,
   },
   the_best_25_bucks_i_ever_spent: {
     description: "Bonus: why you need to do it too.",
     pubDate: new Date(2025, 0, 13).toUTCString(),
     keywords: ["flip", "phone", "quiet"],
+    image: null,
   },
   why_you_need_sccache: {
     description: "You might not actually need it.",
     pubDate: new Date(2024, 11, 29).toUTCString(),
     keywords: ["sccache", "rust", "development", "linux", "distributed"],
+    image: null,
   },
   the_best_books_i_read_this_year: {
     description: "I might be starting to sound like a broken record.",
     pubDate: new Date(2024, 11, 21).toUTCString(),
     keywords: ["books", "reading"],
+    image: null,
   },
   for_the_love_of_iframes: {
     description: "Chronically underrated, chronically over-prescribed",
     pubDate: new Date(2024, 9, 13).toUTCString(),
     keywords: ["iframe", "harper", "blogging", "meta"],
+    image: null,
   },
   naming_harper: {
     description: "Where did Harper come from?",
@@ -99,6 +110,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
       "nomenclature",
       "naming",
     ],
+    image: null,
   },
   the_simplest_neovim_markdown_setup: {
     description: "How I preview my Markdown quickly and reliably.",
@@ -328,6 +340,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
       "A key part of Rust is far better that what JavaScript has to offer.",
     keywords: ["cargo", "rust", "npm", "nodejs", "learning", "ease-of-use"],
     pubDate: new Date(2022, 1, 25).toUTCString(),
+    image: null,
   },
   //  you_need_to_stop_idolizing_programming_languages: {
   //    author: "Elijah Potter",
@@ -359,7 +372,7 @@ const linter = new LocalLinter();
 
 async function createPartialPost(
   key: string,
-  post: PostDeclaration,
+  post: PostDeclaration
 ): Promise<PartialPost> {
   const { processMarkdown } = await import("../src/processMarkdown");
   post.keywords.push("reddit");
@@ -369,7 +382,7 @@ async function createPartialPost(
     linter.toTitleCase(startCase(key)),
   ]);
 
-  let image;
+  let image = null;
 
   if (post.image) {
     image = `https://elijahpotter.dev${post.image}`;
@@ -393,7 +406,7 @@ export async function generatePartialPosts(): Promise<
 
 async function createFullPost(
   key: string,
-  post: PartialPost,
+  post: PartialPost
 ): Promise<FullPost> {
   const { processMarkdown } = await import("../src/processMarkdown");
   const fs = await import("fs/promises");
