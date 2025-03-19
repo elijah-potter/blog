@@ -14,7 +14,7 @@
   "dependencies": {
     "feed": "^4.2.2",
     "framer-motion": "^10.12.18",
-    "harper.js": "^0.18.1",
+    "harper.js": "^0.25.1",
     "highlight.js": "^11.6.0",
     "lodash": "^4.17.21",
     "next": "^15.1.4",

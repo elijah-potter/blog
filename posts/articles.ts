@@ -19,6 +19,27 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  harper_is_in_cursor_and_visual_studio_code: {
+    pubDate: new Date(2025, 2, 19).toUTCString(),
+    description: "A boon if you comment your code.",
+    keywords : [
+     "Harper",
+     "grammar checker",
+     "VSCode extension",
+     "Language Server Protocol",
+     "ESLint",
+     "Pylance",
+     "Visual Studio Marketplace",
+     "open source",
+     "plugin",
+     "code editors",
+     "language server",
+     "integrations",
+     "programming languages",
+     "typos"
+    ],
+    image: null
+  },
   never_wait: {
     pubDate: new Date(2025, 2, 1).toUTCString(),
     description: "Your code is always welcome.",
