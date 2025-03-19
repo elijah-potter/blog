@@ -16,7 +16,7 @@ subreddits=("r/vscode" "r/neovim" "r/wallstreetbets")
 # Loop over each item in the list
 for subreddit in "${subreddits[@]}"; do
   echo "++++++++ BEGIN $subreddit ++++++++"
-  ofc --system-prompt "Assume the persona of a commenter of $subreddit" "What is your opinion on pepperjack cheese."
+  ofc --system-prompt "Assume the persona of a commenter of $subreddit" "What is your opinion on pepperjack cheese?"
   cat
 done
 ```
