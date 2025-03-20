@@ -20,7 +20,7 @@ export type FullPost = {
 
 const postDeclarations: Record<string, PostDeclaration> = {
   ["LLM_assisted_fuzzing"]: {
-    pubDate: new Date(2025, 2, 20).toUTCString(),
+    pubDate: new Date(2025, 2, 21).toUTCString(),
     description: "A new approach to false-positives.",
     keywords: ["harper", "grammar", "ollama", "quality"],
     image: null,
