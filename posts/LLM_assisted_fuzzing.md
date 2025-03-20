@@ -2,7 +2,7 @@
 
 > __Preface__: this post was actually written on February 24th, despite being published today.
 
-I'd like to do some reflection on how we can improve Harper's output. It is fundamentally a process problem. For context, let us go through a contrived example.
+I'd like to do some reflection on how we can improve [Harper's](https://github.com/automattic/Harper) output. It is fundamentally a process problem. For context, let us go through a contrived example.
 
 ![[Sumner Evans](https://sumnerevans.com/) reported a bug to me while writing a tech talk about CI and CD](/images/sumner_screenshot_error.png)
 
