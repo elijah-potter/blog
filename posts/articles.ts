@@ -19,6 +19,12 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  ["LLM_assisted_fuzzing"]: {
+    pubDate: new Date(2025, 2, 20).toUTCString(),
+    description: "A new approach to false-positives.",
+    keywords: ["harper", "grammar", "ollama", "quality"],
+    image: null,
+  },
   harper_is_in_cursor_and_visual_studio_code: {
     pubDate: new Date(2025, 2, 19).toUTCString(),
     description: "A boon if you comment your code.",
