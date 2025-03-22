@@ -19,6 +19,12 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  "3_traits_of_good_test_suites": {
+    pubDate: new Date(2025, 2, 23).toUTCString(),
+    description: "Don't believe the clickbait.",
+    keywords: ["harper", "grammar", "testing", "unit", "integration"],
+    image: null,
+  },
   ["LLM_assisted_fuzzing"]: {
     pubDate: new Date(2025, 2, 21).toUTCString(),
     description: "A new approach to false-positives.",
@@ -28,23 +34,23 @@ const postDeclarations: Record<string, PostDeclaration> = {
   harper_is_in_cursor_and_visual_studio_code: {
     pubDate: new Date(2025, 2, 19).toUTCString(),
     description: "A boon if you comment your code.",
-    keywords : [
-     "Harper",
-     "grammar checker",
-     "VSCode extension",
-     "Language Server Protocol",
-     "ESLint",
-     "Pylance",
-     "Visual Studio Marketplace",
-     "open source",
-     "plugin",
-     "code editors",
-     "language server",
-     "integrations",
-     "programming languages",
-     "typos"
+    keywords: [
+      "Harper",
+      "grammar checker",
+      "VSCode extension",
+      "Language Server Protocol",
+      "ESLint",
+      "Pylance",
+      "Visual Studio Marketplace",
+      "open source",
+      "plugin",
+      "code editors",
+      "language server",
+      "integrations",
+      "programming languages",
+      "typos",
     ],
-    image: null
+    image: null,
   },
   never_wait: {
     pubDate: new Date(2025, 2, 1).toUTCString(),
