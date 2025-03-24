@@ -20,7 +20,7 @@ The speed at which you can build and run tests (unit, static, integration, etc.)
 
 Our goal to be fast at runtime dovetails quite nicely into this, so it's something Harper already does quite well. Moving forward, we need to make sure that we don't rely on any kind of IO in our tests, since that continues to be the slowest part of most Harper integrations.
 
-# 3. Good Assertions
+## 3. Good Assertions
 
 
 We can simplify programs like Harper down into a single function which consumes text and returns a list of observed problems.
