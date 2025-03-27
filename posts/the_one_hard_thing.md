@@ -26,8 +26,8 @@ I call this my daily **_one hard thing_**.
 
 Previous examples:
 
-- Developing the first version of `harper-ls`.
-- Building the first 80% of the Harper Obsidian plugin.
+- Developing the first version of [`harper-ls`](https://writewithharper.com/docs/integrations/language-server) which is now used by thousands of developers daily.
+- Building the first 80% of the [Harper Obsidian plugin](https://writewithharper.com/docs/integrations/obsidian), which is also widely used.
 - Grokking how [`Jetpack's Write Brief with AI`](https://github.com/Automattic/jetpack) feature works (before I joined Automattic).
 - Compiling Harper to WebAssembly and embedding it somewhere no one has put a grammar checker before: _inside the web browser_.
 
