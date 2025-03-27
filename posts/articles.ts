@@ -19,6 +19,27 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  the_one_hard_thing: {
+    pubDate: new Date(2025, 2, 27).toUTCString(),
+    description: "Reach further each day. The minimum effective dose.",
+    keywords: [
+      "productivity",
+      "Pareto distribution",
+      "one hard thing",
+      "daily habit",
+      "tasks",
+      "morning routine",
+      "harper-ls",
+      "Harper Obsidian plugin",
+      "Jetpack AI",
+      "WebAssembly",
+      "grammar checker",
+      "circadian rhythm",
+      "time management",
+      "mental clarity",
+    ],
+    image: null,
+  },
   "3_traits_of_good_test_suites": {
     pubDate: new Date(2025, 2, 23).toUTCString(),
     description: "Don't believe the clickbait.",
