@@ -5,11 +5,11 @@ Actions, each of which are needed to improve a product, release a feature, or ma
 These lists tend to explode in size, as more is asked of you.
 
 There's one problem: I have only eight hours in a working day.
-With so little time, how can I be expected to both maintain existing projects while consistently delivering new functionality?
+With so little time, how can I be expected to both maintain existing projects (bug fixes, etc.) while consistently delivering new functionality and maintaining a fast iterative loop?
 
 ## Insight
 
-I've had two key insights that have led to some tremendous productivity gains.
+I've had two key insights that have led to some tremendous personal productivity gains.
 
 **First:** I've observed that the difficulty of my tasks tends to follow a [Pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution).
 A small number of tasks are shockingly difficult to solve, while a much larger set boil down to communication.
