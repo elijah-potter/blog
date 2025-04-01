@@ -146,7 +146,7 @@ Do I regret not switching to handwritten notes sooner?
 Will I continue typing my notes in humanities classes?
 **Yes.**
 
-I know I phrased the title is a primarily instructive way, but there is only one thing I want you to remember: taking notes is an ultimately personal process.
+I know I phrased the title in a primarily instructive way, but there is only one thing I want you to remember: taking notes is an ultimately personal process.
 **Do what works for you.**
 Similarly, I am just now entering what feels like a new world possibility.
 It may _not_ end up going as well as I theorize.
