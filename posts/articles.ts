@@ -19,6 +19,23 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  the_books_i_read_in_february_and_march_2025: {
+    pubDate: new Date(2025, 3, 5).toUTCString(),
+    description: "Two months does not mean twice as many.",
+    keywords: [
+      "book review",
+      "reading list",
+      "February 2025",
+      "Herman Koch",
+      "The Dinner",
+      "Isaac Asimov",
+      "Gold",
+      "Bonnie Garmus",
+      "Lessons in Chemistry",
+      "fiction",
+    ],
+    image: null,
+  },
   the_one_hard_thing: {
     pubDate: new Date(2025, 2, 27).toUTCString(),
     description: "Reach further each day. The minimum effective dose.",
