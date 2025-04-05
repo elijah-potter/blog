@@ -1,6 +1,6 @@
 # The Books I Read in February and March 2025
 
-In world containing TikTok, YouTube and a vast array of other apps that profit off human attention, it takes effort to place our focus on things that truly benefit our minds.
+In a world containing TikTok, YouTube and a vast array of other apps that profit off human attention, it takes effort to place our focus on things that truly benefit our minds.
 
 At least, that is what I would I say on LinkedIn as an explanation for why I read.
 In reality: __I simply enjoy it__.
