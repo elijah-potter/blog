@@ -3,11 +3,10 @@
 ![A trail in Golden, Colorado](/images/rail.webp)
 
 WebAssembly—even after several years of standardization—is still a nascent technology.
-If you are looking to publish a package that leverages it's ability to deliver high-performance code to the web, there are some specific things you should consider.
 
 I've been working with Rust and WebAssembly for nearly four years now.
 This post is intended to be a distillate of that experience, formatted for developers who are interested in publishing WebAssembly code to npm.
-Three footguns I've personally encountered while working on [`harper.js`](https://writewithharper.com/docs/harperjs/introduction), a WebAssembly-powered package for grammar checking at the edge.
+Specifically, these are the footguns I've personally encountered while working on [`harper.js`](https://writewithharper.com/docs/harperjs/introduction), a WebAssembly-powered package for grammar checking at the edge.
 This page should be valuable if you are even speculating on the possibility of using WebAssembly in your codebase.
 
 ---
