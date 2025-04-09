@@ -19,6 +19,24 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  footguns_of_the_rust_webassembly_target: {
+    pubDate: new Date(2025, 3, 8).toUTCString(),
+    description:
+      "Four years in Rust + WebAssembly taught me these 3 lethal footguns—don’t learn them the hard way.",
+    keywords: [
+      "Rust",
+      "WebAssembly",
+      "async functions",
+      "Linter",
+      "wasm_bindgen",
+      "IO limitations",
+      "inlining",
+      "Obsidian plugins",
+      "Harper",
+      "Automattic",
+    ],
+    image: "/images/rail.webp",
+  },
   the_books_i_read_in_february_and_march_2025: {
     pubDate: new Date(2025, 3, 5).toUTCString(),
     description: "Two months does not mean twice as many.",
