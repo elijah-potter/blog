@@ -5,7 +5,7 @@ As a whole, they have a great pulse on what a good writing experience feels like
 Over time, this community has grown into a real force in the software engineering field.
 
 Linkarzu has been a constant presence in this ecosystem for a while, giving a voice to the hidden 
-maintainers to make Neovim great.
+maintainers that make Neovim great.
 I am honored to be counted among the guests he has hosted on his channel.
 
 We talked at length about [Harper](https://writewithharper.com), open source maintenance, and the tooling we use in our development workflows.
