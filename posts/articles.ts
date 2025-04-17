@@ -21,7 +21,7 @@ export type FullPost = {
 const postDeclarations: Record<string, PostDeclaration> = {
   on_linkarzu: {
     pubDate: new Date(2025, 3, 17).toUTCString(),
-    description: "I was honored to be a guest on a Linkarzu's YouTube series.",
+    description: "I was honored to be a guest on Linkarzu's YouTube series.",
     keywords: [
       "Neovim community interview",
       "Linkarzu YouTube",
