@@ -19,6 +19,21 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  on_linkarzu: {
+    pubDate: new Date(2025, 3, 17).toUTCString(),
+    description: "I was honored to be a guest on a Linkarzu's YouTube series.",
+    keywords: [
+      "Neovim community interview",
+      "Linkarzu YouTube",
+      "Harper grammar checker",
+      "Neovim plugin Harper",
+      "grammar checker for developers",
+      "open‑source maintenance",
+      "developer writing workflow",
+      "software‑engineering tools discussion"
+    ],
+    image: null,
+  },
   footguns_of_the_rust_webassembly_target: {
     pubDate: new Date(2025, 3, 8).toUTCString(),
     description:
@@ -52,7 +67,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
       "Lessons in Chemistry",
       "fiction",
     ],
-    image: null,
+    image: null
   },
   the_one_hard_thing: {
     pubDate: new Date(2025, 2, 27).toUTCString(),
