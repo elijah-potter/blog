@@ -19,6 +19,21 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  the_art_of_exception: {
+    pubDate: new Date(2025, 3, 18).toUTCString(),
+    description: "Reflecting on lessons learned from handling English edge cases in developing Harper's Chrome extension.",
+    keywords: [
+      "English edge cases",
+      "Harper Chrome extension",
+      "exception-tolerant code",
+      "WYSIWYG editor integration",
+      "false-positive suppression",
+      "community contributions",
+      "DSL readability",
+      "software design intuition"
+    ],
+    image: null,
+  },
   on_linkarzu: {
     pubDate: new Date(2025, 3, 17).toUTCString(),
     description: "I was honored to be a guest on Linkarzu's YouTube series.",
