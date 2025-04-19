@@ -19,9 +19,25 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  photography_as_meditation: {
+    pubDate: new Date(2025, 3, 19).toUTCString(),
+    description: "Reflecting on the clarity photography brings.",
+    keywords: [
+      "photography and mindfulness",
+      "meditative photography",
+      "slowing down with a camera",
+      "photography as awareness practice",
+      "framing as understanding",
+      "creative meditation",
+      "visual appreciation",
+      "mother photographer story",
+    ],
+    image: "/images/pink_flower_tree.webp",
+  },
   the_art_of_exception: {
     pubDate: new Date(2025, 3, 18).toUTCString(),
-    description: "Reflecting on lessons learned from handling English edge cases in developing Harper's Chrome extension.",
+    description:
+      "Reflecting on lessons learned from handling English edge cases in developing Harper's Chrome extension.",
     keywords: [
       "English edge cases",
       "Harper Chrome extension",
@@ -30,7 +46,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
       "false-positive suppression",
       "community contributions",
       "DSL readability",
-      "software design intuition"
+      "software design intuition",
     ],
     image: null,
   },
@@ -45,7 +61,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
       "grammar checker for developers",
       "open‑source maintenance",
       "developer writing workflow",
-      "software‑engineering tools discussion"
+      "software‑engineering tools discussion",
     ],
     image: null,
   },
@@ -82,7 +98,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
       "Lessons in Chemistry",
       "fiction",
     ],
-    image: null
+    image: null,
   },
   the_one_hard_thing: {
     pubDate: new Date(2025, 2, 27).toUTCString(),
