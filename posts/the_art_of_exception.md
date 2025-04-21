@@ -3,7 +3,7 @@
 English is an area of interest littered with edge cases.
 In preparation for addressing similar problems in the development of the Harper Chrome extension, I'm spending some time here reflecting on what I've learned by tackling the complex maze of English edge cases.
 
-Harper is not alone, and there's a real chance that you'll have to work on exception-tolerant code. In that case, you will need to understand the *why* for some of the design decisions you encounter in the wild.
+[Harper](https://writewithharper.com) is not alone, and there's a real chance that you'll have to work on exception-tolerant code. In that case, you will need to understand the *why* for some of the design decisions you encounter in the wild.
 
 ![A screenshot of the Harper grammar checker web extension.](/images/harper_chrome_ext.png)
 
