@@ -4,11 +4,10 @@ RUN mkdir -p /usr/build/
 WORKDIR /usr/build/
 
 RUN cargo install wasm-pack --version 0.13.1
-RUN cargo install just
 
 COPY . .
 
-RUN just build
+RUN ./build.sh --no-site --release
 
 # Clean up unneeded build artifacts
 WORKDIR /usr/build/crates/
