@@ -11,14 +11,18 @@ import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
 
 if (typeof window !== "undefined") {
-  posthog.init("phc_ScKr9SxzZRlBn7d4FMFIZzYestHuFonat6gOStQ5t8x", {
-    api_host: "https://us.i.posthog.com",
-    persistence: "sessionStorage",
-    person_profiles: "always",
-    loaded: (posthog) => {
-      if (process.env.NODE_ENV === "development") posthog.debug();
-    },
-  });
+  try {
+    posthog.init("phc_ScKr9SxzZRlBn7d4FMFIZzYestHuFonat6gOStQ5t8x", {
+      api_host: "https://us.i.posthog.com",
+      persistence: "sessionStorage",
+      person_profiles: "always",
+      loaded: (posthog) => {
+        if (process.env.NODE_ENV === "development") posthog.debug();
+      },
+    });
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 export default function App({ Component, pageProps }: AppProps) {
