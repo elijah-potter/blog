@@ -1,5 +1,5 @@
 import { clone, startCase } from "lodash";
-import { LocalLinter } from "harper.js";
+import { binaryInlined, LocalLinter } from "harper.js";
 
 export type PostDeclaration = {
   keywords: string[];
@@ -503,7 +503,7 @@ export function getPostDeclarations(): Record<string, PostDeclaration> {
   return clone(postDeclarations);
 }
 
-const linter = new LocalLinter();
+const linter = new LocalLinter({ binary: binaryInlined });
 
 async function createPartialPost(
   key: string,
