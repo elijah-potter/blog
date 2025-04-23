@@ -3,6 +3,8 @@
 Elijah! Elijah! When will we have a Chrome extension for [Harper](https://writewithharper.com)?
 
 Although it's usually asked with a bit more panache, this is a question I've gotten a lot.
+In fact, an author at Lifehacker [wrote about it just yesterday](https://lifehacker.com/tech/harper-offline-alternative-to-grammarly).
+
 For the longest time, it was a project on the back-burner. 
 Something I intended to work on, but was always passed up for more important things. 
 It never saw the light of day.
