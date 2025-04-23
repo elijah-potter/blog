@@ -87,16 +87,16 @@ const DownloadGraph: React.FC = () => {
 
       /* -- bars -- */
       svg.append('g')
-        .selectAll<SVGRectElement, BarDatum>('rect')
+        .selectAll('rect')
         .data(data)
         .join('rect')
-          .attr('x', d => x(d.start))
-          .attr('width', d => Math.max(1, x(d.end) - x(d.start)))
-          .attr('y', d => y(d.rate))
-          .attr('height', d => y(0) - y(d.rate))
+          .attr('x', (d: BarDatum) => x(d.start))
+          .attr('width',(d: BarDatum)  => Math.max(1, x(d.end) - x(d.start)))
+          .attr('y',(d: BarDatum)  => y(d.rate))
+          .attr('height',(d: BarDatum)  => y(0) - y(d.rate))
           .attr('class', 'fill-sky-500 hover:fill-sky-600 dark:fill-sky-400 transition-colors')
         .append('title')
-          .text(d =>
+          .text((d: BarDatum) =>
             `${d.tag}\n${d.rate} downloads/day\n` +
             `${d.start.toLocaleDateString()} – ${d.end.toLocaleDateString()}`
           );
