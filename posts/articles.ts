@@ -19,6 +19,21 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  status_of_the_harper_chrome_extension: {
+    pubDate: new Date(2025, 3, 23).toUTCString(),
+    description: "An update on the long-awaited Harper Chrome extension, its current state, and what to expect next.",
+    keywords: [
+      "Harper Chrome extension",
+      "grammar checker extension",
+      "on-device grammar checking",
+      "Chrome extension status",
+      "Harper plugin development",
+      "privacy-focused writing tool",
+      "Gutenberg editor support",
+      "Harper Chrome PR update"
+    ],
+    image: "/images/harper_chrome_ext.png",
+  },
   photography_as_meditation: {
     pubDate: new Date(2025, 3, 19).toUTCString(),
     description: "Reflecting on the clarity photography brings.",
