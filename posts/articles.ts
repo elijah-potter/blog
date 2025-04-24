@@ -504,7 +504,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
   },
   why_rust_may_be_more_attractive_than_javascript: {
     description:
-      "A key part of Rust is far better that what JavaScript has to offer.",
+      "A key part of Rust is far better than what JavaScript has to offer.",
     keywords: ["cargo", "rust", "npm", "nodejs", "learning", "ease-of-use"],
     pubDate: new Date(2022, 1, 25).toUTCString(),
     image: null,
