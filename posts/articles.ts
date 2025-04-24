@@ -19,9 +19,26 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  chatgpt_for_the_moms: {
+    pubDate: new Date(2025, 3, 23).toUTCString(),
+    description:
+      "Advice you can give your mom (or other nontechnical person) for how to use ChatGPT wisely and effectively.",
+    keywords: [
+      "ChatGPT tips for moms",
+      "AI literacy for parents",
+      "using ChatGPT safely",
+      "web search tool ChatGPT",
+      "critical thinking with AI",
+      "family technology advice",
+      "AI limitations",
+      "responsible AI use",
+    ],
+    image: "/images/guggenheim.webp",
+  },
   status_of_the_harper_chrome_extension: {
     pubDate: new Date(2025, 3, 23).toUTCString(),
-    description: "An update on the long-awaited Harper Chrome extension, its current state, and what to expect next.",
+    description:
+      "An update on the long-awaited Harper Chrome extension, its current state, and what to expect next.",
     keywords: [
       "Harper Chrome extension",
       "grammar checker extension",
@@ -30,7 +47,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
       "Harper plugin development",
       "privacy-focused writing tool",
       "Gutenberg editor support",
-      "Harper Chrome PR update"
+      "Harper Chrome PR update",
     ],
     image: "/images/harper_chrome_ext.png",
   },
