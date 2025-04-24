@@ -13,6 +13,11 @@ Powerful technology is in their hands, but I've got three things they should kno
 
 ### Use Web Search
 
+My mother recently learned how to make cobbler.
+She adored asked ChatGPT questions about the recipe, and how she could improve it using the ingredients she had on hand.
+Unfortunately, she was getting subtly wrong information from the bot, so the cobbler turned out "sub-par".
+This can be solved by using ChatGPT's web search.
+
 When you open up ChatGPT on a phone or on a computer, you'll be met with the familiar chat window. 
 If you ask it questions it will give you an answer.
 Sometimes that answer will be good, sometimes not.
@@ -28,12 +33,10 @@ It improves the quality of information it gives you, while only adding a second 
 
 When we see a chat window, our first thought is that there's a person on the other end.
 Someone with emotions and lives all their own.
-
 That is not the case here.
 
 ChatGPT, while an advanced machine learning model, is not a person.
 It does not replace real human connection.
-
 It can't watch your kids when you've got an emergency.
 It won't show up to the school recital.
 It doesn't care about you—despite what it says.
@@ -47,7 +50,6 @@ ChatGPT is no substitute for critical thought.
 It cannot do most things, even if it claims it can.
 You are a capable human being—able to accomplish anything you put your mind to.
 While ChatGPT can be a helpful assistant or brainstorming partner, don't let it steer the ship.
-
 
 ## What to Remember
 
