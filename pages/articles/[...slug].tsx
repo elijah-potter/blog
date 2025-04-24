@@ -43,7 +43,7 @@ export default function ({
 }: {
   name: string;
   post: FullPost;
-  featuredPosts: [string, PartialPost][];
+  featuredPosts: [string, FullPost][];
 }) {
   const html = post?.content_html;
 
@@ -62,14 +62,14 @@ export default function ({
           content={`https://elijahpotter.dev/articles/${name}`}
         />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={startCase(name)} />
+        <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.description} />
         <link
           rel="canonical"
           href={`https://elijahpotter.dev/articles/${name}`}
         />
         {post.image && <meta property="og:image" content={post.image} />}
-        <title>{startCase(name)}</title>
+        <title>{post.title}</title>
         <meta name="author" content={post.author} />
         <meta name="description" content={post.description} />
         <meta name="keywords" content={post.keywords.join(", ")} />
