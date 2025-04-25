@@ -6,7 +6,7 @@ My mom is a violently intelligent woman.
 But she lives in the unfortunate reality of not being a software engineer or mathematician.
 While she is just as excited about ChatGPT (and all the other nascent AI technology) as the rest of us, she isn't aware of the unintelligent pitfalls artificial intelligence has these days.
 
-If you're mom is experimenting with ChatGPT, I'd highly recommend sending this list to her.
+If your mom is experimenting with ChatGPT, I'd highly recommend sending this list to her.
 Powerful technology is in their hands, but I've got three things they should know before relying on it.
 
 ## Advice for Moms
