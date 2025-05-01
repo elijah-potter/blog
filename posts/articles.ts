@@ -19,6 +19,20 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  "always_think_of_the_hook_first": {
+    pubDate: new Date(2025, 4, 1).toUTCString(),
+    description: "Spend more time on the introduction than anything else.",
+    keywords: [
+      "writing hook",
+      "introduction first",
+      "deliberate writing practice",
+      "revision process",
+      "audience attention",
+      "Harper grammar checker",
+      "David McCullough writing advice"
+    ],
+    image: "/images/log.webp",
+  },
   chatgpt_for_the_moms: {
     pubDate: new Date(2025, 3, 23).toUTCString(),
     description:
