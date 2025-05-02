@@ -19,6 +19,21 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  putting_harper_in_your_browser: {
+    pubDate: new Date(2025, 4, 2).toUTCString(),
+    description: "When our users install Harper, they should expect it to work anywhere they do.",
+    keywords: [
+      "Harper everywhere",
+      "portable grammar checker",
+      "Harper Chrome extension",
+      "WebAssembly integration",
+      "textarea mirroring",
+      "contenteditable support",
+      "source of truth",
+      "performance and complexity"
+    ],
+    image: "/images/harper_chrome_ext_2.png",
+  },
   "always_think_of_the_hook_first": {
     pubDate: new Date(2025, 4, 1).toUTCString(),
     description: "Spend more time on the introduction than anything else.",
