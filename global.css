@@ -34,11 +34,13 @@ button {
 
 .rmd ul {
   list-style: inside;
+  padding: 16px 0px;
   padding-left: 20px;
 }
 
 .rmd ol {
   list-style: numeric;
+  padding: 16px 0px;
   padding-left: 40px;
 }
 

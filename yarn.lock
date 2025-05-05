@@ -1917,10 +1917,10 @@ growl@1.10.5:
   resolved "https://registry.yarnpkg.com/growl/-/growl-1.10.5.tgz#f2735dc2283674fa67478b10181059355c369e5e"
   integrity sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==
 
-harper.js@^0.29.1:
-  version "0.29.1"
-  resolved "https://registry.yarnpkg.com/harper.js/-/harper.js-0.29.1.tgz#8831c3556ac15a6e9880a010f5f72422d56f76d9"
-  integrity sha512-lpEj76/5v4OZKeTKv7o64TmLQjqnSMG3T2+wFn2lt1PufWsj+ot1wp3/UAhzWPHE4BQWe8wkbsPeXs0LcmM0WQ==
+harper.js@^0.33.0:
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/harper.js/-/harper.js-0.33.0.tgz#ba966f324d3e0b4624bc6e23cd3ef784afa36e29"
+  integrity sha512-irg5hEfPy2kRoun1s/EIaMcEghUP2SsaGwWJtOTDMpa79wnJ0CGoLd0Qqk3gZazCwbfOtP7AjhnEd9UYVV2dtA==
 
 has-flag@^4.0.0:
   version "4.0.0"
