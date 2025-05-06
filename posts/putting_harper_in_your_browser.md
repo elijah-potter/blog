@@ -1,6 +1,6 @@
 # Putting Harper in Your Browser
 
-When our users install Harper, they should expect it to work anywhere they do.
+When our users [install Harper](https://writewithharper.com), they should expect it to work anywhere they do.
 Whether they're writing up a blog post in WordPress, leaving a comment on Facebook, or messaging a loved one on WhatsApp, Harper should be there.
 Harper's core is extremely portable and it can run pretty much anywhere Rust can, so what's the big deal?
 
