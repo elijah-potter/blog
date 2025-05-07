@@ -8,7 +8,7 @@ Why can't we just run Harper in the browser through a web extension?
 
 ## Running Locally
 
-There's a single compliant that I hear over and over again from people who use Grammarly or LanguageTool: they are both slow as molasses.
+There's a single complaint that I hear over and over again from people who use Grammarly or LanguageTool: they are both slow as molasses.
 The process of writing has slowly evolved to be more complex than it needs to be.
 With these tools, it writing looks like:
 
