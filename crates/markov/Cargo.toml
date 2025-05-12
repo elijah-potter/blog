@@ -9,6 +9,6 @@ crate-type = ["cdylib", "rlib"]
 [dependencies]
 console_error_panic_hook = "0.1.7"
 nalgebra = { version = "0.33.2" }
-rand = { version = "0.8.5", default-features = false, features = ["small_rng"] }
+rand = { version = "0.9.1", default-features = false, features = ["small_rng"] }
 wasm-bindgen = "0.2.100"
 
