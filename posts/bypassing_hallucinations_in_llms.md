@@ -1,7 +1,11 @@
 # Bypassing Hallucinations in LLMs
 
-OpenAI's o3 model is quite impressive.
-Although I've found it to be quite a capable coder, I still don't trust it with anything important.
+![My bike broke down. Luckily, I had my camera](/images/bike_sidewalk.webp)
+
+Before I get too deep, I just want to get it out of the way: OpenAI's o3 model is impressive.
+With its tool use and web search capabilities, it can do a lot more than most offerings out there.
+
+That said, although I've found it to be quite a capable coder, I still don't trust it with anything important.
 Once or twice, I've instructed it to outline a React component, only to rewrite most of it myself. 
 
 I also don't trust its factual accuracy at all.
