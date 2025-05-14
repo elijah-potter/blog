@@ -19,6 +19,27 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  bypassing_hallucinations_in_llms: {
+      pubDate: new Date(2025, 4, 14).toUTCString(), 
+      description:
+        "If there is one thing o3 is useful for, it's __finding canonical documentation for complex subjects.__",
+      keywords: [
+        "OpenAI o3",
+        "AI model",
+        "AI for research",
+        "canonical documentation",
+        "authoritative sources",
+        "information retrieval",
+        "AI factual accuracy",
+        "AI limitations",
+        "W3C spec",
+        "Dragon Book",
+        "man pages",
+        "research techniques",
+        "Nikon D7100",
+      ],
+      image: null,
+    },
   putting_harper_in_your_browser: {
     pubDate: new Date(2025, 4, 2).toUTCString(),
     description: "When our users install Harper, they should expect it to work anywhere they do.",
