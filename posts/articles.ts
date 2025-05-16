@@ -19,6 +19,23 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  integration_testing_thousands_of_sites_with_playwright: {
+      pubDate: new Date(2025, 4, 16).toUTCString(), 
+      description: "There are a great variety text editors on the web, each used in a different context. That's a beautiful thing, but unfortunately our users expect Harper to work in all of these places seamlessly.",
+      keywords: [
+        "Playwright",
+        "integration testing",
+        "end-to-end testing",
+        "Harper",
+        "text editors",
+        "browser extensions",
+        "automation",
+        "DOM attributes",
+        "GitHub Actions",
+        "website testing"
+      ],
+      image: null,
+  },
   bypassing_hallucinations_in_llms: {
       pubDate: new Date(2025, 4, 14).toUTCString(), 
       description:
