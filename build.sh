@@ -46,12 +46,12 @@ fi
 if [ $SITE -eq 1 ]
 then
     cd $R/crates/markov/demo
-    yarn install 
-    yarn build
+    pnpm install 
+    pnpm build
     cp $R/crates/markov/demo/dist/index.html $R/public/standalonemarkov.html
 
     cd $R
-    yarn install
-    yarn build
+    pnpm install
+    pnpm build
 fi
 

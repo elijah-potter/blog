@@ -27,7 +27,7 @@ module.exports = {
     ];
   },
   webpack: function (config, options) {
-    config.experiments = { asyncWebAssembly: true };
+    config.experiments.asyncWebAssembly =  true ;
 
     // TODO: Remove this workaround for Next.js WebAssembly bug
     if (options.isServer) {
