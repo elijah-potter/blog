@@ -37,7 +37,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
         "pluggable architecture",
         "contributions"
       ],
-      image: null
+      image: "/images/ford_street.webp"
   },
   integration_testing_thousands_of_sites_with_playwright: {
       pubDate: new Date(2025, 4, 16).toUTCString(), 
