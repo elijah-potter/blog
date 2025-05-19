@@ -19,6 +19,26 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  harper_for_firefox_through_spellbolt: {
+      pubDate: new Date(2025, 4, 19).toUTCString(), 
+      description: "SpellBolt is a Firefox extension that delivers Harper's fantastic grammar checking straight into your Firefox browser.",
+      keywords: [
+        "Harper",
+        "Firefox",
+        "Chrome",
+        "grammar checker",
+        "extension",
+        "SpellBolt",
+        "Mozilla",
+        "addons",
+        "offline grammar checking",
+        "harper.js",
+        "open-source",
+        "pluggable architecture",
+        "contributions"
+      ],
+      image: null
+  },
   integration_testing_thousands_of_sites_with_playwright: {
       pubDate: new Date(2025, 4, 16).toUTCString(), 
       description: "There are a great variety text editors on the web, each used in a different context. That's a beautiful thing, but unfortunately our users expect Harper to work in all of these places seamlessly.",
