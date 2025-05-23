@@ -21,9 +21,9 @@ export async function processMarkdown(markdown: string): Promise<string> {
     .use(remarkMath)
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeTitleFigure)
     .use(rehypeHighlight, { languages: { rust, bash, javascript } })
     .use(remarkKatex)
+    .use(rehypeTitleFigure)
     .use(rehypeStringify, { allowDangerousHtml: true });
 
   const vfile = await processor.process(markdown);

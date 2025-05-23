@@ -19,6 +19,26 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  quality_is_the_most_important_metric: {
+      pubDate: new Date(2025, 4, 19).toUTCString(), 
+      description: "After receiving some feedback related to the suggestion box's visual unpleasantness and difficulty to understand intuitively, I've started making some modifications. Nothing drastic—I don't want to confuse existing users.",
+      keywords: [
+        "Harper",
+        "Firefox",
+        "Chrome",
+        "grammar checker",
+        "extension",
+        "SpellBolt",
+        "Mozilla",
+        "addons",
+        "offline grammar checking",
+        "harper.js",
+        "open-source",
+        "pluggable architecture",
+        "contributions"
+      ],
+      image: "/images/guggenheim_2.png"
+  },
   harper_for_firefox_through_spellbolt: {
       pubDate: new Date(2025, 4, 19).toUTCString(), 
       description: "SpellBolt is a Firefox extension that delivers Harper's fantastic grammar checking straight into your Firefox browser.",
