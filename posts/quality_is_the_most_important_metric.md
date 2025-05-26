@@ -1,6 +1,6 @@
 # Quality Is the Most Important Metric
 
-Harper's Chrome extension continues to come along beautifully. I'm actively working to make it more useful and responsive, slowing crushing bugs that I hear about from our users and contributors. I will not go over them here, since our [closed pull requests](https://github.com/Automattic/harper/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed) should speak for themselves. I would, however, like to rapid-fire some of the small improvements and ideas about Quality that I've been brewing up this week.
+Harper's Chrome extension continues to come along beautifully. I'm actively working to make it more useful and responsive, slowly crushing bugs that I hear about from our users and contributors. I will not go over them here, since our [closed pull requests](https://github.com/Automattic/harper/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed) should speak for themselves. I would, however, like to rapid-fire some of the small improvements and ideas about Quality that I've been brewing up this week.
 
 ![Living in a college town is strange. The whole place gets empty in the summer.](/images/guggenheim_2.png)
 
