@@ -19,6 +19,29 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  ["transformation-based_learning"]: {
+    pubDate: new Date(2025, 5, 3).toUTCString(), 
+    description: "Harper is currently undergoing some pretty radical changes when it comes to its language analysis. These improvements will improve the output of our existing rule engine, in addition to making entirely new corrections possible.",
+    image: "/images/ctlm.webp",
+    keywords: [
+      "NLP",
+      "Natural Language Processing",
+      "POS Tagging",
+      "Part-of-Speech Tagging",
+      "Machine Learning",
+      "Transformation-Based Rule Models",
+      "TRM",
+      "Automattic",
+      "Harper",
+      "Accuracy Improvement",
+      "Supervised Learning",
+      "Corpus",
+      "Algorithm",
+      "Dictionary-Based Approach",
+      "English Language",
+      "Rule Engine"
+    ]
+  },
   quality_is_the_most_important_metric: {
       pubDate: new Date(2025, 4, 19).toUTCString(), 
       description: "After receiving some feedback related to the suggestion box's visual unpleasantness and difficulty to understand intuitively, I've started making some modifications. Nothing drastic—I don't want to confuse existing users.",
