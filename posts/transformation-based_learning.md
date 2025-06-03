@@ -42,7 +42,7 @@ While I heavily considered using a neural network (either via an HMM or MEM), I 
 
 ## Building the Model
 
-I took a supervised learning approach here, making use of open-source datasets from organizations like Universal Dependencies. Since step one in any such endeavor is to obtain the data. Conveniently, these datasets include pretagged corpus’, which I ingested easily using `rs_conllu`.
+I took a supervised learning approach here, making use of open-source datasets from organizations like [Universal Dependencies](https://universaldependencies.org/). Since step one in any such endeavor is to obtain the data. Conveniently, these datasets include pretagged corpus’, which I ingested easily using [`rs_conllu`](https://href.li/?https://docs.rs/rs-conllu/latest/rs_conllu/index.html).
 
 Once that was done, I created a benchmark for Harper’s existing POS tagger. I found that it scored about a 40% accuracy when 100% certainty was required. When lower levels of certainty were needed, I found it performed a bit better. Either way, there was plenty of room for improvement.
 
