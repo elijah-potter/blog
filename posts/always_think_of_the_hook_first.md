@@ -43,7 +43,7 @@ Reading great literature gives you an intuition for what your own work should lo
 
 In rapper circles, it's a common point of debate whether to think of the verse first or the hook.
 
-One one hand, the verse is the substance of the song. 
+On one hand, the verse is the substance of the song. 
 It contains the message, the detail, and the personal meaning.
 Music derives much of its complexity from the verse.
 On the other hand, the hook is what gets people to listen.
