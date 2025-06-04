@@ -2,13 +2,13 @@
 
 ![CTLM](/images/ctlm.webp)
 
-Harper is currently undergoing some pretty radical changes when it comes to its language analysis. These improvements will improve the output of our existing rule engine, in addition to making entirely new corrections possible. This post will cover our existing NLP pipeline, the recent changes and improvements to our machine learning approach, and what will come next.
+[Harper](https://writewithharper.com/) is currently undergoing some pretty radical changes when it comes to its language analysis. These improvements will improve the output of our existing rule engine, in addition to making entirely new corrections possible. This post will cover our existing NLP pipeline, the recent changes and improvements to our machine learning approach, and what will come next.
 
 While AI is a common topic of discussion online, I don’t hear much about actual machine learning. In that light, I hope this post piques someone’s interest.
 
 ## What is POS Tagging?
 
-POS (Part-of-speech) tagging is the first step of most NLP pipelines. For any grammar checker worth its salt, POS tagging is essential. Apart from the basic corrections you’re capable of doing with simple string manipulation, most grammar checking directly or indirectly depends on POS tagging. High-quality tagging results in high-quality suggestions.
+POS (Part-of-speech) tagging is the first step of most NLP (Natural Language Processing) pipelines. For any grammar checker worth its salt, POS tagging is essential. Apart from the basic corrections you’re capable of doing with simple string manipulation, most grammar checking directly or indirectly depends on POS tagging. High-quality tagging results in high-quality suggestions.
 
 What is POS tagging? It is the process of identifying which possible definition of a word is being used, based on the surrounding context. For those unfamiliar with the territory, I’m certain an example is the best way to explain.
 
