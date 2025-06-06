@@ -40,17 +40,105 @@ While I heavily considered using a neural network (either via an HMM or MEM), I 
 *   TRMs are more amenable to fine-tuning.
 *   TRMs are exceptionally low-latency and can be compressed quite small.
 
-## Building the Model
+Transformation-based learning is remarkably simple. It boils down to just four steps:
 
-I took a supervised learning approach here, making use of open-source datasets from organizations like [Universal Dependencies](https://universaldependencies.org/). Since step one in any such endeavor is to obtain the data. Conveniently, these datasets include pretagged corpus’, which I ingested easily using [`rs_conllu`](https://href.li/?https://docs.rs/rs-conllu/latest/rs_conllu/index.html).
+- Use a simple, stochastic model to label your data. This can be as simple as tagging each token (or other discrete component) with that variant’s most common tag. It doesn’t need to super accurate, just enough to establish a baseline.
+- Identify the errors between the tags in your canonical data and that which produced by your baseline model.
+- Using a finite list of human-defined templates, generate candidate rules that transform the output of the baseline model into something else. This is where the term “transformation-based” comes from.
+- Apply each of the candidate rules to the baseline model’s output. Check if the result is _more_ accurate than before. If so, save the rule for future use.
 
-Once that was done, I created a benchmark for Harper’s existing POS tagger. I found that it scored about a 40% accuracy when 100% certainty was required. When lower levels of certainty were needed, I found it performed a bit better. Either way, there was plenty of room for improvement.
+These saved candidates become your model.
 
-Transformation-based learning is remarkably simple.
+## POS-Tagging using Transformation-based Learning
 
-*   Provide a base pass over the data using a simple learning technique. In our case, we assign the most common POS tag for a given word from the corpus. “Tan”, for example, might be most frequently used as a verb, so we’ll start by tagging it as so.
-*   Generate a list of “patch rules” for the data. In a nutshell, these are simple criterion paired with POS transitions. For example, each time we see a token marked as an adposition sandwiched between a noun and a verb, mark it as a subordinating conjunction instead.
-*   Apply each of these patch rules over the base pass and check if the tagger’s performance improves. If so, add it to an ongoing list of “winners”.
-*   Loop steps 2 and 3 until you reach a satisfying level of performance.
+Let’s apply these steps to build a POS-tagging system.
+
+For our baseline model, we will just assign each word in our dataset the most common POS tag associated with that word. If the word is “tan”, we’ll assign it’s most common POS tag (verb). It will often be incorrect, but those cases will be handled by our rules.
+
+To identify the baseline model’s errors, we’ll use an off-the-shelf tree-bank from the Universal Dependencies project.
+
+Our rule templates will take the form of these `PatchCriteria`. By initializing our candidates with any one of these enum variants and initializing the child variables to random values, we can cover a good number of cases.
+
+```rust
+#[derive(Debug, Clone, Serialize, Deserialize, Hash, PartialEq, Eq)]
+pub enum PatchCriteria {
+    WordIsTaggedWith {
+        /// Which token to inspect.
+        relative: isize,
+        is_tagged: UPOS,
+    },
+    AnyWordIsTaggedWith {
+        /// The farthest relative index to look
+        max_relative: isize,
+        is_tagged: UPOS,
+    },
+    SandwichTaggedWith {
+        prev_word_tagged: UPOS,
+        post_word_tagged: UPOS,
+    },
+    WordIs {
+        relative: isize,
+        word: String,
+    },
+    /// Not applicable to the Brill Tagger, only the chunker
+    NounPhraseAt {
+        is_np: bool,
+        relative: isize,
+    },
+    Combined {
+        a: Box<PatchCriteria>,
+        b: Box<PatchCriteria>,
+    },
+}
+```
+
+Finally, we’ll apply each of the hundreds of thousands of candidates to our treebank to see if the result of their transformations have a lower error rate than the baseline.
+
+Here are a couple of the candidates we found:
+
+```json
+[
+  {
+    "from": "PRON",
+    "to": "SCONJ",
+    "criteria": {
+      "Combined": {
+        "a": {
+          "WordIs": {
+            "relative": 0,
+            "word": "that"
+          }
+        },
+        "b": {
+          "WordIsTaggedWith": {
+            "relative": -1,
+            "is_tagged": "VERB"
+          }
+        }
+      }
+    }
+  },
+  {
+    "from": "PART",
+    "to": "ADP",
+    "criteria": {
+      "Combined": {
+        "a": {
+          "WordIs": {
+            "relative": 1,
+            "word": "there"
+          }
+        },
+        "b": {
+          "AnyWordIsTaggedWith": {
+            "max_relative": -4,
+            "is_tagged": "NOUN"
+          }
+        }
+      }
+    }
+  }
+]
+```
 
 That’s the whole process! With it, I was able to bring our previous accuracy all the way up to 95% (from 40%) without a meaningful change in linting latency or compiled binary size.
