@@ -28,11 +28,12 @@ That said, there are edge-cases and systems (which I’ll cover next week when I
 
 ## Why Transformation-based Learning?
 
-The literature highlights three underling machine learning model strategies that seem to work well for POS tagging.
+The literature highlights four underlying machine learning model strategies that seem to work well for POS tagging.
 
-*   Hidden Markov Models (which are traditionally deep neural networks)
-*   Maximum Entropy Models (which are traditionally shallow neural networks)
-*   Transformation-based Rule Models (which are based on learned rules)
+* Hidden Markov Models (probabilistic models that predate the modern deep learning era)
+* Maximum Entropy Models (statistical models closely related to logistic regression).
+* Transformer-based Models (which use deep neural networks)
+* Transformation-based Rule Models (which are based on learned rules)
 
 While I heavily considered using a neural network (either via an HMM or MEM), I discarded the technology for three reasons.
 
