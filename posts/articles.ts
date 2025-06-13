@@ -19,6 +19,27 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  ["more_transformation-based_learning"]: {
+    pubDate: new Date(2025, 5, 13).toUTCString(), 
+    description: "",
+    image: "/images/clear_creek_steps.webp",
+    keywords: 
+    [
+      "transformation-based learning",
+      "machine learning",
+      "neural networks",
+      "Harper's architecture",
+      "edge computing",
+      "entropy",
+      "POS tagging",
+      "nominal phrase chunking",
+      "Universal Dependencies treebank",
+      "rule-based learning",
+      "data cleaning",
+      "grammar checker",
+      "Oxford comma"
+    ]
+  },
   ["transformation-based_learning"]: {
     pubDate: new Date(2025, 5, 3).toUTCString(), 
     description: "Harper is currently undergoing some pretty radical changes when it comes to its language analysis. These improvements will improve the output of our existing rule engine, in addition to making entirely new corrections possible.",
