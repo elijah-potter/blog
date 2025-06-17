@@ -19,6 +19,22 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  "refactoring_more_and_faster": {
+    pubDate: new Date(2025, 5, 17).toUTCString(), 
+    description: "You know—that awful (but strangely satisfying) space where the majority of your commits are small pedantic edits that don't change the end-user-experience at all?",
+    image: "/images/clouds.webp",
+    keywords: [
+      "refactoring",
+      "tech debt",
+      "velocity",
+      "rust-analyzer",
+      "planning",
+      "code quality",
+      "harper",
+      "bugs",
+      "new features"
+    ]
+  },
   ["more_transformation-based_learning"]: {
     pubDate: new Date(2025, 5, 13).toUTCString(), 
     description: "The most common type of machine learning out there takes the form of some kind of neural network. Inspired by how our own brains work, these systems act as function approximations. They are great, but they come with a few key pitfalls.",
