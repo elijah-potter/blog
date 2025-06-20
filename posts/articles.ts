@@ -19,6 +19,12 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  "harper_for_firefox": {
+    pubDate: new Date(2025, 5, 20).toUTCString(),
+    description: "There's a great deal of overlap between those who use Harper and those who use Firefox.",
+    image: null,
+    keywords: ["firefox", "chrome", "harper"]
+  },
   "refactoring_more_and_faster": {
     pubDate: new Date(2025, 5, 17).toUTCString(), 
     description: "You know—that awful (but strangely satisfying) space where the majority of your commits are small pedantic edits that don't change the end-user-experience at all?",

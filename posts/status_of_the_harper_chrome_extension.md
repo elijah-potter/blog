@@ -11,7 +11,7 @@ It never saw the light of day.
 
 Until now.
 
-![](/images/harper_chrome_ext.png)
+![The Harper Chrome Extension](/images/harper_chrome_ext.png)
 
 ## What is Harper?
 ...and why do I need its Chrome extension?
