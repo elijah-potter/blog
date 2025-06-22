@@ -19,6 +19,12 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+  "the_books_i_read_since_april_2025": {
+    pubDate: new Date(2025, 5, 22).toUTCString(),
+    description: "It has been a slow couple of months for my reading habit. Although, now that I've said that out loud, I realize I say that every time.",
+    image: null,
+    keywords: ["books", "reading", "matt haig", "dale carnegie", "john green"]
+  },
   "harper_for_firefox": {
     pubDate: new Date(2025, 5, 20).toUTCString(),
     description: "There's a great deal of overlap between those who use Harper and those who use Firefox.",
