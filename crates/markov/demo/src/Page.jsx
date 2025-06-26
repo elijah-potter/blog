@@ -125,7 +125,7 @@ export default function () {
 								Choose Word
 							</button>
 						</li>
-						{nextWords != null ?? (
+						{nextWords != null ? (
 							nextWords.map((word) => (
 								<li
 									key={word}
@@ -135,7 +135,7 @@ export default function () {
 									{word}
 								</li>
 							))
-						) }
+						) : undefined}
 					</ul>
 				</div>
 			</div>
