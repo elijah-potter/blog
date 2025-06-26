@@ -763,17 +763,12 @@ async function createFullPost(
   return { content_html, ...post };
 }
 
-let fullPosts: Record<string, FullPost> | null = null;
-
 export async function generateFullPosts(): Promise<Record<string, FullPost>> {
-  if (fullPosts == null) {
-    fullPosts = {};
+  const pairs = await Promise.all(
+    Object.entries(await generatePartialPosts()).map(
+      async ([key, post]) => [key, await createFullPost(key, post)] as const
+    )
+  );
 
-    for (const [key, post] of Object.entries(await generatePartialPosts())) {
-      const fullPost = await createFullPost(key, post);
-      fullPosts[key] = fullPost;
-    }
-  }
-
-  return fullPosts;
+  return Object.fromEntries(pairs);
 }

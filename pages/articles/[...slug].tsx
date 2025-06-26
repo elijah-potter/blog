@@ -2,7 +2,7 @@ import Head from "next/head";
 import { FullPost, generateFullPosts, PartialPost } from "../../posts/articles";
 import "katex/dist/katex.css";
 import "highlight.js/styles/hybrid.css";
-import { startCase, sampleSize } from "lodash";
+import { sampleSize } from "lodash";
 import Link from "next/link";
 
 export async function getServerSideProps({ params }: any) {

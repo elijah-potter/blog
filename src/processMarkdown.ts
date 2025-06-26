@@ -13,9 +13,13 @@ import fs from "fs/promises";
 import rehypeTitleFigure from "rehype-title-figure";
 // @ts-expect-error there are no typing for this package.
 import typeset from "typeset";
+import { LRUCache } from "lru-cache";
 
-/// Converts `markdown` to `html`
+const mdCache = new LRUCache<string, string>({ max: 20000 });
+
 export async function processMarkdown(markdown: string): Promise<string> {
+  const cached = mdCache.get(markdown);
+  if (cached) return cached;
   const processor = unified()
     .use(remarkParse)
     .use(remarkMath)
@@ -28,6 +32,8 @@ export async function processMarkdown(markdown: string): Promise<string> {
 
   const vfile = await processor.process(markdown);
   const html = vfile.toString();
+
+  mdCache.set(markdown, html);
 
   return typeset(html);
 }
