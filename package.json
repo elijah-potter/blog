@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "format": "biome format --write"
   },
   "dependencies": {
     "feed": "^4.2.2",
@@ -34,16 +35,11 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.5.5",
+    "@biomejs/biome": "2.0.5",
     "@types/lodash": "^4.17.14",
     "@types/node": "^22.13.1",
     "@types/react": "^18.2.28",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.46.0",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.29.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "postcss": "^8.4.31",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.3.3",

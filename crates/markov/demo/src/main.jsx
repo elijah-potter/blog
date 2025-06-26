@@ -4,7 +4,7 @@ import Page from "./Page.jsx";
 import "./app.css";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <Page />
-  </StrictMode>,
+	<StrictMode>
+		<Page />
+	</StrictMode>,
 );

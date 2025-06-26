@@ -1,15 +1,15 @@
 {
-  "name": "Elijah Potter",
-  "short_name": "Elijah Potter",
-  "icons": [
-    {
-      "src": "/favicon.ico",
-      "sizes": "128x128"
-    }
-  ],
-  "theme_color": "#FFFFFF",
-  "background_color": "#282828",
-  "start_url": "/",
-  "display": "standalone",
-  "orientation": "portrait"
+	"name": "Elijah Potter",
+	"short_name": "Elijah Potter",
+	"icons": [
+		{
+			"src": "/favicon.ico",
+			"sizes": "128x128"
+		}
+	],
+	"theme_color": "#FFFFFF",
+	"background_color": "#282828",
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait"
 }

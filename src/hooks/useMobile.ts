@@ -3,25 +3,25 @@ import { useEffect, useState } from "react";
 /** Whether the window is currently "mobile" size.
  * Automatically updates when the window is resized.*/
 export default function useMobile(): boolean {
-  const [mobile, setMobile] = useState(isMobile());
+	const [mobile, setMobile] = useState(isMobile());
 
-  useEffect(() => {
-    const update = () => setMobile(isMobile());
+	useEffect(() => {
+		const update = () => setMobile(isMobile());
 
-    window.addEventListener("resize", update);
+		window.addEventListener("resize", update);
 
-    return () => {
-      window.removeEventListener("resize", update);
-    };
-  }, []);
+		return () => {
+			window.removeEventListener("resize", update);
+		};
+	}, []);
 
-  return mobile;
+	return mobile;
 }
 
 function isMobile(): boolean {
-  if (typeof window === "undefined") {
-    return false;
-  }
+	if (typeof window === "undefined") {
+		return false;
+	}
 
-  return window.innerWidth < 768;
+	return window.innerWidth < 768;
 }

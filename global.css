@@ -3,215 +3,215 @@
 @tailwind utilities;
 
 :root {
-  text-rendering: optimizeLegibility;
-  font-family: charter;
-  background-color: white;
-  color: black;
-  line-height: 1.3;
+	text-rendering: optimizeLegibility;
+	font-family: charter;
+	background-color: white;
+	color: black;
+	line-height: 1.3;
 }
 
 code {
-  font-family: hack, monospace;
+	font-family: hack, monospace;
 }
 
 a {
-  text-decoration-line: underline;
+	text-decoration-line: underline;
 }
 
 textarea {
-  color: black;
-  line-height: 1.3;
+	color: black;
+	line-height: 1.3;
 }
 
 button {
-  background-color: white;
-  color: black;
+	background-color: white;
+	color: black;
 }
 
 .rmd {
-  font-size: 1.2rem;
+	font-size: 1.2rem;
 }
 
 .rmd ul {
-  list-style: inside;
-  padding: 16px 0px;
-  padding-left: 20px;
+	list-style: inside;
+	padding: 16px 0px;
+	padding-left: 20px;
 }
 
 .rmd ol {
-  list-style: numeric;
-  padding: 16px 0px;
-  padding-left: 40px;
+	list-style: numeric;
+	padding: 16px 0px;
+	padding-left: 40px;
 }
 
 .rmd h1 {
-  font-size: 40px;
-  font-weight: bold;
-  padding: 16px 0px;
+	font-size: 40px;
+	font-weight: bold;
+	padding: 16px 0px;
 }
 
 .rmd h2 {
-  font-size: 32px;
-  font-weight: bold;
-  padding: 16px 0px;
+	font-size: 32px;
+	font-weight: bold;
+	padding: 16px 0px;
 }
 
 .rmd h3 {
-  font-size: 25px;
-  font-weight: bold;
-  padding: 16px 0px;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 16px 0px;
 }
 
 .rmd h4 {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 8px 0px;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 8px 0px;
 }
 
 .rmd p {
-  padding: 16px 0px;
+	padding: 16px 0px;
 }
 
 .rmd img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: auto;
-  transition-timing-function: ease-out;
-  transition-duration: 500ms;
-  border-radius: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: auto;
+	transition-timing-function: ease-out;
+	transition-duration: 500ms;
+	border-radius: 10px;
 }
 
 .rmd img:hover {
-  transform: scale(1.02);
+	transform: scale(1.02);
 }
 
 .rmd figcaption {
-  text-align: center;
+	text-align: center;
 }
 
 .rmd p > code {
-  width: 100%;
-  overflow-x: scroll;
-  font-size: 1rem;
+	width: 100%;
+	overflow-x: scroll;
+	font-size: 1rem;
 }
 
 .rmd p > code {
-  background-color: #89e0a9;
-  padding: 4px;
-  border-radius: 5px;
+	background-color: #89e0a9;
+	padding: 4px;
+	border-radius: 5px;
 }
 
 .rmd table {
-  margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .rmd a {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 .rmd table,
 th,
 td {
-  border: 2px solid var(--lc);
-  border-collapse: collapse;
-  padding: 4px 8px;
+	border: 2px solid var(--lc);
+	border-collapse: collapse;
+	padding: 4px 8px;
 }
 
 .rmd blockquote {
-  background-color: var(--lc);
-  color: var(--fg);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px 0px;
+	background-color: var(--lc);
+	color: var(--fg);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px 0px;
 }
 
 .rmd blockquote p {
-  padding: 0px;
+	padding: 0px;
 }
 
 .rmd .math {
-  font-size: 1rem;
+	font-size: 1rem;
 }
 
 .rmd .katex-display {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
 }
 
 @media (max-width: 767px) {
-  .mobilehide {
-    display: none;
-  }
+	.mobilehide {
+		display: none;
+	}
 }
 
 @font-face {
-  font-family: charter;
-  font-style: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  src: url("/fonts/charter_regular.woff2") format("woff2");
+	font-family: charter;
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("/fonts/charter_regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: charter;
-  font-style: italic;
-  font-weight: normal;
-  font-stretch: normal;
-  src: url("/fonts/charter_italic.woff2") format("woff2");
+	font-family: charter;
+	font-style: italic;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("/fonts/charter_italic.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: charter;
-  font-style: normal;
-  font-weight: bold;
-  font-stretch: normal;
-  src: url("/fonts/charter_bold.woff2") format("woff2");
+	font-family: charter;
+	font-style: normal;
+	font-weight: bold;
+	font-stretch: normal;
+	src: url("/fonts/charter_bold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: charter;
-  font-style: italic;
-  font-weight: bold;
-  font-stretch: normal;
-  src: url("/fonts/charter_bold_italic.woff2") format("woff2");
+	font-family: charter;
+	font-style: italic;
+	font-weight: bold;
+	font-stretch: normal;
+	src: url("/fonts/charter_bold_italic.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: hack;
-  src:
-    url("/fonts/hack-regular-subset.woff2?sha=3114f1256") format("woff2"),
-    url("/fonts/hack-regular-subset.woff?sha=3114f1256") format("woff");
-  font-weight: 400;
-  font-style: normal;
+	font-family: hack;
+	src:
+		url("/fonts/hack-regular-subset.woff2?sha=3114f1256") format("woff2"),
+		url("/fonts/hack-regular-subset.woff?sha=3114f1256") format("woff");
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: hack;
-  src:
-    url("/fonts/hack-bold-subset.woff2?sha=3114f1256") format("woff2"),
-    url("/fonts/hack-bold-subset.woff?sha=3114f1256") format("woff");
-  font-weight: 700;
-  font-style: normal;
+	font-family: hack;
+	src:
+		url("/fonts/hack-bold-subset.woff2?sha=3114f1256") format("woff2"),
+		url("/fonts/hack-bold-subset.woff?sha=3114f1256") format("woff");
+	font-weight: 700;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: hack;
-  src:
-    url("/fonts/hack-italic-subset.woff2?sha=3114f1256") format("woff2"),
-    url("/fonts/hack-italic-webfont.woff?sha=3114f1256") format("woff");
-  font-weight: 400;
-  font-style: italic;
+	font-family: hack;
+	src:
+		url("/fonts/hack-italic-subset.woff2?sha=3114f1256") format("woff2"),
+		url("/fonts/hack-italic-webfont.woff?sha=3114f1256") format("woff");
+	font-weight: 400;
+	font-style: italic;
 }
 
 @font-face {
-  font-family: hack;
-  src:
-    url("/fonts/hack-bolditalic-subset.woff2?sha=3114f1256") format("woff2"),
-    url("/fonts/hack-bolditalic-subset.woff?sha=3114f1256") format("woff");
-  font-weight: 700;
-  font-style: italic;
+	font-family: hack;
+	src:
+		url("/fonts/hack-bolditalic-subset.woff2?sha=3114f1256") format("woff2"),
+		url("/fonts/hack-bolditalic-subset.woff?sha=3114f1256") format("woff");
+	font-weight: 700;
+	font-style: italic;
 }

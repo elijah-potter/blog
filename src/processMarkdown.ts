@@ -18,27 +18,27 @@ import { LRUCache } from "lru-cache";
 const mdCache = new LRUCache<string, string>({ max: 20000 });
 
 export async function processMarkdown(markdown: string): Promise<string> {
-  const cached = mdCache.get(markdown);
-  if (cached) return cached;
-  const processor = unified()
-    .use(remarkParse)
-    .use(remarkMath)
-    .use(remarkGfm)
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeHighlight, { languages: { rust, bash, javascript } })
-    .use(remarkKatex)
-    .use(rehypeTitleFigure)
-    .use(rehypeStringify, { allowDangerousHtml: true });
+	const cached = mdCache.get(markdown);
+	if (cached) return cached;
+	const processor = unified()
+		.use(remarkParse)
+		.use(remarkMath)
+		.use(remarkGfm)
+		.use(remarkRehype, { allowDangerousHtml: true })
+		.use(rehypeHighlight, { languages: { rust, bash, javascript } })
+		.use(remarkKatex)
+		.use(rehypeTitleFigure)
+		.use(rehypeStringify, { allowDangerousHtml: true });
 
-  const vfile = await processor.process(markdown);
-  const html = vfile.toString();
+	const vfile = await processor.process(markdown);
+	const html = vfile.toString();
 
-  mdCache.set(markdown, html);
+	mdCache.set(markdown, html);
 
-  return typeset(html);
+	return typeset(html);
 }
 
 export async function processMarkdownFile(filePath: string): Promise<string> {
-  const file = await fs.readFile(filePath, "utf8");
-  return processMarkdown(file);
+	const file = await fs.readFile(filePath, "utf8");
+	return processMarkdown(file);
 }
