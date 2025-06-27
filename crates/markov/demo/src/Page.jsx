@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-import * as markov from "markov";
 import lowerCase from "lodash/lowerCase";
+import * as markov from "markov";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import initialTrainingText from "./alice_in_wonderland.txt?raw";
 
 export default function () {
@@ -125,17 +125,19 @@ export default function () {
 								Choose Word
 							</button>
 						</li>
-						{nextWords != null ? (
-							nextWords.map((word) => (
-								<li
-									key={word}
-									className="hover:translate-x-2 cursor-pointer transition-all"
-									onClick={() => setCompletingText(`${completingText} ${word}`)}
-								>
-									{word}
-								</li>
-							))
-						) : undefined}
+						{nextWords != null
+							? nextWords.map((word) => (
+									<li
+										key={word}
+										className="hover:translate-x-2 cursor-pointer transition-all"
+										onClick={() =>
+											setCompletingText(`${completingText} ${word}`)
+										}
+									>
+										{word}
+									</li>
+								))
+							: undefined}
 					</ul>
 				</div>
 			</div>

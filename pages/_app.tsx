@@ -1,9 +1,9 @@
+import type { AppProps } from "next/app";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Spacer from "../components/Spacer";
-import Link from "next/link";
-import type { AppProps } from "next/app";
-import Image from "next/image";
 import "../global.css";
 import { useRouter } from "next/router";
 import posthog from "posthog-js";

@@ -1,14 +1,14 @@
 import clone from "lodash/clone";
 import cloneDeep from "lodash/cloneDeep";
+import type { MouseEvent } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
-	type DrawableBody,
 	type Body,
-	radiusFromMass,
 	calculateStep,
+	type DrawableBody,
+	radiusFromMass,
 } from "../src/simulation";
 import { mulS, subV, type Vector } from "../src/vector";
-import type { MouseEvent } from "react";
 
 export const BODY_LINE_WIDTH = 2;
 export const INITIAL_VELOCITY_COEFF = 0.05;

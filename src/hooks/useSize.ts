@@ -1,5 +1,5 @@
-import type { Vector } from "../vector";
 import { type RefCallback, useCallback, useRef, useState } from "react";
+import type { Vector } from "../vector";
 
 export default function useSize(): [RefCallback<HTMLElement>, Vector] {
 	const elementRef = useRef<HTMLElement | null>(null);

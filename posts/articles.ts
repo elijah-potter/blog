@@ -1,5 +1,5 @@
-import { clone, startCase } from "lodash";
 import { binaryInlined, LocalLinter } from "harper.js";
+import { clone, startCase } from "lodash";
 
 export type PostDeclaration = {
 	keywords: string[];
@@ -19,7 +19,7 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
-	the_books_i_read_since_april_2025: {
+	the_books_i_have_read_since_april_2025: {
 		pubDate: new Date(2025, 5, 22).toUTCString(),
 		description:
 			"It has been a slow couple of months for my reading habit. Although, now that I've said that out loud, I realize I say that every time.",
@@ -346,7 +346,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		keywords: ["harper", "grammar", "testing", "unit", "integration"],
 		image: null,
 	},
-	"LLM_assisted_fuzzing": {
+	LLM_assisted_fuzzing: {
 		pubDate: new Date(2025, 2, 21).toUTCString(),
 		description: "A new approach to false-positives.",
 		keywords: ["harper", "grammar", "ollama", "quality"],
@@ -396,7 +396,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 
 		image: null,
 	},
-	"prompting_large_language_models_in_bash_scripts": {
+	prompting_large_language_models_in_bash_scripts: {
 		pubDate: new Date(2025, 1, 26).toUTCString(),
 		description: "Of course it's that easy.",
 		keywords: ["harper", "grammar", "ollama"],

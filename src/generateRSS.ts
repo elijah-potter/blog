@@ -1,5 +1,5 @@
-import { generateFullPosts } from "../posts/articles";
 import { Feed } from "feed";
+import { generateFullPosts } from "../posts/articles";
 
 export default async function generateRSS(): Promise<string> {
 	const feed = new Feed({

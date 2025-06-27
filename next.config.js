@@ -24,6 +24,11 @@ module.exports = {
 				destination: "/articles/markov_chains_are_the_original_language_models",
 				permanent: true,
 			},
+			{
+				source: "/articles/the_books_i_read_since_april_2025",
+				destination: "/articles/the_books_i_have_read_since_april_2025",
+				permanent: true,
+			},
 		];
 	},
 	webpack: (config, options) => {
