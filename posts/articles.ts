@@ -19,6 +19,23 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	code_ages_like_milk: {
+		pubDate: new Date(2025, 5, 27).toUTCString(),
+		description:
+			"Failing to account for this reality can slow down development and dissuade contributors from sticking around.",
+		image: "/images/front_range.webp",
+		keywords: [
+			"code review",
+			"PR (Pull Request)",
+			"code aging",
+			"Lindy effect",
+			"open source",
+			"contributor experience",
+			"feature development",
+			"code quality",
+			"teamwork",
+		],
+	},
 	the_books_i_have_read_since_april_2025: {
 		pubDate: new Date(2025, 5, 22).toUTCString(),
 		description:
