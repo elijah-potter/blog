@@ -1,5 +1,7 @@
 # Local-First Software is Easier to Scale
 
+![The Flatirons](/images/flatirons.webp)
+
 The title of this post is somewhat misleading. Local-first software rarely needs to be scaled at all.
 
 [Harper](https://writewithharper.com) recently received a massive increase in both traffic and user count.
