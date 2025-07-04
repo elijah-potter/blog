@@ -19,6 +19,24 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	["local-first_software_is_easier_to_scale"]: {
+		pubDate: new Date(2025, 6, 4).toUTCString(),
+		description:
+			"The title of this post is somewhat misleading. Local-first software rarely needs to be scaled at all.",
+		image: null,
+		keywords: [
+			"local-first",
+			"on-device",
+			"scalability",
+			"efficiency",
+			"Hacker News",
+			"user acquisition",
+			"performance",
+			"Java",
+			"AWS",
+			"lean code",
+		],
+	},
 	code_ages_like_milk: {
 		pubDate: new Date(2025, 5, 27).toUTCString(),
 		description:
