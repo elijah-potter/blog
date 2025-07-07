@@ -79,7 +79,23 @@ fn filename_to_filetype(path: &Path) -> Option<&'static str> {
         "cs" => "csharp",
 ```
 
-## Step 3: Document
+## Step 3: Testing
+
+To make sure everything behaves correctly, we need to add some integration tests.
+You'll find all the existing ones under `harper-comments/tests/language_support_sources`.
+
+Find or write several new files under this directory in the language you've added support for.
+Add intentional grammatical errors to these file in syntactically relevant places.
+We want to make sure that Harper can detect the errors we want and will ignore the errors we do not want.
+For example, we might put an error inside an `@param` tag in JSDoc.
+That way we'll know if Harper is not properly ignoring those elements.
+
+Add new entries to the bottom of `harper-comments/tests/language_support.rs`.
+The second parameter is the number of grammatical errors that Harper should detect in that file.
+
+From there, you can run `cargo test` to make sure everything passes.
+
+## Step 4: Document
 
 To advertise support for the language, there are a couple addition places that need modification.
 Notably:
