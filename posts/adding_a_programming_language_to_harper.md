@@ -76,7 +76,7 @@ fn filename_to_filetype(path: &Path) -> Option<&'static str> {
         "c" => "c",
         "cmake" => "cmake",
         "cpp" => "cpp",
-        "cs" => "csharp",
+        "cs" => "csharp", // Add a line here
 ```
 
 ## Step 3: Testing
@@ -91,7 +91,14 @@ For example, we might put an error inside an `@param` tag in JSDoc.
 That way we'll know if Harper is not properly ignoring those elements.
 
 Add new entries to the bottom of `harper-comments/tests/language_support.rs`.
-The second parameter is the number of grammatical errors that Harper should detect in that file.
+The second parameter of the `create_test!` macro is the number of grammatical errors that Harper __should__ detect in that file.
+
+```rust
+create_test!(ignore_shebang_3.sh, 0);
+create_test!(ignore_shebang_4.sh, 1);
+create_test!(common.mill, 1);
+create_test!(basic_kotlin.kt, 0); // Add a line here
+```
 
 From there, you can run `cargo test` to make sure everything passes.
 
