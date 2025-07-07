@@ -8,6 +8,7 @@ The common problem, however, is that there have always been programming language
 One of the [oldest issues](https://github.com/Automattic/harper/issues/79) on GitHub is about this.
 
 This post is a guide for adding a new programming language to the Harper language server.
+
 Why isn't it in the official documentation?
 While the information contained within this guide will remain relevant to the project for a long time, I don't imagine each identifier or file path to remain the same.
 If you think it _would_ better serve potential contributors to place this guide on the [main site](https://writewithharper.com), let me know.
@@ -91,3 +92,8 @@ Notably:
 
 That should be everything.
 Open a draft pull request while you work and ping me ([elijah-potter](https://github.com/elijah-potter/)) if you have any questions.
+
+## Additional Resources
+
+- [PR for adding Solidity support](https://github.com/Automattic/harper/pull/1443)
+- [PR for adding Scala support](https://github.com/Automattic/harper/pull/970)
