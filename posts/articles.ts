@@ -19,6 +19,22 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	adding_a_programming_language_to_harper: {
+		pubDate: new Date(2025, 6, 7).toUTCString(),
+		description:
+			"A guide for adding a new programming language to the Harper language server.",
+		image: null,
+		keywords: [
+			"Harper",
+			"LSP",
+			"Tree-sitter",
+			"Crates.io",
+			"Language Server Protocol",
+			"Parser",
+			"Extension",
+			"Comments",
+		],
+	},
 	["local-first_software_is_easier_to_scale"]: {
 		pubDate: new Date(2025, 6, 4).toUTCString(),
 		description:
