@@ -15,9 +15,9 @@ Visit our [issue board](https://github.com/Automattic/harper/issues?q=is%3Aissue
 
 The three paths:
 
-1. [A "phrase correction"](./writing_a_phrase_correction_for_harper). These are for the simplest grammatical rules. Use one of these in cases where semantic meaning and context aren't important.
-1. [An `ExprLinter`](./writing_an_expression_rule_for_harper). These are for more complex rules. Use one of these in cases where semantic meaning or context __are__ important, and you don't need access to information wider than clause-level. Takes a little bit to learn, but are extremely powerful. 
-1. [A plain `Linter`]. These are often used for rules that involve punctuation. It requires the most Rust knowledge but the least Harper-specific knowledge.
+1. [__A "phrase correction"__](./writing_a_phrase_correction_for_harper). These are for the simplest grammatical rules. Use one of these in cases where semantic meaning and context aren't important.
+1. [__An `ExprLinter`__](./writing_an_expression_rule_for_harper). These are for more complex rules. Use one of these in cases where semantic meaning or context __are__ important, and you don't need access to information wider than clause-level. Takes a little bit to learn, but are extremely powerful. 
+1. __A plain `Linter`__. These are often used for rules that involve punctuation. It requires the most Rust knowledge but the least Harper-specific knowledge. I'm going to hold off on writing a guide for these until I hear a real desire to learn about them.
 
 These guides will focus more on the process of writing a rule for Harper, not the technical details of wiring it up.
 For the latter, see our [official documentation.](https://writewithharper.com/docs/contributors/author-a-rule)

@@ -1,5 +1,8 @@
 # Writing an Expression Rule for Harper
 
+_This is part three in a three-part series.
+[Go to part one.](./writing_a_grammatical_rule_for_harper)_
+
 Expression rules (or more commonly, `ExprLinter`s) are Harper rules that use declarative expressions to find and fix grammatical errors.
 They're halfway between a "phrase correction" and manually implementing `Linter`.
 
@@ -8,7 +11,7 @@ Make sure you properly [set up your environment](https://writewithharper.com/doc
 Before we get started, let's take a look at the `ExprLinter` trait.
 Here's what it looks like at the time of writing this post.
 
-```
+```rust
 /// A trait that searches for tokens that fulfil [`Expr`]s in a [`Document`].
 ///
 /// Makes use of [`TokenStringExt::iter_chunks`] to avoid matching across sentence or clause
@@ -180,7 +183,7 @@ impl Default for MissingPreposition {
 Now that we have an effective expression as a base, let's fill out the remaining fields.
 I found checking for an adposition reduced the false-positive rate, and it was easiest to add it to the `match_to_lint` function.
 
-```
+```rust
 impl ExprLinter for MissingPreposition {
     fn expr(&self) -> &dyn Expr {
         self.expr.as_ref()

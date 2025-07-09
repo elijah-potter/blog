@@ -19,6 +19,39 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	writing_an_expression_rule_for_harper: {
+		pubDate: new Date(2025, 6, 9).toUTCString(),
+		description:
+			"This article guides contributors on writing a Harper expression-based rule. It covers defining the rule's expression, writing test cases, and implementing the `match_to_lint` function for user suggestions.",
+		image: null,
+		keywords: [
+			"Harper",
+			"contributing",
+			"open source",
+			"Rust",
+			"SequenceExpr",
+			"medium",
+		],
+	},
+	writing_a_phrase_correction_for_harper: {
+		pubDate: new Date(2025, 6, 9).toUTCString(),
+		description: "This post explains how to add simple phrase corrections to the grammar checker Harper—a beginner-friendly way to address common, context-independent errors and contribute to its grammar checking capabilities.",
+		image: null,
+		keywords: [
+			"Harper",
+			"contributing",
+			"open source",
+			"Rust",
+			"SequenceExpr",
+			"easy",
+		],
+	},
+	writing_a_grammatical_rule_for_harper: {
+		pubDate: new Date(2025, 6, 9).toUTCString(),
+		description: "This article introduces contributing to the open-source grammar checker Harper by writing grammatical rules, outlining different approaches for various skill levels.",
+		image: null,
+		keywords: ["Harper", "contributing", "open source", "Rust", "SequenceExpr"],
+	},
 	adding_a_programming_language_to_harper: {
 		pubDate: new Date(2025, 6, 7).toUTCString(),
 		description:
