@@ -19,6 +19,23 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	writing_good_documentation: {
+		pubDate: new Date(2025, 6, 15).toUTCString(),
+		description:
+			"In an age where large language models have exceptional context windows, it's easy to fall into the trap of believing a system is simpler than it is.",
+		image: null,
+		keywords: [
+			"documentation",
+			"writing documentation",
+			"good documentation",
+			"code documentation",
+			"simplicity",
+			"why",
+			"bug reports",
+			"screenshots",
+			"blog",
+		],
+	},
 	writing_an_expression_rule_for_harper: {
 		pubDate: new Date(2025, 6, 9).toUTCString(),
 		description:
@@ -35,7 +52,8 @@ const postDeclarations: Record<string, PostDeclaration> = {
 	},
 	writing_a_phrase_correction_for_harper: {
 		pubDate: new Date(2025, 6, 9).toUTCString(),
-		description: "This post explains how to add simple phrase corrections to the grammar checker Harper—a beginner-friendly way to address common, context-independent errors and contribute to its grammar checking capabilities.",
+		description:
+			"This post explains how to add simple phrase corrections to the grammar checker Harper—a beginner-friendly way to address common, context-independent errors and contribute to its grammar checking capabilities.",
 		image: null,
 		keywords: [
 			"Harper",
@@ -48,7 +66,8 @@ const postDeclarations: Record<string, PostDeclaration> = {
 	},
 	writing_a_grammatical_rule_for_harper: {
 		pubDate: new Date(2025, 6, 9).toUTCString(),
-		description: "This article introduces contributing to the open-source grammar checker Harper by writing grammatical rules, outlining different approaches for various skill levels.",
+		description:
+			"This article introduces contributing to the open-source grammar checker Harper by writing grammatical rules, outlining different approaches for various skill levels.",
 		image: null,
 		keywords: ["Harper", "contributing", "open source", "Rust", "SequenceExpr"],
 	},
