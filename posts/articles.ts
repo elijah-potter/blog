@@ -19,6 +19,34 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	training_a_chunker_with_burn: {
+		pubDate: new Date(2025, 6, 16).toUTCString(),
+		description:
+			"The end result is a portable neural network that achieves ~95% accuracy on grammatically correct text.",
+		image: null,
+		keywords: [
+			"chunker",
+			"natural language processing",
+			"NLP",
+			"grammar checker",
+			"agreement error",
+			"noun phrase",
+			"subject",
+			"object",
+			"Brill Chunker",
+			"neural network",
+			"BiLSTM",
+			"Burn",
+			"Rust",
+			"machine learning",
+			"embeddings",
+			"Harper",
+			"UPOS",
+			"training",
+			"accuracy",
+			"transformer",
+		],
+	},
 	writing_good_documentation: {
 		pubDate: new Date(2025, 6, 15).toUTCString(),
 		description:
