@@ -19,6 +19,20 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	// reflections_on_expression_rules: {
+	// 	pubDate: new Date(2025, 6, 16).toUTCString(),
+	// 	description:
+	// 		"Expression rules were designed for a certain kind of error. But there are many grammatical or layout rules which hard difficult or downright impossible to define with an expression.",
+	// 	image: null,
+	// 	keywords: [
+	// 		"Harper",
+	// 		"expression rules",
+	// 		"grammar",
+	// 		"rule-based",
+	// 		"documentation",
+	// 		"false-positives",
+	// 	],
+	// },
 	training_a_chunker_with_burn: {
 		pubDate: new Date(2025, 6, 16).toUTCString(),
 		description:
