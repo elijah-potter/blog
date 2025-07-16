@@ -1,5 +1,7 @@
 # Training a Chunker with Burn
 
+![Graffiti in an Underpass](/images/underpass.webp)
+
 In a previous post, I detailed how I implemented a basic nominal phrase chunker using Transformation-based learning.
 Since then, I've taken another crack at the problem.
 My main goal: improve the accuracy.
