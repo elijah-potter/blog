@@ -19,6 +19,22 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	why_i_talk_to_myself: {
+		pubDate: new Date(2025, 6, 21).toUTCString(),
+		description:
+			"It's not easy, but I think it's one of the best habits I've ever built.",
+		image: null,
+		keywords: [
+			"Harper",
+			"reflection",
+			"open source",
+			"public",
+			"blogging",
+			"productivity",
+			"open knowledge",
+			"time management",
+		],
+	},
 	reflections_on_expression_rules: {
 		pubDate: new Date(2025, 6, 18).toUTCString(),
 		description:
