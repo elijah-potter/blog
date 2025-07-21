@@ -4,7 +4,7 @@ Each week I sit down and reflect on what I've learned. I think about which of my
 
 When I really think about it, I'm reminded of the original [After the Deadline blog](https://blog.afterthedeadline.com/), which coincidentally also had a category called "Talking to Myself". I wonder if Raphael Mudge (AtD's author) had a similar motivation.
 
-I talk to myself to find the weaknesses in Harper's mission and focus my attention on what matters. It an efficient way to get from [layer one to layer five](https://ma.tt/2025/05/sharing-levels/). It can help get other maintainers on the same page and build a body of knowledge that can be linked to from anywhere.
+I talk to myself to find the weaknesses in Harper's mission and focus my attention on what matters. It is an efficient way to get from [layer one to layer five](https://ma.tt/2025/05/sharing-levels/). It can help get other maintainers on the same page and build a body of knowledge that can be linked to from anywhere.
 
 Not worrying about keeping information locked-down is one of the more beautiful parts of working in public. Open source code would be nothing without similarly open source knowledge. I talk to myself _online_ so my users can understand my intentions. 
 
