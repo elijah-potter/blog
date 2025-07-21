@@ -12,4 +12,4 @@ In many senses, we are not unlike moths. We are drawn to the lights of distracti
 
 ## Bonus Points
 
-A [few](https://elijahpotter.dev/articles/markov_chains_are_the_original_language_models) of my [articles](https://elijahpotter.dev/articles/local-first_software_is_easier_to_scale) have become popular on sites like Hacker News and Reddit. We've gotten quite a few Harper installations from links on these articles. I would never rely on this kind of blogging as a source of advertising, but it is nice to see it help spread the word.
+A [few](./markov_chains_are_the_original_language_models) of my [articles](./local-first_software_is_easier_to_scale) have become popular on sites like Hacker News and Reddit. We've gotten quite a few Harper installations from links on these articles. I would never rely on this kind of blogging as a source of advertising, but it is nice to see it help spread the word.
