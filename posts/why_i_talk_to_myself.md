@@ -1,6 +1,6 @@
 # Why I Talk to Myself
 
-Each week I sit down and reflect on what I've learned. I think about which of my efforts have helped the Harper endeavor, and which have harmed it. It's not easy, but I think it's one of the best habits I've built. More accurately, it's one of the best habits Matt has encouraged me to build.
+Each week I sit down and reflect on what I've learned. I think about which of my efforts have helped the Harper endeavor, and which have harmed it. It's not easy, but I think it's one of the best habits I've built. More accurately, it's one of the best habits [Matt](https://ma.tt) has encouraged me to build.
 
 When I really think about it, I'm reminded of the original [After the Deadline blog](https://blog.afterthedeadline.com/), which coincidentally also had a category called "Talking to Myself". I wonder if Raphael Mudge (AtD's author) had a similar motivation.
 
