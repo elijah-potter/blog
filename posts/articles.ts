@@ -23,7 +23,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2025, 6, 21).toUTCString(),
 		description:
 			"It's not easy, but I think it's one of the best habits I've ever built.",
-		image: null,
+		image: "/images/bike_sidewalk.webp",
 		keywords: [
 			"Harper",
 			"reflection",
