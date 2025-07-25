@@ -19,6 +19,24 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	["speaking_at_wordcamp_u.s._in_2025"]: {
+		pubDate: new Date(2025, 6, 25).toUTCString(),
+		description:
+			"I was recently encouraged to submit a talk proposal to the AI track at WordCamp US. I was more than happy to oblige, and to my surprise, I got in.",
+		image: "/images/wordcamp_us_speaker_2025.png",
+		keywords: [
+			"WordCamp US",
+			"AI",
+			"Machine Learning",
+			"Edge Computing",
+			"Harper",
+			"WordPress",
+			"Writing AI",
+			"Edge AI",
+			"Model Deployment",
+			"Writing Tools",
+		],
+	},
 	why_i_talk_to_myself: {
 		pubDate: new Date(2025, 6, 21).toUTCString(),
 		description:
