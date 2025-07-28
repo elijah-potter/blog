@@ -19,6 +19,24 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	better_interfaces_for_grammar_checking: {
+		pubDate: new Date(2025, 6, 28).toUTCString(),
+		description:
+			"Grammar checking can be cumbersome, especially when it’s sloth gets in the way of your thinking. That’s part of why so many people prefer Harper over Grammarly or LanguageTool.",
+		image: null,
+		keywords: [
+			"grammar checking",
+			"Harper",
+			"Neovim",
+			"Chrome extension",
+			"writing",
+			"efficiency",
+			"typos",
+			"suggestions",
+			"keyboard",
+			"writing",
+		],
+	},
 	["speaking_at_wordcamp_u.s._in_2025"]: {
 		pubDate: new Date(2025, 6, 25).toUTCString(),
 		description:
