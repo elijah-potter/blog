@@ -2,17 +2,10 @@
 
 ![Graffiti in an Underpass](/images/underpass.webp)
 
-In a previous post, I detailed how I implemented a basic nominal phrase chunker using Transformation-based learning.
+In [a previous post](./more_transformation-based_learning.md), I detailed how I implemented a basic nominal phrase chunker using Transformation-based learning (not to be confused with the transformer class of neural network models).
 Since then, I've taken another crack at the problem.
 My main goal: improve the accuracy.
-The end result is a portable neural network model that achieves ~95% accuracy on grammatically correct text.
-
-## The Failures of the Brill Chunker
-
-The Brill Chunker was, by many accounts, a success.
-It wasn't, however, a success in the main way that mattered: It wasn't reliable enough to be used in Harper's grammatical rule system.
-While fast and small, it failed to catch most edge-cases in English text.
-In some senses, it overfit its training dataset.
+The end result is a portable neural network model that achieves ~95% accuracy on grammatically correct text when tasked with identifying the nominal phrases in text.
 
 ## Our Goal
 
@@ -20,7 +13,7 @@ We want Harper to be able to match against subjects and objects in sentences.
 This is a prerequisite for checking a diverse array of grammatical rules.
 For example, to catch the error in this sentence, we need to correctly identify which tokens represent our subject.
 
-```
+```plaintext
 Neither of the big blue bottle would be broken by the fall.
 ```
 
@@ -28,6 +21,13 @@ In this case, our user has accidentally made the subject singular, while the ver
 We call this an agreement error.
 Because our subject, "big blue bottle" contains multiple tokens, we need a way to identify subjects at a higher level than per-token.
 That is what a chunker does.
+
+## The Failures of the Brill Chunker
+
+The Brill chunker was by many accounts a success.
+It wasn't, however, a success in the main way that mattered: It wasn't reliable enough to be used in Harper's grammatical rule system.
+While fast and small, it failed to catch most edge-cases in English text.
+In some senses, it overfit its training dataset.
 
 ## Why Train Our Own?
 
