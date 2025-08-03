@@ -1,6 +1,6 @@
 # Better UI for Grammar Checking
 
-Grammar checking can be cumbersome, especially when it’s sloth gets in the way of your thinking. That’s part of why so many people prefer [Harper](https://writewithharper.com) over Grammarly or LanguageTool. Waiting four seconds per edit can add up over long days of writing.
+Grammar checking can be cumbersome, especially when its sloth gets in the way of your thinking. That’s part of why so many prefer [Harper](https://writewithharper.com) over Grammarly or LanguageTool. Waiting four seconds per edit can add up over long days of writing.
 
 But there’s something else that can slow people down, especially power users. It’s the mouse. Moving one’s hand to the pointing device, moving it, and clicking can take a while—and that adds up too.
 
