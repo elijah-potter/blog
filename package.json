@@ -28,7 +28,7 @@
 		"rehype-stringify": "^9.0.3",
 		"rehype-title-figure": "^0.1.2",
 		"remark-gfm": "^3.0.1",
-		"remark-math": "^5.1.1",
+		"remark-math": "^6.0.0",
 		"remark-parse": "^10.0.1",
 		"remark-rehype": "^10.1.0",
 		"typeset": "^0.3.5",
