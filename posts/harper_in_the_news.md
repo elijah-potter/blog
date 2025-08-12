@@ -1,7 +1,7 @@
 # Harper in the News
 
 The biggest complaint about Harper is that the quality of grammar checking still needs some work.
-I've got some exciting new work I'm preparing to discuss later this week (hopefully) in that area.
+I've got an exciting new project I'm preparing to discuss later this week (hopefully) in that area.
 It should be a step-function improvement over our previous methods for creating new rules.
 
 In the meantime, I've collected some recent sightings of Harper in the wild:
