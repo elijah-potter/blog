@@ -20,7 +20,7 @@ export type FullPost = {
 
 const postDeclarations: Record<string, PostDeclaration> = {
 	harper_in_the_news: {
-		pubDate: new Date(2025, 6, 12).toUTCString(),
+		pubDate: new Date(2025, 7, 12).toUTCString(),
 		description:
 			"I've got some exciting new work I'm preparing to discuss later this week (hopefully). In the meantime, I've collected some recent sightings of Harper in the wild.",
 		image: null,
