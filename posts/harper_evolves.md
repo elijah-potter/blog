@@ -16,7 +16,7 @@ There are several unique methodologies at play when Harper goes about grammar ch
 Which strategy depends on the grammatical rule in question.
 Today, we're interested in expression rules.
 
-For the curious, I have recently written [a reflection](./reflections_on_expression_rules.md) on expression rules, as well as [a guide](./writing_an_expression_rule_for_harper.md) for anyone interested in producing them.
+For the curious, I have recently written [a reflection](./reflections_on_expression_rules) on expression rules, as well as [a guide](./writing_an_expression_rule_for_harper) for anyone interested in producing them.
 This post, however, will not recount information I've already written on this blog.
 
 By count, expression rules make up the majority of grammatical rules Harper is currently capable of detecting.
