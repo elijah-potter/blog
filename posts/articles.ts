@@ -19,14 +19,36 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
-  the_art_of_the_talk: {
+	harper_evolves: {
+		pubDate: new Date(2025, 7, 21).toUTCString(),
+		description:
+			"I want you to read that title as literally as possible. Harper is now capable of evolution.",
+		image: null,
+		keywords: [
+			"Harper",
+			"evolution",
+			"grammatical rules",
+			"expression rules",
+			"AI",
+			"The Ripper",
+			"artificial selection",
+			"random expressions",
+			"scoring",
+			"dataset",
+			"mutation",
+			"branch prediction",
+			"NLP",
+			"rule generation",
+			"efficiency",
+		],
+	},
+	the_art_of_the_talk: {
 		pubDate: new Date(2025, 7, 15).toUTCString(),
 		description:
 			"I've given dozens of talks over the years, yet I still feel like I have much to learn about public speaking. Preparing for my upcoming talk at WordCamp US has me stopping to reflect on what I already know.",
 		image: null,
 		keywords: [],
-
-  },
+	},
 	harper_in_the_news: {
 		pubDate: new Date(2025, 7, 12).toUTCString(),
 		description:
