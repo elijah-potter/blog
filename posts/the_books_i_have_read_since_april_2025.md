@@ -29,7 +29,7 @@ It was one of the most memorable books (and expeditions) I've had the pleasure o
 Naturally, I was ecstatic to hear John Green published something new: _Everything is Tuberculosis_, a book about the facets of our lives (of which there are many) that we can thank TB for.
 
 I liked this book, but I don't think it matches the reflective attitude about the human experience you find in his other books—but that's a good thing!
-_Everyhitng is Tuberculosis_ is not a book you're supposed to relate to, but a book that tells a story about a life most in the western world find completely unfamiliar.
+_Everything is Tuberculosis_ is not a book you're supposed to relate to, but a book that tells a story about a life most in the western world find completely unfamiliar.
 One where each and every day is counted.
 One where the price of a medication is the most important number.
 One where you might not survive.
