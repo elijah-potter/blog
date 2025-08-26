@@ -6,6 +6,8 @@ export type PostDeclaration = {
 	image: string | null;
 	pubDate: string;
 	description: string;
+	// Whether to highlight this post as a "Greatest Hit"
+	featured?: boolean;
 };
 
 export type PartialPost = {
@@ -107,6 +109,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 			"open knowledge",
 			"time management",
 		],
+		featured: true,
 	},
 	reflections_on_expression_rules: {
 		pubDate: new Date(2025, 6, 18).toUTCString(),
@@ -235,9 +238,11 @@ const postDeclarations: Record<string, PostDeclaration> = {
 			"AWS",
 			"lean code",
 		],
+		featured: true,
 	},
 	code_ages_like_milk: {
 		pubDate: new Date(2025, 5, 27).toUTCString(),
+		featured: true,
 		description:
 			"Failing to account for this reality can slow down development and dissuade contributors from sticking around.",
 		image: "/images/front_range.webp",
@@ -671,6 +676,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2024, 11, 29).toUTCString(),
 		keywords: ["sccache", "rust", "development", "linux", "distributed"],
 		image: null,
+		featured: true,
 	},
 	the_best_books_i_read_this_year: {
 		description: "I might be starting to sound like a broken record.",
@@ -786,6 +792,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 			"large language models",
 			"chatgpt",
 		],
+		featured: true,
 	},
 	building_a_software_render_engine_from_scratch: {
 		description:
@@ -829,6 +836,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		],
 		pubDate: new Date(2023, 9, 29).toUTCString(),
 		image: "/images/pen_paper.webp",
+		featured: true,
 	},
 	quantifying_hope_on_a_global_scale: {
 		description: "An experiment on how to live in a seemingly hopeless world.",
@@ -845,6 +853,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		],
 		image: "/images/hope_sketch.webp",
 		pubDate: new Date(2023, 9, 20).toUTCString(),
+		featured: true,
 	},
 	the_climate_change_progress_bar: {
 		description: "A proposal.",

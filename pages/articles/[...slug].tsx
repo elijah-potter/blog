@@ -24,7 +24,7 @@ export async function getServerSideProps({ params }: any) {
 	const post = posts[name];
 
 	const featuredPosts = sampleSize(
-		Object.entries(posts).filter(([a]) => a != name),
+		Object.entries(posts).filter(([a, b]) => a != name && b.featured === true),
 		3,
 	);
 
@@ -81,7 +81,7 @@ export default function ({
 			<div className="border-t border-black">
 				<h2 className="text-2xl font-bold my-4">Other Stuff</h2>
 				{featuredPosts.map(([key, post]) => (
-					<Link href={`/articles/${key}`}>
+					<Link href={`/articles/${key}`} className="no-underline" key={key}>
 						<div className="border border-gray-300 rounded py-4 px-3 mt-4 transition-all hover:translate-x-4">
 							<h3 className="font-bold text-xl">{post.title}</h3>
 							<p className="text-lg no-underline">{post.description}</p>
