@@ -4,6 +4,7 @@ import "katex/dist/katex.css";
 import "highlight.js/styles/hybrid.css";
 import { sampleSize } from "lodash";
 import Link from "next/link";
+import ScrollProgressBar from "../../components/ScrollProgressBar";
 
 export async function getServerSideProps({ params }: any) {
 	const { slug } = params;
@@ -56,6 +57,7 @@ export default function ({
 
 	return (
 		<>
+			<ScrollProgressBar />
 			<Head>
 				<meta
 					property="og:url"
