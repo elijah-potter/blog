@@ -103,7 +103,7 @@ export default function index({
 					const target = `/articles/${name}`;
 
 					return (
-						<Link href={target} key={name}>
+						<Link href={target} key={name} className="no-underline">
 							<li
 								className="py-4 w-11/12 hover:translate-x-5 transition-all"
 								onClick={() => (location.href = target)}
