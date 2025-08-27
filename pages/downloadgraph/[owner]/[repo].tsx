@@ -108,7 +108,7 @@ const DownloadGraph: React.FC = () => {
 				.attr("height", (d: BarDatum) => y(0) - y(d.rate))
 				.attr(
 					"class",
-					"fill-sky-500 hover:fill-sky-600 dark:fill-sky-400 transition-colors",
+					"fill-sky-500 hover:fill-sky-600 transition-colors",
 				)
 				.append("title")
 				.text(
@@ -124,7 +124,7 @@ const DownloadGraph: React.FC = () => {
 				.call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y-%m-%d")))
 				.selectAll("text")
 				.attr("transform", "rotate(-40)")
-				.attr("class", "text-xs fill-gray-700 dark:fill-gray-300")
+				.attr("class", "text-xs fill-black")
 				.style("text-anchor", "end");
 
 			svg
@@ -132,14 +132,14 @@ const DownloadGraph: React.FC = () => {
 				.attr("transform", `translate(${margin.left},0)`)
 				.call(d3.axisLeft(y).ticks(6))
 				.selectAll("text")
-				.attr("class", "text-xs fill-gray-700 dark:fill-gray-300");
+				.attr("class", "text-xs fill-black");
 
 			/* axis label */
 			svg
 				.append("text")
 				.attr("x", margin.left - 56)
 				.attr("y", margin.top - 6)
-				.attr("class", "text-sm font-medium fill-gray-800 dark:fill-gray-200")
+				.attr("class", "text-sm font-medium fill-black")
 				.text("Downloads / day");
 
 			setStatus("");
@@ -173,17 +173,17 @@ const DownloadGraph: React.FC = () => {
 
 				{/* Status */}
 				{status && (
-					<p className="mb-4 text-sm italic text-gray-500 dark:text-gray-400">
+					<p className="mb-4 text-sm italic">
 						{status}
 					</p>
 				)}
 
 				{/* Chart */}
-				<div className="rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm p-4">
+				<div className="rounded-lg border border-gray-200 shadow-sm p-4">
 					<svg ref={svgRef} className="w-full h-[420px]" />
 				</div>
 
-				<div className="mt-6 text-gray-700 dark:text-gray-300 space-y-2">
+				<div className="mt-6 space-y-2">
 					<h2 className="text-xl font-semibold">About this chart</h2>
 					<p>
 						This visualization shows{" "}
