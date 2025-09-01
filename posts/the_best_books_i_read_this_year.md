@@ -6,7 +6,7 @@ Other than simply admiring those that do, no.
 
 I have found some gems of literature that I would like to share.
 
-## [_Social Intelligence_ by Daniel Goleman](https://app.thestorygraph.com/books/d0a652d7-2461-46ce-9bf8-b684c45a67ea)
+## _Social Intelligence_ by Daniel Goleman
 
 _Social Intelligence_ is truly a treasure.
 I heard of Daniel Goleman's work first from an episode of [Talks at Google](https://www.youtube.com/watch?v=-hoo_dIOP8k) and later from psychologists who raved about his previous book, _Emotional Intelligence_.
@@ -17,7 +17,7 @@ As someone who has been overthinking my own social life from a young age, Daniel
 
 If you're the type to feel anxious in social situations, this book is perfect for you.
 
-## [_Tomorrow and Tomorrow and Tomorrow_ by Gabrielle Zevin](https://app.thestorygraph.com/books/d57e098f-82dc-41f1-94f3-8fcb02dfab1b)
+## _Tomorrow and Tomorrow and Tomorrow_ by Gabrielle Zevin
 
 _Tomorrow and Tomorrow and Tomorrow_ is probably one of the best fiction books I've read.
 **Period.**
@@ -29,7 +29,7 @@ Specifically, how the passion to create something can both bond and break people
 I don't think it is possible for me to accurately describe the emotional rollercoaster this book took me on.
 Which is why you should read it!
 
-## [_Why We Sleep_ by Matthew Walker](https://app.thestorygraph.com/books/73e8dabf-d6bc-432e-98f0-a48e30a470ad)
+## _Why We Sleep_ by Matthew Walker
 
 I was curious why some people in my life sleep very little and other sleep quite a bit, both with varying levels of general wakefulness.
 So, I ran a search: "Why do we sleep?"

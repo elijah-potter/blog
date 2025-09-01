@@ -14,7 +14,7 @@ While I only finished one book in February, I started reading several others tha
 It only felt right to combine the two months into a single post.
 
 
-## [_The Dinner_ by Herman Koch](https://app.thestorygraph.com/books/2986591a-fa02-4b02-b180-13b27708155c)
+## _The Dinner_ by Herman Koch
 
 Someone convinced me to read this book based on its simple premise: the entire novel is an account of a single dinner. 
 I was skeptical. 
@@ -27,7 +27,7 @@ They gain an additional dimension that you couldn't achieve in another, more act
 I won't spoil anything here, but the ending was a complete surprise to me.
 I did _not_ see that coming.
 
-## [_Gold_ by Isaac Asimov](https://app.thestorygraph.com/books/798488cf-0270-436c-900f-aac5fc26c71d)
+## _Gold_ by Isaac Asimov
 
 I remember reading _Gold_ for the first time on a camping trip to the _Great Sand Dunes National Park_.
 I was captivated by the dynamic short-stories contained within. 
@@ -36,7 +36,7 @@ At the time I believed them to be pure science fiction.
 Reading _Gold_ for the second time revealed how wrong I was. 
 More than one of the fictional ideas Asimov presents in the collection of short stories has since come to reality.
 
-## [_My Grandma Asked Me to Tell You She's Sorry_ by Fredrik Backman](https://app.thestorygraph.com/books/6844cc6f-2652-415e-8783-d544cf26e3c8)
+## _My Grandma Asked Me to Tell You She's Sorry_ by Fredrik Backman
 
 I'll admit: this novel was challenging to finish.
 
@@ -49,7 +49,7 @@ __Cons:__ it takes a long time for the insights to start coming.
 An excessive degree of unimportant information is thrown at you right out of the gate.
 I had difficulty maintaining my focus until the second half of the book (when stuff starts heating up).
 
-## [_Lessons in Chemistry_ by Bonnie Garmus](https://app.thestorygraph.com/books/836aff10-4b4e-4b28-8a89-c8ed9e3f966a)
+## _Lessons in Chemistry_ by Bonnie Garmus
 
 Garmus knocked it out of the park for her first novel.
 It follows Elizabeth Zott, who, in all respects is the person I want to be when I grow up.
