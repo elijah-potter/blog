@@ -21,6 +21,22 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	the_books_i_have_read_since_july_2025: {
+		pubDate: new Date(2025, 8, 1).toUTCString(),
+		description:
+			"I reflect about the recent books I have read and the things I (and you) can learn from them.",
+		image: null,
+		keywords: [
+			"book recommendations",
+			"reading list",
+			"stoicism",
+			"productivity",
+			"cal newport",
+			"book review",
+			"self improvement",
+			"reading",
+		],
+	},
 	harper_evolves: {
 		pubDate: new Date(2025, 7, 21).toUTCString(),
 		description:
