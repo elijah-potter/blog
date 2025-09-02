@@ -116,6 +116,15 @@ export default function index({
 							>
 								<h4 className="text-3xl py-2">{post.title}</h4>
 								<p className="font-extrabold py-2">
+									{post.featured ? (
+										<span
+											title="Featured"
+											aria-label="Featured"
+											className="text-yellow-500"
+										>
+											★
+										</span>
+									) : null}
 									Published on{" "}
 									{new Date(post.pubDate).toLocaleString(undefined, {
 										dateStyle: "short",
