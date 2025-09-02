@@ -55,7 +55,7 @@ export default function index({
 				/>
 			</Head>
 			<div className="flex flex-wrap items-center justify-evenly">
-				<div>
+				<div className="scale-90 sm:scale-100">
 					<Image
 						className="rounded-full"
 						src="/images/headshot.webp"
@@ -65,8 +65,10 @@ export default function index({
 					/>
 				</div>
 				<div className="flex flex-col">
-					<h1 className="text-center text-6xl font-bold p-16">Elijah Potter</h1>
-					<h2 className="text-center text-3xl font-bold">
+					<h1 className="text-center text-4xl sm:text-6xl font-bold p-6 sm:p-16">
+						Elijah Potter
+					</h1>
+					<h2 className="text-center text-2xl sm:text-3xl font-bold">
 						Software Engineer
 						<br />
 						Working at <Link href="https://automattic.com/">Automattic</Link>
@@ -75,7 +77,7 @@ export default function index({
 					</h2>
 				</div>
 			</div>
-			<div style={{ paddingTop: "100px" }} />
+			<div className="pt-6 sm:pt-24" />
 			<div className="md:flex md:flex-row grid grid-cols-4 items-center justify-evenly mt-5 transition-all place-items-center">
 				{iconLinks.map(([href, icon, alt]) => (
 					<Link
@@ -93,11 +95,15 @@ export default function index({
 							alt={alt}
 							title={alt}
 						/>
-						<Spacer></Spacer>
+						<div className="hidden sm:block">
+							<Spacer />
+						</div>
 					</Link>
 				))}
 			</div>
-			<h2 className="text-4xl pt-16 font-bold">Articles</h2>
+			<h2 className="text-3xl sm:text-4xl pt-8 sm:pt-16 font-bold flex items-center gap-2">
+				Articles ↓
+			</h2>
 			<ul>
 				{Object.entries(posts).map(([name, post]) => {
 					const target = `/articles/${name}`;
