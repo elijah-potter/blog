@@ -106,10 +106,7 @@ const DownloadGraph: React.FC = () => {
 				.attr("width", (d: BarDatum) => Math.max(1, x(d.end) - x(d.start)))
 				.attr("y", (d: BarDatum) => y(d.rate))
 				.attr("height", (d: BarDatum) => y(0) - y(d.rate))
-				.attr(
-					"class",
-					"fill-sky-500 hover:fill-sky-600 transition-colors",
-				)
+				.attr("class", "fill-sky-500 hover:fill-sky-600 transition-colors")
 				.append("title")
 				.text(
 					(d: BarDatum) =>
@@ -172,11 +169,7 @@ const DownloadGraph: React.FC = () => {
 				</div>
 
 				{/* Status */}
-				{status && (
-					<p className="mb-4 text-sm italic">
-						{status}
-					</p>
-				)}
+				{status && <p className="mb-4 text-sm italic">{status}</p>}
 
 				{/* Chart */}
 				<div className="rounded-lg border border-gray-200 shadow-sm p-4">
