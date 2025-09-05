@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Spacer from "../components/Spacer";
 import { type FullPost, generatePartialPosts } from "../posts/articles";
+import headshot from "../public/images/headshot.webp";
 
 const iconLinks = [
 	[
@@ -58,10 +59,13 @@ export default function index({
 				<div className="scale-90 sm:scale-100">
 					<Image
 						className="rounded-full"
-						src="/images/headshot.webp"
-						width="250"
-						height="250"
+						src={headshot}
+						width={250}
+						height={250}
 						alt="Headshot of Elijah Potter"
+						priority
+						placeholder="blur"
+						sizes="(max-width: 640px) 225px, 250px"
 					/>
 				</div>
 				<div className="flex flex-col">
