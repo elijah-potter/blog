@@ -1,5 +1,7 @@
 # The Books I Have Read Since July of 2025
 
+![Portland Rose](/images/portland_rose.png)
+
 Whenever I can, I try to stop and reflect.
 Often it's about my work and the things I can do to continue being more productive.
 But often, I reflect about the recent books I have read and the things I (and you) can learn from them.
