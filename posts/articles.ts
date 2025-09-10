@@ -21,20 +21,37 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
-
+	["the_chrome_extension_supersedes_the_wordpress_plugin"]: {
+		pubDate: new Date(2025, 8, 10).toUTCString(),
+		description:
+			"Several months ago, I announced the initial version of the Harper WordPress plugin. In the interest of those still using it, I’d like to give y’all an update.",
+		image: null,
+		keywords: [
+			"Chrome Extension",
+			"Harper",
+			"WordPress Plugin",
+			"WordPress.com",
+			"Private Grammar Checker",
+			"user data",
+			"iteration",
+			"review process",
+			"out-of-date",
+			"holistic experience",
+		],
+	},
 	["i_spoke_at_wordcamp_u.s._in_2025"]: {
 		pubDate: new Date(2025, 8, 3).toUTCString(),
 		description:
 			"It was my first WordCamp and first conference talk, so I was naturally nervous.",
 		image: null,
 		keywords: [
-  "WordCamp",
-  "WordPress",
-  "Speaking",
-  "Machine Learning",
-  "AI",
-  "Community"
-],
+			"WordCamp",
+			"WordPress",
+			"Speaking",
+			"Machine Learning",
+			"AI",
+			"Community",
+		],
 	},
 	the_books_i_have_read_since_july_2025: {
 		pubDate: new Date(2025, 8, 1).toUTCString(),
