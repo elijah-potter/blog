@@ -273,7 +273,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2025, 6, 4).toUTCString(),
 		description:
 			"The title of this post is somewhat misleading. Local-first software rarely needs to be scaled at all.",
-		image: null,
+		image: "/images/flatirons.webp",
 		keywords: [
 			"local-first",
 			"on-device",
