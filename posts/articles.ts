@@ -21,7 +21,7 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
-	["what_we_can_learn_from_new_york_city"]: {
+	what_we_can_learn_from_new_york_city: {
 		pubDate: new Date(2025, 8, 13).toUTCString(),
 		description:
 			" I've been told New York is an acquired taste. I can see why they might say that.",
@@ -39,7 +39,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 			"practical",
 		],
 	},
-	["the_chrome_extension_supersedes_the_wordpress_plugin"]: {
+	the_chrome_extension_supersedes_the_wordpress_plugin: {
 		pubDate: new Date(2025, 8, 10).toUTCString(),
 		description:
 			"Several months ago, I announced the initial version of the Harper WordPress plugin. In the interest of those still using it, I’d like to give y’all an update.",
