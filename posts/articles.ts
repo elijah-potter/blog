@@ -25,7 +25,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2025, 8, 13).toUTCString(),
 		description:
 			" I've been told New York is an acquired taste. I can see why they might say that.",
-		image: null,
+		image: "/images/nyc_from_a8c_noho_office.png",
 		keywords: [
 			"New York City",
 			"NYC",
