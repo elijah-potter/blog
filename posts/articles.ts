@@ -21,6 +21,24 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	["what_we_can_learn_from_new_york_city"]: {
+		pubDate: new Date(2025, 8, 13).toUTCString(),
+		description:
+			" I've been told New York is an acquired taste. I can see why they might say that.",
+		image: null,
+		keywords: [
+			"New York City",
+			"NYC",
+			"AI Group",
+			"in-office experiment",
+			"Y Combinator",
+			"AI Group",
+			"James",
+			"tough conversations",
+			"code reviews",
+			"practical",
+		],
+	},
 	["the_chrome_extension_supersedes_the_wordpress_plugin"]: {
 		pubDate: new Date(2025, 8, 10).toUTCString(),
 		description:
