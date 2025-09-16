@@ -13,7 +13,7 @@
 		"format": "biome format --write"
 	},
 	"dependencies": {
-		"feed": "^4.2.2",
+		"feed": "^5.1.0",
 		"framer-motion": "^10.12.18",
 		"harper.js": "^0.64.0",
 		"highlight.js": "^11.6.0",
