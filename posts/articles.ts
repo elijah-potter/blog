@@ -21,10 +21,17 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	demos_make_life_worth_living: {
+		pubDate: new Date(2025, 8, 18).toUTCString(),
+		description:
+			"The initial goal of any greenfield project of mine is to build a working demo. ",
+		image: "/images/bethesda_fountain.png",
+		keywords: ["demo", "Harper", "lint-framework", "web", "motivation"],
+	},
 	what_we_can_learn_from_new_york_city: {
 		pubDate: new Date(2025, 8, 13).toUTCString(),
 		description:
-			" I've been told New York is an acquired taste. I can see why they might say that.",
+			"I've been told New York is an acquired taste. I can see why they might say that.",
 		image: "/images/nyc_from_a8c_noho_office.png",
 		keywords: [
 			"New York City",
