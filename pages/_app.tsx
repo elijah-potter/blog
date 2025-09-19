@@ -61,6 +61,15 @@ export default function App({ Component, pageProps }: AppProps) {
 							</Navbar>
 						)}
 						<Component {...pageProps} />
+						<footer className="mt-12 border-t border-gray-200 pt-6 text-center text-sm text-gray-600">
+							<a
+								href="https://github.com/elijah-potter/blog"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								View source on GitHub
+							</a>
+						</footer>
 					</div>
 				</div>
 			</PostHogProvider>
