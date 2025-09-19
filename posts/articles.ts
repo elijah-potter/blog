@@ -21,6 +21,19 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	improving_harper_for_old_laptops: {
+		pubDate: new Date(2025, 8, 19).toUTCString(),
+		description:
+			"The most common complaint I’ve been hearing as of late relates to Harper’s performance. I’ve been told that Harper has gotten slow. As it turns out, the problem wasn’t the actual grammar checking, it was rendering the highlights on the page.",
+		image: null,
+		keywords: [
+			"Chrome extension performance",
+			"Custom Highlight API",
+			"layout thrash",
+			"DOM reflow",
+			"contenteditable highlights",
+		],
+	},
 	demos_make_life_worth_living: {
 		pubDate: new Date(2025, 8, 18).toUTCString(),
 		description:
