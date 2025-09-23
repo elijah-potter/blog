@@ -1,7 +1,7 @@
 # Writing a Phrase Correction for Harper
 
-_This is part two in a three-part series.
-[Go to part one.](./writing_a_grammatical_rule_for_harper)_
+_This is part of a series.
+[Go to the start.](./writing_a_grammatical_rule_for_harper)_
 
 There are several ways to add a grammatical rule to Harper.
 This post aims to outline the easiest (and most constrained): a "phrase correction".

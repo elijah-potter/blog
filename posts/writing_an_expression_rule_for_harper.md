@@ -1,7 +1,7 @@
 # Writing an Expression Rule for Harper
 
-_This is part three in a three-part series.
-[Go to part one.](./writing_a_grammatical_rule_for_harper)_
+_This is part of a series.
+[Go to the start.](./writing_a_grammatical_rule_for_harper)_
 
 Expression rules (or more commonly, `ExprLinter`s) are Harper rules that use declarative expressions to find and fix grammatical errors.
 They're halfway between a "phrase correction" and manually implementing `Linter`.
