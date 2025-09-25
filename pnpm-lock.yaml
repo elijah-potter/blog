@@ -102,6 +102,9 @@ importers:
       '@types/react':
         specifier: ^18.2.28
         version: 18.2.28
+      '@types/react-gravatar':
+        specifier: ^2.6.14
+        version: 2.6.14
       autoprefixer:
         specifier: ^10.4.16
         version: 10.4.16(postcss@8.4.31)
@@ -121,8 +124,8 @@ importers:
         specifier: ^4.20.5
         version: 4.20.5
       typescript:
-        specifier: ^4.7.4
-        version: 4.8.4
+        specifier: ^5.9.2
+        version: 5.9.2
 
 packages:
 
@@ -821,6 +824,9 @@ packages:
 
   '@types/prop-types@15.7.14':
     resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
+
+  '@types/react-gravatar@2.6.14':
+    resolution: {integrity: sha512-esbOXcvdGEJAsu1X8yHmArQ28Jo1gUmRZNVyA8MlEn7Z1mjj+9daHKiRoDQk61Y0kqbFGl75C4DOfUhb9uk5Tw==}
 
   '@types/react@18.2.28':
     resolution: {integrity: sha512-ad4aa/RaaJS3hyGz0BGegdnSRXQBkd1CCYDCdNjBPg90UUpLgo+WlJqb9fMYUxtehmzF3PJaTWqRZjko6BRzBg==}
@@ -2744,9 +2750,9 @@ packages:
     resolution: {integrity: sha512-Acylog8/luQ8L7il+geoSxhEkazvkslg7PSNKOX59mbB9cOveP5aq9h74Y7YU8yDpJwetzQQrfIwtf4Wp4LKcw==}
     engines: {node: '>=4'}
 
-  typescript@4.8.4:
-    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
-    engines: {node: '>=4.2.0'}
+  typescript@5.9.2:
+    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
+    engines: {node: '>=14.17'}
     hasBin: true
 
   typeset@0.3.5:
@@ -3490,6 +3496,10 @@ snapshots:
   '@types/parse5@6.0.3': {}
 
   '@types/prop-types@15.7.14': {}
+
+  '@types/react-gravatar@2.6.14':
+    dependencies:
+      '@types/react': 18.2.28
 
   '@types/react@18.2.28':
     dependencies:
@@ -5676,7 +5686,7 @@ snapshots:
 
   type-detect@4.1.0: {}
 
-  typescript@4.8.4: {}
+  typescript@5.9.2: {}
 
   typeset@0.3.5(esbuild@0.25.10):
     dependencies:

@@ -6,3 +6,7 @@ services:
     restart: always
     ports:
       - "3000:3000"
+    environment:
+      - DB_FILE_NAME=file:local.db
+    volumes:
+      - ./local.db:/usr/build/local.db

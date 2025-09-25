@@ -12,10 +12,7 @@ export default function CommentForm({ post }: { post: string }) {
 			<input type="hidden" name="id" />
 
 			<div className="flex flex-col">
-				<label
-					htmlFor={`${id}-post`}
-					className="mb-1 font-medium text-gray-700"
-				>
+				<label htmlFor={`${id}-post`} className="mb-1 font-extrabold">
 					Comment
 				</label>
 				<input
@@ -78,10 +75,7 @@ export default function CommentForm({ post }: { post: string }) {
 				/>
 			</div>
 
-			<button
-				type="submit"
-				className="w-full bg-primary-600 text-white py-2 px-4 rounded-lg hover:bg-primary-700 transition-colors"
-			>
+			<button type="submit" className="w-full text-black py-2 px-4">
 				Submit
 			</button>
 		</form>
