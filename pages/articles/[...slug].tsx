@@ -5,6 +5,10 @@ import "highlight.js/styles/hybrid.css";
 import { sampleSize } from "lodash";
 import Link from "next/link";
 import ScrollProgressBar from "../../components/ScrollProgressBar";
+import { getCommentsForPost } from "../../src/db/comments";
+import type { Comment } from "../../src/db/schema";
+import CommentForm from "../../src/CommentForm";
+import CommentRow from "../../src/CommentRow";
 
 export async function getServerSideProps({ params }: any) {
 	const { slug } = params;
@@ -23,6 +27,14 @@ export async function getServerSideProps({ params }: any) {
 	const posts = await generateFullPosts();
 	const post = posts[name];
 
+	let comments: Comment[] = [];
+
+	try {
+		comments = await getCommentsForPost(name);
+	} catch {
+		console.log("Unable to get comments.");
+	}
+
 	const featuredPosts = sampleSize(
 		Object.entries(posts).filter(([a, b]) => a != name && b.featured === true),
 		3,
@@ -30,6 +42,7 @@ export async function getServerSideProps({ params }: any) {
 
 	return {
 		props: {
+			comments,
 			post,
 			featuredPosts,
 			name,
@@ -38,10 +51,12 @@ export async function getServerSideProps({ params }: any) {
 }
 
 export default function ({
+	comments,
 	post,
 	name,
 	featuredPosts,
 }: {
+	comments: Comment[];
 	name: string;
 	post: FullPost;
 	featuredPosts: [string, FullPost][];
@@ -77,6 +92,13 @@ export default function ({
 				<meta name="keywords" content={post.keywords.join(", ")} />
 			</Head>
 			<div className="rmd" dangerouslySetInnerHTML={{ __html: html }}></div>
+
+			<div>
+				<h2 className="text-2xl font-bold my-4">Comments</h2>
+				{comments.map(CommentRow)}
+			</div>
+
+			<CommentForm post={name} />
 
 			<div className="border-t border-black">
 				<h2 className="text-2xl font-bold my-4">Other Stuff</h2>
