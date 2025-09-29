@@ -21,6 +21,19 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	brainstorming_a_harper_service: {
+		pubDate: new Date(2025, 8, 26).toUTCString(),
+		description: "SaaS products are all the rage these days.",
+		image: null,
+		keywords: [
+			"Harper",
+			"service",
+			"local-first",
+			"false positives",
+			"feedback pipeline",
+			"SaaS",
+		],
+	},
 	improving_harper_for_old_laptops: {
 		pubDate: new Date(2025, 8, 19).toUTCString(),
 		description:
