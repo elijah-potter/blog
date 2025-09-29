@@ -22,7 +22,7 @@ export type FullPost = {
 
 const postDeclarations: Record<string, PostDeclaration> = {
 	brainstorming_a_harper_service: {
-		pubDate: new Date(2025, 8, 26).toUTCString(),
+		pubDate: new Date(2025, 8, 29).toUTCString(),
 		description: "SaaS products are all the rage these days.",
 		image: null,
 		keywords: [
