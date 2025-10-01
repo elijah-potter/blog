@@ -4,7 +4,13 @@ import Gravatar from "react-gravatar";
 export default function CommentRow(comment: Comment) {
 	return (
 		<div className="flex space-x-4 p-4 border-b">
-			<Gravatar email={comment.email} className="!aspect-square" />
+			<div className="h-12 w-12 shrink-0 overflow-hidden rounded-full">
+				<Gravatar
+					email={comment.email}
+					size={48}
+					className="h-full w-full object-cover"
+				/>
+			</div>
 			<div className="flex-1">
 				<div className="flex items-center justify-between">
 					<span className="font-semibold text-gray-800">{comment.name}</span>
