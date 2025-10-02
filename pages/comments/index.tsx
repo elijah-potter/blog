@@ -1,4 +1,4 @@
-import type { Comment } from "../../src/db/comments";
+import type { Comment } from "../../src/db/schema";
 import { getRecentComments } from "../../src/db/comments";
 import CommentRow from "../../src/CommentRow";
 
