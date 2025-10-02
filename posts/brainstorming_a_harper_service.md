@@ -1,7 +1,7 @@
 # Brainstorming a Harper Service
 
 SaaS products are all the rage these days.
-Historically, Harper has positioned itself as [local-first](./local-first_software_is_easier_to_scale.md), which many often view as anti-SaaS.
+Historically, Harper has positioned itself as [local-first](./local-first_software_is_easier_to_scale), which many often view as anti-SaaS.
 That is not the case.
 
 I describe Harper as "local-first" because it is principally meant to be run locally, meaning that your data doesn't leave your device.
@@ -15,7 +15,7 @@ Today, I want to explain why a centralized service is necessary, how we intend t
 User's despise false-positives in Harper's grammar engine.
 
 We'll often make a modification, test it as much as possible internally, and release it, only for a user to discover false-positives on their college essay.
-We've significantly reduced their frequency through techniques like [LLM-Assisted Fuzzing](./LLM_assisted_fuzzing.md) and [artificial selection](./harper_evolves.md), but they persist.
+We've significantly reduced their frequency through techniques like [LLM-Assisted Fuzzing](./LLM_assisted_fuzzing) and [artificial selection](./harper_evolves), but they persist.
 
 Far and wide, most of the time between when we get a bug report and when we get a fix into production is spent doing meaningless "paperwork". 
 Reading through issues, writing boilerplate code for tests, and preparing pull requests take up a lot of time.
