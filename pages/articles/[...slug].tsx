@@ -95,7 +95,9 @@ export default function ({
 
 			<div>
 				<h2 className="text-2xl font-bold my-4">Comments</h2>
-				{comments.map(CommentRow)}
+				{comments.map((c) => (
+					<CommentRow comment />
+				))}
 			</div>
 
 			<CommentForm post={name} />

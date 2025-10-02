@@ -1,7 +1,7 @@
 import { Comment } from "./db/schema";
 import Gravatar from "react-gravatar";
 
-export default function CommentRow(comment: Comment) {
+export default function CommentRow({ comment }: { comment: Comment }) {
 	return (
 		<div className="flex space-x-4 p-4 border-b">
 			<div className="h-12 w-12 shrink-0 overflow-hidden rounded-full">
