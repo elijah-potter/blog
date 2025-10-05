@@ -24,7 +24,18 @@ const postDeclarations: Record<string, PostDeclaration> = {
 	my_writing_environment_as_a_software_engineer: {
 		pubDate: new Date(2025, 9, 5).toUTCString(),
 		image: "/images/remarkable.png",
-		keywords: [],
+		keywords: [
+			"writing",
+			"software engineer",
+			"writing environment",
+			"text editor",
+			"Neovim",
+			"quiet space",
+			"Markdown",
+			"ReMarkable 2",
+			"productivity",
+			"notepad",
+		],
 		description:
 			"Writing is one of life's greater joys. It's a mental workout that often brings me a level of clarity that is hard to find elsewhere. I have never sat down to write for an extended period of time without coming away with a greater understanding of myself and the universe.",
 	},
