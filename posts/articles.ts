@@ -21,20 +21,20 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
-  // my_writing_environment: {
-  // pubDate: new Date(2025, 9, 3).toUTCString(),
-  // image: '/images/zen_mode.png',
-  // keywords: [
-  // ],
-  //   description: "Writing is one of life's greater joys. It's a mental workout that often brings me a level of clarity that is hard to find elsewhere. I have never sat down to write for an extended period of time without coming away with a greater understanding of myself and the universe."
-  // }, 
-  // trying_out_the_helium_browser: {
-  // pubDate: new Date(2025, 9, 3).toUTCString(),
-  // description: "I've decided to give the [Helium browser](https://helium.computer/) a shot. So far, I'm impressed!",
-  // image: '/images/helium_website.png',
-  // keywords: [
-  // ],
-  // },
+	my_writing_environment_as_a_software_engineer: {
+		pubDate: new Date(2025, 9, 5).toUTCString(),
+		image: "/images/remarkable.png",
+		keywords: [],
+		description:
+			"Writing is one of life's greater joys. It's a mental workout that often brings me a level of clarity that is hard to find elsewhere. I have never sat down to write for an extended period of time without coming away with a greater understanding of myself and the universe.",
+	},
+	// trying_out_the_helium_browser: {
+	// pubDate: new Date(2025, 9, 3).toUTCString(),
+	// description: "I've decided to give the [Helium browser](https://helium.computer/) a shot. So far, I'm impressed!",
+	// image: '/images/helium_website.png',
+	// keywords: [
+	// ],
+	// },
 	brainstorming_a_harper_service: {
 		pubDate: new Date(2025, 8, 29).toUTCString(),
 		description: "SaaS products are all the rage these days.",
