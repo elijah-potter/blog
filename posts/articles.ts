@@ -21,6 +21,23 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	using_codex_is_a_lot_like_baking: {
+		pubDate: new Date(2025, 9, 6).toUTCString(),
+		image: null,
+		keywords: [
+			"Codex",
+			"OpenAI",
+			"AI",
+			"LLM",
+			"Programming",
+			"Agent",
+			"Workflow",
+			"Planning Document",
+			"AI Programming",
+		],
+		description:
+			"The biggest problem with AI programming today is not what I expected a few years ago. I truly didn't believe they would be able to do any economically valuable work.",
+	},
 	my_writing_environment_as_a_software_engineer: {
 		pubDate: new Date(2025, 9, 5).toUTCString(),
 		image: "/images/remarkable.png",

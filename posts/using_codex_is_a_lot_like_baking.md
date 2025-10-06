@@ -1,4 +1,4 @@
-# Speeding Up My LLM Workflow
+# Using Codex is a Lot Like Baking
 
 The biggest problem with AI programming today is not what I expected a few years ago.
 I truly didn't believe they would be able to do any economically valuable work.
@@ -51,3 +51,5 @@ If I had done used the conversational micro-managing strategy when working on th
 The downside, is that I don't get to go work on something else in the meantime.
 
 By writing a planning document for your agent, you can give yourself room to breath, saving time and being more productive as a result.
+It's a lot like baking.
+You put the ingredients together, put them in the oven, then walk away and something else while it cooks.
