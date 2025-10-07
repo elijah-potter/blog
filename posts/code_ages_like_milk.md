@@ -28,4 +28,4 @@ The rest of the app can evolve too. If you’re an individual contributor, it’
 
 I believe the way I’ve been handling this until now has been entirely wrong. I should be allocating more of my time to training new contributors and fielding PRs from established ones. Open sources is a team effort.
 
-As for you, dear reader, that’s for you to figure out. The worst way code can age is if it stays in your head. Don’t let your ideas go to waste. [Open that PR](./never_wait.md), or remind your reviewer to take another look if you haven’t already.
+As for you, dear reader, that’s for you to figure out. The worst way code can age is if it stays in your head. Don’t let your ideas go to waste. [Open that PR](./never_wait), or remind your reviewer to take another look if you haven’t already.
