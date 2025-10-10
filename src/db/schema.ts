@@ -1,19 +1,14 @@
 import "dotenv/config";
-import { sql } from "drizzle-orm";
-import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { mysqlTable, text, timestamp, int } from "drizzle-orm/mysql-core";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 
-function sqliteTimestamp() {
-	return text("timestamp").notNull().default(sql`(current_timestamp)`);
-}
-
-export const commentsTable = sqliteTable("comments", {
-	id: int().primaryKey(),
+export const commentsTable = mysqlTable("comments", {
+	id: int().autoincrement().primaryKey(),
 	post: text().notNull(),
 	name: text().notNull(),
 	email: text().notNull(),
 	message: text().notNull(),
-	timestamp: sqliteTimestamp(),
+	timestamp: timestamp().notNull().defaultNow(),
 });
 
 export type NewComment = typeof commentsTable.$inferInsert;

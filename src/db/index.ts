@@ -1,5 +1,6 @@
 import "dotenv/config";
-import { drizzle } from "drizzle-orm/libsql";
-import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { drizzle } from "drizzle-orm/mysql2";
+import { migrate } from "drizzle-orm/mysql2/migrator";
 
-export const db = drizzle(process.env.DB_FILE_NAME!);
+export const db = drizzle({ connection: { uri: process.env.DATABASE_URL } });
+migrate(db, { migrationsFolder: "./drizzle" });
