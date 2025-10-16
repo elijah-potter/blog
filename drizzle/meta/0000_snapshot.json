@@ -1,78 +1,76 @@
 {
-  "version": "5",
-  "dialect": "mysql",
-  "id": "82d652d5-5602-4e00-98ff-a4f12f01f4a7",
-  "prevId": "00000000-0000-0000-0000-000000000000",
-  "tables": {
-    "comments": {
-      "name": "comments",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "int",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": true
-        },
-        "post": {
-          "name": "post",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "name": {
-          "name": "name",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "email": {
-          "name": "email",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "message": {
-          "name": "message",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "timestamp": {
-          "name": "timestamp",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false,
-          "default": "(now())"
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {
-        "comments_id": {
-          "name": "comments_id",
-          "columns": [
-            "id"
-          ]
-        }
-      },
-      "uniqueConstraints": {},
-      "checkConstraint": {}
-    }
-  },
-  "views": {},
-  "_meta": {
-    "schemas": {},
-    "tables": {},
-    "columns": {}
-  },
-  "internal": {
-    "tables": {},
-    "indexes": {}
-  }
+	"version": "5",
+	"dialect": "mysql",
+	"id": "82d652d5-5602-4e00-98ff-a4f12f01f4a7",
+	"prevId": "00000000-0000-0000-0000-000000000000",
+	"tables": {
+		"comments": {
+			"name": "comments",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "int",
+					"primaryKey": false,
+					"notNull": true,
+					"autoincrement": true
+				},
+				"post": {
+					"name": "post",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true,
+					"autoincrement": false
+				},
+				"name": {
+					"name": "name",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true,
+					"autoincrement": false
+				},
+				"email": {
+					"name": "email",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true,
+					"autoincrement": false
+				},
+				"message": {
+					"name": "message",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true,
+					"autoincrement": false
+				},
+				"timestamp": {
+					"name": "timestamp",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"autoincrement": false,
+					"default": "(now())"
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {
+				"comments_id": {
+					"name": "comments_id",
+					"columns": ["id"]
+				}
+			},
+			"uniqueConstraints": {},
+			"checkConstraint": {}
+		}
+	},
+	"views": {},
+	"_meta": {
+		"schemas": {},
+		"tables": {},
+		"columns": {}
+	},
+	"internal": {
+		"tables": {},
+		"indexes": {}
+	}
 }

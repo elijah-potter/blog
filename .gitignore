@@ -10,4 +10,5 @@ public/workbox-*.js
 public/workbox-*.js.map
 standalonemarkov.html
 local.db
-mysql_data
+mariadb_data
+

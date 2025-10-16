@@ -21,7 +21,7 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
-  // avoid_complexity: {
+	// avoid_complexity: {
 	// 	pubDate: new Date(2025, 9, 9).toUTCString(),
 	// 	image: '/images/cathedral_st_john.webp',
 	// 	keywords: [
@@ -29,7 +29,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 	// 	description:
 	// 		"",
 
-  // },
+	// },
 	using_codex_is_a_lot_like_baking: {
 		pubDate: new Date(2025, 9, 6).toUTCString(),
 		image: null,

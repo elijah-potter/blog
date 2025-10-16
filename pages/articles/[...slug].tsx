@@ -40,9 +40,11 @@ export async function getServerSideProps({ params }: any) {
 		3,
 	);
 
+	const commentsJSON = JSON.stringify(comments);
+
 	return {
 		props: {
-			comments,
+			commentsJSON,
 			post,
 			featuredPosts,
 			name,
@@ -51,16 +53,17 @@ export async function getServerSideProps({ params }: any) {
 }
 
 export default function ({
-	comments,
+	commentsJSON,
 	post,
 	name,
 	featuredPosts,
 }: {
-	comments: Comment[];
+	commentsJSON: string;
 	name: string;
 	post: FullPost;
 	featuredPosts: [string, FullPost][];
 }) {
+	const comments: Comment[] = JSON.parse(commentsJSON);
 	const html = post?.content_html;
 
 	if (typeof html !== "string") {

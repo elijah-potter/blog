@@ -10,6 +10,7 @@
 		"includes": [
 			"**",
 			"!**/node_modules/**",
+			"!**/mariadb_data",
 			"!**/.next/**",
 			"!**/crates/generative-art/pkg/**",
 			"!**/crates/markov/pkg/**"
