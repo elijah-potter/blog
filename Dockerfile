@@ -12,7 +12,7 @@ RUN ./build.sh --no-site --release
 # Clean up unneeded build artifacts
 WORKDIR /usr/build/crates/
 
-FROM node:slim AS node-build
+FROM node:lts-slim AS node-build
 
 RUN mkdir -p /usr/build/
 WORKDIR /usr/build/
