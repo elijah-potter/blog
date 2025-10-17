@@ -21,15 +21,22 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
-	// avoid_complexity: {
-	// 	pubDate: new Date(2025, 9, 9).toUTCString(),
-	// 	image: '/images/cathedral_st_john.webp',
-	// 	keywords: [
-	// 	],
-	// 	description:
-	// 		"",
-
-	// },
+	avoid_complexity: {
+		pubDate: new Date(2025, 9, 17).toUTCString(),
+		image: "/images/cathedral_st_john.webp",
+		keywords: [
+			"complexity",
+			"software engineering",
+			"tech debt",
+			"Harper",
+			"monorepo",
+			"CI/CD",
+			"developer experience",
+			"automation",
+		],
+		description:
+			"For as long as I can remember, I've told people that the real challenge of software engineering isn't writing code. It isn't documentation or CI pipelines either. No, the biggest challenge in software engineering is managing complexity.",
+	},
 	using_codex_is_a_lot_like_baking: {
 		pubDate: new Date(2025, 9, 6).toUTCString(),
 		image: null,

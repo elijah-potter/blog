@@ -1,7 +1,5 @@
 # Avoid Complexity
 
-![Cathedral of St. John the Divine](/images/cathedral_st_john.webp)
-
 For as long as I can remember, I've told people that the real challenge of software engineering isn't writing code.
 It isn't documentation or CI pipelines either. 
 No, the biggest challenge in software engineering is managing complexity.
