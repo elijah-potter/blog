@@ -26,3 +26,9 @@ That means removing unnecessary build steps, parallelizing individual CI jobs, a
 Harper isn't at the 2005 standard yet, but I want contributing to be as easy as possible. 
 Ideally, it shouldn't take more than five minutes to go from cloning the repo to committing code.
 That starts with simplifying [the environment](https://writewithharper.com/docs/contributors/environment).
+
+## Addendum
+
+I just came across [this other blog post](https://digitalsociety.coop/posts/migrating-to-hetzner-cloud/) where they discuss achieving three times the performance for a quarter of the price by switching from 
+a complex AWS setup to a bare metal Hetzner server.
+Another win for simpler systems!
