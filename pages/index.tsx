@@ -109,13 +109,13 @@ export default function index({
 				Articles ↓
 			</h2>
 			<ul>
-				{Object.entries(posts).map(([name, post]) => {
+				{Object.entries(posts).map(([name, post], i) => {
 					const target = `/articles/${name}`;
 
 					return (
 						<Link href={target} key={name} className="no-underline">
 							<li
-								className="py-4 w-11/12 hover:translate-x-5 transition-all"
+								className={`p-2 my-2 w-11/12 bg-white rounded ${i % 2 == 0 ? "skew-hover" : "skew-hover-left"} border-gray-300 hover:drop-shadow-lg border`}
 								onClick={() => (location.href = target)}
 							>
 								<h4 className="text-3xl py-2">{post.title}</h4>

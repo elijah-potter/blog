@@ -29,6 +29,11 @@ module.exports = {
 				destination: "/articles/the_books_i_have_read_since_april_2025",
 				permanent: true,
 			},
+			{
+				source: "/articles",
+				destination: "/",
+				permanent: true,
+			},
 		];
 	},
 	webpack: (config, options) => {
