@@ -44,7 +44,7 @@ export async function getServerSideProps({ params }: any) {
 	let comments: Comment[] = [];
 
 	try {
-		comments = await getCommentsForPost(slug);
+		comments = await getCommentsForPost(articleId);
 	} catch {
 		console.log("Unable to get comments.");
 	}
