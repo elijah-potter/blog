@@ -9,34 +9,48 @@ import { getCommentsForPost } from "../../src/db/comments";
 import type { Comment } from "../../src/db/schema";
 import CommentForm from "../../src/CommentForm";
 import CommentRow from "../../src/CommentRow";
+import { articleIdToSlug, slugToArticleId } from "../../posts/articleId";
 
 export async function getServerSideProps({ params }: any) {
-	const { slug } = params;
+	let { slug } = params;
 
 	if (slug === undefined) {
 		console.log("No slug!");
 		return;
 	}
 
-	let name = slug;
+	if (typeof slug !== "string") {
+		slug = slug[0];
+	}
 
-	if (typeof name !== "string") {
-		name = slug[0];
+	if (typeof slug !== "string") {
+		return 500;
+	}
+
+	// Redirect to dash-separated slug.
+	const articleId = slugToArticleId(slug);
+	if (articleId == slug) {
+		return {
+			redirect: {
+				destination: `/articles/${articleIdToSlug(articleId)}`,
+				permanent: false,
+			},
+		};
 	}
 
 	const posts = await generateFullPosts();
-	const post = posts[name];
+	const post = posts[articleId];
 
 	let comments: Comment[] = [];
 
 	try {
-		comments = await getCommentsForPost(name);
+		comments = await getCommentsForPost(slug);
 	} catch {
 		console.log("Unable to get comments.");
 	}
 
 	const featuredPosts = sampleSize(
-		Object.entries(posts).filter(([a, b]) => a != name && b.featured === true),
+		Object.entries(posts).filter(([a, b]) => a != slug && b.featured === true),
 		3,
 	);
 
@@ -47,7 +61,7 @@ export async function getServerSideProps({ params }: any) {
 			commentsJSON,
 			post,
 			featuredPosts,
-			name,
+			articleId,
 		},
 	};
 }
@@ -55,11 +69,11 @@ export async function getServerSideProps({ params }: any) {
 export default function ({
 	commentsJSON,
 	post,
-	name,
+	articleId,
 	featuredPosts,
 }: {
 	commentsJSON: string;
-	name: string;
+	articleId: string;
 	post: FullPost;
 	featuredPosts: [string, FullPost][];
 }) {
@@ -79,14 +93,14 @@ export default function ({
 			<Head>
 				<meta
 					property="og:url"
-					content={`https://elijahpotter.dev/articles/${name}`}
+					content={`https://elijahpotter.dev/articles/${articleId}`}
 				/>
 				<meta property="og:type" content="article" />
 				<meta property="og:title" content={post.title} />
 				<meta property="og:description" content={post.description} />
 				<link
 					rel="canonical"
-					href={`https://elijahpotter.dev/articles/${name}`}
+					href={`https://elijahpotter.dev/articles/${articleId}`}
 				/>
 				{post.image && <meta property="og:image" content={post.image} />}
 				<title>{post.title}</title>
@@ -103,7 +117,7 @@ export default function ({
 				))}
 			</div>
 
-			<CommentForm post={name} />
+			<CommentForm post={articleId} />
 
 			<div className="border-t border-black">
 				<h2 className="text-2xl font-bold my-4">Other Stuff</h2>

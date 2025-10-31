@@ -4,6 +4,7 @@ import Link from "next/link";
 import Spacer from "../components/Spacer";
 import { type FullPost, generatePartialPosts } from "../posts/articles";
 import headshot from "../public/images/headshot.webp";
+import { articleIdToSlug } from "../posts/articleId";
 
 const iconLinks = [
 	[
@@ -109,11 +110,11 @@ export default function index({
 				Articles ↓
 			</h2>
 			<ul>
-				{Object.entries(posts).map(([name, post], i) => {
-					const target = `/articles/${name}`;
+				{Object.entries(posts).map(([articleId, post], i) => {
+					const target = `/articles/${articleIdToSlug(articleId)}`;
 
 					return (
-						<Link href={target} key={name} className="no-underline">
+						<Link href={target} key={articleId} className="no-underline">
 							<li
 								className={`p-2 my-2 w-11/12 bg-white rounded ${i % 2 == 0 ? "skew-hover" : "skew-hover-left"} border-gray-300 hover:drop-shadow-lg border`}
 								onClick={() => (location.href = target)}
