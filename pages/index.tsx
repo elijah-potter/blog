@@ -116,7 +116,7 @@ export default function index({
 					return (
 						<Link href={target} key={articleId} className="no-underline">
 							<li
-								className={`p-2 my-2 w-11/12 bg-white rounded ${i % 2 == 0 ? "skew-hover" : "skew-hover-left"} border-gray-300 hover:drop-shadow-lg border`}
+								className={`p-4 my-2 w-11/12 bg-white rounded ${i % 2 == 0 ? "skew-hover" : "skew-hover-left"} border-gray-300 hover:drop-shadow-lg border`}
 								onClick={() => (location.href = target)}
 							>
 								<h4 className="text-3xl py-2">{post.title}</h4>
