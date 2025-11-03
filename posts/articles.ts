@@ -21,6 +21,22 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	finding_signal_through_the_noise: {
+		pubDate: new Date(2025, 10, 3).toUTCString(),
+		description:
+			"As the maintainer of [Harper](https://github.com/automattic/harper), I read through dozens of issues and pull requests per day and countless more per week. At times, it can get overwhelming.",
+		image: null,
+		keywords: [
+			"complexity",
+			"software engineering",
+			"tech debt",
+			"Harper",
+			"monorepo",
+			"CI/CD",
+			"developer experience",
+			"automation",
+		],
+	},
 	avoid_complexity: {
 		pubDate: new Date(2025, 9, 17).toUTCString(),
 		image: "/images/cathedral_st_john.webp",
