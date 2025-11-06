@@ -21,6 +21,20 @@ export type FullPost = {
 } & PartialPost;
 
 const postDeclarations: Record<string, PostDeclaration> = {
+	["improving_rust_compile_times_by_71_percent"]: {
+		pubDate: new Date(2025, 10, 6).toUTCString(),
+		description:
+			"If you maintain or work on a project in any compiled language, particularly a language that is known for having a slow compiler, I believe it is critical to regularly schedule time to do an analysis of your build process and make adjustments if necessary.",
+		image: null,
+		keywords: [
+			"Rust",
+			"Compiler Optimization",
+			"Build Time",
+			"LTO",
+			"Codegen Units",
+			"Developer Experience",
+		],
+	},
 	finding_signal_through_the_noise: {
 		pubDate: new Date(2025, 10, 3).toUTCString(),
 		description:
