@@ -1,6 +1,11 @@
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
+import {
+	BarDatum,
+	drawBarChart,
+	msDay,
+} from "../../../src/github/barChart";
 
 /* ------------------------------------------------------------ *
  *  Types & helpers                                              *
@@ -10,20 +15,6 @@ interface Release {
 	published_at: string;
 	assets: { name: string; download_count: number }[];
 }
-interface BarDatum {
-	tag: string;
-	start: Date;
-	end: Date;
-	rate: number;
-}
-declare global {
-	// D3 is loaded late from a CDN – declare it to keep TS happy
-	// eslint-disable-next-line no-var
-	var d3: any;
-}
-
-const msDay = 24 * 60 * 60 * 1000;
-
 /* ------------------------------------------------------------ *
  *  Component                                                    *
  * ------------------------------------------------------------ */
@@ -37,8 +28,6 @@ const DownloadGraph: React.FC = () => {
 	useEffect(() => {
 		if (!owner || !repo) return; // wait for route params
 		if (!window.d3 || !svgRef.current) return; // wait for D3 script + DOM
-
-		const d3 = window.d3 as any;
 
 		/* ---------------- data fetch ---------------- */
 		const fetchData = async (): Promise<BarDatum[]> => {
@@ -72,73 +61,13 @@ const DownloadGraph: React.FC = () => {
 
 		/* ---------------- draw chart ---------------- */
 		const draw = (data: BarDatum[]) => {
-			const svg = d3.select(svgRef.current);
-			const width = svgRef.current!.clientWidth;
-			const height = 420;
-			const margin = { top: 20, right: 24, bottom: 60, left: 72 };
-
-			svg.attr("viewBox", `0 0 ${width} ${height}`);
-
-			svg.selectAll("*").remove();
-
-			/* -- scales -- */
-			const x = d3
-				.scaleTime()
-				.domain([
-					d3.min(data, (d: BarDatum) => d.start),
-					d3.max(data, (d: BarDatum) => d.end),
-				])
-				.range([margin.left, width - margin.right]);
-
-			const y = d3
-				.scaleLinear()
-				.domain([0, d3.max(data, (d: BarDatum) => d.rate)])
-				.nice()
-				.range([height - margin.bottom, margin.top]);
-
-			/* -- bars -- */
-			svg
-				.append("g")
-				.selectAll("rect")
-				.data(data)
-				.join("rect")
-				.attr("x", (d: BarDatum) => x(d.start))
-				.attr("width", (d: BarDatum) => Math.max(1, x(d.end) - x(d.start)))
-				.attr("y", (d: BarDatum) => y(d.rate))
-				.attr("height", (d: BarDatum) => y(0) - y(d.rate))
-				.attr("class", "fill-sky-500 hover:fill-sky-600 transition-colors")
-				.append("title")
-				.text(
-					(d: BarDatum) =>
-						`${d.tag}\n${d.rate} downloads/day\n` +
-						`${d.start.toLocaleDateString()} – ${d.end.toLocaleDateString()}`,
-				);
-
-			/* -- axes -- */
-			svg
-				.append("g")
-				.attr("transform", `translate(0,${height - margin.bottom})`)
-				.call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y-%m-%d")))
-				.selectAll("text")
-				.attr("transform", "rotate(-40)")
-				.attr("class", "text-xs fill-black")
-				.style("text-anchor", "end");
-
-			svg
-				.append("g")
-				.attr("transform", `translate(${margin.left},0)`)
-				.call(d3.axisLeft(y).ticks(6))
-				.selectAll("text")
-				.attr("class", "text-xs fill-black");
-
-			/* axis label */
-			svg
-				.append("text")
-				.attr("x", margin.left - 56)
-				.attr("y", margin.top - 6)
-				.attr("class", "text-sm font-medium fill-black")
-				.text("Downloads / day");
-
+			if (!svgRef.current) return;
+			drawBarChart(svgRef.current, data, {
+				axisLabel: "Downloads / day",
+				tooltipFormatter: (d: BarDatum) =>
+					`${d.tag}\n${d.rate} downloads/day\n` +
+					`${d.start.toLocaleDateString()} – ${d.end.toLocaleDateString()}`,
+			});
 			setStatus("");
 		};
 
