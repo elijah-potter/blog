@@ -1,15 +1,15 @@
 import Head from "next/head";
-import { type FullPost, generateFullPosts } from "../../posts/articles";
+import { type FullPost, generateFullPosts } from "../../posts/postGeneration";
 import "katex/dist/katex.css";
 import "highlight.js/styles/hybrid.css";
 import { sampleSize } from "lodash";
 import Link from "next/link";
 import ScrollProgressBar from "../../components/ScrollProgressBar";
-import { getCommentsForPost } from "../../src/db/comments";
-import type { Comment } from "../../src/db/schema";
+import { articleIdToSlug, slugToArticleId } from "../../posts/articleId";
 import CommentForm from "../../src/CommentForm";
 import CommentRow from "../../src/CommentRow";
-import { articleIdToSlug, slugToArticleId } from "../../posts/articleId";
+import { getCommentsForPost } from "../../src/db/comments";
+import type { Comment } from "../../src/db/schema";
 
 export async function getServerSideProps({ params }: any) {
 	let { slug } = params;

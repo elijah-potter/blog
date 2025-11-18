@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ArticleList from "../components/ArticleList";
 import Spacer from "../components/Spacer";
-import { type FullPost, generatePartialPosts } from "../posts/articles";
+import { type FullPost, generatePartialPosts } from "../posts/postGeneration";
 import headshot from "../public/images/headshot.webp";
 
 const iconLinks = [
