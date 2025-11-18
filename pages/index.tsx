@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import ArticleList from "../components/ArticleList";
 import Spacer from "../components/Spacer";
 import { type FullPost, generatePartialPosts } from "../posts/articles";
 import headshot from "../public/images/headshot.webp";
-import { articleIdToSlug } from "../posts/articleId";
 
 const iconLinks = [
 	[
@@ -48,6 +48,9 @@ export default function index({
 }: {
 	posts: { [name: string]: FullPost };
 }) {
+	const postEntries = Object.entries(posts);
+	const featuredEntries = postEntries.filter(([, post]) => post.featured);
+
 	return (
 		<>
 			<Head>
@@ -106,43 +109,8 @@ export default function index({
 					</Link>
 				))}
 			</div>
-			<h2 className="text-3xl sm:text-4xl pt-8 sm:pt-16 font-bold flex items-center gap-2">
-				Articles ↓
-			</h2>
-			<ul>
-				{Object.entries(posts).map(([articleId, post], i) => {
-					const target = `/articles/${articleIdToSlug(articleId)}`;
-
-					return (
-						<Link href={target} key={articleId} className="no-underline">
-							<li
-								className={`p-4 my-2 w-11/12 bg-white rounded ${i % 2 == 0 ? "skew-hover" : "skew-hover-left"} border-gray-300 hover:drop-shadow-lg border`}
-								onClick={() => (location.href = target)}
-							>
-								<h4 className="text-3xl py-2">{post.title}</h4>
-								<p className="font-extrabold py-2">
-									{post.featured ? (
-										<span
-											title="Featured"
-											aria-label="Featured"
-											className="text-yellow-500"
-										>
-											★
-										</span>
-									) : null}
-									Published on{" "}
-									{new Date(post.pubDate).toLocaleString(undefined, {
-										dateStyle: "short",
-									})}
-								</p>
-								<div
-									dangerouslySetInnerHTML={{ __html: post.description_html }}
-								/>
-							</li>
-						</Link>
-					);
-				})}
-			</ul>
+			<ArticleList title="Greatest Hits" posts={featuredEntries} />
+			<ArticleList title="All Articles" posts={postEntries} />
 		</>
 	);
 }
