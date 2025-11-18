@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { type FullPost } from "../posts/articles";
 import { articleIdToSlug } from "../posts/articleId";
+import type { FullPost } from "../posts/postGeneration";
 
 type ArticleListProps = {
 	title: string;
