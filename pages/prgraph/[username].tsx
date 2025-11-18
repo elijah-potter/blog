@@ -96,9 +96,7 @@ const PRGraph: React.FC = () => {
 			let page = 1;
 
 			while (page <= maxPages) {
-				setStatus(
-					`Fetching PRs for ${username} (page ${page}/${maxPages})…`,
-				);
+				setStatus(`Fetching PRs for ${username} (page ${page}/${maxPages})…`);
 
 				const query = [
 					"type:pr",
@@ -138,13 +136,7 @@ const PRGraph: React.FC = () => {
 			return { bars, line };
 		};
 
-		const draw = ({
-			bars,
-			line,
-		}: {
-			bars: BarDatum[];
-			line: LineDatum[];
-		}) => {
+		const draw = ({ bars, line }: { bars: BarDatum[]; line: LineDatum[] }) => {
 			if (!svgRef.current) return;
 
 			const totalPRs = bars.reduce((sum, day) => sum + day.rate, 0);
@@ -185,9 +177,7 @@ const PRGraph: React.FC = () => {
 				<div className="flex items-center justify-between mb-8">
 					<div className="flex items-center gap-4">
 						<h1 className="text-2xl font-semibold tracking-tight">
-							{username
-								? `${username}'s PR velocity`
-								: "Loading username…"}
+							{username ? `${username}'s PR velocity` : "Loading username…"}
 						</h1>
 					</div>
 				</div>

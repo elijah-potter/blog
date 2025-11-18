@@ -40,11 +40,14 @@ export default function ArticleList({ title, posts }: ArticleListProps) {
 											★
 										</span>
 									) : null}
-									Published on {new Date(post.pubDate).toLocaleString(undefined, {
+									Published on{" "}
+									{new Date(post.pubDate).toLocaleString(undefined, {
 										dateStyle: "short",
 									})}
 								</p>
-								<div dangerouslySetInnerHTML={{ __html: post.description_html }} />
+								<div
+									dangerouslySetInnerHTML={{ __html: post.description_html }}
+								/>
 							</li>
 						</Link>
 					);

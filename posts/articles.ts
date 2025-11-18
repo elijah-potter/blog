@@ -1146,6 +1146,12 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: "/images/pen_plotter_drawing_hilbert2.jpeg",
 		pubDate: new Date(2022, 9, 18).toUTCString(),
 	},
+	"re:_collaboration_sucks": {
+		pubDate: new Date(2025, 10, 18).toUTCString(),
+		description: "Why collaboration still matters when kept intentional.",
+		image: null,
+		keywords: ["collaboration", "open source", "motivation", "community"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
@@ -1179,8 +1185,12 @@ export async function generatePartialPosts(): Promise<
 	Record<string, PartialPost>
 > {
 	const partialPosts: Record<string, PartialPost> = {};
+	const entries = Object.entries(getPostDeclarations()).sort(
+		([, a], [, b]) =>
+			new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf(),
+	);
 
-	for (const [key, post] of Object.entries(getPostDeclarations())) {
+	for (const [key, post] of entries) {
 		const partialPost = await createPartialPost(key, post);
 		partialPosts[key] = partialPost;
 	}

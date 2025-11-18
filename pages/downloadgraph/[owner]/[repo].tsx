@@ -1,11 +1,7 @@
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
-import {
-	BarDatum,
-	drawBarChart,
-	msDay,
-} from "../../../src/github/barChart";
+import { BarDatum, drawBarChart, msDay } from "../../../src/github/barChart";
 
 /* ------------------------------------------------------------ *
  *  Types & helpers                                              *
