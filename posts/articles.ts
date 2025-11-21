@@ -1141,6 +1141,12 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["collaboration", "open source", "motivation", "community"],
 	},
+	quality_requires_visual_design: {
+		pubDate: new Date(2025, 10, 21).toUTCString(),
+		description: "My recent work to improve Harper's visual design.",
+		image: null,
+		keywords: ["UI", "UX", "GUI", "Harper", "Visual Design", "Learning"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
