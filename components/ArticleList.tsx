@@ -4,10 +4,15 @@ import type { FullPost } from "../posts/postGeneration";
 
 type ArticleListProps = {
 	title: string;
+	subtitle: string;
 	posts: [string, FullPost][];
 };
 
-export default function ArticleList({ title, posts }: ArticleListProps) {
+export default function ArticleList({
+	title,
+	subtitle,
+	posts,
+}: ArticleListProps) {
 	if (!posts.length) {
 		return null;
 	}
@@ -17,6 +22,9 @@ export default function ArticleList({ title, posts }: ArticleListProps) {
 			<h2 className="text-3xl sm:text-4xl font-bold flex items-center gap-2">
 				{title}
 			</h2>
+			<h3 className="text-xl sm:text-xl font-bold flex items-center gap-2">
+				{subtitle}
+			</h3>
 			<ul>
 				{posts.map(([articleId, post], index) => {
 					const target = `/articles/${articleIdToSlug(articleId)}`;

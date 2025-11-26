@@ -109,8 +109,16 @@ export default function index({
 					</Link>
 				))}
 			</div>
-			<ArticleList title="Greatest Hits" posts={featuredEntries} />
-			<ArticleList title="All Articles" posts={postEntries} />
+			<ArticleList
+				title="Greatest Hits"
+				subtitle="My most popular work."
+				posts={featuredEntries}
+			/>
+			<ArticleList
+				title="All Articles"
+				subtitle="Everything I've written, sorted with the most recent stuff first."
+				posts={postEntries}
+			/>
 		</>
 	);
 }
