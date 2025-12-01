@@ -1147,6 +1147,12 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["UI", "UX", "GUI", "Harper", "Visual Design", "Learning"],
 	},
+	["harper_turns_1.0_today"]: {
+		pubDate: new Date(2025, 10, 28).toUTCString(),
+		description: "Harper finally releases a `1.0.0`",
+		image: null,
+		keywords: ["Harper", "release", "milestone"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
