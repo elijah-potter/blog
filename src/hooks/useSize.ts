@@ -6,7 +6,7 @@ export default function useSize(): [RefCallback<HTMLElement>, Vector] {
 	const [size, setSize] = useState<Vector>([100, 100]);
 
 	if (typeof window === "undefined") {
-		return [() => null, size];
+		return [() => undefined, size];
 	}
 
 	const [ro] = useState(
