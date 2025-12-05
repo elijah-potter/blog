@@ -23,7 +23,7 @@ async function createPartialPost(
 
 	const [description_html, title] = await Promise.all([
 		processMarkdown(post.description),
-		linter.toTitleCase(key.replaceAll('_', ' ')),
+		linter.toTitleCase(key.replaceAll("_", " ")),
 	]);
 
 	let image = null;

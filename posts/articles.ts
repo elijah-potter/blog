@@ -1153,6 +1153,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Harper", "release", "milestone"],
 	},
+
+	harper_can_apply_titlecase: {
+		pubDate: new Date(2025, 11, 5).toUTCString(),
+		description:
+			"In case you didn't know: Harper can convert text to title case! This has been around for a long time, but we haven't really talked about it publicly.",
+		image: null,
+		keywords: ["Harper", "title case", "Chicago Style"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
