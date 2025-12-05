@@ -76,6 +76,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 	my_writing_environment_as_a_software_engineer: {
 		pubDate: new Date(2025, 9, 5).toUTCString(),
 		image: "/images/remarkable.png",
+		featured: true,
 		keywords: [
 			"writing",
 			"software engineer",
@@ -852,7 +853,6 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2024, 11, 29).toUTCString(),
 		keywords: ["sccache", "rust", "development", "linux", "distributed"],
 		image: null,
-		featured: true,
 	},
 	the_best_books_i_read_this_year: {
 		description: "I might be starting to sound like a broken record.",
