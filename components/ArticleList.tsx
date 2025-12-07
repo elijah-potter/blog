@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { articleIdToSlug } from "../posts/articleId";
 import type { FullPost } from "../posts/postGeneration";
 
@@ -30,13 +31,15 @@ export default function ArticleList({
 					const target = `/articles/${articleIdToSlug(articleId)}`;
 
 					return (
-						<Link href={target} key={articleId} className="no-underline">
-							<li
-								className={`p-4 my-2 w-11/12 bg-white rounded ${
-									index % 2 === 0 ? "skew-hover" : "skew-hover-left"
-								} border-gray-300 hover:drop-shadow-lg border`}
-								onClick={() => (location.href = target)}
-							>
+						<Link
+							href={target}
+							key={articleId}
+							className={`p-4 my-2 bg-white rounded ${
+								index % 2 === 0 ? "skew-hover" : "skew-hover-left"
+							} border-gray-300 hover:drop-shadow-lg border no-underline flex flex-row justify-between group
+              `}
+						>
+							<li onClick={() => (location.href = target)}>
 								<h4 className="text-3xl py-2">{post.title}</h4>
 								<p className="font-extrabold py-2">
 									{post.featured ? (
@@ -57,6 +60,18 @@ export default function ArticleList({
 									dangerouslySetInnerHTML={{ __html: post.description_html }}
 								/>
 							</li>
+
+							{post.image ? (
+								<div className="relative h-24 w-24 shrink-0 self-center hidden xl:inline-block">
+									<Image
+										src={post.image}
+										fill
+										alt={post.title}
+										className="rounded object-cover scale-100 transition-all group-hover:scale-[200%] group-hover:translate-x-32"
+										sizes="196px"
+									/>
+								</div>
+							) : null}
 						</Link>
 					);
 				})}

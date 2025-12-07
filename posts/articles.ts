@@ -75,7 +75,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 	},
 	my_writing_environment_as_a_software_engineer: {
 		pubDate: new Date(2025, 9, 5).toUTCString(),
-		image: "/images/remarkable.png",
+		image: "/images/remarkable.jpeg",
 		featured: true,
 		keywords: [
 			"writing",
