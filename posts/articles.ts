@@ -90,7 +90,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 			"notepad",
 		],
 		description:
-			"Writing is one of life's greater joys. It's a mental workout that often brings me a level of clarity that is hard to find elsewhere. I have never sat down to write for an extended period of time without coming away with a greater understanding of myself and the universe.",
+			"Writing is one of life's greater joys. It's a mental workout that often brings me a level of clarity that is hard to find elsewhere.",
 	},
 	// trying_out_the_helium_browser: {
 	// pubDate: new Date(2025, 9, 3).toUTCString(),
