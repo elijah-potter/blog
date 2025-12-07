@@ -36,7 +36,7 @@ export default function ArticleList({
 							key={articleId}
 							className={`p-4 my-2 bg-white rounded ${
 								index % 2 === 0 ? "skew-hover" : "skew-hover-left"
-							} border-gray-300 hover:drop-shadow-lg border no-underline flex flex-row justify-between group
+							} border-gray-300 hover:drop-shadow-lg border no-underline flex flex-row gap-2 justify-between group
               `}
 						>
 							<li onClick={() => (location.href = target)}>
