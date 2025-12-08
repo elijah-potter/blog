@@ -9,3 +9,5 @@ The community made it feel easy.
 
 I spoke about how we can use machine learning to improve the quality of our applications without big capital expenditures.
 In fact, I argue that capital expenditures are often a step in the wrong direction.
+
+Fun fact: This talk started out as [a blog post](./training_a_chunker_with_burn).

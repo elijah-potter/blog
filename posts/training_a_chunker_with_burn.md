@@ -67,3 +67,10 @@ After dozens of training runs of experimentation, these worked best:
 Similar to the Brill Chunker, I'll be trying to use this new system in our grammar checker.
 From there, I'll know what additional information we'd like for it to infer.
 Once I've gotten it to reliably work for >= 3 rules, I'll declare it ready to merge.
+
+## Update as of December 2025
+
+I totally forgot to update this post. 
+I suppose it is better late than never.
+Back in August I actually ended up giving [a talk about our chunker at WordCamp U.S](./i_spoke_at_wordcamp_u.s._in_2025).
+It was a great experience, and I highly suggest you go watch it if you find this stuff interesting.
