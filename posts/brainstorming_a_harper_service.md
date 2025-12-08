@@ -33,7 +33,7 @@ It's rare for user feedback to have such a direct impact on Grammarly's core eng
 
 This is just the start. Once we've proven that we can maintain such a system for our users, we will move on to more ambitious goals.
 
-## How We Plan To Make It Happen
+## How We Plan to Make It Happen
 
 I've had success with these technologies in the past, and believe they'll work quite well for our initial use-case, and scale quite nicely as the service becomes more capable.
 
@@ -53,15 +53,15 @@ For the moment, iteration speed is paramount.
 I want to move fast.
 To that end, [James](https://j.cv/) and I have discussed hosting everything on a small VPS, and we agree it's the best choice.
 
-### Auth.js
+### Auth.JS
 
 Authentication is not something anyone should roll on their own.
-Auth.js is a proven solution that bundles well with Drizzle to building out user profiles, authentication pages, and everything in-between.
+Auth.JS is a proven solution that bundles well with Drizzle to building out user profiles, authentication pages, and everything in-between.
 The needs of the project won't necessitate this right away.
-When the time comes, using Auth.js (from my experience) will shorten the auth problem down from weeks to just hours.
+When the time comes, using Auth.JS (from my experience) will shorten the auth problem down from weeks to just hours.
 
 ## The Future
 
 I'm thrilled that we're finally moving in this direction.
-Being local-only has taken us far, but loosening the reins to be more simply "local-first" will allow us to tackle more interesting problems and provide more value to our users.
+Being local-only has taken us far, but loosening the reigns to be more simply "local-first" will allow us to tackle more interesting problems and provide more value to our users.
 I can't wait to get started.
