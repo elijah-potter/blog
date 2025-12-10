@@ -9,4 +9,4 @@ I'd love to see it become more widespread.
 
 We have [a live demo](https://writewithharper.com/titlecase) where you can try it out. It's also available [as part of `harper.js`](https://writewithharper.com/docs/harperjs/ref/harper.js.binarymodule.totitlecase.html), our JavaScript package.
 
-[Soon], this will become a part of Harper's native linting capabilities.
+[Soon](https://github.com/Automattic/harper/pull/2297), this will become a part of Harper's native linting capabilities.
