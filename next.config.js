@@ -1,6 +1,13 @@
 module.exports = {
 	images: {
-		unoptimized: true,
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "elijahpotter.dev",
+				port: "",
+				search: "",
+			},
+		],
 	},
 	async redirects() {
 		return [
