@@ -62,13 +62,13 @@ export default function ArticleList({
 							</li>
 
 							{post.image ? (
-								<div className="relative h-24 w-24 shrink-0 self-center hidden xl:inline-block">
+								<div className="relative h-24 w-24 shrink-0 self-center hidden lg:inline-block">
 									<Image
 										src={post.image}
 										fill
 										alt={post.title}
-										className="rounded object-cover scale-100 transition-all group-hover:scale-[200%] group-hover:translate-x-32"
-										sizes="196px"
+										className="rounded object-cover scale-100 transition-all group-hover:scale-[150%] group-hover:translate-x-16"
+										sizes="512px"
 									/>
 								</div>
 							) : null}
