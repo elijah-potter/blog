@@ -77,7 +77,7 @@ declare becomes "Google Workspace"
 The first line describes the pattern of the problematic text.
 There are two cases here:
 
-1. The letter "G" followed by "Suite" or its eggcorn "Suit"
+1. The letter "G" followed by "Suite" or its misspelling "Suit"
 1. The literal phrase "Google Apps for Work"
 
 Here is a semantically equivalent example that I find a bit easier to read:
@@ -99,7 +99,7 @@ One of my goals here was to make the system simple enough for an end-user to cop
 For the more complex cases, I think we could set up a custom GPT to write these pretty easily.
 
 Here's another example, one that will actually be a part of the Harper source code.
-It uses a filter (the `<>` syntax) to first select the broader phrase, then another to select the whitespace in-between.
+It uses a filter (the `<>` syntax) to first select the broader phrase, then another to select the whitespace in-between (that's the `( )` part).
 
 ```weir
 set main <([right, middle, left] $click), ( )>
@@ -107,7 +107,6 @@ declare message "Hyphenate this mouse command"
 declare description "Hyphenates right-click style mouse commands."
 declare kind "Punctuation"
 declare becomes "-"
-"#;
 ```
 
 This is a great example of the `$` tag. 
