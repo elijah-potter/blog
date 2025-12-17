@@ -225,7 +225,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2025, 7, 15).toUTCString(),
 		description:
 			"I've given dozens of talks over the years, yet I still feel like I have much to learn about public speaking. Preparing for my upcoming talk at WordCamp US has me stopping to reflect on what I already know.",
-		image: null,
+		image: "/images/mic.png",
 		keywords: [],
 	},
 	harper_in_the_news: {

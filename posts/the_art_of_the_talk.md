@@ -1,5 +1,7 @@
 # The Art of the Talk
 
+![A microphone sitting on a piano.](/images/mic.png)
+
 I've given dozens of talks over the years, yet I still feel like I have much to learn about public speaking.
 The act of presenting an idea to a large audience in person is intimidating for me, as I imagine it is for most people.
 
