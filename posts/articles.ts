@@ -1169,6 +1169,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Weir", "Harper", "Language", "DSL"],
 	},
+
+	updates_on_the_weir_language: {
+		pubDate: new Date(2025, 11, 17).toUTCString(),
+		description:
+			"In [my last blog post](./building_the_weir_language), I described the why, what, and how of the Weir programming language. Before signing off for the day, I just wanted to give a few updates on the Weir language project.",
+		image: null,
+		keywords: ["Weir", "Harper", "DSL"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
