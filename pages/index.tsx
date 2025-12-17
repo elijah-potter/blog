@@ -32,6 +32,11 @@ const iconLinks = [
 		"/icons/linkedin.svg",
 		"LinkedIn and Resume",
 	],
+	[
+		"https://bsky.app/profile/elijahpotter.dev",
+		"/icons/bluesky.svg",
+		"Bluesky",
+	],
 	["https://github.com/elijah-potter/", "/icons/github.svg", "GitHub"],
 ];
 
