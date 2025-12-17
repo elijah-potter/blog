@@ -27,13 +27,15 @@ let strategy "Exact"
 Note that I've also added the `strategy` setting.
 This allows rule authors to describe which strategy Harper will use when applying the replacements.
 Right now, the only two options are `Exact` or `MatchCase`, which apply either the exact text, or the exact text but matching the capitalization of the text it replaces.
-In the above example, we use "Exact" because it is a proper noun, and it doesn't matter what the original text looked like: we want to capitalize it properly.
+In the above example, we use `Exact` because it is a proper noun, and it doesn't matter what the original text looked like: we want to capitalize it properly.
 
 ## Deprecation of the `phrase_corrections` Module
 
 I've also gone ahead and converted the entirety of the `phrase_corrections` module, as well as all associated tests, to the Weir language.
 If you're reading this and you're a contributor, know that we will no longer be adding new rules to that module once Weir is merged into `master`.
 When the merge happens, I'll handle the conversion of any lagging phrase corrections that haven't already been converted.
+
+That unfortunately means that [my previous guide](./writing_a_phrase_correction_for_harper) on the subject is no longer relevant.
 
 ## What's Next?
 
