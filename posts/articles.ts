@@ -1177,6 +1177,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Weir", "Harper", "DSL"],
 	},
+
+	generating_weir_code_with_LLMs: {
+		pubDate: new Date(2025, 11, 19).toUTCString(),
+		description:
+			"Some experimentation shows that LLMs are extremely effective at understanding and generating DSL code.",
+		image: null,
+		keywords: ["Harper", "Weir", "LLMs", "AI", "OpenAI"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
