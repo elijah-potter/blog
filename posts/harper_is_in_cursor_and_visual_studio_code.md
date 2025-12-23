@@ -1,4 +1,4 @@
-# Harper is in Cursor and Visual Studio Code
+# Harper Is in Cursor and Visual Studio Code
 
 Harper is a grammar checker for developers. Its roots are in code editors like Neovim, Helix, Zed, and you guessed it—Visual Studio Code. I don't think a lot of my followers know this, so I thought I'd give it a little shout-out here.
 
@@ -6,7 +6,7 @@ Since Cursor and Windsurf are forks of Visual Studio Code, Harper is available f
 
 ![A screenshot of the Harper Visual Studio Code extension checking its own source code](/images/harper_vscode_screenshot.png)
 
-## How Does it Work?
+## How Does It Work?
 
 Harper works similarly to a number of other extensions you may have installed. Like Pylance or ESLint, it runs in the background as [a language server](https://microsoft.github.io/language-server-protocol/). Each time a modification is made to your document, it reads your comments for grammatical mistakes and typos and displays them as errors or warnings (it's configurable).
 
