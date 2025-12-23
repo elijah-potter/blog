@@ -4,6 +4,7 @@ I recently did some snooping ([through Dependabot](https://github.blog/news-insi
 Since I last checked, there are some new ones.
 I wonder if the recent additions have anything to do with [Harper going `1.0`](./harper_turns_1.0_today).
 
+- [Stubby](https://stubby.io/)
 - [Stencila](https://github.com/stencila/stencila)
 - [Gherlint](https://github.com/gherlint/gherlint)
 - [walletbeat](https://github.com/walletbeat/walletbeat)
