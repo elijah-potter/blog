@@ -1185,6 +1185,17 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Harper", "Weir", "LLMs", "AI", "OpenAI"],
 	},
+
+	projects_using_harper: {
+		pubDate: new Date(2025, 11, 23).toUTCString(),
+		description: "I just found out that some new projects are using Harper. Could yours be next?",
+		image: null,
+		keywords: [
+			"Harper",
+			"Open Source",
+			"GitHub",
+		],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
