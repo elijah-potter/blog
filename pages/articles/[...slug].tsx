@@ -108,7 +108,13 @@ export default function ({
 				<meta name="description" content={post.description} />
 				<meta name="keywords" content={post.keywords.join(", ")} />
 			</Head>
+
 			<div className="rmd" dangerouslySetInnerHTML={{ __html: html }}></div>
+
+			<p className="italic">
+				This post was proofread by{" "}
+				<a href="https://writewithharper.com">Harper</a>.
+			</p>
 
 			<div>
 				<h2 className="text-2xl font-bold my-4">Comments</h2>
