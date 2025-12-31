@@ -1196,6 +1196,15 @@ const postDeclarations: Record<string, PostDeclaration> = {
 			"GitHub",
 		],
 	},
+
+	someone_remixed_tatum: {
+		pubDate: new Date(2025, 11, 30).toUTCString(),
+		description: "A quick shout-out",
+		image: null,
+		keywords: [
+			"Tatum",
+		],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
