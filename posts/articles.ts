@@ -1188,22 +1188,17 @@ const postDeclarations: Record<string, PostDeclaration> = {
 
 	projects_using_harper: {
 		pubDate: new Date(2025, 11, 23).toUTCString(),
-		description: "I just found out that some new projects are using Harper. Could yours be next?",
+		description:
+			"I just found out that some new projects are using Harper. Could yours be next?",
 		image: null,
-		keywords: [
-			"Harper",
-			"Open Source",
-			"GitHub",
-		],
+		keywords: ["Harper", "Open Source", "GitHub"],
 	},
 
 	someone_remixed_tatum: {
 		pubDate: new Date(2025, 11, 30).toUTCString(),
-		description: "A quick shout-out",
+		description: "A quick shout-out.",
 		image: null,
-		keywords: [
-			"Tatum",
-		],
+		keywords: ["Tatum"],
 	},
 };
 
