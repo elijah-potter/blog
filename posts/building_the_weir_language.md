@@ -110,7 +110,7 @@ declare becomes "-"
 ```
 
 This is a great example of the `$` tag. 
-Instead of instructing Harper to look for the literal word afterwards, it instead instructs it to look for all derivative words.
+Instead of instructing Harper to look for the literal word afterward, it instead instructs it to look for all derivative words.
 Those include "click", "clicking", "clicked", etc.
 
 We also have specific syntax that can be used to test the expression inline.
