@@ -20,7 +20,7 @@ export default function ShareRow({ title, link }: ShareRowProps) {
 			iconSrc: "/icons/reddit.svg",
 		},
 		{
-			name: "BlueSky",
+			name: "Bluesky",
 			href: `https://bsky.app/intent/compose?text=${encodedText}`,
 			iconSrc: "/icons/bluesky.svg",
 		},
