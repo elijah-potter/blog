@@ -5,6 +5,7 @@ import "highlight.js/styles/hybrid.css";
 import { sampleSize } from "lodash";
 import Link from "next/link";
 import ScrollProgressBar from "../../components/ScrollProgressBar";
+import ShareRow from "../../components/ShareRow";
 import { articleIdToSlug, slugToArticleId } from "../../posts/articleId";
 import CommentForm from "../../src/CommentForm";
 import CommentRow from "../../src/CommentRow";
@@ -115,6 +116,11 @@ export default function ({
 				This post was proofread by{" "}
 				<a href="https://writewithharper.com">Harper</a>.
 			</p>
+
+			<ShareRow
+				title={post.title}
+				link={`https://elijahpotter.dev/articles/${articleId}`}
+			/>
 
 			<div>
 				<h2 className="text-2xl font-bold my-4">Comments</h2>
