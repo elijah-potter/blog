@@ -3,7 +3,7 @@ import { getRecentComments } from "../../src/db/comments";
 import CommentRow from "../../src/CommentRow";
 
 export async function getServerSideProps() {
-	let comments = await getRecentComments(10);
+	let comments = await getRecentComments(50);
 
 	return {
 		props: {
