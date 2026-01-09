@@ -1200,6 +1200,19 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Tatum"],
 	},
+
+	imagine_a_weir_marketplace: {
+		pubDate: new Date(2026, 0, 9).toUTCString(),
+		description: "I've come to the realization that there is a high degree of specialization among academic fields. If we embrace this specialization through customization, we could gain an advantage over other grammar checkers. That's all to say: We want to enable authors and academics to customize Harper to their specialized language.",
+		image: null,
+		keywords: [
+			"Harper",
+			"Weir",
+			"Obsidian",
+			"Marketplace",
+			"Open Source",
+		],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
