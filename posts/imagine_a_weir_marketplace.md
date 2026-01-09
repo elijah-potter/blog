@@ -4,6 +4,7 @@
 > This post is a kind of RFC for a potential improvement to the project's ergonomics.
 
 I've observed a high degree of specialization of language between academic fields.
+
 Ecologists use bits of language that computer scientists don't use, and computer scientists use bits of language that ecologists don't use.
 If we embrace this specialization through customization, we could gain an advantage over other grammar checkers.
 That's all to say: We want to enable authors and academics to customize Harper to their specialized language.
