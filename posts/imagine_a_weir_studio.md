@@ -49,3 +49,7 @@ More critically, I've been informed that the inclusion of dictionary files direc
 I'll likely start tackling that as soon as I have a spare moment.
 
 If you have thoughts on where Harper or Weir is going, please don't hesitate to voice them.
+
+---
+
+P.S. [A great piece was just published about Harper.](https://www.makeuseof.com/stopped-paying-for-grammarly-once-found-free-open-source-alternative/)
