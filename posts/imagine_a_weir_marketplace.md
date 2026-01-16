@@ -28,7 +28,7 @@ There is a need and desire for this today, and I want to address it as soon as p
 
 ## Distribution
 
-Once a collection of Weir rules has been drafted, how should it be shared.
+Once a collection of Weir rules has been drafted, how should it be shared?
 There is a formatting piece, as well as an infrastructure piece.
 
 ### Weirpacks
