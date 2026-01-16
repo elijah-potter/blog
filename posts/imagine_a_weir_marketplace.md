@@ -9,7 +9,7 @@ Ecologists use bits of language that computer scientists don't use, and computer
 If we embrace this specialization through customization, we could gain an advantage over other grammar checkers.
 That's all to say: We want to enable authors and academics to customize Harper to their specialized language.
 For example, a chemist might want to enforce a set of rules for ensuring molecules are named correctly according to the IUPAC standard, and a science fiction author might want to enforce rules to make sure specific characters are addressed by the proper titles.
-Weir is solution to these problems.
+Weir is the solution to these problems.
 
 In this post, I'll recap what Weir is, and outline a mechanism for distributing Weir rules to individual users that might take advantage of them.
 I'd love your thoughts on how we can make it as impactful and interactive as possible.
