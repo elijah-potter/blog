@@ -1211,13 +1211,10 @@ const postDeclarations: Record<string, PostDeclaration> = {
 
 	imagine_a_weir_studio: {
 		pubDate: new Date(2026, 0, 16).toUTCString(),
-		description: "The Weir Studio comes from a pretty simple idea. We want to give people all the tooling necessary to build and distribute Weir rules without any upfront cost.",
+		description:
+			"The Weir Studio comes from a pretty simple idea. We want to give people all the tooling necessary to build and distribute Weir rules without any upfront cost.",
 		image: "/images/weir_studio_draft.png",
-		keywords: [
-			"Weir",
-			"Harper",
-			"LLM",
-		],
+		keywords: ["Weir", "Harper", "LLM"],
 	},
 };
 
