@@ -2,6 +2,22 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { insertComment } from "../../src/db/comments";
 import { NewCommentSchema } from "../../src/db/schema";
 
+const BLOCKED_KEYWORDS = [
+	"carnal",
+	"erotic",
+	"minx",
+	"nymphomaniac",
+	"unsubscribe",
+	"subscribe",
+	"promotional",
+	"warranty",
+];
+
+function containsBlockedKeyword(message: string): boolean {
+	const lowerMessage = message.toLowerCase();
+	return BLOCKED_KEYWORDS.some((keyword) => lowerMessage.includes(keyword));
+}
+
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse,
@@ -17,6 +33,13 @@ export default async function handler(
 		email: req.body?.email,
 		message: req.body?.message,
 	};
+
+	if (
+		typeof newComment.message === "string" &&
+		containsBlockedKeyword(newComment.message)
+	) {
+		return res.status(400).end("Comment rejected.");
+	}
 
 	const parsed = NewCommentSchema.parse(newComment);
 
