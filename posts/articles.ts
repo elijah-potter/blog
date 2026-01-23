@@ -1216,6 +1216,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: "/images/weir_studio_draft.png",
 		keywords: ["Weir", "Harper", "LLM"],
 	},
+
+	["linkarzu:_harper_is_getting_better"]: {
+		pubDate: new Date(2026, 0, 23).toUTCString(),
+		description:
+			"Linkarzu's recent video about Harper is a great primer on what it can do.",
+		image: null,
+		keywords: ["Harper", "YouTube"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
