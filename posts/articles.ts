@@ -1224,6 +1224,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Harper", "YouTube"],
 	},
+
+	finding_the_active_voice: {
+		pubDate: new Date(2026, 0, 26).toUTCString(),
+		description:
+			"How should we go about helping our users with their active voice?",
+		image: null,
+		keywords: ["Harper", "Weir", "The Active Voice"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
