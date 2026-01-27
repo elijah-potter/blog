@@ -1232,6 +1232,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Harper", "Weir", "The Active Voice"],
 	},
+
+	writing_in_visual_studio_code: {
+		pubDate: new Date(2026, 0, 27).toUTCString(),
+		description:
+			"People are using Harper for writing prose in Visual Studio Code.",
+		image: null,
+		keywords: ["Harper", "VS Code"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
