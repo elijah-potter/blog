@@ -1240,6 +1240,16 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Harper", "VS Code"],
 	},
+
+	training_a_small_language_model: {
+		pubDate: new Date(2026, 1, 3).toUTCString(),
+		description: "I've built and trained an extremely small language model from scratch, specifically designed for short-form sentence rewriting tasks that are highly resource constrained.",
+		image: null,
+		keywords: [
+			"Harper",
+			"LM",
+		],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
