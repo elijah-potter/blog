@@ -1243,12 +1243,17 @@ const postDeclarations: Record<string, PostDeclaration> = {
 
 	training_a_small_language_model: {
 		pubDate: new Date(2026, 1, 3).toUTCString(),
-		description: "I've built and trained an extremely small language model from scratch, specifically designed for short-form sentence rewriting tasks that are highly resource constrained.",
+		description:
+			"I've built and trained an extremely small language model from scratch, specifically designed for short-form sentence rewriting tasks that are highly resource constrained.",
 		image: null,
-		keywords: [
-			"Harper",
-			"LM",
-		],
+		keywords: ["Harper", "LM"],
+	},
+
+	building_software_that_is_good_for_humans: {
+		pubDate: new Date(2026, 1, 9).toUTCString(),
+		description: "Why does so much of the software we use feel harmful?",
+		image: null,
+		keywords: ["Automattic", "AI", "TikTok", "Rambling"],
 	},
 };
 
