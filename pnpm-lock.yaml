@@ -24,8 +24,8 @@ importers:
         specifier: ^10.12.18
         version: 10.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       harper.js:
-        specifier: ^1.4.0
-        version: 1.4.0
+        specifier: ^1.7.0
+        version: 1.7.0
       highlight.js:
         specifier: ^11.6.0
         version: 11.11.1
@@ -1713,6 +1713,9 @@ packages:
   fflate@0.4.8:
     resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
 
+  fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
+
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
@@ -1821,8 +1824,8 @@ packages:
     resolution: {integrity: sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==}
     engines: {node: '>=4.x'}
 
-  harper.js@1.4.0:
-    resolution: {integrity: sha512-xdH64m3o9FVKlUZCKmvBa8zE5wJPEVqbql4Hi0Br2kEl/CbaBkVsroFtAnnLf07t+nX+xQZ2YDlbWBTtmHJQZQ==}
+  harper.js@1.7.0:
+    resolution: {integrity: sha512-TimKG35PXdGlg69SN0UGq4oePplDdOmRY5mKRgcEOdd/5u0y+aVCl/jaVwIsZRoH9KZikoz+G8vx7g/S6mrrvA==}
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
@@ -4493,6 +4496,8 @@ snapshots:
 
   fflate@0.4.8: {}
 
+  fflate@0.8.2: {}
+
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
@@ -4616,7 +4621,9 @@ snapshots:
 
   growl@1.10.5: {}
 
-  harper.js@1.4.0: {}
+  harper.js@1.7.0:
+    dependencies:
+      fflate: 0.8.2
 
   has-flag@4.0.0: {}
 
