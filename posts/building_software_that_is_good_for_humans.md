@@ -1,4 +1,4 @@
-# Building Software that Is Good for Humans
+# Building Software That Is Good for Humans
 
 Earlier today, [the European Commission released a report](https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act) detailing their initial findings that TikTok's core recommendation algorithm is in breach of the Digital Services Act.
 This is only the most recent episode in the extended saga where western governments try to regulate the Chinese company.
@@ -13,7 +13,7 @@ How can we make sure our software sits in the latter group?
 ## Traits of Offensive Software
 
 There are a few fundamental things that I've found make using certain software feel like a chore.
-Software feels "icky" when it is some combination of slow, unpredictable, or when it gets in the way of the meaninful pursuits in life.
+Software feels "icky" when it is some combination of slow, unpredictable, or when it gets in the way of the meaningful pursuits in life.
 
 ### It Is Slow
 
@@ -46,7 +46,7 @@ When someone chooses to use software not because it's genuinely helpful, but bec
 
 In my experience, Microsoft Word is like this, as are most agentic coding tools and image generators.
 
-### It Distracts from that Which Makes Life Meaningful
+### It Distracts from That Which Makes Life Meaningful
 
 When software is slow, or otherwise removes your agency with variable reward systems, it can start to chip away at your ability to make reasonable decisions on where to spend your time.
 People who use "social" media sites like Facebook or Instagram can attest to this.
