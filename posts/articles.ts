@@ -1255,6 +1255,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Automattic", "AI", "TikTok", "Rambling"],
 	},
+
+	latex_support_is_coming_to_harper: {
+		pubDate: new Date(2026, 1, 18).toUTCString(),
+		description:
+			"It's been a long time coming, which is why I'm thrilled to say that Harper will soon support LaTeX.",
+		image: null,
+		keywords: ["Harper", "LaTeX", "Overleaf"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
