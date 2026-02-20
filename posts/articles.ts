@@ -1263,6 +1263,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Harper", "LaTeX", "Overleaf"],
 	},
+
+	refactoring_slop: {
+		pubDate: new Date(2026, 1, 20).toUTCString(),
+		description:
+			"There are a gazillion guides out there about the various techniques you can use to improve the quality of AI generated code. Instead, I want to talk about some more generally applicable ideas that I've found especially useful in the age of AI.",
+		image: null,
+		keywords: ["Harper", "LLM", "Refactoring", "Open Source"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
