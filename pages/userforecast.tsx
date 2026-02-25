@@ -28,9 +28,17 @@ interface ForecastState {
 	historicalBars: BarDatum[];
 	models: ModelResult[];
 	twoMonthDate: Date;
+	exponentialGrowthRatePerMonth: number | null;
 }
 
 type Predictor = (x: number) => number;
+interface FitResult {
+	predictor: Predictor;
+	r2: number;
+	growthRatePerMonth?: number;
+}
+
+const DAYS_PER_MONTH = 30;
 
 const parseUsDate = (value: string): Date | null => {
 	const trimmed = value.trim();
@@ -99,10 +107,7 @@ const computeR2 = (xs: number[], ys: number[], predict: Predictor): number => {
 	return 1 - ssRes / ssTot;
 };
 
-const fitLinear = (
-	xs: number[],
-	ys: number[],
-): { predictor: Predictor; r2: number } | null => {
+const fitLinear = (xs: number[], ys: number[]): FitResult | null => {
 	if (xs.length < 2 || ys.length < 2 || xs.length !== ys.length) return null;
 
 	let sumX = 0;
@@ -125,7 +130,10 @@ const fitLinear = (
 	const intercept = (sumY - slope * sumX) / n;
 	const predictor: Predictor = (x) => slope * x + intercept;
 
-	return { predictor, r2: computeR2(xs, ys, predictor) };
+	return {
+		predictor,
+		r2: computeR2(xs, ys, predictor),
+	};
 };
 
 const solve3x3 = (matrix: number[][], vector: number[]): number[] | null => {
@@ -164,10 +172,7 @@ const solve3x3 = (matrix: number[][], vector: number[]): number[] | null => {
 	return [augmented[0][3], augmented[1][3], augmented[2][3]];
 };
 
-const fitQuadratic = (
-	xs: number[],
-	ys: number[],
-): { predictor: Predictor; r2: number } | null => {
+const fitQuadratic = (xs: number[], ys: number[]): FitResult | null => {
 	if (xs.length < 3 || ys.length < 3 || xs.length !== ys.length) return null;
 
 	let sumX = 0;
@@ -205,13 +210,13 @@ const fitQuadratic = (
 
 	const [a, b, c] = coeffs;
 	const predictor: Predictor = (x) => a * x * x + b * x + c;
-	return { predictor, r2: computeR2(xs, ys, predictor) };
+	return {
+		predictor,
+		r2: computeR2(xs, ys, predictor),
+	};
 };
 
-const fitExponential = (
-	xs: number[],
-	ys: number[],
-): { predictor: Predictor; r2: number } | null => {
+const fitExponential = (xs: number[], ys: number[]): FitResult | null => {
 	if (xs.length < 2 || ys.length < 2 || xs.length !== ys.length) return null;
 	if (ys.some((y) => y <= 0)) return null;
 
@@ -219,8 +224,15 @@ const fitExponential = (
 	const linear = fitLinear(xs, transformed);
 	if (!linear) return null;
 
+	const slope = linear.predictor(1) - linear.predictor(0);
+	const intercept = linear.predictor(0);
+	const b = slope;
 	const predictor: Predictor = (x) => Math.exp(linear.predictor(x));
-	return { predictor, r2: computeR2(xs, ys, predictor) };
+	return {
+		predictor,
+		r2: computeR2(xs, ys, predictor),
+		growthRatePerMonth: Math.exp(b * DAYS_PER_MONTH) - 1,
+	};
 };
 
 const buildProjectionLine = (
@@ -262,10 +274,7 @@ const buildForecastState = (
 	const modelDefs: {
 		name: string;
 		color: string;
-		fit: (
-			xVals: number[],
-			yVals: number[],
-		) => { predictor: Predictor; r2: number } | null;
+		fit: (xVals: number[], yVals: number[]) => FitResult | null;
 	}[] = [
 		{ name: "Linear", color: "#2563eb", fit: fitLinear },
 		{ name: "Quadratic", color: "#dc2626", fit: fitQuadratic },
@@ -275,6 +284,7 @@ const buildForecastState = (
 	const targetX = Math.round(
 		(twoMonthDate.getTime() - startDate.getTime()) / msDay,
 	);
+	let exponentialGrowthRatePerMonth: number | null = null;
 
 	const models: ModelResult[] = modelDefs
 		.map((model) => {
@@ -282,6 +292,12 @@ const buildForecastState = (
 			if (!fitted) return null;
 
 			const confidence = clamp(fitted.r2, 0, 1) * 100;
+			if (
+				model.name === "Exponential" &&
+				typeof fitted.growthRatePerMonth === "number"
+			) {
+				exponentialGrowthRatePerMonth = fitted.growthRatePerMonth;
+			}
 			return {
 				name: model.name,
 				color: model.color,
@@ -310,6 +326,7 @@ const buildForecastState = (
 		historicalBars,
 		models,
 		twoMonthDate,
+		exponentialGrowthRatePerMonth,
 	};
 };
 
@@ -319,6 +336,9 @@ const numberFormatter = new Intl.NumberFormat("en-US", {
 
 const percentFormatter = new Intl.NumberFormat("en-US", {
 	maximumFractionDigits: 2,
+});
+const percentRateFormatter = new Intl.NumberFormat("en-US", {
+	maximumFractionDigits: 4,
 });
 
 const UserForecastPage: React.FC = () => {
@@ -459,6 +479,16 @@ const UserForecastPage: React.FC = () => {
 								Forecast target date:{" "}
 								<strong>
 									{forecast.twoMonthDate.toISOString().split("T")[0]}
+								</strong>
+							</p>
+							<p className="text-sm text-gray-700 mb-3">
+								Exponential growth rate:{" "}
+								<strong>
+									{forecast.exponentialGrowthRatePerMonth === null
+										? "Unavailable"
+										: `${percentRateFormatter.format(
+												forecast.exponentialGrowthRatePerMonth * 100,
+											)}% per month`}
 								</strong>
 							</p>
 							<table className="min-w-full border border-gray-200 text-sm">
