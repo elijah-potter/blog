@@ -17,6 +17,13 @@ export interface LineDatum {
 	value: number;
 }
 
+export interface LineSeries {
+	name: string;
+	data: LineDatum[];
+	color?: string;
+	width?: number;
+}
+
 export interface DrawBarChartOptions {
 	height?: number;
 	margin?: Partial<Margin>;
@@ -26,6 +33,7 @@ export interface DrawBarChartOptions {
 	lineData?: LineDatum[];
 	lineColor?: string;
 	lineWidth?: number;
+	lineSeries?: LineSeries[];
 }
 
 declare global {
@@ -62,6 +70,7 @@ export const drawBarChart = (
 		lineData,
 		lineColor = "#be185d",
 		lineWidth = 2,
+		lineSeries,
 	} = options;
 	const margin: Margin = { ...defaultMargin, ...options.margin };
 	const barClass = options.barClass ?? defaultBarClass;
@@ -73,7 +82,22 @@ export const drawBarChart = (
 	svg.selectAll("*").remove();
 
 	const hasBars = data.length > 0;
-	const hasLine = Boolean(lineData && lineData.length > 0);
+	const resolvedLineSeries: LineSeries[] = [];
+	if (lineData && lineData.length > 0) {
+		resolvedLineSeries.push({
+			name: "Line",
+			data: lineData,
+			color: lineColor,
+			width: lineWidth,
+		});
+	}
+	if (lineSeries && lineSeries.length > 0) {
+		resolvedLineSeries.push(
+			...lineSeries.filter((series) => series.data.length),
+		);
+	}
+
+	const hasLine = resolvedLineSeries.length > 0;
 
 	if (!hasBars && !hasLine) {
 		return;
@@ -86,11 +110,13 @@ export const drawBarChart = (
 		if (barStart) domainDates.push(barStart);
 		if (barEnd) domainDates.push(barEnd);
 	}
-	if (hasLine && lineData) {
-		const lineStart = d3.min(lineData, (d: LineDatum) => d.date);
-		const lineEnd = d3.max(lineData, (d: LineDatum) => d.date);
-		if (lineStart) domainDates.push(lineStart);
-		if (lineEnd) domainDates.push(lineEnd);
+	if (hasLine) {
+		for (const series of resolvedLineSeries) {
+			const lineStart = d3.min(series.data, (d: LineDatum) => d.date);
+			const lineEnd = d3.max(series.data, (d: LineDatum) => d.date);
+			if (lineStart) domainDates.push(lineStart);
+			if (lineEnd) domainDates.push(lineEnd);
+		}
 	}
 
 	const domainStart = d3.min(domainDates);
@@ -107,8 +133,11 @@ export const drawBarChart = (
 
 	const allValues: number[] = [];
 	if (hasBars) allValues.push(...data.map((d: BarDatum) => d.rate));
-	if (hasLine && lineData)
-		allValues.push(...lineData.map((d: LineDatum) => d.value));
+	if (hasLine) {
+		for (const series of resolvedLineSeries) {
+			allValues.push(...series.data.map((d: LineDatum) => d.value));
+		}
+	}
 
 	const maxY = d3.max(allValues) ?? 0;
 	const y = d3
@@ -134,22 +163,24 @@ export const drawBarChart = (
 			.text((datum: BarDatum) => tooltip(datum));
 	}
 
-	if (hasLine && lineData) {
+	if (hasLine) {
 		const line = d3
 			.line()
 			.x((d: LineDatum) => x(d.date))
 			.y((d: LineDatum) => y(d.value))
 			.curve(d3.curveMonotoneX);
 
-		svg
-			.append("path")
-			.datum(lineData)
-			.attr("fill", "none")
-			.attr("stroke", lineColor)
-			.attr("stroke-width", lineWidth)
-			.attr("stroke-linejoin", "round")
-			.attr("stroke-linecap", "round")
-			.attr("d", line as any);
+		for (const series of resolvedLineSeries) {
+			svg
+				.append("path")
+				.datum(series.data)
+				.attr("fill", "none")
+				.attr("stroke", series.color ?? lineColor)
+				.attr("stroke-width", series.width ?? lineWidth)
+				.attr("stroke-linejoin", "round")
+				.attr("stroke-linecap", "round")
+				.attr("d", line as any);
+		}
 	}
 
 	svg
