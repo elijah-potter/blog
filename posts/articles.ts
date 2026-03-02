@@ -1029,7 +1029,6 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		],
 		image: "/images/hope_sketch.webp",
 		pubDate: new Date(2023, 9, 20).toUTCString(),
-		featured: true,
 	},
 	the_climate_change_progress_bar: {
 		description: "A proposal.",
