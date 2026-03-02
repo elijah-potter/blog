@@ -1271,6 +1271,15 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Harper", "LLM", "Refactoring", "Open Source"],
 	},
+
+	do_not_write_with_an_LLM: {
+		pubDate: new Date(2026, 2, 2).toUTCString(),
+		description:
+			"I have been seeing an increasingly prevalent trend of people showing up in online spaces flaunting that they are writing with the assistance of AI. They seem to be proud of this. They shouldn't be.",
+		image: null,
+		keywords: ["Harper", "LLM", "AI", "Writing"],
+		featured: true,
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
