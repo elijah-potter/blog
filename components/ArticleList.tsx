@@ -22,6 +22,9 @@ export default function ArticleList({
 		<section className="pt-8 sm:pt-16">
 			<h2 className="text-3xl sm:text-4xl font-bold flex items-center gap-2">
 				{title}
+				<span className="text-lg sm:text-xl font-semibold text-gray-600">
+					({posts.length})
+				</span>
 			</h2>
 			<h3 className="text-xl sm:text-xl font-bold flex items-center gap-2">
 				{subtitle}
