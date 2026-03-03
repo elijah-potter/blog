@@ -35,6 +35,6 @@ While we're simultaneously working on rolling out our new Weirpack system and ou
 
 ## A Quick Correction
 
-A few days after writing this post, I found evidence that LangaugeTool supports an older version of the Overleaf editor.
+A few days after writing this post, I found evidence that LanguageTool supports an older version of the Overleaf editor.
 While it doesn't seem to support the latest version, this new information makes my previous statement that it "doesn't support sites like Overleaf in any way" false.
 I apologize for the misinformation.
