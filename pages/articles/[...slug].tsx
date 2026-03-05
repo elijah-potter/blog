@@ -13,11 +13,11 @@ import { getCommentsForPost } from "../../src/db/comments";
 import type { Comment } from "../../src/db/schema";
 
 export async function getServerSideProps({ params }: any) {
-	let { slug } = params;
+	let { slug } = params ?? {};
 
 	if (slug === undefined) {
 		console.log("No slug!");
-		return;
+		return { notFound: true };
 	}
 
 	if (typeof slug !== "string") {
@@ -25,7 +25,7 @@ export async function getServerSideProps({ params }: any) {
 	}
 
 	if (typeof slug !== "string") {
-		return 500;
+		return { notFound: true };
 	}
 
 	// Redirect to dash-separated slug.
@@ -41,6 +41,9 @@ export async function getServerSideProps({ params }: any) {
 
 	const posts = await generateFullPosts();
 	const post = posts[articleId];
+	if (!post) {
+		return { notFound: true };
+	}
 
 	let comments: Comment[] = [];
 
@@ -51,7 +54,9 @@ export async function getServerSideProps({ params }: any) {
 	}
 
 	const featuredPosts = sampleSize(
-		Object.entries(posts).filter(([a, b]) => a != slug && b.featured === true),
+		Object.entries(posts).filter(
+			([key, candidate]) => key !== articleId && candidate.featured === true,
+		),
 		3,
 	);
 
@@ -67,7 +72,7 @@ export async function getServerSideProps({ params }: any) {
 	};
 }
 
-export default function ({
+export default function ArticlePage({
 	commentsJSON,
 	post,
 	articleId,
@@ -83,9 +88,7 @@ export default function ({
 
 	if (typeof html !== "string") {
 		console.log("Not a string!");
-		return {
-			notFound: true,
-		};
+		return null;
 	}
 
 	return (
@@ -125,7 +128,7 @@ export default function ({
 			<div>
 				<h2 className="text-2xl font-bold my-4">Comments</h2>
 				{comments.map((c) => (
-					<CommentRow comment={c} />
+					<CommentRow comment={c} key={c.id} />
 				))}
 			</div>
 
