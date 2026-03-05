@@ -8,6 +8,7 @@ import "../global.css";
 import { useRouter } from "next/router";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
+import UserStatus from "../components/UserStatus";
 
 if (typeof window !== "undefined") {
 	posthog.init("phc_ScKr9SxzZRlBn7d4FMFIZzYestHuFonat6gOStQ5t8x", {
@@ -20,7 +21,7 @@ if (typeof window !== "undefined") {
 	});
 }
 
-export default function App({ Component, pageProps }: AppProps) {
+export default async function App({ Component, pageProps }: AppProps) {
 	const router = useRouter();
 
 	const showNavbar = router.query.navbar !== "no";
@@ -58,6 +59,7 @@ export default function App({ Component, pageProps }: AppProps) {
 										}}
 									/>
 								</a>
+                <UserStatus />
 							</Navbar>
 						)}
 						<Component {...pageProps} />
