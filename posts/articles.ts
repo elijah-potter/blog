@@ -186,7 +186,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2025, 8, 1).toUTCString(),
 		description:
 			"I reflect about the recent books I have read and the things I (and you) can learn from them.",
-		image: null,
+		image: "/images/portland_rose.png",
 		keywords: [
 			"book recommendations",
 			"reading list",
