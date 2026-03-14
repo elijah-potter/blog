@@ -1279,6 +1279,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		keywords: ["Harper", "LLM", "AI", "Writing"],
 		featured: true,
 	},
+
+	my_superpower: {
+		pubDate: new Date(2026, 2, 14).toUTCString(),
+		description:
+			"It was not until relatively late in my academic career when I realized my thirst for the written word had given me a superpower.",
+		image: null,
+		keywords: ["Harper", "Reading", "Superpower"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
