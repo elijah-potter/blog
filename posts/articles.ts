@@ -1244,7 +1244,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2026, 1, 3).toUTCString(),
 		description:
 			"I've built and trained an extremely small language model from scratch, specifically designed for short-form sentence rewriting tasks that are highly resource constrained.",
-		image: null,
+		image: "/images/blue_bird.webp",
 		keywords: ["Harper", "LM"],
 	},
 
@@ -1275,7 +1275,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2026, 2, 2).toUTCString(),
 		description:
 			"I have been seeing an increasingly prevalent trend of people showing up in online spaces flaunting that they are writing with the assistance of AI. They seem to be proud of this. They shouldn't be.",
-		image: null,
+		image: "/images/green_bird.webp",
 		keywords: ["Harper", "LLM", "AI", "Writing"],
 		featured: true,
 	},
@@ -1284,7 +1284,7 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2026, 2, 14).toUTCString(),
 		description:
 			"It was not until relatively late in my academic career when I realized my thirst for the written word had given me a superpower.",
-		image: null,
+		image: "/images/giraffe.webp",
 		keywords: ["Harper", "Reading", "Superpower"],
 	},
 };

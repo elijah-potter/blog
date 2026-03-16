@@ -1,5 +1,7 @@
 # My Superpower
 
+![A photo taken by myself of a giraffe resting its head on a pole.](/images/giraffe.webp)
+
 In high school, I was an insatiable consumer of science fiction.
 In hindsight, it is unbelievable how much time I spent reading instead of doing the other things usually considered to be typical for teenagers (going out, doing homework, etc.).
 I was the classic science fiction nerd.

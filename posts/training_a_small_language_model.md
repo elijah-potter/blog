@@ -1,5 +1,7 @@
 # Training a Small Language Model
 
+![A photo taken by myself of a blue bird.](/images/blue_bird.webp)
+
 > TL;DR: I've built and trained an extremely small language model from scratch, specifically designed for short-form sentence rewriting tasks that are highly resource constrained.
 
 In [my last post](./finding_the_active_voice), I discussed how I plan to tackle the difficult problem of helping [Harper's](https://writewithharper.com) users take advantage of the active voice.

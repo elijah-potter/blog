@@ -1,5 +1,7 @@
 # Do Not Write with an LLM
 
+![A photo taken by myself of a green bird.](/images/green_bird.webp)
+
 ## A Growing Trend
 
 I have been seeing an increasingly prevalent trend of people showing up in online spaces proudly flaunting that they are writing with the assistance of AI.
