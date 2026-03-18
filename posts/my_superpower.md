@@ -48,7 +48,7 @@ Hundreds of hours of intellectual floundering can be saved with just a little bi
 To illustrate why the kind of deep understanding that can be obtained through literature is relevant, I'll bring an example from my own recent work.
 
 For context, I work on Harper, a grammar checker for those who care for their privacy.
-We've recently been [working to expand our offering to compete with Grammarly Premium](https://harperp2.wordpress.com/2026/01/23/finding-the-active-voice/).
+We've recently been [working to expand our offering to compete with Grammarly Premium](./finding_the_active_voice).
 This is a complex, open-ended problem with no "right" answer.
 I can imagine two approaches to it, one good and another bad.
 
