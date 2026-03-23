@@ -1287,6 +1287,13 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: "/images/giraffe.webp",
 		keywords: ["Harper", "Reading", "Superpower"],
 	},
+	["harper\'s_policy_on_agent_PRs"]: {
+		pubDate: new Date(2026, 2, 23).toUTCString(),
+		description:
+			"The goal of this page is to formalize my answer so that we can judiciously deal with patch requests produced by LLMs.",
+		image: null,
+		keywords: ["Harper", "PR", "LLM", "Agents", "Claude"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
