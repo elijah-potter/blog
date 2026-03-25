@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { deleteComment, getCommentFromId } from "../../../src/db/comments";
-import { auth } from "../../../src/auth";
+import { isAdmin } from "../../../src/auth";
 
 export default async function handler(
 	req: NextApiRequest,
@@ -27,12 +27,7 @@ export default async function handler(
 		return res.status(404).end(`Unable to find comment ${id}.`);
 	}
 
-	const session = await auth(req, res);
-
-	console.log(session);
-	console.log(process.env.ADMIN_USER_ID);
-
-	if (session?.user?.id == process.env.ADMIN_USER_ID) {
+	if (await isAdmin(req, res)) {
 		await deleteComment(id);
 	} else {
 		return res.status(401).end("Not authorized");
