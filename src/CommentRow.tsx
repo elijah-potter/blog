@@ -1,6 +1,10 @@
 import { Comment } from "./db/schema";
 import Gravatar from "react-gravatar";
 
+async function sendDeleteRequest(id: number) {
+	await fetch(`/api/deletecomment/${id}`, { method: "DELETE" });
+}
+
 export default function CommentRow({ comment }: { comment: Comment }) {
 	return (
 		<div className="flex space-x-4 p-4 border-b">
@@ -14,6 +18,12 @@ export default function CommentRow({ comment }: { comment: Comment }) {
 			<div className="flex-1">
 				<div className="flex items-center justify-between">
 					<span className="font-semibold text-gray-800">{comment.name}</span>
+					<button
+						className="font-semibold text-red-800"
+						onClick={() => sendDeleteRequest(comment.id)}
+					>
+						Delete
+					</button>
 				</div>
 				<p className="mt-1 text-gray-700">{comment.message}</p>
 			</div>

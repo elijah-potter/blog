@@ -1,4 +1,7 @@
+const { hostname } = require("node:os");
+
 module.exports = {
+	transpilePackages: ["next-auth"],
 	images: {
 		remotePatterns: [
 			{
@@ -6,6 +9,10 @@ module.exports = {
 				hostname: "elijahpotter.dev",
 				port: "",
 				search: "",
+			},
+			{
+				protocol: "https",
+				hostname: "avatars.githubusercontent.com",
 			},
 		],
 	},
