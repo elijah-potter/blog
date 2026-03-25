@@ -8,6 +8,13 @@
 			"when": 1760046511406,
 			"tag": "0000_careless_miracleman",
 			"breakpoints": true
+		},
+		{
+			"idx": 1,
+			"version": "5",
+			"when": 1774450153649,
+			"tag": "0001_free_hiroim",
+			"breakpoints": true
 		}
 	]
 }

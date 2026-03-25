@@ -9,6 +9,7 @@ export const commentsTable = mysqlTable("comments", {
 	email: text().notNull(),
 	message: text().notNull(),
 	timestamp: timestamp().notNull().defaultNow(),
+	deleted: timestamp(),
 });
 
 export type NewComment = typeof commentsTable.$inferInsert;
