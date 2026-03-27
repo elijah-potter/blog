@@ -1294,6 +1294,14 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["Harper", "PR", "LLM", "Agents", "Claude"],
 	},
+
+	when_to_use_an_agent: {
+		pubDate: new Date(2026, 2, 27).toUTCString(),
+		description:
+			"There are times where it is prudent to use an AI agent (like Codex) aggressively. There are other times where they should be avoided like the plague. The question of into which bucket a particular endeavor falls is difficult to answer.",
+		image: null,
+		keywords: ["LLM", "AI Agents", "Productivity"],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
