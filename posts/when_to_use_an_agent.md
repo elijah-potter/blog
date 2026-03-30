@@ -14,7 +14,7 @@ It is not always a guarantee.
 
 Indeed, most developers say that they estimate their productivity multiple to be greater than one when surveyed.
 In other words, they think that their productivity at least doubles when they use either Claude Code or Codex.
-In reality, they agents can often slow you down, even if it feels like they are helping.
+In reality, agents can often slow you down, even if it feels like they are helping.
 Indeed, [an METR study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) found that they more frequently counterproductive than productive, even if the developer feels otherwise.
 
 Over the last few months, I have been anecdotally tracking the types of tasks that I've found to be empirically better done with an agent, and the types of tasks that are better done with only the meat between my ears.
