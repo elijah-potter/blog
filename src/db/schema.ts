@@ -9,6 +9,7 @@ import {
 	boolean,
 } from "drizzle-orm/mysql-core";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
+import { AdapterAccountType } from "next-auth/adapters";
 
 export const commentsTable = mysqlTable("comments", {
 	id: int().autoincrement().primaryKey(),
