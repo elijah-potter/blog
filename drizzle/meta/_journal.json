@@ -15,6 +15,13 @@
 			"when": 1774450153649,
 			"tag": "0001_free_hiroim",
 			"breakpoints": true
+		},
+		{
+			"idx": 2,
+			"version": "5",
+			"when": 1774976154010,
+			"tag": "0002_deep_madame_masque",
+			"breakpoints": true
 		}
 	]
 }
