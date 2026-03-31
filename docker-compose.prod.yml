@@ -25,6 +25,7 @@ services:
       AUTH_GITHUB_ID: replaceme
       AUTH_GITHUB_SECRET: replaceme
       ADMIN_USER_ID: replaceme
+      AUTH_TRUST_HOST: true
     ports:
       - "3306:3306"
     volumes:
