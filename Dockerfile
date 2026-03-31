@@ -22,4 +22,4 @@ COPY --from=wasm-build /usr/build/ /usr/build/
 RUN corepack enable
 RUN ./build.sh --no-wasm --release
 
-ENTRYPOINT ["pnpm", "start", "-p", "3000", "-H", "0.0.0.0"]
+ENTRYPOINT ["pnpm", "start", "-p", "3000", "-H", "localhost"]
