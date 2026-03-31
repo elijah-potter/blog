@@ -9,7 +9,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=mysql://bloguser:password@db:3306/blog
+      DATABASE_URL: mysql://bloguser:password@db:3306/blog
+      AUTH_SECRET: replaceme
+      AUTH_GITHUB_ID: replaceme
+      AUTH_GITHUB_SECRET: replaceme
+      ADMIN_USER_ID: replaceme
+      AUTH_TRUST_HOST: true
     depends_on:
       db:
         condition: service_healthy
@@ -21,11 +26,6 @@ services:
       MARIADB_DATABASE: blog
       MARIADB_USER: bloguser
       MARIADB_PASSWORD: password
-      AUTH_SECRET: replaceme
-      AUTH_GITHUB_ID: replaceme
-      AUTH_GITHUB_SECRET: replaceme
-      ADMIN_USER_ID: replaceme
-      AUTH_TRUST_HOST: true
     ports:
       - "3306:3306"
     volumes:
