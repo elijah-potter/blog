@@ -3,12 +3,10 @@ import { getRecentComments } from "../../src/db/comments";
 import CommentRow from "../../src/CommentRow";
 
 export async function getServerSideProps() {
-	let comments = await getRecentComments(50);
+	const comments = await getRecentComments(50);
 
 	return {
-		props: {
-			comments,
-		},
+		props: JSON.parse(JSON.stringify({ comments })),
 	};
 }
 

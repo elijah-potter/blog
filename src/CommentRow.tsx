@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Comment } from "./db/schema";
 import Gravatar from "react-gravatar";
+import { useRouter } from "next/router";
 
 async function sendDeleteRequest(id: number) {
 	await fetch(`/api/deletecomment/${id}`, { method: "DELETE" });
@@ -8,6 +9,7 @@ async function sendDeleteRequest(id: number) {
 
 export default function CommentRow({ comment }: { comment: Comment }) {
 	const [authorized, setAuthorized] = useState(false);
+	let router = useRouter();
 
 	useEffect(() => {
 		fetch("/api/isadmin").then((res) => {
@@ -31,7 +33,9 @@ export default function CommentRow({ comment }: { comment: Comment }) {
 					{authorized ? (
 						<button
 							className="font-semibold text-red-800"
-							onClick={() => sendDeleteRequest(comment.id)}
+							onClick={() =>
+								sendDeleteRequest(comment.id).then(() => router.reload())
+							}
 						>
 							Delete
 						</button>
