@@ -21,6 +21,10 @@ services:
       MARIADB_DATABASE: blog
       MARIADB_USER: bloguser
       MARIADB_PASSWORD: password
+      AUTH_SECRET: replaceme
+      AUTH_GITHUB_ID: replaceme
+      AUTH_GITHUB_SECRET: replaceme
+      ADMIN_USER_ID: replaceme
     ports:
       - "3306:3306"
     volumes:

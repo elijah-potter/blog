@@ -8,6 +8,8 @@ import "../global.css";
 import { useRouter } from "next/router";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
+import UserStatus from "../components/UserStatus";
+import { SessionProvider } from "next-auth/react";
 
 if (typeof window !== "undefined") {
 	posthog.init("phc_ScKr9SxzZRlBn7d4FMFIZzYestHuFonat6gOStQ5t8x", {
@@ -31,47 +33,50 @@ export default function App({ Component, pageProps }: AppProps) {
 				<Head>
 					<title>Elijah Potter</title>
 				</Head>
-				<div className="flex flex-row justify-center">
-					<div className="w-full p-4 sm:w-full md:w-[800px] m-5">
-						{showNavbar && (
-							<Navbar>
-								<div className="mobilehide">
-									<Image
-										src="/icons/profile.svg"
-										width="75"
-										height="100"
-										alt="Profile Picture"
-									/>
-								</div>
-								<Link href="/">
-									<h1 className="text-2xl">Elijah Potter</h1>
-								</Link>
-								<Spacer />
-								<a href="/rss.xml">
-									<Image
-										width="25"
-										height="25"
-										alt="RSS Icon"
-										src="/icons/rss.svg"
-										style={{
-											filter: "var(--themefilter)",
-										}}
-									/>
+				<SessionProvider>
+					<div className="flex flex-row justify-center">
+						<div className="w-full p-4 sm:w-full md:w-[800px] m-5">
+							{showNavbar && (
+								<Navbar>
+									<div className="mobilehide">
+										<Image
+											src="/icons/profile.svg"
+											width="75"
+											height="100"
+											alt="Profile Picture"
+										/>
+									</div>
+									<Link href="/">
+										<h1 className="text-2xl">Elijah Potter</h1>
+									</Link>
+									<Spacer />
+									<a href="/rss.xml">
+										<Image
+											width="25"
+											height="25"
+											alt="RSS Icon"
+											src="/icons/rss.svg"
+											style={{
+												filter: "var(--themefilter)",
+											}}
+										/>
+									</a>
+									<UserStatus />
+								</Navbar>
+							)}
+							<Component {...pageProps} />
+							<footer className="mt-12 border-t border-gray-200 pt-6 text-center text-sm text-gray-600">
+								<a
+									href="https://github.com/elijah-potter/blog"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									View source on GitHub
 								</a>
-							</Navbar>
-						)}
-						<Component {...pageProps} />
-						<footer className="mt-12 border-t border-gray-200 pt-6 text-center text-sm text-gray-600">
-							<a
-								href="https://github.com/elijah-potter/blog"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								View source on GitHub
-							</a>
-						</footer>
+							</footer>
+						</div>
 					</div>
-				</div>
+				</SessionProvider>
 			</PostHogProvider>
 		</>
 	);
