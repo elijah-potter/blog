@@ -5,7 +5,7 @@ In particular, I've been thinking about how [I can eliminate waste](https://elij
 
 These efforts have been partially successful.
 I've found ways to speed up code review with an agent and improve the turnaround time on communication.
-I've been spending less time waiting and more time__working.__
+I've been spending less time waiting and more time __working.__
 But in the end, I don't feel that these performative actions have resulted in any real productivity gains. I realize now, that this was because I was focusing on the wrong thing.
 
 I was focusing on the process of getting stuff done, instead of focusing on how to actually get that same stuff done.
