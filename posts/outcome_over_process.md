@@ -38,7 +38,7 @@ For me, the process involves:
 The "process" will look different for you.
 It is composed of the individual steps needed to deliver the final outcome.
 
-## How You Got There Matters Less than Where You Are
+## Think About Where You're Going and Nothing Else
 
 [An occasional check-in](https://elijahpotter.dev/articles/improving-rust-compile-times-by-71-percent) on what the process itself looks like can be beneficial, but it should not be the focus of my attention.
 My attention should be on how to get things __done__ and more importantly how to get my work __in the hands of my users__ as fast as possible.
