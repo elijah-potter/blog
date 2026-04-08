@@ -15,6 +15,7 @@ x.com##[role="tab"]:has(span:has-text(/^For you$/i))
 x.com##div:has(> [data-testid="news_sidebar"]:first-child)
 x.com##[aria-label="Timeline: Trending now"]
 x.com##[aria-label="Who to follow"]
+x.com##body:has([role="tab"][aria-selected="true"]:has(*:has-text(/^For you$/i))) [aria-label="Timeline: Your Home Timeline"]
 
 www.reddit.com##[id="right-sidebar-contents"]
 www.reddit.com##[id="recent-communities-section"]
