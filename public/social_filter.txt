@@ -26,6 +26,6 @@ www.reddit.com##reddit-search-large
 www.reddit.com##div.prominent-search
 
 www.facebook.com##[data-video-id]
-www.facebook.com##[data-ad-rendering-role="story_message"]
+www.facebook.com##:matches-path(/^\/$/) [id="screen-root"]
 www.facebook.com##[data-imgperflogname="feedImage"]
 www.facebook.com##[aria-label="Reels"]
