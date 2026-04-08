@@ -1,0 +1,30 @@
+[Adblock Plus]
+! Title: Elijah's Social Media Filters
+! Homepage: https://elijahpotter.dev
+! Version: 1
+! Expires: 1 hour
+
+news.ycombinator.com##tr.athing:nth-child(n+14)
+news.ycombinator.com##.subtext
+
+x.com##[href*="/explore"]
+x.com##[href*="/i/premium_sign_up"]
+x.com##[href*="/i/connect_people"]
+x.com##[href*="/i/grok"]
+x.com##[role="tab"]:has(span:has-text(/^For you$/i))
+x.com##div:has(> [data-testid="news_sidebar"]:first-child)
+x.com##[aria-label="Timeline: Trending now"]
+x.com##[aria-label="Who to follow"]
+
+www.reddit.com##[id="right-sidebar-contents"]
+www.reddit.com##[id="recent-communities-section"]
+www.reddit.com##games-section-badge-controller
+www.reddit.com##[aria-label="Reddit resources"]
+www.reddit.com##left-nav-top-section
+www.reddit.com##reddit-search-large
+www.reddit.com##div.prominent-search
+
+www.facebook.com##[data-video-id]
+www.facebook.com##[data-ad-rendering-role="story_message"]
+www.facebook.com##[data-imgperflogname="feedImage"]
+www.facebook.com##[aria-label="Reels"]
