@@ -24,6 +24,7 @@ www.reddit.com##[aria-label="Reddit resources"]
 www.reddit.com##left-nav-top-section
 www.reddit.com##reddit-search-large
 www.reddit.com##div.prominent-search
+www.reddit.com##[id="expand-search-button"]
 
 www.facebook.com##[data-video-id]
 www.facebook.com##:matches-path(/^\/$/) [id="screen-root"]
