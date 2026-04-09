@@ -1,4 +1,5 @@
-import { binaryInlined, LocalLinter } from "harper.js";
+import { LocalLinter } from "harper.js";
+import { binaryInlined } from "harper.js/binaryInlined"
 import { startCase } from "lodash";
 import { getPostDeclarations, type PostDeclaration } from "./articles";
 
