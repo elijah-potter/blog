@@ -1302,13 +1302,20 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		image: null,
 		keywords: ["LLM", "AI Agents", "Productivity"],
 	},
-
 	outcome_over_process: {
 		pubDate: new Date(2026, 3, 3).toUTCString(),
 		description:
 			"I don't feel that these performative actions have resulted in any real productivity gains. I realize now, that this is because I was focusing on the wrong thing.",
 		image: null,
 		keywords: ["Harper", "Productivity"],
+	},
+	["harper_2.0"]: {
+		pubDate: new Date(2026, 3, 9).toUTCString(),
+		description: "We're finally releasing Harper 2.0.",
+		image: null,
+		keywords: [
+			"Harper",
+		],
 	},
 };
 
