@@ -30,3 +30,8 @@ www.facebook.com##[data-video-id]
 www.facebook.com##:matches-path(/^\/$/) [id="screen-root"]
 www.facebook.com##[data-imgperflogname="feedImage"]
 www.facebook.com##[aria-label="Reels"]
+
+m.facebook.com##[data-video-id]
+m.facebook.com##:matches-path(/^\/$/) [id="screen-root"]
+m.facebook.com##[data-imgperflogname="feedImage"]
+m.facebook.com##[aria-label="Reels"]
