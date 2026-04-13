@@ -1317,6 +1317,15 @@ const postDeclarations: Record<string, PostDeclaration> = {
 			"Harper",
 		],
 	},
+
+	we_are_in_this_together: {
+		pubDate: new Date(2026, 3, 13).toUTCString(),
+		description: "Harper's mission is to encourage and assist people with communicating their complex ideas and emotions.",
+		image: null,
+		keywords: [
+			"Harper",
+		],
+	},
 };
 
 export function getPostDeclarations(): Record<string, PostDeclaration> {
