@@ -5,8 +5,12 @@ import type { AdapterSession } from "next-auth/adapters";
 import GitHub from "next-auth/providers/github";
 import { db } from "./db";
 
+// The published adapter types lag behind the Drizzle ORM types used in this repo.
+// The runtime value is still the same MySQL2 database instance.
+const drizzleDb = db as unknown as Parameters<typeof DrizzleAdapter>[0];
+
 const nextAuth = NextAuth({
-	adapter: DrizzleAdapter(db),
+	adapter: DrizzleAdapter(drizzleDb),
 	providers: [GitHub],
 	callbacks: {
 		session({ session }) {
