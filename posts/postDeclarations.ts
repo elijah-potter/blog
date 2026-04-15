@@ -1,14 +1,17 @@
 import fs from "fs/promises";
 import path from "path";
-import { clone } from "lodash";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkParse from "remark-parse";
 import { unified } from "unified";
 import { parse as parseYaml } from "yaml";
-import {
-	getPostDeclarations as getLegacyPostDeclarations,
-	type PostDeclaration,
-} from "./articles";
+
+export type PostDeclaration = {
+	keywords: string[];
+	image: string | null;
+	pubDate: string;
+	description: string;
+	featured?: boolean;
+};
 
 type FrontmatterPostDeclaration = PostDeclaration & {
 	draft?: boolean;
@@ -97,12 +100,12 @@ function validateFrontmatter(
 function parseFrontmatter(
 	fileName: string,
 	fileContent: string,
-): FrontmatterPostDeclaration | null {
+): FrontmatterPostDeclaration {
 	const tree = frontmatterProcessor.parse(fileContent) as MarkdownRoot;
 	const firstChild = tree.children?.[0];
 
 	if (firstChild?.type !== "yaml") {
-		return null;
+		throw new Error(`Post ${fileName} is missing front matter.`);
 	}
 
 	const parsed = parseYaml(
@@ -122,7 +125,6 @@ export async function getPostDeclarations(): Promise<
 	const files = (await fs.readdir("./posts"))
 		.filter((file) => file.endsWith(".md"))
 		.sort();
-	const legacyPosts = getLegacyPostDeclarations();
 	const declarations = await Promise.all(
 		files.map(async (fileName) => {
 			const fileContent = await fs.readFile(
@@ -132,25 +134,14 @@ export async function getPostDeclarations(): Promise<
 			const key = path.basename(fileName, ".md");
 			const frontmatter = parseFrontmatter(fileName, fileContent);
 
-			if (frontmatter) {
-				if (frontmatter.draft) {
-					return null;
-				}
-
-				const { draft: _draft, ...postDeclaration } = frontmatter;
-				return [key, postDeclaration] as const;
-			}
-
-			const legacyDeclaration = legacyPosts[key];
-			if (!legacyDeclaration) {
+			if (frontmatter.draft) {
 				return null;
 			}
 
-			return [key, clone(legacyDeclaration)] as const;
+			const { draft: _draft, ...postDeclaration } = frontmatter;
+			return [key, postDeclaration] as const;
 		}),
 	);
 
 	return Object.fromEntries(declarations.filter((entry) => entry !== null));
 }
-
-export type { PostDeclaration };

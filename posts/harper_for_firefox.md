@@ -1,3 +1,16 @@
+---
+"description": "There's a great deal of overlap between those who use Harper and
+  those who use Firefox."
+"pubDate": "Fri, 20 Jun 2025 06:00:00 GMT"
+"keywords":
+  - "firefox"
+  - "chrome"
+  - "harper"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Harper for Firefox
 
 ![The Harper Firefox Extension](/images/harper_chrome_ext.png)

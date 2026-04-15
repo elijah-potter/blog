@@ -1,3 +1,18 @@
+---
+"description": "It has been a slow couple of months for my reading habit.
+  Although, now that I've said that out loud, I realize I say that every time."
+"pubDate": "Sun, 22 Jun 2025 06:00:00 GMT"
+"keywords":
+  - "books"
+  - "reading"
+  - "matt haig"
+  - "dale carnegie"
+  - "john green"
+"image": null
+"featured": false
+"draft": false
+---
+
 # The Books I Have Read Since April 2025
 
 It has been a slow couple of months for my reading habit.

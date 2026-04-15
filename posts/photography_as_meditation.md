@@ -1,3 +1,20 @@
+---
+"description": "Reflecting on the clarity photography brings."
+"pubDate": "Sat, 19 Apr 2025 06:00:00 GMT"
+"keywords":
+  - "photography and mindfulness"
+  - "meditative photography"
+  - "slowing down with a camera"
+  - "photography as awareness practice"
+  - "framing as understanding"
+  - "creative meditation"
+  - "visual appreciation"
+  - "mother photographer story"
+"image": "/images/pink_flower_tree.webp"
+"featured": false
+"draft": false
+---
+
 # Photography as Meditation
 
 The goal of meditation is to become more mindful and aware.

@@ -1,3 +1,14 @@
+---
+"description": "Linkarzu's recent video about Harper is a great primer on what it can do."
+"pubDate": "Fri, 23 Jan 2026 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "YouTube"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Linkarzu: Harper Is Getting Better
 
 Linkarzu's recent video about Harper is a great primer on what it can do if you spend a ton of time in Neovim (like I do). It's true: Harper is getting better.

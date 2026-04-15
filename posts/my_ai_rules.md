@@ -1,3 +1,15 @@
+---
+"description": "A draft about the rules I want to follow when using AI."
+"pubDate": "Wed, 16 Jul 2025 21:55:49 GMT"
+"keywords":
+  - "AI"
+  - "LLM"
+  - "writing"
+"image": null
+"featured": false
+"draft": true
+---
+
 # My AI Rules
 
 In a recent [study](https://arxiv.org/abs/2506.08872) researchers found that consistent use of LLMs

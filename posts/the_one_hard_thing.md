@@ -1,3 +1,26 @@
+---
+"description": "Reach further each day. The minimum effective dose."
+"pubDate": "Thu, 27 Mar 2025 06:00:00 GMT"
+"keywords":
+  - "productivity"
+  - "Pareto distribution"
+  - "one hard thing"
+  - "daily habit"
+  - "tasks"
+  - "morning routine"
+  - "harper-ls"
+  - "Harper Obsidian plugin"
+  - "Jetpack AI"
+  - "WebAssembly"
+  - "grammar checker"
+  - "circadian rhythm"
+  - "time management"
+  - "mental clarity"
+"image": null
+"featured": false
+"draft": false
+---
+
 # The One Hard Thing
 
 People (myself included) love to make cascading lists of tasks.

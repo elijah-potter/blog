@@ -1,3 +1,21 @@
+---
+"description": "I've come to the realization that there is a high degree of
+  specialization among academic fields. If we embrace this specialization
+  through customization, we could gain an advantage over other grammar checkers.
+  That's all to say: We want to enable authors and academics to customize Harper
+  to their specialized language."
+"pubDate": "Fri, 09 Jan 2026 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "Weir"
+  - "Obsidian"
+  - "Marketplace"
+  - "Open Source"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Imagine a Weir Marketplace 
 
 > For context, I maintain [an open-source grammar checker by the name of Harper.](https://writewithharper.com/)

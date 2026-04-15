@@ -1,3 +1,18 @@
+---
+"description": "Some experimentation shows that LLMs are extremely effective at
+  understanding and generating DSL code."
+"pubDate": "Fri, 19 Dec 2025 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "Weir"
+  - "LLMs"
+  - "AI"
+  - "OpenAI"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Generating Weir Code with LLMs
 
 As you know, I've been working on a small programming language called Weir for generating corrections to natural language.

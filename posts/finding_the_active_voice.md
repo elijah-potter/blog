@@ -1,3 +1,15 @@
+---
+"description": "How should we go about helping our users with their active voice?"
+"pubDate": "Mon, 26 Jan 2026 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "Weir"
+  - "The Active Voice"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Finding the Active Voice
 
 Last week, Harper hit a stroke of luck.

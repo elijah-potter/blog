@@ -1,3 +1,23 @@
+---
+"description": "You know—that awful (but strangely satisfying) space where the
+  majority of your commits are small pedantic edits that don't change the
+  end-user-experience at all?"
+"pubDate": "Tue, 17 Jun 2025 06:00:00 GMT"
+"keywords":
+  - "refactoring"
+  - "tech debt"
+  - "velocity"
+  - "rust-analyzer"
+  - "planning"
+  - "code quality"
+  - "harper"
+  - "bugs"
+  - "new features"
+"image": "/images/clouds.webp"
+"featured": false
+"draft": false
+---
+
 # Refactoring More and Faster
 
 ![Clouds in Colorado](/images/clouds.webp)

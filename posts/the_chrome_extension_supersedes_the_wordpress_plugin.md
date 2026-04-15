@@ -1,3 +1,24 @@
+---
+"description": "Several months ago, I announced the initial version of the
+  Harper WordPress plugin. In the interest of those still using it, I’d like to
+  give y’all an update."
+"pubDate": "Wed, 10 Sep 2025 06:00:00 GMT"
+"keywords":
+  - "Chrome Extension"
+  - "Harper"
+  - "WordPress Plugin"
+  - "WordPress.com"
+  - "Private Grammar Checker"
+  - "user data"
+  - "iteration"
+  - "review process"
+  - "out-of-date"
+  - "holistic experience"
+"image": null
+"featured": false
+"draft": false
+---
+
 # The Chrome Extension Supersedes the WordPress Plugin
 
 Several months ago, I announced the initial version of the Harper WordPress plugin. In the interest of those still using it, I’d like to give y’all an update.

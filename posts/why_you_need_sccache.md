@@ -1,3 +1,17 @@
+---
+"description": "You might not actually need it."
+"pubDate": "Sun, 29 Dec 2024 07:00:00 GMT"
+"keywords":
+  - "sccache"
+  - "rust"
+  - "development"
+  - "linux"
+  - "distributed"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Why You Need `sccache`
 
 As the maintainer of a [reasonably popular open source project](https://writewithharper.com) written in Rust, I find myself cloning PRs and swapping between branches dozens of times a day.

@@ -1,3 +1,16 @@
+---
+"description": "I don't feel that these performative actions have resulted in
+  any real productivity gains. I realize now, that this is because I was
+  focusing on the wrong thing."
+"pubDate": "Fri, 03 Apr 2026 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "Productivity"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Outcome over Process
 
 For the past few weeks, I've been thinking about I can be more productive.

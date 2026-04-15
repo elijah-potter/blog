@@ -1,3 +1,19 @@
+---
+"description": "This article introduces contributing to the open-source grammar
+  checker Harper by writing grammatical rules, outlining different approaches
+  for various skill levels."
+"pubDate": "Wed, 09 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "contributing"
+  - "open source"
+  - "Rust"
+  - "SequenceExpr"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Writing a Grammatical Rule for Harper
 
 [Harper](https://writewithharper.com) is a grammar checker that relies on concrete, legible grammatical rules.

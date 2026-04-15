@@ -1,3 +1,21 @@
+---
+"description": "An update on the long-awaited Harper Chrome extension, its
+  current state, and what to expect next."
+"pubDate": "Wed, 23 Apr 2025 06:00:00 GMT"
+"keywords":
+  - "Harper Chrome extension"
+  - "grammar checker extension"
+  - "on-device grammar checking"
+  - "Chrome extension status"
+  - "Harper plugin development"
+  - "privacy-focused writing tool"
+  - "Gutenberg editor support"
+  - "Harper Chrome PR update"
+"image": "/images/harper_chrome_ext.png"
+"featured": false
+"draft": false
+---
+
 # The Status of the Harper Chrome Extension
 
 Elijah! Elijah! When will we have a Chrome extension for [Harper](https://writewithharper.com)?

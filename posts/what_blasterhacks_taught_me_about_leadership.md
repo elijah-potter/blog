@@ -1,3 +1,22 @@
+---
+"description": "It's easier than you think."
+"pubDate": "Fri, 19 Apr 2024 06:00:00 GMT"
+"keywords":
+  - "Colorado School of Mines"
+  - "hackathon"
+  - "blasterhacks"
+  - "sveltekit"
+  - "firebase"
+  - "snow"
+  - "leadership"
+  - "leader"
+  - "mental health"
+  - "wellbeing"
+"image": "/images/kanban_blasterhacks.jpg"
+"featured": false
+"draft": false
+---
+
 # What Blasterhacks Taught Me About Leadership
 
 ## The Beginning

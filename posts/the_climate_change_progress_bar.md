@@ -1,3 +1,18 @@
+---
+"description": "A proposal."
+"pubDate": "Thu, 12 Oct 2023 06:00:00 GMT"
+"keywords":
+  - "climate change"
+  - "indonesia"
+  - "idea"
+  - "pitch"
+  - "startup"
+  - "feedback"
+"image": "/images/blue_marble.jpg"
+"featured": false
+"draft": false
+---
+
 # The Climate Change Progress Bar
 
 ![The Blue Marble](/images/blue_marble.jpg)

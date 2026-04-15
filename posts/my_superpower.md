@@ -1,3 +1,16 @@
+---
+"description": "It was not until relatively late in my academic career when I
+  realized my thirst for the written word had given me a superpower."
+"pubDate": "Sat, 14 Mar 2026 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "Reading"
+  - "Superpower"
+"image": "/images/giraffe.webp"
+"featured": false
+"draft": false
+---
+
 # My Superpower
 
 ![A photo taken by myself of a giraffe resting its head on a pole.](/images/giraffe.webp)

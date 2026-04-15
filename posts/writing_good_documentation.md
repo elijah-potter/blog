@@ -1,3 +1,23 @@
+---
+"description": "In an age where large language models have exceptional context
+  windows, it's easy to fall into the trap of believing a system is simpler than
+  it is."
+"pubDate": "Tue, 15 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "documentation"
+  - "writing documentation"
+  - "good documentation"
+  - "code documentation"
+  - "simplicity"
+  - "why"
+  - "bug reports"
+  - "screenshots"
+  - "blog"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Writing Good Documentation
 
 I believe that good documentation is more important than ever. In an age where large language models have exceptional context windows, it's easy to fall into the trap of believing a system is simpler than it is. To test the limits of their abilities, I'll often feed Harper code in and ask for their explanation of it's inner workings.

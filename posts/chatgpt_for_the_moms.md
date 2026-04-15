@@ -1,3 +1,21 @@
+---
+"description": "Advice you can give your mom (or other nontechnical person) for
+  how to use ChatGPT wisely and effectively."
+"pubDate": "Wed, 23 Apr 2025 06:00:00 GMT"
+"keywords":
+  - "ChatGPT tips for moms"
+  - "AI literacy for parents"
+  - "using ChatGPT safely"
+  - "web search tool ChatGPT"
+  - "critical thinking with AI"
+  - "family technology advice"
+  - "AI limitations"
+  - "responsible AI use"
+"image": "/images/guggenheim.webp"
+"featured": false
+"draft": false
+---
+
 # ChatGPT for the Moms
 
 ![Spring has sprung, and Guggenheim shows it.](/images/guggenheim.webp)

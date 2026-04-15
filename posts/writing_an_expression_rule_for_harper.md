@@ -1,3 +1,20 @@
+---
+"description": "This article guides contributors on writing a Harper
+  expression-based rule. It covers defining the rule's expression, writing test
+  cases, and implementing the `match_to_lint` function for user suggestions."
+"pubDate": "Wed, 09 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "contributing"
+  - "open source"
+  - "Rust"
+  - "SequenceExpr"
+  - "medium"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Writing an Expression Rule for Harper
 
 _This is part of a series.

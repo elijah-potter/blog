@@ -1,3 +1,18 @@
+---
+"description": "The goal of this page is to formalize my answer so that we can
+  judiciously deal with patch requests produced by LLMs."
+"pubDate": "Mon, 23 Mar 2026 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "PR"
+  - "LLM"
+  - "Agents"
+  - "Claude"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Harper's Policy on PRs Authored by Agents
 
 A few weeks ago, I was invited to speak at my local chapter of the Association for Computing Machinery (ACM). Being on a college campus — in this case, the Colorado School of Mines — much of my audience were students. My presentation, which was about how open source software tends to outperform proprietary software in the marketplace due to the ability for its users to contribute back in ways that are genuinely valuable, went well. I hope I am invited back.  

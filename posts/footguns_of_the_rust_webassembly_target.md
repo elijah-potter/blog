@@ -1,3 +1,23 @@
+---
+"description": "Four years in Rust + WebAssembly taught me these 3 lethal
+  footguns—don’t learn them the hard way."
+"pubDate": "Tue, 08 Apr 2025 06:00:00 GMT"
+"keywords":
+  - "Rust"
+  - "WebAssembly"
+  - "async functions"
+  - "Linter"
+  - "wasm_bindgen"
+  - "IO limitations"
+  - "inlining"
+  - "Obsidian plugins"
+  - "Harper"
+  - "Automattic"
+"image": "/images/rail.webp"
+"featured": false
+"draft": false
+---
+
 # Footguns of the Rust WebAssembly Target
 
 ![A trail in Golden, Colorado](/images/rail.webp)

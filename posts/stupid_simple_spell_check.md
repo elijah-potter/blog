@@ -1,3 +1,24 @@
+---
+"description": "It almost feels wrong. Maybe it is."
+"pubDate": "Mon, 04 Mar 2024 07:00:00 GMT"
+"keywords":
+  - "harper"
+  - "grammarly"
+  - "languagetool"
+  - "grammar"
+  - "neovim"
+  - "rust"
+  - "math"
+  - "how"
+  - "does"
+  - "spellcheck"
+  - "work"
+  - "better"
+"image": "/images/antiques.webp"
+"featured": false
+"draft": false
+---
+
 # Stupid-Simple Spell-Check
 
 ![A sign advertising for antiques, but misspelled.](/images/antiques.webp)

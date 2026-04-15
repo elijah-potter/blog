@@ -1,3 +1,17 @@
+---
+"description": "Spoiler: there aren't many."
+"pubDate": "Tue, 04 Feb 2025 07:00:00 GMT"
+"keywords":
+  - "async"
+  - "sync"
+  - "communication"
+  - "project"
+  - "management"
+"image": null
+"featured": false
+"draft": false
+---
+
 # The Books I Read in January 2025
 
 I only got to read two full books this month.

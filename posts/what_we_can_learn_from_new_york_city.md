@@ -1,3 +1,23 @@
+---
+"description": "I've been told New York is an acquired taste. I can see why they
+  might say that."
+"pubDate": "Sat, 13 Sep 2025 06:00:00 GMT"
+"keywords":
+  - "New York City"
+  - "NYC"
+  - "AI Group"
+  - "in-office experiment"
+  - "Y Combinator"
+  - "AI Group"
+  - "James"
+  - "tough conversations"
+  - "code reviews"
+  - "practical"
+"image": "/images/nyc_from_a8c_noho_office.png"
+"featured": false
+"draft": false
+---
+
 ## What We Can Learn from New York City
 
 ![The view from Automattic's NoHo Office](/images/nyc_from_a8c_noho_office.png)

@@ -1,3 +1,15 @@
+---
+"description": "🎉"
+"pubDate": "Thu, 06 Feb 2025 07:00:00 GMT"
+"keywords":
+  - "harper"
+  - "grammar"
+  - "raycast"
+"image": null
+"featured": false
+"draft": false
+---
+
 # A Harper Record
 
 When we started work on [`harper.js`](https://writewithharper.com/docs/harperjs/introduction), our goal was simple.

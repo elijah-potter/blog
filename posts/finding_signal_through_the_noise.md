@@ -1,3 +1,23 @@
+---
+"description": "As the maintainer of
+  [Harper](https://github.com/automattic/harper), I read through dozens of
+  issues and pull requests per day and countless more per week. At times, it can
+  get overwhelming."
+"pubDate": "Mon, 03 Nov 2025 07:00:00 GMT"
+"keywords":
+  - "complexity"
+  - "software engineering"
+  - "tech debt"
+  - "Harper"
+  - "monorepo"
+  - "CI/CD"
+  - "developer experience"
+  - "automation"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Finding Signal Through The Noise  
 
 As the maintainer of [Harper](https://github.com/automattic/harper), I read through dozens of issues and pull requests per day and countless more per week.

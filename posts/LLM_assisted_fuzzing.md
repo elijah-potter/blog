@@ -1,3 +1,16 @@
+---
+"description": "A new approach to false-positives."
+"pubDate": "Fri, 21 Mar 2025 06:00:00 GMT"
+"keywords":
+  - "harper"
+  - "grammar"
+  - "ollama"
+  - "quality"
+"image": null
+"featured": false
+"draft": false
+---
+
 # LLM-Assisted Fuzzing: A New Approach to False-Positives
 
 > __Preface__: this post was actually written on February 24th, despite being published today.

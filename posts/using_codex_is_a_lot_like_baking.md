@@ -1,3 +1,23 @@
+---
+"description": "The biggest problem with AI programming today is not what I
+  expected a few years ago. I truly didn't believe they would be able to do any
+  economically valuable work."
+"pubDate": "Mon, 06 Oct 2025 06:00:00 GMT"
+"keywords":
+  - "Codex"
+  - "OpenAI"
+  - "AI"
+  - "LLM"
+  - "Programming"
+  - "Agent"
+  - "Workflow"
+  - "Planning Document"
+  - "AI Programming"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Using Codex is a Lot Like Baking
 
 The biggest problem with AI programming today is not what I expected a few years ago.

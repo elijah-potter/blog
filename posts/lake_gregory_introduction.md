@@ -1,3 +1,16 @@
+---
+"description": "An introduction to Lake Gregory and the climate modeling ideas
+  behind the project."
+"pubDate": "Fri, 03 Feb 2023 13:14:48 GMT"
+"keywords":
+  - "Lake Gregory"
+  - "climate modeling"
+  - "fluid dynamics"
+"image": null
+"featured": false
+"draft": true
+---
+
 # Lake Gregory
 
 ## Current Climate

@@ -1,3 +1,12 @@
+---
+"description": "I've decided to give the Helium browser a shot. So far, I'm impressed!"
+"pubDate": "Sat, 04 Oct 2025 20:45:58 GMT"
+"keywords": []
+"image": "/images/helium_website.png"
+"featured": false
+"draft": true
+---
+
 # Trying Out the Helium Browser
 
 ![The Helium Website](/images/helium_website.png)

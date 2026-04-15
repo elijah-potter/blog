@@ -1,3 +1,16 @@
+---
+"description": "Why does so much of the software we use feel harmful?"
+"pubDate": "Mon, 09 Feb 2026 07:00:00 GMT"
+"keywords":
+  - "Automattic"
+  - "AI"
+  - "TikTok"
+  - "Rambling"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Building Software That Is Good for Humans
 
 Earlier today, [the European Commission released a report](https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act) detailing their initial findings that TikTok's core recommendation algorithm is in breach of the Digital Services Act.

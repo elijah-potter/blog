@@ -1,3 +1,33 @@
+---
+"description": "The end result is a portable neural network that achieves ~95%
+  accuracy on grammatically correct text."
+"pubDate": "Wed, 16 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "chunker"
+  - "natural language processing"
+  - "NLP"
+  - "grammar checker"
+  - "agreement error"
+  - "noun phrase"
+  - "subject"
+  - "object"
+  - "Brill Chunker"
+  - "neural network"
+  - "BiLSTM"
+  - "Burn"
+  - "Rust"
+  - "machine learning"
+  - "embeddings"
+  - "Harper"
+  - "UPOS"
+  - "training"
+  - "accuracy"
+  - "transformer"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Training a Chunker with Burn
 
 ![Graffiti in an Underpass](/images/underpass.webp)

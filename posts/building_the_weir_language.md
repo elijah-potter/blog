@@ -1,3 +1,16 @@
+---
+"description": "A domain-specific language for describing patterns in natural language."
+"pubDate": "Thu, 11 Dec 2025 07:00:00 GMT"
+"keywords":
+  - "Weir"
+  - "Harper"
+  - "Language"
+  - "DSL"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Building the Weir Language
 
 Most large organizations have a style guide.

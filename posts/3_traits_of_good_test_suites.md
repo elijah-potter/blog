@@ -1,3 +1,17 @@
+---
+"description": "Don't believe the clickbait."
+"pubDate": "Sun, 23 Mar 2025 06:00:00 GMT"
+"keywords":
+  - "harper"
+  - "grammar"
+  - "testing"
+  - "unit"
+  - "integration"
+"image": null
+"featured": false
+"draft": false
+---
+
 # 3 Traits of Good Test Suites
 
 As evidenced by my previous posts on [LLM-Assisted Fuzzing](https://elijahpotter.dev/articles/LLM_assisted_fuzzing), I've been dedicating a lot of my mental bandwidth to maintaining a low false-positive rate while we improve [Harper's rule coverage](https://github.com/automattic/harper). Part of that is through fuzzing and dogfooding, some can be through statistics, but the first lines of defense will continue to be unit and integration testing. This past week particularly, I've been reading up on how other [big linting programs](https://github.com/rust-lang/rust-analyzer) approach this problem.

@@ -1,3 +1,24 @@
+---
+"description": "Grammar checking can be cumbersome, especially when its sloth
+  gets in the way of your thinking. That’s part of why so many prefer Harper
+  over Grammarly or LanguageTool."
+"pubDate": "Mon, 28 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "grammar checking"
+  - "Harper"
+  - "Neovim"
+  - "Chrome extension"
+  - "writing"
+  - "efficiency"
+  - "typos"
+  - "suggestions"
+  - "keyboard"
+  - "writing"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Better UI for Grammar Checking
 
 Grammar checking can be cumbersome, especially when its sloth gets in the way of your thinking. That’s part of why so many prefer [Harper](https://writewithharper.com) over Grammarly or LanguageTool. Waiting four seconds per edit can add up over long days of writing.

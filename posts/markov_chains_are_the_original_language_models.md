@@ -1,3 +1,24 @@
+---
+"description": "Back in my day, we used math for autocomplete."
+"pubDate": "Wed, 31 Jan 2024 07:00:00 GMT"
+"keywords":
+  - "linear algebra"
+  - "linear"
+  - "algebra"
+  - "rust"
+  - "mathematics"
+  - "college"
+  - "high school"
+  - "artificial intelligence"
+  - "autocomplete"
+  - "llm"
+  - "large language models"
+  - "chatgpt"
+"image": "/images/andrei_markov.jpg"
+"featured": true
+"draft": false
+---
+
 # Markov Chains are the Original Language Models
 
 ![An old car interior](/images/old_car.webp)

@@ -1,3 +1,18 @@
+---
+"description": "I have been seeing an increasingly prevalent trend of people
+  showing up in online spaces flaunting that they are writing with the
+  assistance of AI. They seem to be proud of this. They shouldn't be."
+"pubDate": "Mon, 02 Mar 2026 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "LLM"
+  - "AI"
+  - "Writing"
+"image": "/images/green_bird.webp"
+"featured": true
+"draft": false
+---
+
 # Do Not Write with an LLM
 
 ![A photo taken by myself of a green bird.](/images/green_bird.webp)

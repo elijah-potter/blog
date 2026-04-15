@@ -1,3 +1,26 @@
+---
+"description": "A boon if you comment your code."
+"pubDate": "Wed, 19 Mar 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "grammar checker"
+  - "VSCode extension"
+  - "Language Server Protocol"
+  - "ESLint"
+  - "Pylance"
+  - "Visual Studio Marketplace"
+  - "open source"
+  - "plugin"
+  - "code editors"
+  - "language server"
+  - "integrations"
+  - "programming languages"
+  - "typos"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Harper Is in Cursor and Visual Studio Code
 
 Harper is a grammar checker for developers. Its roots are in code editors like Neovim, Helix, Zed, and you guessed it—Visual Studio Code. I don't think a lot of my followers know this, so I thought I'd give it a little shout-out here.

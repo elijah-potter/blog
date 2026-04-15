@@ -1,3 +1,21 @@
+---
+"description": "How I preview my Markdown quickly and reliably."
+"pubDate": "Sat, 13 Jul 2024 06:00:00 GMT"
+"keywords":
+  - "harper-ls"
+  - "harper"
+  - "grammar checking"
+  - "markdown"
+  - "rendering"
+  - "html"
+  - "css"
+  - "katex"
+  - "neovim"
+"image": "/images/tatum_screenshot.webp"
+"featured": false
+"draft": false
+---
+
 # The Simplest Neovim Markdown Setup
 
 I am not one who enjoys complexity.

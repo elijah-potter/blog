@@ -1,3 +1,12 @@
+---
+"description": "Wisdom from my grandmother."
+"pubDate": "Thu, 30 Jan 2025 07:00:00 GMT"
+"keywords": []
+"image": null
+"featured": false
+"draft": false
+---
+
 # The Three Steps to an Apology
 
 My grandmother is a wonderful woman. She never leaves the house without a least a little bit of purple. Maybe a keychain or a purse. Sometimes, she wouldn't leave the house without a lot of purple, head to toe. She also never forgets a smile and a good attitude.

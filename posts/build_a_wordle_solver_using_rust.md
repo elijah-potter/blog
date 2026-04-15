@@ -1,3 +1,20 @@
+---
+"description": "I built a Wordle solver in Rust to beat my grandma. Follow the
+  journey of how I did, and how I failed."
+"pubDate": "Tue, 01 Mar 2022 07:00:00 GMT"
+"keywords":
+  - "wordle"
+  - "rust"
+  - "information"
+  - "theory"
+  - "elimination"
+  - "fast"
+  - "blazing"
+"image": "/images/wordle_example.png"
+"featured": false
+"draft": false
+---
+
 # Build a Wordle Solver Using Rust
 
 ## The Game

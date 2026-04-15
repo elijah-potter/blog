@@ -1,3 +1,21 @@
+---
+"description": "This post explains how to add simple phrase corrections to the
+  grammar checker Harper—a beginner-friendly way to address common,
+  context-independent errors and contribute to its grammar checking
+  capabilities."
+"pubDate": "Wed, 09 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "contributing"
+  - "open source"
+  - "Rust"
+  - "SequenceExpr"
+  - "easy"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Writing a Phrase Correction for Harper
 
 _This is part of a series.

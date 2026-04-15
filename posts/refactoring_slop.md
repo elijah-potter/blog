@@ -1,3 +1,19 @@
+---
+"description": "There are a gazillion guides out there about the various
+  techniques you can use to improve the quality of AI generated code. Instead, I
+  want to talk about some more generally applicable ideas that I've found
+  especially useful in the age of AI."
+"pubDate": "Fri, 20 Feb 2026 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "LLM"
+  - "Refactoring"
+  - "Open Source"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Refactoring Slop
 
 The term "slop" is rapidly entering the conventional English lexicon.

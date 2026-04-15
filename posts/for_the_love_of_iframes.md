@@ -1,3 +1,16 @@
+---
+"description": "Chronically underrated, chronically over-prescribed"
+"pubDate": "Sun, 13 Oct 2024 06:00:00 GMT"
+"keywords":
+  - "iframe"
+  - "harper"
+  - "blogging"
+  - "meta"
+"image": null
+"featured": false
+"draft": false
+---
+
 # For The Love of `iframe`s.
 
 I adore a good `iframe`.

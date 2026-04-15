@@ -1,3 +1,14 @@
+---
+"description": "Harper's mission is to encourage and assist people with
+  communicating their complex ideas and emotions."
+"pubDate": "Mon, 13 Apr 2026 06:00:00 GMT"
+"keywords":
+  - "Harper"
+"image": null
+"featured": false
+"draft": false
+---
+
 # We Are in This Together
 
 Today, Jason Adams joined me and some of the other Automatticians based in the Denver area for a burrito.

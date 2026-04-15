@@ -1,3 +1,16 @@
+---
+"description": "Below you'll find a small interface for some generative art
+  algorithms that I've made."
+"pubDate": "Sat, 31 Dec 2022 00:17:37 GMT"
+"keywords":
+  - "generative art"
+  - "algorithms"
+  - "browser"
+"image": null
+"featured": false
+"draft": true
+---
+
 # Generative Art
 
 Below you'll find a small interface for some generative art algorithms that I've made.

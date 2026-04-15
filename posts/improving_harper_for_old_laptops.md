@@ -1,3 +1,20 @@
+---
+"description": "The most common complaint I’ve been hearing as of late relates
+  to Harper’s performance. I’ve been told that Harper has gotten slow. As it
+  turns out, the problem wasn’t the actual grammar checking, it was rendering
+  the highlights on the page."
+"pubDate": "Fri, 19 Sep 2025 06:00:00 GMT"
+"keywords":
+  - "Chrome extension performance"
+  - "Custom Highlight API"
+  - "layout thrash"
+  - "DOM reflow"
+  - "contenteditable highlights"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Improving Harper for Old Laptops
 
 The most common complaint I’ve been hearing as of late relates to Harper’s performance. I’ve been told that Harper has gotten slow.  

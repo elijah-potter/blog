@@ -1,3 +1,23 @@
+---
+"description": "The title of this post is somewhat misleading. Local-first
+  software rarely needs to be scaled at all."
+"pubDate": "Fri, 04 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "local-first"
+  - "on-device"
+  - "scalability"
+  - "efficiency"
+  - "Hacker News"
+  - "user acquisition"
+  - "performance"
+  - "Java"
+  - "AWS"
+  - "lean code"
+"image": "/images/flatirons.webp"
+"featured": true
+"draft": false
+---
+
 # Local-First Software is Easier to Scale
 
 ![The Flatirons](/images/flatirons.webp)

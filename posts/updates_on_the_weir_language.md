@@ -1,3 +1,18 @@
+---
+"description": "In [my last blog post](./building_the_weir_language), I
+  described the why, what, and how of the Weir programming language. Before
+  signing off for the day, I just wanted to give a few updates on the Weir
+  language project."
+"pubDate": "Wed, 17 Dec 2025 07:00:00 GMT"
+"keywords":
+  - "Weir"
+  - "Harper"
+  - "DSL"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Updates on the Weir Language
 
 In [my last blog post](./building_the_weir_language), I described the why, what, and how of the Weir programming language.

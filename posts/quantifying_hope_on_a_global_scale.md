@@ -1,3 +1,21 @@
+---
+"description": "An experiment on how to live in a seemingly hopeless world."
+"pubDate": "Fri, 20 Oct 2023 06:00:00 GMT"
+"keywords":
+  - "hope"
+  - "experiment"
+  - "design"
+  - "makerspace"
+  - "colorado school of mines"
+  - "web scraping"
+  - "asp.net core"
+  - "python"
+  - "rust"
+"image": "/images/hope_sketch.webp"
+"featured": false
+"draft": false
+---
+
 # Quantifying Hope on a Global Scale
 
 **_Hope_** is a somewhat nebulous word.

@@ -1,3 +1,16 @@
+---
+"description": "Why collaboration still matters when kept intentional."
+"pubDate": "Tue, 18 Nov 2025 07:00:00 GMT"
+"keywords":
+  - "collaboration"
+  - "open source"
+  - "motivation"
+  - "community"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Re: Collaboration Sucks
 
 Earlier this week, I came across a really great post from a product engineer over at PostHog. If you haven't already, I highly recommend [reading it](https://newsletter.posthog.com/p/collaboration-sucks). With the title "Collaboration sucks," I think it makes its message clear.

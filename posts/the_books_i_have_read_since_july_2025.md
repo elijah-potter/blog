@@ -1,3 +1,21 @@
+---
+"description": "I reflect about the recent books I have read and the things I
+  (and you) can learn from them."
+"pubDate": "Mon, 01 Sep 2025 06:00:00 GMT"
+"keywords":
+  - "book recommendations"
+  - "reading list"
+  - "stoicism"
+  - "productivity"
+  - "cal newport"
+  - "book review"
+  - "self improvement"
+  - "reading"
+"image": "/images/portland_rose.png"
+"featured": false
+"draft": false
+---
+
 # The Books I Have Read Since July of 2025
 
 ![Portland Rose](/images/portland_rose.png)

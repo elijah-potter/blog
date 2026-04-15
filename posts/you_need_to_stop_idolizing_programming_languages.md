@@ -1,3 +1,15 @@
+---
+"description": "I am tired of it."
+"pubDate": "Sun, 17 Jul 2022 05:06:43 GMT"
+"keywords":
+  - "rust"
+  - "c++"
+  - "javascript"
+"image": null
+"featured": false
+"draft": true
+---
+
 # You Need to Stop Idolizing Programming Languages
 
 ## I’m tired of it

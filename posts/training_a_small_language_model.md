@@ -1,3 +1,16 @@
+---
+"description": "I've built and trained an extremely small language model from
+  scratch, specifically designed for short-form sentence rewriting tasks that
+  are highly resource constrained."
+"pubDate": "Tue, 03 Feb 2026 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "LM"
+"image": "/images/blue_bird.webp"
+"featured": false
+"draft": false
+---
+
 # Training a Small Language Model
 
 ![A photo taken by myself of a blue bird.](/images/blue_bird.webp)

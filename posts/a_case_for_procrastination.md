@@ -1,3 +1,19 @@
+---
+"description": "Or: why doing things at the last minute actually saves time. I
+  talk about the importance of shockingly fast iteration cycles and lean
+  manufacturing."
+"pubDate": "Wed, 27 Sep 2023 06:00:00 GMT"
+"keywords":
+  - "lean"
+  - "lean startup"
+  - "lean manufacturing"
+  - "iteration"
+  - "entrepreneurship"
+"image": "/images/model_t.jpg"
+"featured": false
+"draft": false
+---
+
 # A Case for Procrastination
 
 ![A linup of Model T Fords](/images/model_t.jpg)

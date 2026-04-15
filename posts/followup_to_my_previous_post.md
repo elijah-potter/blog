@@ -1,3 +1,16 @@
+---
+"description": "I received a bit of a backlash from my previous post. I hope to
+  clear up my intentions and a deeper meaning behind what I said."
+"pubDate": "Fri, 15 Jul 2022 04:19:36 GMT"
+"keywords":
+  - "apology"
+  - "discussion"
+  - "programming languages"
+"image": null
+"featured": false
+"draft": true
+---
+
 # Followup To My Previous Post
 
 ## Addressing History

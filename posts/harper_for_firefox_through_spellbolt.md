@@ -1,3 +1,26 @@
+---
+"description": "SpellBolt is a Firefox extension that delivers Harper's
+  fantastic grammar checking straight into your Firefox browser."
+"pubDate": "Mon, 19 May 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "Firefox"
+  - "Chrome"
+  - "grammar checker"
+  - "extension"
+  - "SpellBolt"
+  - "Mozilla"
+  - "addons"
+  - "offline grammar checking"
+  - "harper.js"
+  - "open-source"
+  - "pluggable architecture"
+  - "contributions"
+"image": "/images/ford_street.webp"
+"featured": false
+"draft": false
+---
+
 # Harper in Firefox Through SpellBolt
 
 ![Ford Street, Golden, Colorado](/images/ford_street.webp)

@@ -1,3 +1,18 @@
+---
+"description": "There are times where it is prudent to use an AI agent (like
+  Codex) aggressively. There are other times where they should be avoided like
+  the plague. The question of into which bucket a particular endeavor falls is
+  difficult to answer."
+"pubDate": "Fri, 27 Mar 2026 06:00:00 GMT"
+"keywords":
+  - "LLM"
+  - "AI Agents"
+  - "Productivity"
+"image": null
+"featured": false
+"draft": false
+---
+
 # When (Not) to Use an Agent 
 
 There are times where it is prudent to use an AI agent (like Codex) aggressively. There are other times where they should be avoided like the plague. The question of into which bucket a particular endeavor falls is difficult to answer.

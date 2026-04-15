@@ -1,3 +1,20 @@
+---
+"description": "In which I go through the process of designing, building, and
+  testing a vector graphic pen plotter."
+"pubDate": "Tue, 18 Oct 2022 06:00:00 GMT"
+"keywords":
+  - "pen"
+  - "plotter"
+  - "rust"
+  - "arduino"
+  - "design"
+  - "learn"
+  - "engineering"
+"image": "/images/pen_plotter_drawing_hilbert2.jpeg"
+"featured": false
+"draft": false
+---
+
 # How I Designed (and built) My Own Pen Plotter
 
 For the last few months, after reading Preslav Rachev's book [Generative Art in Go](https://p5v.gumroad.com/l/generative-art-in-golang), I have been playing around with writing algorithms that create interesting graphics. I eventually ended up building a [modular canvas library](https://github.com/elijah-potter/denim) for Rust to make that easier to do, for me and other people.

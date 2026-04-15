@@ -1,3 +1,24 @@
+---
+"description": "It didn't work for me, and if you reading this, it probably
+  won't work for you either."
+"pubDate": "Sun, 29 Oct 2023 06:00:00 GMT"
+"keywords":
+  - "arch"
+  - "linux"
+  - "neovim"
+  - "nvim"
+  - "notes"
+  - "notetaking"
+  - "latex"
+  - "markdown"
+  - "handwriting"
+  - "college"
+  - "colorado school of mines"
+"image": "/images/pen_paper.webp"
+"featured": true
+"draft": false
+---
+
 # Do _Not_ Type Your Notes
 
 ![A man taking notes on pen and paper](/images/pen_paper.webp)

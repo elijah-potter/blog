@@ -1,3 +1,21 @@
+---
+"description": "Where did Harper come from?"
+"pubDate": "Tue, 06 Aug 2024 06:00:00 GMT"
+"keywords":
+  - "harper-ls"
+  - "harper"
+  - "grammar checking"
+  - "markdown"
+  - "html"
+  - "css"
+  - "neovim"
+  - "nomenclature"
+  - "naming"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Naming Harper
 
 [Someone](https://github.com/elijah-potter/harper/issues/103) recently asked me where the name [Harper](https://writewithharper.com) came from.

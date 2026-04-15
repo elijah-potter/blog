@@ -1,3 +1,28 @@
+---
+"description": "After receiving some feedback related to the suggestion box's
+  visual unpleasantness and difficulty to understand intuitively, I've started
+  making some modifications. Nothing drastic—I don't want to confuse existing
+  users."
+"pubDate": "Mon, 19 May 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "Firefox"
+  - "Chrome"
+  - "grammar checker"
+  - "extension"
+  - "SpellBolt"
+  - "Mozilla"
+  - "addons"
+  - "offline grammar checking"
+  - "harper.js"
+  - "open-source"
+  - "pluggable architecture"
+  - "contributions"
+"image": "/images/guggenheim_2.png"
+"featured": false
+"draft": false
+---
+
 # Quality Is the Most Important Metric
 
 Harper's Chrome extension continues to come along beautifully. I'm actively working to make it more useful and responsive, slowly crushing bugs that I hear about from our users and contributors. I will not go over them here, since our [closed pull requests](https://github.com/Automattic/harper/pulls?q=sort%3Aupdated-desc+is%3Apr+is%3Aclosed) should speak for themselves. I would, however, like to rapid-fire some of the small improvements and ideas about Quality that I've been brewing up this week.

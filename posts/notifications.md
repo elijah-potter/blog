@@ -1,3 +1,17 @@
+---
+"description": "The mornings are for deep work."
+"pubDate": "Sun, 02 Feb 2025 07:00:00 GMT"
+"keywords":
+  - "deep"
+  - "work"
+  - "open-source"
+  - "github"
+  - "notifications"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Notifications
 
 I have found that the first couple hours of the day are my most productive.

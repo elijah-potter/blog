@@ -1,3 +1,21 @@
+---
+"description": "If you maintain or work on a project in any compiled language,
+  particularly a language that is known for having a slow compiler, I believe it
+  is critical to regularly schedule time to do an analysis of your build process
+  and make adjustments if necessary."
+"pubDate": "Thu, 06 Nov 2025 07:00:00 GMT"
+"keywords":
+  - "Rust"
+  - "Compiler Optimization"
+  - "Build Time"
+  - "LTO"
+  - "Codegen Units"
+  - "Developer Experience"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Improving Rust Compile Times By 71%
 
 If you maintain or work on a project in any compiled language, particularly a language that is known for having a slow compiler, I believe it is critical to regularly schedule time to do an analysis of your build process and make adjustments if necessary. 

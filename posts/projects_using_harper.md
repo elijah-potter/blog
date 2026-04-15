@@ -1,3 +1,16 @@
+---
+"description": "I just found out that some new projects are using Harper. Could
+  yours be next?"
+"pubDate": "Tue, 23 Dec 2025 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "Open Source"
+  - "GitHub"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Some New Projects Are Using Harper
 
 I recently did some snooping ([through Dependabot](https://github.blog/news-insights/product-news/keep-all-your-packages-up-to-date-with-dependabot/)) on what open source projects have been using Harper.

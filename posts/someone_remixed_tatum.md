@@ -1,3 +1,13 @@
+---
+"description": "A quick shout-out."
+"pubDate": "Tue, 30 Dec 2025 07:00:00 GMT"
+"keywords":
+  - "Tatum"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Someone Remixed Tatum
 
 A while back, I wrote a small tool, dubbed "Tatum", for rendering Markdown to HTML for use alongside Neovim.

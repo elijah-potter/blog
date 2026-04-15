@@ -1,3 +1,15 @@
+---
+"description": "Controls and sources for the Lake Gregory climate modeling project."
+"pubDate": "Fri, 03 Feb 2023 13:14:48 GMT"
+"keywords":
+  - "Lake Gregory"
+  - "climate modeling"
+  - "sources"
+"image": null
+"featured": false
+"draft": true
+---
+
 ### Controls
 
 | Function                        |        Key |

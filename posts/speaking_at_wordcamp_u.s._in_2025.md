@@ -1,3 +1,24 @@
+---
+"description": "I was recently encouraged to submit a talk proposal to the AI
+  track at WordCamp US. I was more than happy to oblige, and to my surprise, I
+  got in."
+"pubDate": "Fri, 25 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "WordCamp US"
+  - "AI"
+  - "Machine Learning"
+  - "Edge Computing"
+  - "Harper"
+  - "WordPress"
+  - "Writing AI"
+  - "Edge AI"
+  - "Model Deployment"
+  - "Writing Tools"
+"image": "/images/wordcamp_us_speaker_2025.png"
+"featured": false
+"draft": false
+---
+
 # Speaking at WordCamp U.S. in August
 
 I was recently encouraged to submit a talk proposal to the AI track at WordCamp US.

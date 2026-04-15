@@ -1,3 +1,26 @@
+---
+"description": "If there is one thing o3 is useful for, it's __finding canonical
+  documentation for complex subjects.__"
+"pubDate": "Wed, 14 May 2025 06:00:00 GMT"
+"keywords":
+  - "OpenAI o3"
+  - "AI model"
+  - "AI for research"
+  - "canonical documentation"
+  - "authoritative sources"
+  - "information retrieval"
+  - "AI factual accuracy"
+  - "AI limitations"
+  - "W3C spec"
+  - "Dragon Book"
+  - "man pages"
+  - "research techniques"
+  - "Nikon D7100"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Bypassing Hallucinations in LLMs
 
 ![My bike broke down. Luckily, I had my camera](/images/bike_sidewalk.webp)

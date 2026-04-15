@@ -1,3 +1,19 @@
+---
+"description": "Spend more time on the introduction than anything else."
+"pubDate": "Thu, 01 May 2025 06:00:00 GMT"
+"keywords":
+  - "writing hook"
+  - "introduction first"
+  - "deliberate writing practice"
+  - "revision process"
+  - "audience attention"
+  - "Harper grammar checker"
+  - "David McCullough writing advice"
+"image": "/images/log.webp"
+"featured": false
+"draft": false
+---
+
 # Always Think of the Hook First
 
 ![A log I found in the Indian Peaks Wilderness](/images/log.webp)

@@ -1,3 +1,23 @@
+---
+"description": "For as long as I can remember, I've told people that the real
+  challenge of software engineering isn't writing code. It isn't documentation
+  or CI pipelines either. No, the biggest challenge in software engineering is
+  managing complexity."
+"pubDate": "Fri, 17 Oct 2025 06:00:00 GMT"
+"keywords":
+  - "complexity"
+  - "software engineering"
+  - "tech debt"
+  - "Harper"
+  - "monorepo"
+  - "CI/CD"
+  - "developer experience"
+  - "automation"
+"image": "/images/cathedral_st_john.webp"
+"featured": false
+"draft": false
+---
+
 # Avoid Complexity
 
 For as long as I can remember, I've told people that the real challenge of software engineering isn't writing code.

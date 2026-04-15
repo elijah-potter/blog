@@ -1,3 +1,14 @@
+---
+"description": "People are using Harper for writing prose in Visual Studio Code."
+"pubDate": "Tue, 27 Jan 2026 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "VS Code"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Writing in Visual Studio Code
 
 I [write this blog in Neovim](./my_writing_environment_as_a_software_engineer), and I'm aware of a good number of other nerds who do the same.

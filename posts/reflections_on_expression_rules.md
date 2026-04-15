@@ -1,3 +1,20 @@
+---
+"description": "Expression rules were designed for a certain kind of error. But
+  there are many grammatical or layout rules which hard difficult or downright
+  impossible to define with an expression."
+"pubDate": "Fri, 18 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "expression rules"
+  - "grammar"
+  - "rule-based"
+  - "documentation"
+  - "false-positives"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Reflections on Expression Rules
 
 Just like grammar itself, Harper is rule-based.

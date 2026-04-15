@@ -1,3 +1,18 @@
+---
+"description": "I've got some exciting new work I'm preparing to discuss later
+  this week (hopefully). In the meantime, I've collected some recent sightings
+  of Harper in the wild."
+"pubDate": "Tue, 12 Aug 2025 06:00:00 GMT"
+"keywords":
+  - "grammar checking"
+  - "Harper"
+  - "news"
+  - "social"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Harper in the News
 
 The biggest complaint about Harper is that the quality of grammar checking still needs some work.

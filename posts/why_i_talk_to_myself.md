@@ -1,3 +1,20 @@
+---
+"description": "It's not easy, but I think it's one of the best habits I've ever built."
+"pubDate": "Mon, 21 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "reflection"
+  - "open source"
+  - "public"
+  - "blogging"
+  - "productivity"
+  - "open knowledge"
+  - "time management"
+"image": "/images/bike_sidewalk.webp"
+"featured": true
+"draft": false
+---
+
 # Why I Talk to Myself
 
 ![My bike broke down. Luckily, I had my camera](/images/bike_sidewalk.webp)

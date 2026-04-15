@@ -1,3 +1,27 @@
+---
+"description": "Your code is always welcome."
+"pubDate": "Sat, 01 Mar 2025 07:00:00 GMT"
+"keywords":
+  - "pull request"
+  - "draft PR"
+  - "open source"
+  - "duplicate work"
+  - "CI (Continuous Integration)"
+  - "debugging"
+  - "mentorship"
+  - "community building"
+  - "contribution"
+  - "collaboration"
+  - "GitHub"
+  - "feedback loop"
+  - "project efficiency"
+  - "contributor support"
+  - "early submission"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Never Wait
 
 > _Preface:_ This post is specifically about Pull Requests for [Harper](https://github.com/Automattic/harper).

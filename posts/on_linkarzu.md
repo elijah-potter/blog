@@ -1,3 +1,20 @@
+---
+"description": "I was honored to be a guest on Linkarzu's YouTube series."
+"pubDate": "Thu, 17 Apr 2025 06:00:00 GMT"
+"keywords":
+  - "Neovim community interview"
+  - "Linkarzu YouTube"
+  - "Harper grammar checker"
+  - "Neovim plugin Harper"
+  - "grammar checker for developers"
+  - "open‑source maintenance"
+  - "developer writing workflow"
+  - "software‑engineering tools discussion"
+"image": null
+"featured": false
+"draft": false
+---
+
 # On Linkarzu's YouTube
 
 I consider myself an avid member of the Neovim community.

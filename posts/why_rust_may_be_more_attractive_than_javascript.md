@@ -1,3 +1,18 @@
+---
+"description": "A key part of Rust is far better than what JavaScript has to offer."
+"pubDate": "Fri, 25 Feb 2022 07:00:00 GMT"
+"keywords":
+  - "cargo"
+  - "rust"
+  - "npm"
+  - "nodejs"
+  - "learning"
+  - "ease-of-use"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Why Rust Might Attract More Developers Than Java and JavaScript
 
 Rust is undeniably a greatly appreciated language, after all, it has placed as "#1 Most Loved Programming Language" on the StackOverflow Developer Survey for 6th year running.

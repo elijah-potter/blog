@@ -1,3 +1,24 @@
+---
+"description": "There are a great variety text editors on the web, each used in
+  a different context. That's a beautiful thing, but unfortunately our users
+  expect Harper to work in all of these places seamlessly."
+"pubDate": "Fri, 16 May 2025 06:00:00 GMT"
+"keywords":
+  - "Playwright"
+  - "integration testing"
+  - "end-to-end testing"
+  - "Harper"
+  - "text editors"
+  - "browser extensions"
+  - "automation"
+  - "DOM attributes"
+  - "GitHub Actions"
+  - "website testing"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Integration Testing Thousands of Websites with Playwright
 
 As I've accounted and discussed in previous posts, one of the hardest problems [Harper faces](https://github.com/automattic/harper) is that of the great diversity of the internet. There are a great variety text editors on the web, each used in a different context. That's a beautiful thing, but unfortunately our users expect Harper to work in all of these places seamlessly. I suppose you can view this post as a third part in this series where I talk about supporting thousands of websites for potentially millions of users (with zero server costs, I might add).

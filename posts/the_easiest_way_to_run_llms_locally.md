@@ -1,3 +1,17 @@
+---
+"description": "It saved me enough time, I had some to share about it."
+"pubDate": "Mon, 18 Dec 2023 07:00:00 GMT"
+"keywords":
+  - "arch"
+  - "linux"
+  - "llama"
+  - "chatgpt"
+  - "academia"
+"image": "/images/llama.webp"
+"featured": false
+"draft": false
+---
+
 # The Easiest Way to Run LLMs Locally
 
 ![A Goofy Lookin' Llama](/images/llama.webp)

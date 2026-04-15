@@ -1,3 +1,20 @@
+---
+"description": "We look at several interesting ways computers generate random
+  numbers. It may fascinate you to know that some methods are not *truly*
+  random, but only an approximate."
+"pubDate": "Fri, 04 Mar 2022 07:00:00 GMT"
+"keywords":
+  - "random"
+  - "nuclear"
+  - "intel"
+  - "amd"
+  - "generation"
+  - "rng"
+"image": "/images/numbers_on_a_screen.jpg"
+"featured": false
+"draft": false
+---
+
 # What Is Randomness?
 
 ![Numbers on a screen](/images/numbers_on_a_screen.jpg)

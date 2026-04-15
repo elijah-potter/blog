@@ -1,3 +1,18 @@
+---
+"description": "The initial goal of any greenfield project of mine is to build a
+  working demo. "
+"pubDate": "Thu, 18 Sep 2025 06:00:00 GMT"
+"keywords":
+  - "demo"
+  - "Harper"
+  - "lint-framework"
+  - "web"
+  - "motivation"
+"image": "/images/bethesda_fountain.png"
+"featured": false
+"draft": false
+---
+
 # Demos Make Life Worth Living
 
 ![The Bethesda Fountain in NYC](/images/bethesda_fountain.png)

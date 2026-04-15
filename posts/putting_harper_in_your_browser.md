@@ -1,3 +1,21 @@
+---
+"description": "When our users install Harper, they should expect it to work
+  anywhere they do."
+"pubDate": "Fri, 02 May 2025 06:00:00 GMT"
+"keywords":
+  - "Harper everywhere"
+  - "portable grammar checker"
+  - "Harper Chrome extension"
+  - "WebAssembly integration"
+  - "textarea mirroring"
+  - "contenteditable support"
+  - "source of truth"
+  - "performance and complexity"
+"image": "/images/harper_chrome_ext_2.png"
+"featured": false
+"draft": false
+---
+
 # Putting Harper in Your Browser
 
 When our users [install Harper](https://writewithharper.com), they should expect it to work anywhere they do.

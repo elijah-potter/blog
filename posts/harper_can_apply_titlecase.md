@@ -1,3 +1,17 @@
+---
+"description": "In case you didn't know: Harper can convert text to title case!
+  This has been around for a long time, but we haven't really talked about it
+  publicly."
+"pubDate": "Fri, 05 Dec 2025 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "title case"
+  - "Chicago Style"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Harper Can Apply Title Case
 
 In case you didn't know: Harper can convert text to title case! 

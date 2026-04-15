@@ -1,3 +1,15 @@
+---
+"description": "Harper finally releases a `1.0.0`"
+"pubDate": "Fri, 28 Nov 2025 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "release"
+  - "milestone"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Harper Turns 1.0 Today
 
 Today, we published [Harper's `1.0.0` release](https://github.com/Automattic/harper/releases/tag/v1.0.0). It's a huge milestone, and in this post I'd like to discuss why it took so long, why we're doing it now, and what's next for the project.

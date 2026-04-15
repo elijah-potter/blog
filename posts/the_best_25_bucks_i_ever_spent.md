@@ -1,3 +1,15 @@
+---
+"description": "Bonus: why you need to do it too."
+"pubDate": "Mon, 13 Jan 2025 07:00:00 GMT"
+"keywords":
+  - "flip"
+  - "phone"
+  - "quiet"
+"image": null
+"featured": false
+"draft": false
+---
+
 # The Best 25 Bucks I Ever Spent
 
 Earlier this year (I don't remember the exact day or month) I decided, screw it, I'm going to try using a flip phone.

@@ -1,3 +1,28 @@
+---
+"description": "The most common type of machine learning out there takes the
+  form of some kind of neural network. Inspired by how our own brains work,
+  these systems act as function approximations. They are great, but they come
+  with a few key pitfalls."
+"pubDate": "Fri, 13 Jun 2025 06:00:00 GMT"
+"keywords":
+  - "transformation-based learning"
+  - "machine learning"
+  - "neural networks"
+  - "Harper's architecture"
+  - "edge computing"
+  - "entropy"
+  - "POS tagging"
+  - "nominal phrase chunking"
+  - "Universal Dependencies treebank"
+  - "rule-based learning"
+  - "data cleaning"
+  - "grammar checker"
+  - "Oxford comma"
+"image": "/images/clear_creek_steps.webp"
+"featured": false
+"draft": false
+---
+
 # Continuations on Transformation-based Learning
 
 ![Steps near Clear Creek. Taken by me.](/images/clear_creek_steps.webp)

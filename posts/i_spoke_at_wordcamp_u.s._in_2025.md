@@ -1,3 +1,19 @@
+---
+"description": "It was my first WordCamp and first conference talk, so I was
+  naturally nervous."
+"pubDate": "Wed, 03 Sep 2025 06:00:00 GMT"
+"keywords":
+  - "WordCamp"
+  - "WordPress"
+  - "Speaking"
+  - "Machine Learning"
+  - "AI"
+  - "Community"
+"image": null
+"featured": false
+"draft": false
+---
+
 # I Spoke at WordCamp U.S. in 2025
 
 I had the incredible opportunity to speak at WordCamp U.S. at [Matt](https://ma.tt)'s suggestion.

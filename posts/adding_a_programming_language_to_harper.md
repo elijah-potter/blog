@@ -1,3 +1,20 @@
+---
+"description": "A guide for adding a new programming language to the Harper language server."
+"pubDate": "Mon, 07 Jul 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "LSP"
+  - "Tree-sitter"
+  - "Crates.io"
+  - "Language Server Protocol"
+  - "Parser"
+  - "Extension"
+  - "Comments"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Adding a Programming Language to Harper
 
 When I started the [Harper project](https://github.com/automattic/harper) I knew I wanted to be able to use it for the comments in my code.

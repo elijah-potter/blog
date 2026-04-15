@@ -1,3 +1,22 @@
+---
+"description": "Two months does not mean twice as many."
+"pubDate": "Sat, 05 Apr 2025 06:00:00 GMT"
+"keywords":
+  - "book review"
+  - "reading list"
+  - "February 2025"
+  - "Herman Koch"
+  - "The Dinner"
+  - "Isaac Asimov"
+  - "Gold"
+  - "Bonnie Garmus"
+  - "Lessons in Chemistry"
+  - "fiction"
+"image": null
+"featured": false
+"draft": false
+---
+
 # The Books I Read in February and March 2025
 
 In a world containing TikTok, YouTube and a vast array of other apps that profit off human attention, it takes effort to place our focus on things that truly benefit our minds.

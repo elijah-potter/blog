@@ -1,3 +1,23 @@
+---
+"description": "Writing is one of life's greater joys. It's a mental workout
+  that often brings me a level of clarity that is hard to find elsewhere."
+"pubDate": "Sun, 05 Oct 2025 06:00:00 GMT"
+"keywords":
+  - "writing"
+  - "software engineer"
+  - "writing environment"
+  - "text editor"
+  - "Neovim"
+  - "quiet space"
+  - "Markdown"
+  - "ReMarkable 2"
+  - "productivity"
+  - "notepad"
+"image": "/images/remarkable.jpeg"
+"featured": true
+"draft": false
+---
+
 # My Writing Environment As a Software Engineer
 
 > __TL;DR: _Get a good text editor, and get good at using it.

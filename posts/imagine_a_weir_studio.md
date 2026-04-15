@@ -1,3 +1,17 @@
+---
+"description": "The Weir Studio comes from a pretty simple idea. We want to give
+  people all the tooling necessary to build and distribute Weir rules without
+  any upfront cost."
+"pubDate": "Fri, 16 Jan 2026 07:00:00 GMT"
+"keywords":
+  - "Weir"
+  - "Harper"
+  - "LLM"
+"image": "/images/weir_studio_draft.png"
+"featured": false
+"draft": false
+---
+
 # Imagine a Weir Studio
 
 This week, I received a message from someone working on a learning management system.

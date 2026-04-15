@@ -1,3 +1,14 @@
+---
+"description": "I might be starting to sound like a broken record."
+"pubDate": "Sat, 21 Dec 2024 07:00:00 GMT"
+"keywords":
+  - "books"
+  - "reading"
+"image": null
+"featured": false
+"draft": false
+---
+
 # The Best Books I Read This Year
 
 This year I've been reading a lot more.

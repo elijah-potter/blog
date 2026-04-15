@@ -1,3 +1,21 @@
+---
+"description": "Reflecting on lessons learned from handling English edge cases
+  in developing Harper's Chrome extension."
+"pubDate": "Fri, 18 Apr 2025 06:00:00 GMT"
+"keywords":
+  - "English edge cases"
+  - "Harper Chrome extension"
+  - "exception-tolerant code"
+  - "WYSIWYG editor integration"
+  - "false-positive suppression"
+  - "community contributions"
+  - "DSL readability"
+  - "software design intuition"
+"image": null
+"featured": false
+"draft": false
+---
+
 # The Art of Exception
 
 English is an area of interest littered with edge cases.

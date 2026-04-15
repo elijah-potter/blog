@@ -1,3 +1,15 @@
+---
+"description": "Of course it's that easy."
+"pubDate": "Wed, 26 Feb 2025 07:00:00 GMT"
+"keywords":
+  - "harper"
+  - "grammar"
+  - "ollama"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Prompting Large Language Models In Bash Scripts
 
 I've been experimenting with using LLMs locally for generating datasets to test [Harper](https://writewithharper.com) against.

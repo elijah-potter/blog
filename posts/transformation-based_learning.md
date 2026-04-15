@@ -1,3 +1,31 @@
+---
+"description": "Harper is currently undergoing some pretty radical changes when
+  it comes to its language analysis. These improvements will improve the output
+  of our existing rule engine, in addition to making entirely new corrections
+  possible."
+"pubDate": "Tue, 03 Jun 2025 06:00:00 GMT"
+"keywords":
+  - "NLP"
+  - "Natural Language Processing"
+  - "POS Tagging"
+  - "Part-of-Speech Tagging"
+  - "Machine Learning"
+  - "Transformation-Based Rule Models"
+  - "TRM"
+  - "Automattic"
+  - "Harper"
+  - "Accuracy Improvement"
+  - "Supervised Learning"
+  - "Corpus"
+  - "Algorithm"
+  - "Dictionary-Based Approach"
+  - "English Language"
+  - "Rule Engine"
+"image": "/images/ctlm.webp"
+"featured": false
+"draft": false
+---
+
 # Transformation-based Learning for POS Tagging
 
 ![CTLM](/images/ctlm.webp)

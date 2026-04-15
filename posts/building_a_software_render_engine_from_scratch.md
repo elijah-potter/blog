@@ -1,3 +1,22 @@
+---
+"description": "How I built a software render engine from scratch, and you can too."
+"pubDate": "Wed, 31 Jan 2024 07:00:00 GMT"
+"keywords":
+  - "computer graphics"
+  - "computer"
+  - "graphics"
+  - "linear algebra"
+  - "linear"
+  - "algebra"
+  - "rust"
+  - "mathematics"
+  - "college"
+  - "high school"
+"image": "/images/star_fox.png"
+"featured": false
+"draft": false
+---
+
 # How I Built a Software Render Engine from Scratch
 
 > **Heads Up:** This article is a republished (with some tweaks on spelling, grammar and layout) version of

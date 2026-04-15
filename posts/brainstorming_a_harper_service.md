@@ -1,3 +1,18 @@
+---
+"description": "SaaS products are all the rage these days."
+"pubDate": "Mon, 29 Sep 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "service"
+  - "local-first"
+  - "false positives"
+  - "feedback pipeline"
+  - "SaaS"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Brainstorming a Harper Service
 
 SaaS products are all the rage these days.

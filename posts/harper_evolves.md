@@ -1,3 +1,28 @@
+---
+"description": "I want you to read that title as literally as possible. Harper
+  is now capable of evolution."
+"pubDate": "Thu, 21 Aug 2025 06:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "evolution"
+  - "grammatical rules"
+  - "expression rules"
+  - "AI"
+  - "The Ripper"
+  - "artificial selection"
+  - "random expressions"
+  - "scoring"
+  - "dataset"
+  - "mutation"
+  - "branch prediction"
+  - "NLP"
+  - "rule generation"
+  - "efficiency"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Harper Evolves
 
 I want you to read that title as literally as possible.

@@ -1,3 +1,16 @@
+---
+"description": "It's been a long time coming, which is why I'm thrilled to say
+  that Harper will soon support LaTeX."
+"pubDate": "Wed, 18 Feb 2026 07:00:00 GMT"
+"keywords":
+  - "Harper"
+  - "LaTeX"
+  - "Overleaf"
+"image": null
+"featured": false
+"draft": false
+---
+
 # LaTeX Support Is Coming to Harper
 
 It's been a long time coming, which is why I'm thrilled to say that Harper will soon support LaTeX. This is something our users have been pleading for since the beginning of the project. LaTeX support feels like a feature that is comparatively low‑effort, but unlocks a massive new consumer segment with little existing competition. It has the potential to be a huge boon to our user base and our offering overall.

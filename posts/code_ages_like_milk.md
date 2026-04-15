@@ -1,3 +1,22 @@
+---
+"description": "Failing to account for this reality can slow down development
+  and dissuade contributors from sticking around."
+"pubDate": "Fri, 27 Jun 2025 06:00:00 GMT"
+"keywords":
+  - "code review"
+  - "PR (Pull Request)"
+  - "code aging"
+  - "Lindy effect"
+  - "open source"
+  - "contributor experience"
+  - "feature development"
+  - "code quality"
+  - "teamwork"
+"image": "/images/front_range.webp"
+"featured": true
+"draft": false
+---
+
 # Code Ages Like Milk
 
 ![The Front Range in the summer is hard to beat](/images/front_range.webp)

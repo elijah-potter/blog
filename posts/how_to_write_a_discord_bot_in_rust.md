@@ -1,3 +1,21 @@
+---
+"description": "We go through step-by-step how to build a Discord bot using the
+  Rust Serenity Framework."
+"pubDate": "Wed, 02 Jun 2021 06:00:00 GMT"
+"keywords":
+  - "discord"
+  - "rust"
+  - "internet"
+  - "communication"
+  - "bot"
+  - "chatbot"
+  - "interactive"
+  - "tutorial"
+"image": "/images/flat_ferris.png"
+"featured": false
+"draft": false
+---
+
 # How to Write a Discord Bot in Rust
 
 Discord is an instant message platform with more than 150 million monthly active users. The main appeal seems to a combination of the wide reach that platforms like StackOverflow have, as well as the instant delivery of the instant messaging concept. One of the best features of Discord is it’s seemingly unlimited hackability of the platform via it’s “Bot” system. The Bot system allows developers to add functionality to Discord communities by writing software that interfaces in a similar way that people do. I want to give you an introduction on how to do that in Rust.

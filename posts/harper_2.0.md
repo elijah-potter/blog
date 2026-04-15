@@ -1,3 +1,13 @@
+---
+"description": "We're finally releasing Harper 2.0."
+"pubDate": "Thu, 09 Apr 2026 06:00:00 GMT"
+"keywords":
+  - "Harper"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Harper 2.0
 
 Hey all! We're finally releasing Harper 2.0. Why? 

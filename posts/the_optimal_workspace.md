@@ -1,3 +1,21 @@
+---
+"description": "How I intend to live better."
+"pubDate": "Fri, 29 Mar 2024 06:00:00 GMT"
+"keywords":
+  - "Cal Newport"
+  - "Deep Work"
+  - "sleep"
+  - "focus"
+  - "self"
+  - "workspaces"
+  - "book"
+  - "Why We Sleep"
+  - "Matthew Walker"
+"image": "/images/prod_map.png"
+"featured": false
+"draft": false
+---
+
 # The Optimal Workspace
 
 There are a number of grand challenges my generation faces.

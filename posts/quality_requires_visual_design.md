@@ -1,3 +1,18 @@
+---
+"description": "My recent work to improve Harper's visual design."
+"pubDate": "Fri, 21 Nov 2025 07:00:00 GMT"
+"keywords":
+  - "UI"
+  - "UX"
+  - "GUI"
+  - "Harper"
+  - "Visual Design"
+  - "Learning"
+"image": null
+"featured": false
+"draft": false
+---
+
 # Quality Requires Visual Design
 
 Earlier this week, I was looking through a table of user feedback about [Harper](https://writewithharper.com).
