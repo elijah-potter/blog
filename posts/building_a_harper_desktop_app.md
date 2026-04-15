@@ -20,7 +20,7 @@ As I said last week: [We're in this together](./we_are_in_this_together).
 That means you'll be seeing more posts on this blog and in other places.
 I hope to share fun bits about our implementation and announce requests for feedback.
 
-You might be wondering, __why is he using the pronoun "we"?__
+You might be wondering, _why is he using the pronoun "we"?_
 It is because the wonderful [Jason Adams](https://jason.blog/) has volunteered a significant amount of time over the next month towards this effort. 
 He's an incredible engineer and I can't wait to start solving hard problems with him.
 
