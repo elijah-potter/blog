@@ -1,7 +1,7 @@
 import { LocalLinter } from "harper.js";
-import { binaryInlined } from "harper.js/binaryInlined"
+import { binaryInlined } from "harper.js/binaryInlined";
 import { startCase } from "lodash";
-import { getPostDeclarations, type PostDeclaration } from "./articles";
+import { getPostDeclarations, type PostDeclaration } from "./postDeclarations";
 
 export type PartialPost = {
 	title: string;
@@ -20,7 +20,7 @@ async function createPartialPost(
 	post: PostDeclaration,
 ): Promise<PartialPost> {
 	const { processMarkdown } = await import("../src/processMarkdown");
-	post.keywords.push("reddit");
+	const keywords = [...post.keywords, "reddit"];
 
 	const [description_html, title] = await Promise.all([
 		processMarkdown(post.description),
@@ -33,14 +33,21 @@ async function createPartialPost(
 		image = `https://elijahpotter.dev${post.image}`;
 	}
 
-	return { author: "Elijah Potter", title, description_html, ...post, image };
+	return {
+		author: "Elijah Potter",
+		title,
+		description_html,
+		...post,
+		keywords,
+		image,
+	};
 }
 
 export async function generatePartialPosts(): Promise<
 	Record<string, PartialPost>
 > {
 	const partialPosts: Record<string, PartialPost> = {};
-	const entries = Object.entries(getPostDeclarations()).sort(
+	const entries = Object.entries(await getPostDeclarations()).sort(
 		([, a], [, b]) =>
 			new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf(),
 	);

@@ -5,6 +5,7 @@ import rust from "highlight.js/lib/languages/rust";
 import { LRUCache } from "lru-cache";
 import rehypeHighlight from "rehype-highlight";
 import remarkKatex from "rehype-katex";
+import remarkFrontmatter from "remark-frontmatter";
 import rehypeStringify from "rehype-stringify";
 import rehypeTitleFigure from "rehype-title-figure";
 import remarkGfm from "remark-gfm";
@@ -17,11 +18,23 @@ import { unified } from "unified";
 
 const mdCache = new LRUCache<string, string>({ max: 20000 });
 
+function stripFrontmatter() {
+	return (tree: {
+		children?: Array<{
+			type?: string;
+		}>;
+	}) => {
+		tree.children = tree.children?.filter((node) => node.type !== "yaml") ?? [];
+	};
+}
+
 export async function processMarkdown(markdown: string): Promise<string> {
 	const cached = mdCache.get(markdown);
 	if (cached) return cached;
 	const processor = unified()
 		.use(remarkParse)
+		.use(remarkFrontmatter, ["yaml"])
+		.use(stripFrontmatter)
 		.use(remarkMath)
 		.use(remarkGfm)
 		.use(remarkRehype, { allowDangerousHtml: true })

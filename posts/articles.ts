@@ -1313,18 +1313,15 @@ const postDeclarations: Record<string, PostDeclaration> = {
 		pubDate: new Date(2026, 3, 9).toUTCString(),
 		description: "We're finally releasing Harper 2.0.",
 		image: null,
-		keywords: [
-			"Harper",
-		],
+		keywords: ["Harper"],
 	},
 
 	we_are_in_this_together: {
 		pubDate: new Date(2026, 3, 13).toUTCString(),
-		description: "Harper's mission is to encourage and assist people with communicating their complex ideas and emotions.",
+		description:
+			"Harper's mission is to encourage and assist people with communicating their complex ideas and emotions.",
 		image: null,
-		keywords: [
-			"Harper",
-		],
+		keywords: ["Harper"],
 	},
 };
 

@@ -6,7 +6,8 @@ import { sampleSize } from "lodash";
 import Link from "next/link";
 import ScrollProgressBar from "../../components/ScrollProgressBar";
 import ShareRow from "../../components/ShareRow";
-import { articleIdToSlug, slugToArticleId } from "../../posts/articleId";
+import { articleIdToSlug } from "../../posts/articleId";
+import { slugToArticleId } from "../../posts/slugLookup";
 import CommentForm from "../../src/CommentForm";
 import CommentRow from "../../src/CommentRow";
 import { getCommentsForPost } from "../../src/db/comments";
@@ -29,7 +30,11 @@ export async function getServerSideProps({ params }: any) {
 	}
 
 	// Redirect to dash-separated slug.
-	const articleId = slugToArticleId(slug);
+	const articleId = await slugToArticleId(slug);
+	if (!articleId) {
+		return { notFound: true };
+	}
+
 	if (articleId == slug) {
 		return {
 			redirect: {
