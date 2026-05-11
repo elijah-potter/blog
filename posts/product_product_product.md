@@ -2,7 +2,10 @@
 "description": "Working this past week with Jason Adams has given me a brand-new appreciation for the category of ideas that we engineers call 'product.'"
 "pubDate": "Fri, 01 May 2026 22:00:42 GMT"
 "keywords":
-  - "keyword"
+  - "Harper"
+  - "Desktop"
+  - "Automattic"
+  - "Radical Speed Month"
 "image": null
 "featured": false
 "draft": false
