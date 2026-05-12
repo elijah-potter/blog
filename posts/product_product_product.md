@@ -6,7 +6,7 @@
   - "Desktop"
   - "Automattic"
   - "Radical Speed Month"
-"image": null
+"image": "/images/jason_elijah_garden_of_the_gods.png"
 "featured": false
 "draft": false
 ---
