@@ -30,7 +30,7 @@ Claude Code and Codex both include plan mode, but in both cases it feels like an
 I had tried it a few times, but I was left unimpressed.
 Not so with OpenCode.
 It's a deeply integrated part of the experience. 
-If you are using OpenCode without plan mode, you're holding it wrong.
+If you are using OpenCode without plan mode, you are holding it wrong.
 
 Overall, I found it a far more productive and enjoyable experience than Codex.
 
@@ -38,7 +38,7 @@ Overall, I found it a far more productive and enjoyable experience than Codex.
 
 Pi is amazing.
 Similar to OpenCode, Pi is an open source agent.
-Unlike OpenCode, it isn't designed to be a clone of Claude Code or Codex.
+Unlike OpenCode, it is not designed to be a clone of Claude Code or Codex.
 It is its own thing with an entirely separate philosophy.
 
 ### It Is Static
@@ -55,19 +55,19 @@ Pi is not like that.
 Pi is intended to be as simple as possible, and as extensible as possible.
 An engineer to automate tasks using Pi and expect those automations to continue working forever.
 
-This is important to me, and if you're an engineer, it should be important to you.
+This is important to me, and if you are an engineer, it should be important to you.
 
 ### It Is Extensible
 
 The energy behind Pi feels a lot like the energy behind Neovim.
 It's built for and by a community of hackers, who each have their own custom setup.
 
-I've only been using it for a few days, but I already feel an indescribable sense of ownership over my prompts, skills, and the extensions I have installed. 
-When I feel a deficiency in my workflow, I don't feel that I need to wait until Anthropic or OpenAI has time to address it.
+I have only been using it for a few days, but I already feel an indescribable sense of ownership over my prompts, skills, and the extensions I have installed. 
+When I feel a deficiency in my workflow, I do not feel that I need to wait until Anthropic or OpenAI has time to address it.
 I can address it myself.
 
 ## Think Critically
 
-If you aren't actively pushing your brain to it's limit while programming — whether you are using an agent or not — you aren't doing your best work.
+If you are not actively pushing your brain to it's limit while programming — whether you are using an agent or not — you are not doing your best work.
 Trying both of these agents has taught me that it is entirely possible to push my brain hard while also using an agent to take away some of the tedium.
 In the end, I get better software faster.
