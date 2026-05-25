@@ -17,6 +17,13 @@ x.com##[aria-label="Timeline: Trending now"]
 x.com##[aria-label="Who to follow"]
 x.com##body:has([role="tab"][aria-selected="true"]:has(*:has-text(/^For you$/i))) [aria-label="Timeline: Your Home Timeline"]
 
+/^https?:\/\/(www\.)?instagram\.com\/reels(\/|$)/$document
+instagram.com##a[href="/reels"]
+instagram.com##a[href="/reels/"]
+instagram.com##a[href^="/reels/"]
+instagram.com##a[href^="https://www.instagram.com/reels"]
+instagram.com##a[href^="https://instagram.com/reels"]
+
 www.reddit.com##[id="right-sidebar-contents"]
 www.reddit.com##[id="recent-communities-section"]
 www.reddit.com##games-section-badge-controller
