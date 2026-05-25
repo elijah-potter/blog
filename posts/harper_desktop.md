@@ -14,7 +14,7 @@
 
 Harper Desktop is finally available for download.
 It's been about a month since [Jason](https://jason.blog/) and I [started work on it](./building_a_harper_desktop_app) for Radical Speed Month.
-In that time, we have worked hard to create a meaningfully functional experience and it is available for download today.
+In that time, we have worked hard to create a meaningfully functional experience and [it is available for download today](https://writewithharper.com/desktop).
 
 That said, it's still early work. 
 There are bound to be bugs and edge-cases we have not considered.
