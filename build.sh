@@ -36,11 +36,11 @@ then
     wasm-pack build --target bundler $WP_FLAG
 
     cd $R/crates/rast/
-    cargo build --target wasm32-unknown-unknown --release
+    # macroquad/miniquad wasm imports WebGL/browser functions from its JS loader at runtime,
+    # so this one link step must allow those symbols to remain unresolved.
+    RUSTFLAGS="${RUSTFLAGS:-} -C link-arg=--allow-undefined" cargo build --target wasm32-unknown-unknown --release
     
     cp $R/crates/rast/target/wasm32-unknown-unknown/release/rast.wasm $R/public
-
-    cargo build --target wasm32-unknown-unknown --release
 fi
 
 if [ $SITE -eq 1 ]
