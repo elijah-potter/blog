@@ -233,7 +233,7 @@ export default function index({
 		if (activeMode.mode === "intro") {
 			ctx.fillStyle = secondaryColor();
 			ctx.textBaseline = "middle";
-			ctx.font = "30px charter";
+			ctx.font = "30px domine";
 			ctx.textAlign = "center";
 			ctx.fillText("Click and Drag", width / 2, height / 2);
 
