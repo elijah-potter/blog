@@ -1,5 +1,6 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
 import {
 	type CashflowResult,
 	type Holding,
@@ -23,14 +24,74 @@ const DEFAULT_HOLDINGS: Holding[] = [
 	{ ticker: "BND", value: 1000, targetWeight: 0.1 },
 ];
 
+/* URL serialization ------------------------------------------------------- */
+
+// "VTI:5400:54|VXUS:3600:36|BND:1000:10"
+const encodeHoldings = (holdings: Holding[]): string =>
+	holdings
+		.map(
+			(h) =>
+				`${h.ticker}:${h.value}:${parseFloat((h.targetWeight * 100).toFixed(2))}`,
+		)
+		.join("|");
+
+const decodeHoldings = (raw: string): Holding[] | null => {
+	if (!raw) return null;
+	const result: Holding[] = [];
+	for (const entry of raw.split("|")) {
+		const parts = entry.split(":");
+		if (parts.length !== 3) continue;
+		const ticker = parts[0];
+		const value = Number.parseFloat(parts[1]);
+		const weight = Number.parseFloat(parts[2]) / 100;
+		if (!ticker || !Number.isFinite(value) || !Number.isFinite(weight))
+			continue;
+		result.push({ ticker, value, targetWeight: weight });
+	}
+	return result.length > 0 ? result : null;
+};
+
 type Mode = "standard" | "cashflow";
 
 /* Component --------------------------------------------------------------- */
 
 export default function RebalancePage() {
+	const router = useRouter();
+	const initializedRef = useRef(false);
+
 	const [holdings, setHoldings] = useState<Holding[]>(DEFAULT_HOLDINGS);
 	const [mode, setMode] = useState<Mode>("standard");
 	const [cash, setCash] = useState<number>(1000);
+
+	/* ---- URL ↔ state sync ---- */
+
+	// Read URL params once when router is ready
+	useEffect(() => {
+		if (!router.isReady || initializedRef.current) return;
+		initializedRef.current = true;
+
+		const { h, mode: m, cash: c } = router.query;
+
+		const decoded = decodeHoldings(h as string);
+		if (decoded) setHoldings(decoded);
+		if (m === "cashflow") setMode("cashflow");
+		if (typeof c === "string" && Number.isFinite(Number(c)))
+			setCash(Number(c));
+	}, [router.isReady, router.query]);
+
+	// Write state back to URL (shallow — no server round-trip)
+	useEffect(() => {
+		if (!initializedRef.current) return;
+
+		const params = new URLSearchParams();
+		params.set("h", encodeHoldings(holdings));
+		if (mode === "cashflow") params.set("mode", "cashflow");
+		if (mode === "cashflow" && cash > 0) params.set("cash", cash.toString());
+
+		router.replace(`/rebalance?${params.toString()}`, undefined, {
+			shallow: true,
+		});
+	}, [holdings, mode, cash]);
 
 	/* ---- derived values ---- */
 
@@ -63,6 +124,8 @@ export default function RebalancePage() {
 			0,
 		) ?? 0;
 	const portfolioTotal = holdings.reduce((s, h) => s + h.value, 0);
+	const resultTotal =
+		mode === "cashflow" ? portfolioTotal + cash : portfolioTotal;
 
 	/* ---- handlers ---- */
 
@@ -239,9 +302,11 @@ export default function RebalancePage() {
 								<tr className="border-b border-gray-300">
 									<th className="py-2 pr-2">Ticker</th>
 									<th className="py-2 pr-2 text-right">Current</th>
+									<th className="py-2 pr-2 text-right">Current %</th>
 									<th className="py-2 pr-2 text-right">Target</th>
 									<th className="py-2 pr-2 text-center">Action</th>
 									<th className="py-2 text-right">Amount</th>
+								<th className="py-2 text-right">Resulting</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -253,6 +318,9 @@ export default function RebalancePage() {
 										<td className="py-2 pr-2 font-medium">{a.ticker}</td>
 										<td className="py-2 pr-2 text-right">
 											{fmt(a.current)}
+										</td>
+										<td className="py-2 pr-2 text-right tabular-nums">
+											{pct(a.current / portfolioTotal)}
 										</td>
 										<td className="py-2 pr-2 text-right">
 											{fmt(a.target)}
@@ -270,6 +338,17 @@ export default function RebalancePage() {
 										</td>
 										<td className="py-2 text-right">
 											{a.amount > 0.005 ? fmt(a.amount) : "—"}
+										</td>
+										<td className="py-2 text-right tabular-nums">
+											{pct(
+												(a.current +
+													(a.action === "buy"
+														? a.amount
+														: a.action === "sell"
+															? -a.amount
+															: 0)) /
+													resultTotal,
+											)}
 										</td>
 									</tr>
 								))}
@@ -351,10 +430,15 @@ export default function RebalancePage() {
 					</p>
 					<p>
 						<strong>Cashflow Only</strong> mode is for when you're
-						contributing new money and want to avoid selling. It directs cash
-						to underweight assets first; overweight holdings are left
-						untouched. Any cash that can't be deployed (because all assets are
-						at or above target) is reported as unallocated.
+						contributing new money and want to avoid selling. It spreads cash
+						across all underweight assets in proportion to how far below target
+						each one sits; overweight holdings are left untouched. Any cash that
+						can't be deployed (because all assets are at or above target) is
+						reported as unallocated.
+					</p>
+					<p>
+						Your settings are saved in the URL automatically — bookmark this
+						page to preserve your portfolio configuration.
 					</p>
 				</div>
 			</div>

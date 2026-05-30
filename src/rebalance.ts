@@ -68,36 +68,52 @@ export function rebalanceWithCashflow(
 	const currentTotal = holdings.reduce((sum, h) => sum + h.value, 0);
 	const newTotal = currentTotal + cash;
 
-	const actions: RebalanceAction[] = [];
-	let remainingCash = cash;
-
-	for (const h of holdings) {
+	// Compute each holding's target and deficit (positive = underweight)
+	const computed = holdings.map((h) => {
 		const targetValue = newTotal * h.targetWeight;
 		const diff = targetValue - h.value;
+		return { ticker: h.ticker, value: h.value, targetValue, diff };
+	});
 
-		// Only buy when underweight; never sell overweight
-		if (diff > 0) {
-			const buyAmount = Math.min(diff, remainingCash);
-			remainingCash -= buyAmount;
+	const positiveDiffs = computed
+		.map((c) => c.diff)
+		.filter((d) => d > 0.005);
+	const totalDeficit = positiveDiffs.reduce((s, d) => s + d, 0);
 
-			actions.push({
-				ticker: h.ticker,
-				current: h.value,
+	let unallocated = 0;
+
+	const actions: RebalanceAction[] = computed.map(
+		({ ticker, value, targetValue, diff }) => {
+			// On-target or overweight — hold
+			if (diff <= 0.005) {
+				return {
+					ticker,
+					current: value,
+					target: targetValue,
+					action: "hold" as const,
+					amount: 0,
+				};
+			}
+
+			// Underweight — allocate proportional to deficit, capped at the deficit
+			const buyAmount =
+				totalDeficit > 0 ? Math.min(diff, (cash * diff) / totalDeficit) : 0;
+
+			return {
+				ticker,
+				current: value,
 				target: targetValue,
 				action: buyAmount > 0.005 ? ("buy" as const) : ("hold" as const),
 				amount: buyAmount,
-			});
-		} else {
-			// Overweight or on-target — hold as-is
-			actions.push({
-				ticker: h.ticker,
-				current: h.value,
-				target: targetValue,
-				action: "hold" as const,
-				amount: 0,
-			});
-		}
+			};
+		},
+	);
+
+	if (cash <= totalDeficit) {
+		unallocated = 0;
+	} else {
+		unallocated = cash - totalDeficit;
 	}
 
-	return { actions, unallocatedCash: remainingCash };
+	return { actions, unallocatedCash: unallocated };
 }
