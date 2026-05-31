@@ -1,9 +1,7 @@
-/** Types ------------------------------------------------------------------ */
-
 export interface Holding {
 	ticker: string;
 	value: number;
-	targetWeight: number; // 0–1 (e.g. 0.54 for 54 %)
+	targetWeight: number;
 }
 
 export interface RebalanceAction {
@@ -14,10 +12,13 @@ export interface RebalanceAction {
 	amount: number;
 }
 
-/** Helpers ----------------------------------------------------------------- */
+const WEIGHT_TOLERANCE = 0.005;
 
-const WEIGHT_TOLERANCE = 0.005; // allow ±0.5 % deviation from 100 %
-
+/**
+ * Validate that target weights sum to 1.0.
+ * @param holdings - The portfolio holdings to validate.
+ * @throws {Error} If the total deviates from 1.0 by more than WEIGHT_TOLERANCE.
+ */
 function validateWeights(holdings: Holding[]): void {
 	const total = holdings.reduce((sum, h) => sum + h.targetWeight, 0);
 	if (Math.abs(total - 1) > WEIGHT_TOLERANCE) {
@@ -27,8 +28,11 @@ function validateWeights(holdings: Holding[]): void {
 	}
 }
 
-/** Standard rebalance (sell overweight, buy underweight, net cash flow = 0) */
-
+/**
+ * Standard rebalance: sell overweight holdings to fund buys, net cash flow = 0.
+ * @param holdings - The current portfolio holdings with target weights.
+ * @returns An action per holding (buy, sell, or hold).
+ */
 export function rebalance(holdings: Holding[]): RebalanceAction[] {
 	validateWeights(holdings);
 
@@ -42,7 +46,7 @@ export function rebalance(holdings: Holding[]): RebalanceAction[] {
 			ticker: h.ticker,
 			current: h.value,
 			target: targetValue,
-			action: Math.abs(diff) < 0.005
+			action: Math.abs(diff) < WEIGHT_TOLERANCE
 				? ("hold" as const)
 				: diff > 0
 					? ("buy" as const)
@@ -52,13 +56,17 @@ export function rebalance(holdings: Holding[]): RebalanceAction[] {
 	});
 }
 
-/** Cashflow-only rebalance (never sell, only buy underweight with new cash) */
-
 export interface CashflowResult {
 	actions: RebalanceAction[];
 	unallocatedCash: number;
 }
 
+/**
+ * Cashflow-only rebalance: deploy new cash into underweight holdings without selling.
+ * @param holdings - The current portfolio holdings with target weights.
+ * @param cash - The amount of new cash to deploy.
+ * @returns The actions to take and any unallocated cash that could not be deployed.
+ */
 export function rebalanceWithCashflow(
 	holdings: Holding[],
 	cash: number,
@@ -68,7 +76,6 @@ export function rebalanceWithCashflow(
 	const currentTotal = holdings.reduce((sum, h) => sum + h.value, 0);
 	const newTotal = currentTotal + cash;
 
-	// Compute each holding's target and deficit (positive = underweight)
 	const computed = holdings.map((h) => {
 		const targetValue = newTotal * h.targetWeight;
 		const diff = targetValue - h.value;
@@ -77,15 +84,14 @@ export function rebalanceWithCashflow(
 
 	const positiveDiffs = computed
 		.map((c) => c.diff)
-		.filter((d) => d > 0.005);
+		.filter((d) => d > WEIGHT_TOLERANCE);
 	const totalDeficit = positiveDiffs.reduce((s, d) => s + d, 0);
 
 	let unallocated = 0;
 
 	const actions: RebalanceAction[] = computed.map(
 		({ ticker, value, targetValue, diff }) => {
-			// On-target or overweight — hold
-			if (diff <= 0.005) {
+			if (diff <= WEIGHT_TOLERANCE) {
 				return {
 					ticker,
 					current: value,
@@ -95,7 +101,6 @@ export function rebalanceWithCashflow(
 				};
 			}
 
-			// Underweight — allocate proportional to deficit, capped at the deficit
 			const buyAmount =
 				totalDeficit > 0 ? Math.min(diff, (cash * diff) / totalDeficit) : 0;
 
@@ -103,7 +108,7 @@ export function rebalanceWithCashflow(
 				ticker,
 				current: value,
 				target: targetValue,
-				action: buyAmount > 0.005 ? ("buy" as const) : ("hold" as const),
+				action: buyAmount > WEIGHT_TOLERANCE ? ("buy" as const) : ("hold" as const),
 				amount: buyAmount,
 			};
 		},

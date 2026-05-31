@@ -9,14 +9,21 @@ import {
 	rebalanceWithCashflow,
 } from "../src/rebalance";
 
-/* Helpers ----------------------------------------------------------------- */
+/**
+ * Format a number as US currency.
+ * @param n - The dollar amount to format.
+ */
+function fmt(n: number): string {
+	return n.toLocaleString("en-US", { style: "currency", currency: "USD" });
+}
 
-const fmt = (n: number) =>
-	n.toLocaleString("en-US", { style: "currency", currency: "USD" });
-
-const pct = (w: number) => `${(w * 100).toFixed(1)}%`;
-
-/* Default holdings: 90/10 stock/bond, 60/40 VTI/VXUS within equities ------- */
+/**
+ * Format a 0–1 ratio as a percentage string with one decimal place.
+ * @param w - The ratio (e.g. 0.54 for 54%).
+ */
+function pct(w: number): string {
+	return `${(w * 100).toFixed(1)}%`;
+}
 
 const DEFAULT_HOLDINGS: Holding[] = [
 	{ ticker: "VTI", value: 5400, targetWeight: 0.54 },
@@ -24,18 +31,26 @@ const DEFAULT_HOLDINGS: Holding[] = [
 	{ ticker: "BND", value: 1000, targetWeight: 0.1 },
 ];
 
-/* URL serialization ------------------------------------------------------- */
-
-// "VTI:5400:54|VXUS:3600:36|BND:1000:10"
-const encodeHoldings = (holdings: Holding[]): string =>
-	holdings
+/**
+ * Serialize holdings into a URL-safe string.
+ * @param holdings - The portfolio holdings to encode.
+ * @returns A pipe-delimited string, e.g. "VTI:5400:54|VXUS:3600:36".
+ */
+function encodeHoldings(holdings: Holding[]): string {
+	return holdings
 		.map(
 			(h) =>
 				`${h.ticker}:${h.value}:${parseFloat((h.targetWeight * 100).toFixed(2))}`,
 		)
 		.join("|");
+}
 
-const decodeHoldings = (raw: string): Holding[] | null => {
+/**
+ * Deserialize a pipe-delimited holdings string.
+ * @param raw - The URL string to decode.
+ * @returns An array of holdings, or null if the input is empty or invalid.
+ */
+function decodeHoldings(raw: string): Holding[] | null {
 	if (!raw) return null;
 	const result: Holding[] = [];
 	for (const entry of raw.split("|")) {
@@ -53,8 +68,6 @@ const decodeHoldings = (raw: string): Holding[] | null => {
 
 type Mode = "standard" | "cashflow";
 
-/* Component --------------------------------------------------------------- */
-
 export default function RebalancePage() {
 	const router = useRouter();
 	const initializedRef = useRef(false);
@@ -63,9 +76,6 @@ export default function RebalancePage() {
 	const [mode, setMode] = useState<Mode>("standard");
 	const [cash, setCash] = useState<number>(1000);
 
-	/* ---- URL ↔ state sync ---- */
-
-	// Read URL params once when router is ready
 	useEffect(() => {
 		if (!router.isReady || initializedRef.current) return;
 		initializedRef.current = true;
@@ -79,7 +89,6 @@ export default function RebalancePage() {
 			setCash(Number(c));
 	}, [router.isReady, router.query]);
 
-	// Write state back to URL (shallow — no server round-trip)
 	useEffect(() => {
 		if (!initializedRef.current) return;
 
@@ -93,8 +102,6 @@ export default function RebalancePage() {
 		});
 	}, [holdings, mode, cash]);
 
-	/* ---- derived values ---- */
-
 	const weightSum = holdings.reduce((s, h) => s + h.targetWeight, 0);
 	const weightsOk = Math.abs(weightSum - 1) < 0.005;
 
@@ -106,9 +113,7 @@ export default function RebalancePage() {
 			standardResult = rebalance(holdings);
 			cashflowResult = rebalanceWithCashflow(holdings, cash);
 		}
-	} catch {
-		// validation error — results stay null
-	}
+	} catch {}
 
 	const activeResult =
 		mode === "standard" ? standardResult : cashflowResult?.actions ?? null;
@@ -126,8 +131,6 @@ export default function RebalancePage() {
 	const portfolioTotal = holdings.reduce((s, h) => s + h.value, 0);
 	const resultTotal =
 		mode === "cashflow" ? portfolioTotal + cash : portfolioTotal;
-
-	/* ---- handlers ---- */
 
 	const update = (index: number, field: keyof Holding, raw: string) => {
 		setHoldings((prev) =>
@@ -149,8 +152,6 @@ export default function RebalancePage() {
 	const removeRow = (index: number) =>
 		setHoldings((prev) => prev.filter((_, i) => i !== index));
 
-	/* ---- markup ---- */
-
 	return (
 		<>
 			<Head>
@@ -165,7 +166,6 @@ export default function RebalancePage() {
 					Portfolio Rebalancer
 				</h1>
 
-				{/* ── Holdings input ──────────────────────────────────── */}
 				<table className="w-full text-left border-collapse mb-4">
 					<thead>
 						<tr className="border-b border-gray-300">
@@ -254,7 +254,6 @@ export default function RebalancePage() {
 					</span>
 				</div>
 
-				{/* ── Mode toggle ──────────────────────────────────────── */}
 				<div className="flex items-center gap-4 mb-6">
 					<label className="flex items-center gap-1 text-sm cursor-pointer">
 						<input
@@ -276,7 +275,6 @@ export default function RebalancePage() {
 					</label>
 				</div>
 
-				{/* ── Cashflow input ──────────────────────────────────── */}
 				{mode === "cashflow" && (
 					<div className="flex items-center gap-2 mb-6">
 						<label className="text-sm">New cash:</label>
@@ -294,7 +292,6 @@ export default function RebalancePage() {
 					</div>
 				)}
 
-				{/* ── Results ─────────────────────────────────────────── */}
 				{activeResult && weightsOk ? (
 					<div className="rounded-lg border border-gray-200 shadow-sm p-4 mb-8">
 						<table className="w-full text-left border-collapse">
@@ -306,7 +303,7 @@ export default function RebalancePage() {
 									<th className="py-2 pr-2 text-right">Target</th>
 									<th className="py-2 pr-2 text-center">Action</th>
 									<th className="py-2 text-right">Amount</th>
-								<th className="py-2 text-right">Resulting</th>
+									<th className="py-2 text-right">Resulting</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -355,7 +352,6 @@ export default function RebalancePage() {
 							</tbody>
 						</table>
 
-						{/* Summary */}
 						<div className="mt-4 pt-3 border-t border-gray-200 text-sm space-y-1">
 							<p>
 								Portfolio total: <strong>{fmt(portfolioTotal)}</strong>
@@ -413,7 +409,6 @@ export default function RebalancePage() {
 					</p>
 				)}
 
-				{/* ── About ──────────────────────────────────────────── */}
 				<div className="mt-6 space-y-2">
 					<h2 className="text-xl font-semibold">About this calculator</h2>
 					<p>
