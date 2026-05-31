@@ -112,6 +112,25 @@ describe("rebalanceWithCashflow", () => {
 		expect(bnd.amount).toBeGreaterThan(0);
 	});
 
+	it("allocates most to the farthest holding from target", () => {
+		const atTarget: Holding[] = [
+			{ ticker: "VTI", value: 1000, targetWeight: 0.3 },
+			{ ticker: "VXUS", value: 2000, targetWeight: 0.2 },
+			{ ticker: "BND", value: 10000, targetWeight: 0.5 },
+		];
+		const { actions } = rebalanceWithCashflow(atTarget, 1000);
+
+		const vti = actions.find((a) => a.ticker === "VTI")!;
+		const vxus = actions.find((a) => a.ticker === "VXUS")!;
+		const bnd = actions.find((a) => a.ticker === "BND")!;
+
+		expect(vti.action).toBe("buy");
+		expect(vxus.action).toBe("buy");
+		expect(vti.amount).toBeGreaterThan(vxus.amount);
+
+		expect(bnd.action).toBe("hold");
+	});
+
 	it("returns all holds and zero unallocated for zero cash", () => {
 		const { actions, unallocatedCash } = rebalanceWithCashflow(holdings, 0);
 
