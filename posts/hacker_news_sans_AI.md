@@ -20,31 +20,31 @@ I like Hacker News, but I do not love that so much of it has turned into discuss
 - "LLM"
 - …and many more.
 
-For visibility, I have embedded a version of it below, but you can also visit it (or bookmark it directly) [here](/hnsansai).
-
-<div style="position: relative; width: 100%; height: 600px;">
-  <a
-    href="/hnsansai"
-    style="
-      position: absolute;
-      top: -8px;
-      right: 8px;
-      z-index: 10;
-      padding: 4px 8px;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      text-decoration: none;
-      color: black;
-      font-size: 12px;
-    "
-  >
-    Open ↗
-  </a>
-
-  <iframe
-    src="/hnsansai"
-    style="width: 100%; height: 100%; border: 0;"
-    title="HNSansai"
-  ></iframe>
-</div>
+<!-- For visibility, I have embedded a version of it below, but you can also visit it (or bookmark it directly) [here](/hnsansai). -->
+<!---->
+<!-- <div style="position: relative; width: 100%; height: 600px;"> -->
+<!--   <a -->
+<!--     href="/hnsansai" -->
+<!--     style=" -->
+<!--       position: absolute; -->
+<!--       top: -8px; -->
+<!--       right: 8px; -->
+<!--       z-index: 10; -->
+<!--       padding: 4px 8px; -->
+<!--       background: white; -->
+<!--       border: 1px solid #ccc; -->
+<!--       border-radius: 4px; -->
+<!--       text-decoration: none; -->
+<!--       color: black; -->
+<!--       font-size: 12px; -->
+<!--     " -->
+<!--   > -->
+<!--     Open ↗ -->
+<!--   </a> -->
+<!---->
+<!--   <iframe -->
+<!--     src="/hnsansai" -->
+<!--     style="width: 100%; height: 100%; border: 0;" -->
+<!--     title="HNSansai" -->
+<!--   ></iframe> -->
+<!-- </div> -->
