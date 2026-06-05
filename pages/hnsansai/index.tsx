@@ -46,6 +46,21 @@ interface HackerNewsPageProps {
 	error?: string;
 }
 
+const HNSANSAI_PROPS_CACHE_TTL_MS = 5 * 60 * 1000;
+
+const hnsansaiPropsCache = new Map<
+	HackerNewsPostListType,
+	{
+		expiresAt: number;
+		props: HackerNewsPageProps;
+	}
+>();
+
+const hnsansaiPropsInFlight = new Map<
+	HackerNewsPostListType,
+	Promise<HackerNewsPageProps>
+>();
+
 const isPostType = (value: unknown): value is HackerNewsPostListType => {
 	return (
 		typeof value === "string" &&
@@ -272,12 +287,9 @@ const HackerNewsPage: NextPage<HackerNewsPageProps> = ({
 	);
 };
 
-export const getServerSideProps: GetServerSideProps<
-	HackerNewsPageProps
-> = async (context) => {
-	const requestedType = context.query.type;
-	const type = isPostType(requestedType) ? requestedType : "top";
-
+const generateHackerNewsPageProps = async (
+	type: HackerNewsPostListType,
+): Promise<HackerNewsPageProps> => {
 	try {
 		const ids = await HackerNewsClient.getPostIds(type);
 		const items = await Promise.all(
@@ -285,20 +297,49 @@ export const getServerSideProps: GetServerSideProps<
 		);
 
 		return {
-			props: {
-				type,
-				items: await filterAllowedHackerNewsItems(items),
-			},
+			type,
+			items: await filterAllowedHackerNewsItems(items),
 		};
 	} catch (err) {
 		return {
-			props: {
-				type,
-				items: [],
-				error:
-					err instanceof Error ? err.message : "Failed to load Hacker News.",
-			},
+			type,
+			items: [],
+			error: err instanceof Error ? err.message : "Failed to load Hacker News.",
 		};
+	}
+};
+
+export const getServerSideProps: GetServerSideProps<
+	HackerNewsPageProps
+> = async (context) => {
+	const requestedType = context.query.type;
+	const type = isPostType(requestedType) ? requestedType : "top";
+	const cached = hnsansaiPropsCache.get(type);
+
+	context.res.setHeader("Cache-Control", "public, max-age=60");
+
+	if (cached && cached.expiresAt > Date.now()) {
+		return { props: cached.props };
+	}
+
+	const inFlight = hnsansaiPropsInFlight.get(type);
+	if (inFlight) {
+		return { props: await inFlight };
+	}
+
+	const propsPromise = generateHackerNewsPageProps(type);
+	hnsansaiPropsInFlight.set(type, propsPromise);
+
+	try {
+		const props = await propsPromise;
+		hnsansaiPropsCache.set(type, {
+			expiresAt: Date.now() + HNSANSAI_PROPS_CACHE_TTL_MS,
+			props,
+		});
+
+		return { props };
+	} finally {
+		hnsansaiPropsInFlight.delete(type);
 	}
 };
 
