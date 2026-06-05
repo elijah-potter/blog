@@ -28,6 +28,7 @@ const postTypeLabels: Record<HackerNewsPostListType, string> = {
 
 const blockedTerms = [
 	"ai",
+	"agent",
 	"copilot",
 	"openai",
 	"open ai",
