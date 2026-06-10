@@ -47,7 +47,7 @@ interface HackerNewsPageProps {
 	error?: string;
 }
 
-const HNSANSAI_PROPS_CACHE_TTL_MS = 60 * 60 * 1000;
+const HNSANSAI_PROPS_CACHE_TTL_MS = 10 * 60 * 1000;
 
 const hnsansaiPropsCache = new Map<
 	HackerNewsPostListType,
