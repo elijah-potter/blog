@@ -4,7 +4,7 @@
 "keywords":
   - "Hacker News"
 "image": null
-"featured": false
+"featured": true
 "draft": false
 ---
 

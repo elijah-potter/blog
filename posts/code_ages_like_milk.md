@@ -13,7 +13,7 @@
   - "code quality"
   - "teamwork"
 "image": "/images/front_range.webp"
-"featured": true
+"featured": false
 "draft": false
 ---
 
