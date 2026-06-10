@@ -27,8 +27,16 @@ describe("decodeHoldings", () => {
 	it("parses a valid encoded string", () => {
 		const result = decodeHoldings("VTI:5400:54|VXUS:3600:36")!;
 		expect(result).toHaveLength(2);
-		expect(result[0]).toEqual({ ticker: "VTI", value: 5400, targetWeight: 0.54 });
-		expect(result[1]).toEqual({ ticker: "VXUS", value: 3600, targetWeight: 0.36 });
+		expect(result[0]).toEqual({
+			ticker: "VTI",
+			value: 5400,
+			targetWeight: 0.54,
+		});
+		expect(result[1]).toEqual({
+			ticker: "VXUS",
+			value: 3600,
+			targetWeight: 0.36,
+		});
 	});
 
 	it("returns null for empty string", () => {

@@ -34,7 +34,9 @@ describe("rebalance", () => {
 	});
 
 	it("handles a single holding at 100% weight", () => {
-		const holdings: Holding[] = [{ ticker: "VTI", value: 10000, targetWeight: 1 }];
+		const holdings: Holding[] = [
+			{ ticker: "VTI", value: 10000, targetWeight: 1 },
+		];
 		const result = rebalance(holdings);
 		expect(result[0].action).toBe("hold");
 		expect(result[0].amount).toBe(0);

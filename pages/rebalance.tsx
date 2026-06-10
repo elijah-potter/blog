@@ -51,8 +51,7 @@ export default function RebalancePage() {
 		const decoded = decodeHoldings(h as string);
 		if (decoded) setHoldings(decoded);
 		if (m === "cashflow") setMode("cashflow");
-		if (typeof c === "string" && Number.isFinite(Number(c)))
-			setCash(Number(c));
+		if (typeof c === "string" && Number.isFinite(Number(c))) setCash(Number(c));
 	}, [router.isReady, router.query]);
 
 	useEffect(() => {
@@ -82,7 +81,7 @@ export default function RebalancePage() {
 	} catch {}
 
 	const activeResult =
-		mode === "standard" ? standardResult : cashflowResult?.actions ?? null;
+		mode === "standard" ? standardResult : (cashflowResult?.actions ?? null);
 
 	const totalBuys =
 		activeResult?.reduce(
@@ -110,10 +109,7 @@ export default function RebalancePage() {
 	};
 
 	const addRow = () =>
-		setHoldings((prev) => [
-			...prev,
-			{ ticker: "", value: 0, targetWeight: 0 },
-		]);
+		setHoldings((prev) => [...prev, { ticker: "", value: 0, targetWeight: 0 }]);
 
 	const removeRow = (index: number) =>
 		setHoldings((prev) => prev.filter((_, i) => i !== index));
@@ -169,9 +165,7 @@ export default function RebalancePage() {
 										<input
 											type="number"
 											value={
-												h.targetWeight
-													? +(h.targetWeight * 100).toFixed(2)
-													: ""
+												h.targetWeight ? +(h.targetWeight * 100).toFixed(2) : ""
 											}
 											onChange={(e) =>
 												update(
@@ -247,9 +241,7 @@ export default function RebalancePage() {
 						<input
 							type="number"
 							value={cash || ""}
-							onChange={(e) =>
-								setCash(Number.parseFloat(e.target.value) || 0)
-							}
+							onChange={(e) => setCash(Number.parseFloat(e.target.value) || 0)}
 							className="border border-gray-300 rounded px-2 py-1 bg-transparent w-32"
 							min="0"
 							step="100"
@@ -279,15 +271,11 @@ export default function RebalancePage() {
 										className="border-b border-gray-100"
 									>
 										<td className="py-2 pr-2 font-medium">{a.ticker}</td>
-										<td className="py-2 pr-2 text-right">
-											{fmt(a.current)}
-										</td>
+										<td className="py-2 pr-2 text-right">{fmt(a.current)}</td>
 										<td className="py-2 pr-2 text-right tabular-nums">
 											{pct(a.current / portfolioTotal)}
 										</td>
-										<td className="py-2 pr-2 text-right">
-											{fmt(a.target)}
-										</td>
+										<td className="py-2 pr-2 text-right">{fmt(a.target)}</td>
 										<td
 											className={`py-2 pr-2 text-center font-semibold ${
 												a.action === "buy"
@@ -324,8 +312,8 @@ export default function RebalancePage() {
 								{mode === "cashflow" && (
 									<span>
 										{" "}
-										→ <strong>{fmt(portfolioTotal + cash)}</strong>{" "}
-										(after cashflow)
+										→ <strong>{fmt(portfolioTotal + cash)}</strong> (after
+										cashflow)
 									</span>
 								)}
 							</p>
@@ -333,37 +321,30 @@ export default function RebalancePage() {
 								<>
 									<p>
 										Total buys:{" "}
-										<strong className="text-green-600">
-											{fmt(totalBuys)}
-										</strong>
+										<strong className="text-green-600">{fmt(totalBuys)}</strong>
 									</p>
 									<p>
 										Total sells:{" "}
-										<strong className="text-red-500">
-											{fmt(totalSells)}
-										</strong>
+										<strong className="text-red-500">{fmt(totalSells)}</strong>
 									</p>
 								</>
 							) : (
 								<>
 									<p>
 										Total buys:{" "}
-										<strong className="text-green-600">
-											{fmt(totalBuys)}
-										</strong>
+										<strong className="text-green-600">{fmt(totalBuys)}</strong>
 									</p>
-									{cashflowResult &&
-										cashflowResult.unallocatedCash > 0.005 && (
-											<p>
-												Unallocated cash:{" "}
-												<strong className="text-yellow-600">
-													{fmt(cashflowResult.unallocatedCash)}
-												</strong>{" "}
-												<span className="text-gray-500">
-													(could not deploy — some assets already overweight)
-												</span>
-											</p>
-										)}
+									{cashflowResult && cashflowResult.unallocatedCash > 0.005 && (
+										<p>
+											Unallocated cash:{" "}
+											<strong className="text-yellow-600">
+												{fmt(cashflowResult.unallocatedCash)}
+											</strong>{" "}
+											<span className="text-gray-500">
+												(could not deploy — some assets already overweight)
+											</span>
+										</p>
+									)}
 								</>
 							)}
 						</div>
@@ -378,24 +359,23 @@ export default function RebalancePage() {
 				<div className="mt-6 space-y-2">
 					<h2 className="text-xl font-semibold">About this calculator</h2>
 					<p>
-						This tool helps you rebalance a{" "}
-						<strong>Boglehead-style</strong> portfolio back to your target
-						asset allocation. Enter each holding's ticker symbol, its current
-						dollar value, and your desired target weight (as a percentage of
-						the total portfolio).
+						This tool helps you rebalance a <strong>Boglehead-style</strong>{" "}
+						portfolio back to your target asset allocation. Enter each holding's
+						ticker symbol, its current dollar value, and your desired target
+						weight (as a percentage of the total portfolio).
 					</p>
 					<p>
 						<strong>Sell &amp; Buy</strong> mode computes the exact buys and
-						sells needed so that every asset lands at its target weight —
-						sells fund buys dollar-for-dollar with zero net cash flow.
+						sells needed so that every asset lands at its target weight — sells
+						fund buys dollar-for-dollar with zero net cash flow.
 					</p>
 					<p>
-						<strong>Cashflow Only</strong> mode is for when you're
-						contributing new money and want to avoid selling. It spreads cash
-						across all underweight assets in proportion to how far below target
-						each one sits; overweight holdings are left untouched. Any cash that
-						can't be deployed (because all assets are at or above target) is
-						reported as unallocated.
+						<strong>Cashflow Only</strong> mode is for when you're contributing
+						new money and want to avoid selling. It spreads cash across all
+						underweight assets in proportion to how far below target each one
+						sits; overweight holdings are left untouched. Any cash that can't be
+						deployed (because all assets are at or above target) is reported as
+						unallocated.
 					</p>
 					<p>
 						Your settings are saved in the URL automatically — bookmark this

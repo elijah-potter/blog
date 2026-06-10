@@ -46,11 +46,12 @@ export function rebalance(holdings: Holding[]): RebalanceAction[] {
 			ticker: h.ticker,
 			current: h.value,
 			target: targetValue,
-			action: Math.abs(diff) < WEIGHT_TOLERANCE
-				? ("hold" as const)
-				: diff > 0
-					? ("buy" as const)
-					: ("sell" as const),
+			action:
+				Math.abs(diff) < WEIGHT_TOLERANCE
+					? ("hold" as const)
+					: diff > 0
+						? ("buy" as const)
+						: ("sell" as const),
 			amount: Math.abs(diff),
 		};
 	});
@@ -108,7 +109,8 @@ export function rebalanceWithCashflow(
 				ticker,
 				current: value,
 				target: targetValue,
-				action: buyAmount > WEIGHT_TOLERANCE ? ("buy" as const) : ("hold" as const),
+				action:
+					buyAmount > WEIGHT_TOLERANCE ? ("buy" as const) : ("hold" as const),
 				amount: buyAmount,
 			};
 		},
