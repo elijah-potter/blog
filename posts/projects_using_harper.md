@@ -24,3 +24,5 @@ I wonder if the recent additions have anything to do with [Harper going `1.0`](.
 - [fixmyspelling](https://github.com/samedwardes/fixmyspelling)
 
 [Someone also wrote a book using Harper.](https://www.reddit.com/r/ObsidianMD/comments/1nfks80/oh_my_god_its_done_an_entire_book_written_in/)
+
+> This post is now out-of-date. There are even more projects using Harper today (as of 6.11.2026). The canonical list exists in [Harper's Documentation](https://writewithharper.com/docs/about)
