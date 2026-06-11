@@ -1,6 +1,5 @@
 ---
-"description": "The goal of this page is to formalize my answer so that we can
-  judiciously deal with patch requests produced by LLMs."
+"description": "Keep things brief, stay grounded, and be honest."
 "pubDate": "Mon, 23 Mar 2026 06:00:00 GMT"
 "keywords":
   - "Harper"
