@@ -13,6 +13,13 @@ import CommentRow from "../../src/CommentRow";
 import { getCommentsForPost } from "../../src/db/comments";
 import type { Comment } from "../../src/db/schema";
 
+function humanReadableDate(date: Date): string {
+	return new Intl.DateTimeFormat("en-US", {
+		dateStyle: "long",
+		timeStyle: "short",
+	}).format(date);
+}
+
 export async function getServerSideProps({ params }: any) {
 	let { slug } = params ?? {};
 
@@ -120,9 +127,12 @@ export default function ArticlePage({
 
 			<div className="rmd" dangerouslySetInnerHTML={{ __html: html }}></div>
 
-			<p className="italic">
-				This post was proofread by{" "}
-				<a href="https://writewithharper.com">Harper</a>.
+			<p className="bold pt-4">
+				Published {humanReadableDate(new Date(post.pubDate))}
+			</p>
+
+			<p className="italic pt-4">
+				Proofread by <a href="https://writewithharper.com">Harper</a>.
 			</p>
 
 			<ShareRow
