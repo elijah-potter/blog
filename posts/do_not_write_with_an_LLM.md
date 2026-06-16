@@ -94,3 +94,7 @@ For Harper, that means we need to be diverse in our training datasets and mindfu
 For WordPress, it means we need to encourage our LLM integrations to tread lightly and respectfully.
 They need to accept when they're wrong.
 Just as any good human should. 
+
+> Months after writing this post, I came across another.
+> Author Cynthia Dunlop gives [a great overview of how developers react to blog posts written by AI](https://writethatblog.substack.com/p/dev-reaction-to-ai-blog-posts).
+> I highly suggest you take a look if you have more time.
