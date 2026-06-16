@@ -18,7 +18,7 @@ It takes time to determine what is important and what is not.
 My hope is that by declaring this essay "incomplete", you will grant me some grace and understanding.
 
 While reading an old — unpublished, for now — essay of mine, I was reminded of the wonderful book by Robert Persig titled _Zen and the Art of Motorcycle Maintenance_.
-I read it in high-school, and it has served as the foundation of much of worldview up to this point.
+I read it in high-school, and it has served as the foundation of much of my worldview up to this point.
 The book serves to help anyone in any profession, but I think it speaks particularly well to the lives of open source maintainers.
 Here, I hope to reflect on its teachings and find ways to apply them to the daily routine of open source maintenance and development.
 
