@@ -10,7 +10,8 @@
 
 # Hacker News, sans AI
 
-I like Hacker News, but I do not love that so much of it has turned into discussion of a single topic: AI. So, I've created my own version.
+I like Hacker News, but I do not love that so much of it has turned into discussion of a single topic: AI. So, I have created my own version.
+A version of Hacker News, without AI.
 
 [HNSansAI](/hnsansai) pulls from the official Hacker News API, looks through the content of each article, and discards any that mention a term related to "AI". That includes stuff like:
 
