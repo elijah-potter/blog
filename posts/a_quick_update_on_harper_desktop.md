@@ -13,7 +13,7 @@
 
 # A Quick Update on Harper Desktop
 
-This week of Radical Speed Month has been dedicated to putting the disparate components of the Harper Desktop App together.
+This week of [Radical Speed Month](./what_was_radical_speed_month?) has been dedicated to putting the disparate components of the Harper Desktop App together.
 In other words, we have been in what [Shane Wighton](https://www.youtube.com/@stuffmadehere) would call "integration hell".
 
 Due to the constraints put in place by the operating system and our decision to use Tauri, Harper Desktop needed to be split into three main pieces: the highlighter process, the main Rust Tauri process, and the Svelte frontend.

@@ -24,7 +24,7 @@ But the version of Quality that can be defined with numbers is not complete.
 A complete definition of Quality includes something that I currently don't know how to define.
 People like Jason Adams and Eduardo Villuendas can.
 
-At the end of Radical Speed Month, my goal is to be able to describe it, at least shallowly.
+At the end of [Radical Speed Month](./what_was_radical_speed_month?), my goal is to be able to describe it, at least shallowly.
 Right now, I feel that I understand some of the base components, but not well enough to bring them together into a cohesive whole.
 
 ## Harper Desktop

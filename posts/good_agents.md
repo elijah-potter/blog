@@ -14,7 +14,7 @@
 
 # Good Agents for Developers
 
-The spirit of Radical Speed Month includes an impetus to experiment.
+The spirit of [Radical Speed Month](./what_was_radical_speed_month?) includes an impetus to experiment.
 So experiment I have.
 
 In particular, I have been trying two new coding agents: [OpenCode](https://opencode.ai/) and [Pi](https://pi.dev/).

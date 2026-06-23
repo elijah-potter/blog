@@ -28,7 +28,7 @@ Harper Desktop sought to solve that.
 
 It was build in only a month, with the combined effort of just two engineers, myself, and [Jason Adams](https://jason.blog/).
 It was possible though dedication, hard work, and a willingness to learn.
-Radical Speed Month held an impetus to experiment, and experiment we did.
+[Radical Speed Month](./what_was_radical_speed_month?) held an impetus to experiment, and experiment we did.
 
 In this post, I want to talk about:
 
