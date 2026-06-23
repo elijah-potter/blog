@@ -14,9 +14,12 @@ export async function slugToArticleId(
 	const articleIds = Object.keys(posts);
 
 	const shortened = articleIds.map((id) =>
-		id.replaceAll("_", "").replaceAll("-", ""),
+		id.replaceAll("_", "").replaceAll("-", "").replaceAll("?", ""),
 	);
-	const shortedSlug = slug.replaceAll("_", "").replaceAll("-", "");
+	const shortedSlug = slug
+		.replaceAll("_", "")
+		.replaceAll("-", "")
+		.replaceAll("?", "");
 
 	const match = shortened.findIndex((s) => s == shortedSlug);
 
