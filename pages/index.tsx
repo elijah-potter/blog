@@ -5,6 +5,7 @@ import ArticleList from "../components/ArticleList";
 import Spacer from "../components/Spacer";
 import { type FullPost, generatePartialPosts } from "../posts/postGeneration";
 import headshot from "../public/images/headshot.webp";
+import WebringRow from "../components/WebringRow";
 
 const iconLinks = [
 	[
@@ -124,6 +125,7 @@ export default function index({
 				subtitle="Everything I've written, sorted with the most recent stuff first."
 				posts={postEntries}
 			/>
+			<WebringRow />
 		</>
 	);
 }
