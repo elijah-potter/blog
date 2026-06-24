@@ -2,7 +2,8 @@
 "description": "A complete or partial loss of function while reviewing the output of a coding agent."
 "pubDate": "Wed, 24 Jun 2026 16:41:44 GMT"
 "keywords":
-  - "keyword"
+  - "AI"
+  - "Vibe Coding"
 "image": null
 "featured": false
 "draft": false
