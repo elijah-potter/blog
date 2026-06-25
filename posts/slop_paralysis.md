@@ -27,7 +27,7 @@ You tell your coding agent all of this.
 Then, you let it loose.
 It cooks and cleans and implements your product for you.
 In the end, you have _some_ idea of how the end result works, but it is not complete.
-Since this is a project that is imporetant, which you intend to maintain, you go to read the code.
+Since this is a project that is important, which you intend to maintain, you go to read the code.
 That's when it hits you.
 __Slop paralysis__.
 
@@ -55,7 +55,7 @@ Sometimes they do not.
 [Knowing which is which is difficult, but extremely valuable.](./when_to_use_an_agent)
 
 When you do decide to use an agent, you can have the agent simply produce less code.
-I've heard of [projects](https://github.com/DietrichGebert/ponytail) that help you do this, but I haven't actually tried them.
+I have heard of [projects](https://github.com/DietrichGebert/ponytail) that help you do this, but I have not actually tried them.
 Instead, I ask the agent to make a plan first, then rework that plan myself to minimize the number of changes.
 In the end, a plan which was originally written by the agent becomes one that has been mercilessly edited by myself.
 In this way, I minimize the amount of code which demands consumption.
