@@ -39,6 +39,9 @@ const blockedTerms = [
 	"llm",
 	"llms",
 	"large language model",
+	"fable",
+	"model",
+	"vibe cod",
 ];
 
 interface HackerNewsPageProps {
