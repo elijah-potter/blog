@@ -4,10 +4,10 @@
 "keywords": []
 "image": "/images/helium_website.png"
 "featured": false
-"draft": true
+"draft": false
 ---
 
-# Trying Out the Helium Browser
+# Trying out the Helium Browser
 
 ![The Helium Website](/images/helium_website.png)
 
