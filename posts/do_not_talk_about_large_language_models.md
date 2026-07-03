@@ -20,7 +20,7 @@ People read something online, twist it into their own flavor of opinion, and reg
 It's tiring.
 
 I do it too.
-[I](./do_not_write_with_an_LLM) [talk](./my_ai_rules) [about](./LLM_assisted_fuzzing) [LLMs](./generating_weir_code_with_LLMs) [a](./bypassing_hallucinations_in_llms) [LOT](./using_codex_is_a_lot_like_baking).
+[I](./do_not_write_with_an_LLM) [talk](./i_spoke_at_wordcamp_u.s._in_2025) [about](./LLM_assisted_fuzzing) [LLMs](./generating_weir_code_with_LLMs) [a](./bypassing_hallucinations_in_llms) [LOT](./using_codex_is_a_lot_like_baking).
 It is a part of my job to know about them and to have an opinion on them.
 It is a part of every software engineer's job today.
 It's okay to have an opinion, and it's okay to share it with others.
