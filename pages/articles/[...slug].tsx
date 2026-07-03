@@ -42,7 +42,7 @@ export async function getServerSideProps({ params }: any) {
 		return { notFound: true };
 	}
 
-	if (articleId == slug) {
+	if (articleId == slug && articleIdToSlug(articleId) != articleId) {
 		return {
 			redirect: {
 				destination: `/articles/${articleIdToSlug(articleId)}`,
