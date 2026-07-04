@@ -35,7 +35,7 @@ I think we are focused on the wrong thing.
 
 When we focus on "productivity" we are focusing on our output. 
 But because it is inherently unquantifiable, we are unable to objectively monitor that output.
-Because there is no way to quantify it, it's impossible to know if we have improved our productive or not, which results in one of two things.
+Because there is no way to quantify it, it's impossible to know if we have improved our productivity or not, which results in one of two things.
 
 In one situation, a person can believe an action, habit, or tool is __more__ helpful than it really is. 
 You see this all the time with vibe-coders.
