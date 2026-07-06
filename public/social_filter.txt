@@ -1,11 +1,14 @@
 [Adblock Plus]
 ! Title: Elijah's Social Media Filters
 ! Homepage: https://elijahpotter.dev
-! Version: 3
+! Version: 4
 ! Expires: 1 hour
 
 news.ycombinator.com##tr.athing:nth-child(n+14)
 news.ycombinator.com##.subtext
+
+lobste.rs##ol.stories:nth-child(n+5)
+lobste.rs##.byline
 
 x.com##[href*="/explore"]
 x.com##[href*="/i/premium_sign_up"]
