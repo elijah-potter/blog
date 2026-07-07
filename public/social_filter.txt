@@ -1,7 +1,7 @@
 [Adblock Plus]
 ! Title: Elijah's Social Media Filters
 ! Homepage: https://elijahpotter.dev
-! Version: 4
+! Version: 5
 ! Expires: 1 hour
 
 news.ycombinator.com##tr.athing:nth-child(n+14)
@@ -26,6 +26,7 @@ instagram.com##a[href="/reels/"]
 instagram.com##a[href^="/reels/"]
 instagram.com##a[href^="https://www.instagram.com/reels"]
 instagram.com##a[href^="https://instagram.com/reels"]
+instagram.com##a[href^="https://instagram.com/p/*"]
 
 www.reddit.com##[id="right-sidebar-contents"]
 www.reddit.com##[id="recent-communities-section"]
