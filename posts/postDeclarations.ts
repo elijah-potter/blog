@@ -4,6 +4,7 @@ import remarkFrontmatter from "remark-frontmatter";
 import remarkParse from "remark-parse";
 import { unified } from "unified";
 import { parse as parseYaml } from "yaml";
+import { memoize } from "lodash";
 
 export type PostDeclaration = {
 	keywords: string[];
@@ -97,6 +98,8 @@ function validateFrontmatter(
 	};
 }
 
+let memoizedParseYaml = memoize(parseYaml);
+
 function parseFrontmatter(
 	fileName: string,
 	fileContent: string,
@@ -108,7 +111,7 @@ function parseFrontmatter(
 		throw new Error(`Post ${fileName} is missing front matter.`);
 	}
 
-	const parsed = parseYaml(
+	const parsed = memoizedParseYaml(
 		typeof firstChild.value === "string" ? firstChild.value : "",
 	);
 
