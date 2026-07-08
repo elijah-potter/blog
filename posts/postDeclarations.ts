@@ -123,8 +123,8 @@ export async function getPostDeclarations(): Promise<
 	Record<string, PostDeclaration>
 > {
 	const files = (await fs.readdir("./posts"))
-		.filter((file) => file.endsWith(".md"))
-		.sort();
+		.filter((file) => file.endsWith(".md"));
+
 	const declarations = await Promise.all(
 		files.map(async (fileName) => {
 			const fileContent = await fs.readFile(

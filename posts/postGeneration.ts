@@ -1,3 +1,4 @@
+import { LRUCache } from "lru-cache";
 import { LocalLinter } from "harper.js";
 import { binaryInlined } from "harper.js/binaryInlined";
 import { startCase } from "lodash";
@@ -15,6 +16,19 @@ export type FullPost = {
 
 const linter = new LocalLinter({ binary: binaryInlined });
 
+const titleCaseCache = new LRUCache<string, string>({ max: 20000 });
+
+async function cachedTitleCase(str: string){
+  let cached = titleCaseCache.get(str);
+  if (cached){
+    return cached; 
+  }else{
+    let titleCase = await linter.toTitleCase(str);
+    titleCaseCache.set(str, titleCase);
+    return titleCase;
+  }
+}
+
 async function createPartialPost(
 	key: string,
 	post: PostDeclaration,
@@ -24,7 +38,7 @@ async function createPartialPost(
 
 	const [description_html, title] = await Promise.all([
 		processMarkdown(post.description),
-		linter.toTitleCase(key.replaceAll("_", " ")),
+    cachedTitleCase(key.replaceAll("_", " "))
 	]);
 
 	let image = null;

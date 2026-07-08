@@ -28,10 +28,7 @@ function stripFrontmatter() {
 	};
 }
 
-export async function processMarkdown(markdown: string): Promise<string> {
-	const cached = mdCache.get(markdown);
-	if (cached) return cached;
-	const processor = unified()
+const processor = unified()
 		.use(remarkParse)
 		.use(remarkFrontmatter, ["yaml"])
 		.use(stripFrontmatter)
@@ -43,12 +40,16 @@ export async function processMarkdown(markdown: string): Promise<string> {
 		.use(rehypeTitleFigure)
 		.use(rehypeStringify, { allowDangerousHtml: true });
 
+export async function processMarkdown(markdown: string): Promise<string> {
+	const cached = mdCache.get(markdown);
+	if (cached) return cached;
+
 	const vfile = await processor.process(markdown);
-	const html = vfile.toString();
+	const html = typeset(vfile.toString());
 
 	mdCache.set(markdown, html);
 
-	return typeset(html);
+	return html;
 }
 
 export async function processMarkdownFile(filePath: string): Promise<string> {
