@@ -14,7 +14,7 @@
   - "productivity"
   - "notepad"
 "image": "/images/remarkable.jpeg"
-"featured": true
+"featured": false 
 "draft": false
 ---
 

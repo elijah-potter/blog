@@ -5,7 +5,7 @@
   - "AI"
   - "Vibe Coding"
 "image": null
-"featured": false
+"featured": true
 "draft": false
 ---
 
