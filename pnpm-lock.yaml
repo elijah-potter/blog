@@ -30,8 +30,8 @@ importers:
         specifier: ^10.12.18
         version: 10.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       harper.js:
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.7.0
+        version: 2.7.0
       highlight.js:
         specifier: ^11.6.0
         version: 11.11.1
@@ -149,7 +149,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.1.7
-        version: 4.1.7(@types/node@22.19.1)(jsdom@22.1.0)(vite@8.0.14(@types/node@22.19.1)(esbuild@0.25.10)(jiti@1.21.7)(terser@5.39.2)(tsx@4.21.0)(yaml@2.8.3))
+        version: 4.1.7(@types/node@22.19.1)(jsdom@29.1.1)(vite@8.0.14(@types/node@22.19.1)(esbuild@0.25.10)(jiti@1.21.7)(terser@5.39.2)(tsx@4.21.0)(yaml@2.8.3))
 
 packages:
 
@@ -1008,15 +1008,15 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@mozilla/readability@0.6.0':
+    resolution: {integrity: sha512-juG5VWh4qAivzTAeMzvY9xs9HY5rAcr2E4I7tiSSCokRFi7XIZCAu92ZkSTsIj1OPceCifL3cpfteP3pDT9/QQ==}
+    engines: {node: '>=14.0.0'}
+
   '@napi-rs/wasm-runtime@1.1.4':
     resolution: {integrity: sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow==}
     peerDependencies:
       '@emnapi/core': ^1.7.1
       '@emnapi/runtime': ^1.7.1
-
-  '@mozilla/readability@0.6.0':
-    resolution: {integrity: sha512-juG5VWh4qAivzTAeMzvY9xs9HY5rAcr2E4I7tiSSCokRFi7XIZCAu92ZkSTsIj1OPceCifL3cpfteP3pDT9/QQ==}
-    engines: {node: '>=14.0.0'}
 
   '@neon-rs/load@0.0.4':
     resolution: {integrity: sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==}
@@ -2168,8 +2168,8 @@ packages:
     resolution: {integrity: sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==}
     engines: {node: '>=4.x'}
 
-  harper.js@2.0.0:
-    resolution: {integrity: sha512-2j7Zb1b+W88nHb/qws89oqRa9jCLRY8O2T99v/EZ1z7dBzXvtBQky+2jac0Ji31ddxVlUul8fUxX2DsmapY/LA==}
+  harper.js@2.7.0:
+    resolution: {integrity: sha512-INDnUMNJvQzv5Zv9lhgGuIRYNIpDvOXcieCbo5ED/dwn8V/02zVW5kKvU6jSJJHq1MpY0VDyg+5RjE7z5D+FeA==}
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
@@ -4540,14 +4540,14 @@ snapshots:
   '@libsql/win32-x64-msvc@0.5.22':
     optional: true
 
+  '@mozilla/readability@0.6.0': {}
+
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
       '@emnapi/core': 1.10.0
       '@emnapi/runtime': 1.10.0
       '@tybys/wasm-util': 0.10.2
     optional: true
-
-  '@mozilla/readability@0.6.0': {}
 
   '@neon-rs/load@0.0.4':
     optional: true
@@ -5624,7 +5624,7 @@ snapshots:
 
   growl@1.10.5: {}
 
-  harper.js@2.0.0:
+  harper.js@2.7.0:
     dependencies:
       fflate: 0.8.2
 
@@ -7643,7 +7643,7 @@ snapshots:
       tsx: 4.21.0
       yaml: 2.8.3
 
-  vitest@4.1.7(@types/node@22.19.1)(jsdom@22.1.0)(vite@8.0.14(@types/node@22.19.1)(esbuild@0.25.10)(jiti@1.21.7)(terser@5.39.2)(tsx@4.21.0)(yaml@2.8.3)):
+  vitest@4.1.7(@types/node@22.19.1)(jsdom@29.1.1)(vite@8.0.14(@types/node@22.19.1)(esbuild@0.25.10)(jiti@1.21.7)(terser@5.39.2)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:
       '@vitest/expect': 4.1.7
       '@vitest/mocker': 4.1.7(vite@8.0.14(@types/node@22.19.1)(esbuild@0.25.10)(jiti@1.21.7)(terser@5.39.2)(tsx@4.21.0)(yaml@2.8.3))
@@ -7667,7 +7667,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.19.1
-      jsdom: 22.1.0
+      jsdom: 29.1.1
     transitivePeerDependencies:
       - msw
 
