@@ -4,7 +4,6 @@ import "katex/dist/katex.css";
 import "highlight.js/styles/hybrid.css";
 import { sampleSize } from "lodash";
 import Link from "next/link";
-import ScrollProgressBar from "../../components/ScrollProgressBar";
 import ShareRow from "../../components/ShareRow";
 import { articleIdToSlug } from "../../posts/articleId";
 import { slugToArticleId } from "../../posts/slugLookup";
@@ -105,7 +104,6 @@ export default function ArticlePage({
 
 	return (
 		<>
-			<ScrollProgressBar />
 			<Head>
 				<meta
 					property="og:url"
