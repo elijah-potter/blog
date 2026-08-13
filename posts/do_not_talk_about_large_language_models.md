@@ -1,14 +1,13 @@
 ---
 "description": "Is this post hypocritical? It sure is."
-"pubDate": "Fri, 03 Jul 2026 20:32:05 GMT"
+"pubDate": "Thu, 13 Aug 2026 18:49:43 GMT"
 "keywords":
   - "AI"
   - "Large Language Models"
 "image": null
 "featured": false
-"draft": true
+"draft": false
 ---
-
 
 # Do Not Talk About Large Language Models
 
