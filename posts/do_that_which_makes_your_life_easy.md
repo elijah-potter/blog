@@ -34,7 +34,7 @@ This mental shortcut — choosing the option that improves your quality of life 
 ## Dogfooding
 
 [Eating your own dogfood](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) is perhaps the most obvious example of this idea of improving one's own quality of life.
-When you are required — by force of will, or by necessity — use your own product, the incentives align strongly towards making it better.
+When you are required — by force of will, or by necessity — to use your own product, the incentives align strongly towards making it better.
 If you make a change, and it improves the quality of your own life, it's quite likely it will also improve the lives of your present and future users.
 
 The obvious place dogfooding helps is in the search for bugs.
@@ -57,7 +57,7 @@ There are a wealth of situations where the decision to improve your quality of l
 Consider your continuous integration (if you have it).
 It may take a few minutes to complete, or it may take a few hours.
 In either case, you probably do not like waiting for it to run.
-Perhaps it has been demanded that you decide whether to (A) add a new highly-requested feature your product, or to (B) spend some time speeding up your continues integration.
+Perhaps it has been demanded that you decide whether to (A) add a new highly-requested feature your product, or to (B) spend some time speeding up your continuous integration.
 
 If you do not think that speeding up your continuous integration will improve your quality of life, I suggest that you add the feature instead (option A).
 I have observed this is rarely the case.
@@ -72,5 +72,5 @@ What is there to complain about?!
 
 No matter how many blanket rules I or even the folks at 37signals throw at you, please use your brain.
 Each decision should be considered with the effort it deserves. 
-Sometimes a mental shortcut is enough, and other times you need to but some real gray matter to work.
+Sometimes a mental shortcut is enough, and other times you need to put some real gray matter to work.
 Developing judgment for which situation is which is a difficult, but extremely valuable, skill.
