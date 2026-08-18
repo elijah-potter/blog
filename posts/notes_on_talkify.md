@@ -10,7 +10,7 @@
 
 # Notes on Talkify
 
-Matt recently asked me to take a look into [Talkify](https://x.com/tornikegomareli/status/2088524464224919700), which is a native macOS app in the same vein as [Superwhisper](https://superwhisper.com/).
+[Matt](https://ma.tt) recently asked me to take a look into [Talkify](https://x.com/tornikegomareli/status/2088524464224919700), which is a native macOS app in the same vein as [Superwhisper](https://superwhisper.com/).
 
 The key differentiator between Talkify and its competitors is speed.
 Talkify uses the existing speech-to-text models that Apple ships on its devices, which are naturally well-optimized for the hardware available.
