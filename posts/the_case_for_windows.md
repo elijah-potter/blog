@@ -53,7 +53,7 @@ We would only need to implement a few (admittedly complex) functions.
 Once the project itself is done, I estimate the marginal maintenance cost to be pretty low.
 Compared to macOS, maintaining Windows applications is a breeze.
 System APIs rarely change, and the developer tooling is _miles_ ahead.
-[Unlike macOS](https://www.geeks3d.com/20180605/apple-announces-that-opengl-and-opencl-will-be-deprecated-in-macos-10-14-mojave/), Microsoft doesn't deprecate industry standards.
+[Unlike macOS](https://www.geeks3d.com/20180605/apple-announces-that-opengl-and-opencl-will-be-deprecated-in-macos-10-14-mojave/), Microsoft does not deprecate industry standards.
 
 In fact, I believe that adding Windows support will have _negative_ marginal maintenance cost, since it will make it __far easier__ to debug platform-agnostic issues.
 Bugs we find and fix in Windows (due to Harper's architecture) will also be fixed on macOS.
