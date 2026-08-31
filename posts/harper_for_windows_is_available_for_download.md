@@ -20,7 +20,7 @@ Until then, it will be available for download from [Harper's releases page on Gi
 I have not yet given myself the time to go through and produce a curated list of supported applications and where they tend to exist on typical Windows systems.
 As such, you will need to add each app to the integrations page yourself.
 
-Additionally, I am still working to obtain a certificate from Microsoft for the binary. I don't expect it to take much more time, but until then you will likely be faced with a warning popup that informs you that the package is not signed.
+Additionally, I am still working to obtain a certificate from Microsoft for the binary. To be more specific, there are some tweaks I need to do to our build process before I can run it on Automattic's Windows CI machines. I don't expect it to take much more time, but until then you will likely be faced with a warning popup that informs you that the package is not signed.
 
 ## Other News
 
