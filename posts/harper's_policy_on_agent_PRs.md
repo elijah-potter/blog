@@ -60,3 +60,15 @@ Tell them that the use of their agent, while it may be productive in the short t
 
 Note that this will not change if you lie and report yourself as a non-agent. 
 Who wrote the code matters very little. Whether it is good matters a lot.
+
+## Update as of 9/2/2026
+
+As we have received an influx of PRs from drive-by bots, I'm amending Harper's agent policy.
+
+From now on, we will no longer accept pull requests with descriptions written by an agent.
+Your PR may contain clanker code, but your description may not.
+
+This policy many disproportionately affect those who use ChatGPT (or similar) to translate from their native language.
+If that is you, please use Google Translate instead.
+
+Existing PRs will not be affected by this change.
