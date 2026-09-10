@@ -38,6 +38,7 @@ const iconLinks = [
 		"/icons/bluesky.svg",
 		"Bluesky",
 	],
+	["https://x.com/theleastsirius", "/icons/x.svg", "Twitter / X"],
 	["https://github.com/elijah-potter/", "/icons/github.svg", "GitHub"],
 ];
 
