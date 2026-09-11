@@ -2,7 +2,8 @@
 "description": "This article is not about vibe coding. In fact, this article is about all the things you can do with an AI agent that are separate from writing code."
 "pubDate": "Fri, 11 Sep 2026 21:39:44 GMT"
 "keywords":
-  - "keyword"
+  - "pi"
+  - "Vibecoding"
 "image": null
 "featured": false
 "draft": false
@@ -48,7 +49,7 @@ DO NOT push your changes until I have a chance to review them myself.
 In `pi`, I can call this like a function:
 
 ```plaintext
-/fix-pr-confict #4222
+/fix-pr-conflict #4222
 ```
 
 It does not matter if I have the relevant PR downloaded and checked out.
@@ -108,7 +109,7 @@ Once you have taken a look to identify the possible underlying problem, offer a 
 If not the current branch, look at $@
 ```
 
-Again, it can be run as a command inside of `pi`:
+It can be run as a command inside of `pi`:
 
 ```plaintext
 /diagnose-action-failure
@@ -116,6 +117,6 @@ Again, it can be run as a command inside of `pi`:
 
 ## Wrap-Up
 
-Again, I offer these prompts as inspiration.
+I offer these prompts as inspiration.
 Are there things that you could automate?
 If so, please let me know!
