@@ -52,6 +52,7 @@ As it turns out, the ideal token size for our tasks seem to be about 3.47 charac
 Big enough to allow the model to focus on the big picture tasks, but small enough for the model to have enough awareness of the structure of individual words.
 
 > "Elijah, how did you calculate that average?"
+> 
 > I ran a task using the model and averaged the size of the tokens emitted. 
 > Obviously, it probably is not a super accurate figure, but I think it offers enough salience and precision for this post.
 
