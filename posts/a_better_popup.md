@@ -19,7 +19,7 @@ The popup you see above is the one we had available previously for the Chrome Ex
 
 ![The current Harper suggestion popup with a flyout panel](/images/better_popup_current.png)
 
-Today, I plan to discuss the evolution of the popup window and why it looks the way it does today. I am a designer in the sense that I occasionally design things, but I do not identify as one nor do I have the real training to be labeled as one. Designing things is really hard. I hold an enormous amount of respect to the people who do it professionally. I must admit that this new design would not have been possible without Claude Design. Part of my intention with this blog post is to do an investigation on what works and what doesn’t so that I might not need to rely on an LLM next time.
+Today, I plan to discuss the evolution of the popup window and why it looks the way it does today. I am a designer in the sense that I occasionally design things, but I do not identify as one nor do I have the real training to be labeled as one. Designing things is really hard. I hold an enormous amount of respect to the people who do it professionally. I must admit that this new design would not have been possible without Claude Design. Part of my intention with this blog post is to do an investigation on what it does so that I might not need to rely on an LLM next time.
 
 ![A compact Harper suggestion popup](/images/after_suggestion_box.png)
 
