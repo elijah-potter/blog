@@ -2,7 +2,8 @@
 "description": "Arguably the most important part of any Harper integration is the popup window."
 "pubDate": "Fri, 18 Sep 2026 20:44:27 GMT"
 "keywords":
-  - "keyword"
+  - "Harper"
+  - "Design"
 "image": "/images/better_popup_current.png"
 "featured": false
 "draft": false
@@ -50,7 +51,7 @@ Finally, I decided that all the least used options and information should be mad
 
 After arriving at a rough sketch, I took it to Claude Design.
 From there, Claude sketched out a few options with varying styles.
-I chose the one that was closest the "canonical" design of the Harper macOS app.
+I chose the one that was closest to the "canonical" design of the Harper macOS app.
 
 And that is how we got to the popup available in the most recent release of Harper:
 
