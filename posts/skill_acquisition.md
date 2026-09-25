@@ -12,7 +12,7 @@
 # Skill Acquisition
 
 Some time ago, I stumbled upon the [Dreyfus Model of Skill Acquisition](https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition).
-It describes the stages through which a student moves on the road to master of a certain skill.
+It describes the stages through which a student moves on the road to mastery of a certain skill.
 That skill could be baking, fencing, programming, or even teaching.
 
 I think that it stands to be a well-suited framework through which we can analyze certain aspects of the always-evolving profession of software engineering.
@@ -30,7 +30,7 @@ When a student first learns a skill, they almost always learn it from a teacher 
 When this happens, they are given a specific set of rules they need to abide by, regardless of the situation. 
 
 When you are learning to ride a bike, you are told to keep pedaling, keep your hands on the handlebars, and turn by moving the handlebars in the intended direction.
-These are explicit rules that the learning __must__ abide by in order to continue.
+These are explicit rules that the learner __must__ abide by in order to continue.
 
 ### Stage Two
 
@@ -106,8 +106,8 @@ Of course, the available tools are changing so quickly, as they always do, so it
 
 ## Conclusion
 
-While I did connect to LLMs in this post [against my better judgment](./do_not_talk_about_large_language_models), I think this is topic that gets quite under-discussed.
-Instead of solely thinking about how LLMs are destroying your critical thinking skills consider the nuance skill acquisition on the whole.
+While I did connect to LLMs in this post [against my better judgment](./do_not_talk_about_large_language_models), I think this is a topic that gets quite under-discussed.
+Instead of solely thinking about how LLMs are destroying your critical thinking skills consider the nuances of skill acquisition on the whole.
 Perhaps, consider whether you are actively learning to intuit aspects of your profession, rather than leaving it all to the conscious mind.
 Are there ways you can train yourself to do this?
 I am not sure.
