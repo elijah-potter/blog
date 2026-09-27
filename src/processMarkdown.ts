@@ -29,16 +29,16 @@ function stripFrontmatter() {
 }
 
 const processor = unified()
-		.use(remarkParse)
-		.use(remarkFrontmatter, ["yaml"])
-		.use(stripFrontmatter)
-		.use(remarkMath)
-		.use(remarkGfm)
-		.use(remarkRehype, { allowDangerousHtml: true })
-		.use(rehypeHighlight, { languages: { rust, bash, javascript } })
-		.use(remarkKatex)
-		.use(rehypeTitleFigure)
-		.use(rehypeStringify, { allowDangerousHtml: true });
+	.use(remarkParse)
+	.use(remarkFrontmatter, ["yaml"])
+	.use(stripFrontmatter)
+	.use(remarkMath)
+	.use(remarkGfm)
+	.use(remarkRehype, { allowDangerousHtml: true })
+	.use(rehypeHighlight, { languages: { rust, bash, javascript } })
+	.use(remarkKatex)
+	.use(rehypeTitleFigure)
+	.use(rehypeStringify, { allowDangerousHtml: true });
 
 export async function processMarkdown(markdown: string): Promise<string> {
 	const cached = mdCache.get(markdown);

@@ -125,8 +125,9 @@ function parseFrontmatter(
 export async function getPostDeclarations(): Promise<
 	Record<string, PostDeclaration>
 > {
-	const files = (await fs.readdir("./posts"))
-		.filter((file) => file.endsWith(".md"));
+	const files = (await fs.readdir("./posts")).filter((file) =>
+		file.endsWith(".md"),
+	);
 
 	const declarations = await Promise.all(
 		files.map(async (fileName) => {
