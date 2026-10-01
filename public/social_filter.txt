@@ -1,7 +1,7 @@
 [Adblock Plus]
 ! Title: Elijah's Social Media Filters
 ! Homepage: https://elijahpotter.dev
-! Version: 11
+! Version: 12
 ! Expires: 1 hour
 
 news.ycombinator.com##tr.athing:nth-child(n+14)
@@ -16,7 +16,7 @@ x.com##[role="presentation"]:nth-child(1):has([role="tab"])
 x.com##div:has(> [data-testid="news_sidebar"]:first-child)
 x.com##[aria-label="Timeline: Trending now"]
 x.com##[aria-label="Who to follow"]
-x.com##body:has([role="tab"][aria-selected="true"]:has(*:has-text(/^For you$/i))) [aria-label="Timeline: Your Home Timeline"]
+x.com##body:has([role="tab"][aria-selected="true"]:has-text(/^\s*For you\s*$/i)) [aria-label="Timeline: Your Home Timeline"]
 
 /^https?:\/\/(www\.)?instagram\.com\/reels(\/|$)/$document
 instagram.com##a[href="/reels"]
