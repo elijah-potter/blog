@@ -1,8 +1,9 @@
 ---
-"description": "Short description"
+"description": "Almost all the discourse around LLMs today is centered on the models themselves. Today, I want to introduce you to an entirely new world."
 "pubDate": "Fri, 09 Oct 2026 18:31:19 GMT"
 "keywords":
-  - "keyword"
+  - "LLMs"
+  - "Sampling"
 "image": null
 "featured": false
 "draft": false
