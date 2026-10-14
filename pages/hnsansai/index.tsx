@@ -35,6 +35,7 @@ const blockedTerms = [
 	"chatgpt",
 	"gpt",
 	"claude",
+	"gemini",
 	"anthropic",
 	"llm",
 	"llms",
