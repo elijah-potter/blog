@@ -65,3 +65,19 @@ Butterick's guide especially is an explanation for why an attention to detail is
 _The Long Earth_ series, written by Terry Pratchett and Stephen Baxter, is a collection of books following Joshua Valienté, a natural "Stepper."
 
 Imagine a long tube, filled with copies Earth. Like a straw full of boba tea.
+That's the long Earth.
+With a special device, people can flick back and forth between slightly-different copies of Earth, up and down the boba straw.
+
+I will not go any further into my description. I liked these books, and I would recommend them to people who like hard sci-fi.
+
+## Slaughterhouse-Five
+
+## The Effective Executive
+
+## Atomic Habits
+
+## The Darkest Minds Series (Maybe)
+
+## Getting Real
+
+## The Leviathan Trilogy
