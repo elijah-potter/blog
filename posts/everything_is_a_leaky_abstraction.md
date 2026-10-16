@@ -14,7 +14,7 @@
 
 _*in machine learning_
 
-One of my favorite blogposts of all time was written Andrej Karpathy nearly ten years ago.
+One of my favorite blog posts of all time was written by Andrej Karpathy nearly ten years ago.
 In it, he details how he would require the students of his CS231n Deep Learning class at Stanford to implement the forward and backward passes of neural networks by hand (that is, in Python with NumPy).
 Why? 
 Because he wanted his students to leave his class with a visceral understanding of backpropagation.
@@ -53,7 +53,7 @@ Successful use of a transformer (or any model architecture, for that matter) dep
 
 ## Take Your Time
 
-As with any kind of system with a rube-goldberg level of complexity, it is best to take your time.
+As with any kind of system with a Rube Goldberg–level complexity, it is best to take your time.
 Go slow.
 Skip that extra pot of coffee.
 It's better to be right slowly than wrong very fast.
