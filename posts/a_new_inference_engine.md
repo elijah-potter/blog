@@ -80,3 +80,8 @@ Andrew fulfills all our requirements:
 - It can load, unload, and switch LoRAs instantly.
 - Base model weights can be composed (like LEGO) to use the same weights when switching between batched masking and autoregressive inference.
 - It is optimized for consumer hardware.
+
+## Stay Tuned
+
+Over the next few weeks, I'll be releasing more information about how these models are trained and how you can get access to them.
+In the meantime, don't be afraid to reach out if you have any questions.
