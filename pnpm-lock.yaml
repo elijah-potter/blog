@@ -30,8 +30,8 @@ importers:
         specifier: ^10.12.18
         version: 10.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       harper.js:
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^3.0.0
+        version: 3.0.0
       highlight.js:
         specifier: ^11.6.0
         version: 11.12.0
@@ -2189,8 +2189,8 @@ packages:
     resolution: {integrity: sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==}
     engines: {node: '>=4.x'}
 
-  harper.js@2.13.0:
-    resolution: {integrity: sha512-kUj+WLx8NSEVxQMoRqoBHGAPECAkATS9eCyYfQHWp1rEcOxtDkSKgjV+N0VHPd5xYKIF6cufJ7+evwaHfRF3WA==}
+  harper.js@3.0.0:
+    resolution: {integrity: sha512-Dyj1Q/mk8zr8vzGOZ6RJpUOj2BYbYPHMOmO4pIzKgOza9M/VHHfwwnFohIxpchPxeCoH3K/UlEI2Jkt7d6OeiA==}
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
@@ -5682,7 +5682,7 @@ snapshots:
 
   growl@1.10.5: {}
 
-  harper.js@2.13.0:
+  harper.js@3.0.0:
     dependencies:
       fflate: 0.8.3
 
