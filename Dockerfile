@@ -12,7 +12,8 @@ RUN ./build.sh --no-site --release
 # Clean up unneeded build artifacts
 WORKDIR /usr/build/crates/
 
-FROM node:lts-slim AS node-build
+# Node 25+ no longer bundles Corepack, which provides pnpm below.
+FROM node:24-slim AS node-build
 
 RUN mkdir -p /usr/build/
 WORKDIR /usr/build/
