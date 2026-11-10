@@ -1,7 +1,7 @@
 [Adblock Plus]
 ! Title: Elijah's Social Media Filters
 ! Homepage: https://elijahpotter.dev
-! Version: 12
+! Version: 13
 ! Expires: 1 hour
 
 news.ycombinator.com##tr.athing:nth-child(n+14)
@@ -35,6 +35,9 @@ www.reddit.com##left-nav-top-section
 www.reddit.com##reddit-search-large
 www.reddit.com##div.prominent-search
 www.reddit.com##[id="expand-search-button"]
+
+www.reddit.com###feed-tab-1
+reddit.com###feed-tab-group:has(>#feed-tab-1+#feed-tab-2.tab-selected)
 
 www.facebook.com##[data-video-id]
 www.facebook.com##:matches-path(/^\/$/) [id="screen-root"]
