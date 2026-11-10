@@ -50,6 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
 										<h1 className="text-2xl">Elijah Potter</h1>
 									</Link>
 									<Spacer />
+									<UserStatus />
 									<a href="/rss.xml">
 										<Image
 											width="25"
@@ -61,7 +62,6 @@ export default function App({ Component, pageProps }: AppProps) {
 											}}
 										/>
 									</a>
-									<UserStatus />
 								</Navbar>
 							)}
 							<Component {...pageProps} />
