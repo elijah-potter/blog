@@ -4,7 +4,6 @@ import "katex/dist/katex.css";
 import "highlight.js/styles/hybrid.css";
 import { sampleSize } from "lodash";
 import Link from "next/link";
-import ShareRow from "../../components/ShareRow";
 import { articleIdToSlug } from "../../posts/articleId";
 import { slugToArticleId } from "../../posts/slugLookup";
 import CommentForm from "../../src/CommentForm";
@@ -133,10 +132,9 @@ export default function ArticlePage({
 				Proofread by <a href="https://writewithharper.com">Harper</a>.
 			</p>
 
-			<ShareRow
-				title={post.title}
-				link={`https://elijahpotter.dev/articles/${articleId}`}
-			/>
+			<p className="italic pt-4">
+				<a href="https://x.com/theleastsirius">Follow me on X.</a>
+			</p>
 
 			<div>
 				<h2 className="text-2xl font-bold my-4">Comments</h2>
