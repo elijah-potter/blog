@@ -29,18 +29,22 @@ To achieve that, we need to be able to do as much analysis as possible in the ti
 To allow Harper to do the most work possible in the time between when a user finished typing and when they're ready for review, I am introducing a new idea into Harper's core grammar checker: the __deadline__.
 Here's how it works.
 
-Harper will keep track of the _throughput_ of every grammar rule we check.
-I will measure it in characters per second.
-Whenever we check a user's document, Harper will keep track of exactly how much CPU time each rule consumes, then divide it by the document length.
-If we do this many times with a variety of documents, we can get a rough estimate of how long _on average_ it takes a given rule to process and offer suggestions to improve or grammar check a single character
+Harper checks a variety of individual grammatical and stylistic rules.
+Each one of these rules is pretty self contained.
+You can imagine them to be individual little programs.
+Every time Harper "checks" a document for errors (or for ways to improve it), each one of these programs is run.
 
-I call this process _calibration_.
+To set up a deadline, Harper will keep track of the throughput (in characters per second) of every grammar program we run and therefore every grammatical rule we check.
+Whenever we check a user's document, Harper will keep track of exactly how much CPU time each rule consumes, then divide it by the document length.
+If we do this many times with a variety of documents, we can get a rough estimate of how long on average it takes a given rule to process and offer suggestions to improve or grammar check a single character
+
+I call this process calibration.
 An initial calibration process will need to run when Harper first starts up.
 That will happen quickly in the background, so the user will not even noticed it happened.
 After that, the throughput estimates will continue to get more accurate as the user uses Harper.
 
 Once Harper has been calibrated, we can assign deadlines to specific rules based on when the user might expect them to be available.
-Some things are most useful __while__ the user is actively typing.
+Some things are most useful while the user is actively typing.
 
 For instance, I often already know if I have made a typo _before_ I even finish typing a word.
 When that happens, I expect the spell checker to already be available to fix my problem.
